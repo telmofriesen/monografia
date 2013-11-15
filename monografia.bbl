@@ -41,12 +41,6 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em: $<$http://www.robot-electronics.co.uk/htm/srf06tech.htm$>$.
   Acesso em: 29 de Fevereiro de 2012.}
 
-\bibitem[DOCTORROBOT 2012]{X80}
-\abntrefinfo{DOCTORROBOT}{DOCTORROBOT}{2012}
-{DOCTORROBOT. \textbf{X80 Robot}. 2012.
-Dispon{\'\i}vel em: $<$http://www.drrobot.com/products\_item. \\
-  asp?itemNumber=x80$>$. Acesso em: 06 de Fevereiro de 2012.}
-
 \bibitem[ELETRONICAORG 2012]{PWMREF}
 \abntrefinfo{ELETRONICAORG}{ELETRONICAORG}{2012}
 {ELETRONICAORG. \textbf{Apostila Sobre Modulação PWM}. 2012.
@@ -82,6 +76,12 @@ Dispon{\'\i}vel em: $<$https://github.com/$>$. Acesso em: 06 de Março de 2012.}
 {GITHUB. \textbf{Help.GitHub}. 2012.
 Dispon{\'\i}vel em: $<$http://help.github.com/$>$. Acesso em: 06 de Março de
   2012.}
+
+\bibitem[Gonzalez e Woods 2006]{GONZALEZ-2006}
+\abntrefinfo{Gonzalez e Woods}{GONZALEZ; WOODS}{2006}
+{GONZALEZ, R.~C.; WOODS, R.~E. \textbf{Digital Image Processing (3rd Edition)}.
+  Upper Saddle River, NJ, USA: Prentice-Hall, Inc., 2006.
+ISBN 013168728X.}
 
 \bibitem[KOSKO 1986]{KOSKO}
 \abntrefinfo{KOSKO}{KOSKO}{1986}
@@ -151,6 +151,13 @@ ISBN 978-0-471-78857-7.}
 {PHILIPS. \textbf{74LS244 Octal buffer,line driver; 3-state}.
 Dispon{\'\i}vel em: $<$http://www.learn-c.com/74ls244.pdf$>$. Acesso em: 26 de
   Fevereiro de 2012.}
+
+\bibitem[Piccardi 2004]{BACKGROUND-SUBTRACTION}
+\abntrefinfo{Piccardi}{PICCARDI}{2004}
+{PICCARDI, M. Background subtraction techniques: a review. In:
+  \textbf{Systems, Man and Cybernetics, 2004 IEEE International Conference on}.
+  [S.l.: s.n.], 2004. v.~4, p. 3099--3104 vol.4.
+ISSN 1062-922X.}
 
 \bibitem[SEMICONDUCTOR 2012]{LM317}
 \abntrefinfo{SEMICONDUCTOR}{SEMICONDUCTOR}{2012}

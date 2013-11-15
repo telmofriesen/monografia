@@ -1,14 +1,30 @@
-\chapter{Fundamentação Teórica}
-\label{chap:fundteor}
+\chapter{Fundamentação Teórica} \label{chap:fundteor}
 
 Este capítulo apresenta a fundamentação teórica, que consiste no estudo das técnicas e algoritmos utilizados. O capitulo divide-se em três seções. A seção \ref{sec:segmentacao} apresenta técnicas de subtração de fundo, limiarização, filtros morfológicos, esqueletonização e análise de componentes principais. A seção \ref{sec:descricao}  por sua vez apresenta propriedades de regiões em imagens e descritores de \emph{fourier}. Finalmente a seção \ref{sec:classificacao} apresenta uma visão geral de redes neurais e métodos de treinamento.
 
 \section{Segmentação} \label{sec:segmentacao}
 
-\subsection{Subtração de fundo}
-% subtração de fundo
-\subsection{Limiarização}
+\subsection{Subtração de fundo} \label{sub:fundteor_sub_fundo}
+
+Técnicas de subtração de fundo são amplamente empregadas para a detecção de movimento em sequencias de imagens de vídeo. A detecção do movimento se dá pela subtração da imagem de referencia chamada "fundo", ou em inglês \emph{background image}, da imagem a ser segmentada. A imagem de fundo não deve possuir objetos em movimento e deve estar sempre atualizada com relação à variações de iluminação \cite{BACKGROUND-SUBTRACTION}.
+
+O método mais simples de subtração de fundo consiste em subtrair a imagem de fundo da imagem a ser segmentada e em seguida aplicar  um limiar no resultado. Pode-se resumir esse método na equação \ref{eq:background-subtraction}. Onde, $D(t+1)$ é a imagem segmentada, $V(x,y,t+1)$ é a imagem de entrada, $V(x,y,t)$ é a imagem de referencia, ou fundo e $Th$ é um limiar, que pode ser escolhido conforme os métodos apresentados na seção \ref{sub:fundteor_limiarizacao}.
+
+\begin{equation}
+D(t+1) = \left |V(x,y,t+1)-V(x,y,t)  \right |> Th
+\label{eq:background-subtraction}
+\end{equation}
+
+Existem outros métodos mais complexos, como \emph{Running Gaussian average}, \emph{Temporal median filter}, entre outros, que geram melhores resultados com fundos que não são completamente estáticos \cite{BACKGROUND-SUBTRACTION}, porém não são de interesse para este projeto.
+
+\subsection{Limiarização} \label{sub:fundteor_limiarizacao}
 % limiarização
+
+
+
+
+
+
 \subsection{Filtros morfológicos}
 % filtros morfológicos
 \subsection{Esqueletonização}
@@ -37,6 +53,7 @@ Este capítulo apresenta a fundamentação teórica, que consiste no estudo das técn
 
 
 
+\cite{GONZALEZ-2006}
 
 
 %---------- Estado inicial do Projeto ----------
