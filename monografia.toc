@@ -5,25 +5,38 @@
 \contentsline {section}{\numberline {1.3}Metodologia}{12}
 \contentsline {section}{\numberline {1.4}Estrutura do Documento}{12}
 \contentsline {chapter}{\numberline {2}Fundamenta\c c\~ao Te\'orica}{13}
-\contentsline {section}{\numberline {2.1}Estado Inicial do Projeto}{13}
-\contentsline {subsection}{\numberline {2.1.1}Vis\~ao Geral}{13}
-\contentsline {subsection}{\numberline {2.1.2}Recebimento do Rob\^o}{15}
-\contentsline {subsection}{\numberline {2.1.3}Considera\c c\~oes}{16}
-\contentsline {section}{\numberline {2.2}Especifica\c c\~oes do Rob\^o}{17}
-\contentsline {subsection}{\numberline {2.2.1}Sensor IR 2Y0A02F98}{17}
-\contentsline {subsection}{\numberline {2.2.2}Encoder \'Optico HEDS-9700}{18}
-\contentsline {subsection}{\numberline {2.2.3}C8051F340DK}{19}
-\contentsline {subsection}{\numberline {2.2.4}Placa TS-7260}{20}
-\contentsline {subsection}{\numberline {2.2.5}Placa de Roteamento}{21}
-\contentsline {subsection}{\numberline {2.2.6}Rob\^o Bellator}{22}
-\contentsline {section}{\numberline {2.3}\emph {Pulse Width Modulation} (PWM)}{24}
-\contentsline {section}{\numberline {2.4}L\'ogica Fuzzy}{25}
-\contentsline {subsection}{\numberline {2.4.1}Conjuntos \emph {Fuzzy}}{26}
-\contentsline {subsection}{\numberline {2.4.2}Vari\'avel Lingu\IeC {\'\i }stica}{26}
-\contentsline {subsection}{\numberline {2.4.3}Controle \emph {Fuzzy}}{28}
-\contentsline {subsection}{\numberline {2.4.4}Considera\c c\~oes}{29}
-\contentsline {section}{\numberline {2.5}\emph {Event-Driven Fuzzy Congnitive Maps} (ED-FCM)}{29}
-\contentsline {subsection}{\numberline {2.5.1}Considera\c c\~oes}{36}
+\contentsline {section}{\numberline {2.1}Segmenta\c c\~ao}{14}
+\contentsline {subsection}{\numberline {2.1.1}Subtra\c c\~ao de fundo}{14}
+\contentsline {subsection}{\numberline {2.1.2}Limiariza\c c\~ao}{14}
+\contentsline {subsection}{\numberline {2.1.3}Filtros morfol\'ogicos}{14}
+\contentsline {subsection}{\numberline {2.1.4}Esqueletoniza\c c\~ao}{14}
+\contentsline {subsection}{\numberline {2.1.5}An\'alise de componentes principais}{14}
+\contentsline {section}{\numberline {2.2}Descri\c c\~ao}{14}
+\contentsline {subsection}{\numberline {2.2.1}Propriedades de regi\~oes}{14}
+\contentsline {subsection}{\numberline {2.2.2}Descritores de fourier}{14}
+\contentsline {section}{\numberline {2.3}Classifica\c c\~ao}{14}
+\contentsline {subsection}{\numberline {2.3.1}Redes neurais}{14}
+\contentsline {subsection}{\numberline {2.3.2}M\'etodo de BR}{14}
+\contentsline {subsection}{\numberline {2.3.3}M\'etodo de LM}{14}
+\contentsline {section}{\numberline {2.4}Estado Inicial do Projeto}{14}
+\contentsline {subsection}{\numberline {2.4.1}Vis\~ao Geral}{14}
+\contentsline {subsection}{\numberline {2.4.2}Recebimento do Rob\^o}{15}
+\contentsline {subsection}{\numberline {2.4.3}Considera\c c\~oes}{16}
+\contentsline {section}{\numberline {2.5}Especifica\c c\~oes do Rob\^o}{16}
+\contentsline {subsection}{\numberline {2.5.1}Sensor IR 2Y0A02F98}{16}
+\contentsline {subsection}{\numberline {2.5.2}Encoder \'Optico HEDS-9700}{18}
+\contentsline {subsection}{\numberline {2.5.3}C8051F340DK}{19}
+\contentsline {subsection}{\numberline {2.5.4}Placa TS-7260}{20}
+\contentsline {subsection}{\numberline {2.5.5}Placa de Roteamento}{21}
+\contentsline {subsection}{\numberline {2.5.6}Rob\^o Bellator}{22}
+\contentsline {section}{\numberline {2.6}\emph {Pulse Width Modulation} (PWM)}{24}
+\contentsline {section}{\numberline {2.7}L\'ogica Fuzzy}{25}
+\contentsline {subsection}{\numberline {2.7.1}Conjuntos \emph {Fuzzy}}{26}
+\contentsline {subsection}{\numberline {2.7.2}Vari\'avel Lingu\IeC {\'\i }stica}{26}
+\contentsline {subsection}{\numberline {2.7.3}Controle \emph {Fuzzy}}{28}
+\contentsline {subsection}{\numberline {2.7.4}Considera\c c\~oes}{29}
+\contentsline {section}{\numberline {2.8}\emph {Event-Driven Fuzzy Congnitive Maps} (ED-FCM)}{29}
+\contentsline {subsection}{\numberline {2.8.1}Considera\c c\~oes}{36}
 \contentsline {chapter}{\numberline {3}Desenvolvimento}{38}
 \contentsline {section}{\numberline {3.1}Reconstru\c c\~ao da Plataforma Rob\'otica Bellator}{38}
 \contentsline {subsection}{\numberline {3.1.1}Teste dos Componentes}{38}
