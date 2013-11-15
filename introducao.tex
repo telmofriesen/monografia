@@ -1,14 +1,59 @@
 %---------- Primeiro Capitulo ----------
 \chapter{Introdução}
 
-1 Motivação - necessidade do problema a ser resolvido - custo, ambiental,
-2 Justificativa -se for diferente da motivacao
-3 Objetivos: geral + 3 especificos
-4 metodologia
-5 apresentacao do documento: no cap tal, etc - pode absorver a metodologia
+% Por que classificar objetos
+% Por que identificar o angulo
 
-% motivação
 Técnicas de visão computacional podem ser ferramentas úteis para a automação de linhas de produção em tarefas como, por exemplo, a fabricação de componentes eletrônicos \cite{USO-COMPONENTES-ELETRONICOS}, \cite{USO-COMPONENTES-ELETRONICOS-2} a inspeção do acabamento em objetos metálicos \cite{USO-INSPECAO-SUPERFICIES}, a produção de circuitos impressos \cite{USO-INSPECAO-PCB},  \cite{USO-INSPECAO-PCB-2}, entre outros.
+
+Muitas vezes, existem etapas da produção em indústrias metalúrgicas, nas quais se necessita identificar objetos metálicos e sua respectiva orientação angular, seja para análise, separação ou mesmo somente para classificação desses objetos. 
+
+A grande quantidade de objetos distintos que podem estar em uma mesma linha de produção ou linha de montagem podem confundir os trabalhadores, estando estes portanto sujeitos a erros e falhas. A identificação automática de objetos, assim como a identificação automática de sua posição, tendem a diminuir o erro cometido na classificação ou reposicionamento manual para cada objeto. Diminuindo o erro de classificação diminui se consequentemente o custo gerado por uma linha de montagem parada e dispensa-se a necessidade de operadores na linha.
+
+% problema de classificação de objetos
+%	pesquisar principais problemas iluminação/etc
+% Problema de identificação de posicao dos objetos
+%	
+%	deve ser confiável e preciso
+%	deve ser rápido
+%	parada da linha significa perda e prejuízo
+% abordagens existenstes para classificação de objetos
+% abordagens para medida de posicao angular
+%
+
+
+
+\section{Motivação}
+%1 Motivação - necessidade do problema a ser resolvido - custo, ambiental,
+% problema especifico de uma linha de produção numa industria metalurgica.
+% tempo reduzido na producao e automatizacao da linha
+
+\section{Justificativa}
+%2 Justificativa -se for diferente da motivacao
+
+\section{Objetivos}
+%3 Objetivos: geral + 3 especificos
+O objetivo deste trabalho é
+desenvolver um sistema capaz de classificar objetos metálicos e medir seu respectivo ângulo
+de rotação com relação ao eixo x do plano cartesiano, sendo os objetos previamente
+conhecidos pelo sistema utilizando-se técnicas de aprendizagem de máquina.
+
+\section{Metodologia}
+
+O desenvolvimento do projeto é dividido em quatro etapas. A primeira etapa consiste no estudo
+de técnicas de segmentação de imagem e implementação no software MATLAB. A segunda
+etapa consiste no estudo de técnicas de descrição de imagens e também implementação no
+MATLAB. Na terceira etapa é implementado no MATLAB um método de classificação.
+Finalmente, as técnicas das etapas anteriores que apresentarem os melhores resultados são
+implementadas utilizando-se linguagens como C, C++ ou Java, com o objetivo de construir
+um protótipo funcional a ser utilizado no ambiente de chão de fábrica.
+
+\section{Estrutura do Documento}
+%5 apresentacao do documento: no cap tal, etc - pode absorver a metodologia
+
+
+
+
 
 
 O problema do controle de navegação de robôs móveis autônomos apresenta um grande
