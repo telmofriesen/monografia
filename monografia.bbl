@@ -1,0 +1,175 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.45.2.1 }
+
+\bibitem[AGILENTTECHNOLOGIES 2002]{HEDS9700}
+\abntrefinfo{AGILENTTECHNOLOGIES}{AGILENTTECHNOLOGIES}{2002}
+{AGILENTTECHNOLOGIES. \textbf{Small Optical Encoder Modules HEDS-9700 Series}.
+  2002.
+Dispon{\'\i}vel em:
+  $<$http://www.digchip.com/datasheets/parts/datasheet/021/QEDS-9871-pdf.php$>$.
+  Acesso em: 28 de Fevereiro de 2012.}
+
+\bibitem[ARM 2009]{TS-7260}
+\abntrefinfo{ARM}{ARM}{2009}
+{ARM, E. \textbf{TS-7260 Datasheet}. 2009.
+Dispon{\'\i}vel em:
+  $<$http://www.embeddedarm.com/documentation/ts-7260-datasheet.pdf$>$. Acesso
+  em: 16 de Janeiro de 2012.}
+
+\bibitem[ARM 2012]{tsmanual}
+\abntrefinfo{ARM}{ARM}{2012}
+{ARM, E. \textbf{TS-7260 Hardware Manual}. 2012.
+Dispon{\'\i}vel em:
+  $<$http://www.embeddedarm.com/documentation/ts-7260-manual.pdf$>$. Acesso em:
+  16 de Janeiro de 2012.}
+
+\bibitem[CADSOFT 2012]{EAGLE}
+\abntrefinfo{CADSOFT}{CADSOFT}{2012}
+{CADSOFT. \textbf{CadSoft EAGLE Freeware Version}. 2012.
+Dispon{\'\i}vel em:
+  $<$http://www.cadsoftusa.com/downloads/freeware/?language=en$>$. Acesso em:
+  05 de Março de 2012.}
+
+\bibitem[DEVANTECHELETRONIC 2012]{SRF06}
+\abntrefinfo{DEVANTECHELETRONIC}{DEVANTECHELETRONIC}{2012}
+{DEVANTECHELETRONIC. \textbf{SRF06 Ultra-Sonic Ranger with 4-20mA Output}.
+  2012.
+Dispon{\'\i}vel em: $<$http://www.robot-electronics.co.uk/htm/srf06tech.htm$>$.
+  Acesso em: 29 de Fevereiro de 2012.}
+
+\bibitem[DOCTORROBOT 2012]{X80}
+\abntrefinfo{DOCTORROBOT}{DOCTORROBOT}{2012}
+{DOCTORROBOT. \textbf{X80 Robot}. 2012.
+Dispon{\'\i}vel em: $<$http://www.drrobot.com/products\_item. \\
+  asp?itemNumber=x80$>$. Acesso em: 06 de Fevereiro de 2012.}
+
+\bibitem[ELETRONICAORG 2012]{PWMREF}
+\abntrefinfo{ELETRONICAORG}{ELETRONICAORG}{2012}
+{ELETRONICAORG. \textbf{Apostila Sobre Modulação PWM}. 2012.
+Dispon{\'\i}vel em:
+  $<$http://www.eletronica.org/arq\_apostilas/apostila\_pwm.pdf$>$. Acesso em:
+  04 de Março de 2012.}
+
+\bibitem[Fabro 1996]{FABRO}
+\abntrefinfo{Fabro}{FABRO}{1996}
+{FABRO, J.~A.
+\textbf{Grupos neurais e sistemas nebulosos: aplicação a navegação autonoma}.
+Dissertação (Mestrado) --- Universidade Estadual de Campinas. Faculdade de
+  Engenharia Elétrica, Fevereiro 1996.}
+
+\bibitem[FRACASSO e COSTA 2005]{FRACASSO}
+\abntrefinfo{FRACASSO e COSTA}{FRACASSO; COSTA}{2005}
+{FRACASSO, P.~T.; COSTA, A.~H. Navegação reativa de robôs móveis autônomos
+  utilizando lógica nebulosa com regras ponderadas.
+\textbf{VII SBAI/ II IEEE LARS}, Setembro 2005.}
+
+\bibitem[GIT 2012]{GIT}
+\abntrefinfo{GIT}{GIT}{2012}
+{GIT. \textbf{Git - Fast Version Control System}. 2012.
+Dispon{\'\i}vel em: $<$http://git-scm.com/$>$. Acesso em: 06 de Março de 2012.}
+
+\bibitem[GITHUB 2012]{GITHUB}
+\abntrefinfo{GITHUB}{GITHUB}{2012a}
+{GITHUB. \textbf{GitHub}. 2012.
+Dispon{\'\i}vel em: $<$https://github.com/$>$. Acesso em: 06 de Março de 2012.}
+
+\bibitem[GITHUB 2012]{GITHELP}
+\abntrefinfo{GITHUB}{GITHUB}{2012b}
+{GITHUB. \textbf{Help.GitHub}. 2012.
+Dispon{\'\i}vel em: $<$http://help.github.com/$>$. Acesso em: 06 de Março de
+  2012.}
+
+\bibitem[KOSKO 1986]{KOSKO}
+\abntrefinfo{KOSKO}{KOSKO}{1986}
+{KOSKO, B. Fuzzy cognitive maps.
+\textbf{International Journal Man-Machine Studie}, v.~24, n.~1, p. 65--75,
+  1986.}
+
+\bibitem[Mamdani e Assilian 1999]{MAMDAMI}
+\abntrefinfo{Mamdani e Assilian}{MAMDANI; ASSILIAN}{1999}
+{MAMDANI, E.~H.; ASSILIAN, S. An experiment in linguistic synthesis with a
+  fuzzy logic controller.
+\textbf{Int. J. Hum.-Comput. Stud.}, Elsevier, v.~51, n.~2, p. 135--147, 1999.}
+
+\bibitem[Marin et al. 2010]{BELLATOR}
+\abntrefinfo{Marin et al.}{MARIN et al.}{2010}
+{MARIN, A.~J. et al. \textbf{Desenvolvimento do Projeto Bellator}. Curitiba,
+  2010.}
+
+\bibitem[MENDONÇA 2011]{FCMENDONCA}
+\abntrefinfo{MENDONÇA}{MENDONÇA}{2011}
+{MENDONÇA, M.
+\textbf{Uma Contribuição ao Desenvolvimento de Sistemas Inteligentes Utilizando
+  Redes Cognitivas Dinâmicas}.
+Doutorado --- Universidade Tecnológica Federal do Paraná, 2011.}
+
+\bibitem[MENDONÇA, ARRUDA e NEVES 2011]{MENDONCA}
+\abntrefinfo{MENDONÇA, ARRUDA e NEVES}{MENDONÇA; ARRUDA; NEVES}{2011}
+{MENDONÇA, M.; ARRUDA, L.; NEVES, F. Autonomous navigation system using event
+  driven-fuzzy cognitive maps.
+\textbf{© Springer Science+Business Media}, Outubro 2011.}
+
+\bibitem[Pedrycz e Gomide 2007]{PEDRYCZ}
+\abntrefinfo{Pedrycz e Gomide}{PEDRYCZ; GOMIDE}{2007}
+{PEDRYCZ, W.; GOMIDE, F. A.~C. \textbf{Fuzzy Systems Engineering - Toward
+  Human-Centric Computing}. [S.l.]: Wiley, 2007. I-XXII, 1-526~p.
+ISBN 978-0-471-78857-7.}
+
+\bibitem[PHILIPS]{74LS244}
+\abntrefinfo{PHILIPS}{PHILIPS}{}
+{PHILIPS. \textbf{74LS244 Octal buffer,line driver; 3-state}.
+Dispon{\'\i}vel em: $<$http://www.learn-c.com/74ls244.pdf$>$. Acesso em: 26 de
+  Fevereiro de 2012.}
+
+\bibitem[SEMICONDUCTOR 2012]{LM317}
+\abntrefinfo{SEMICONDUCTOR}{SEMICONDUCTOR}{2012}
+{SEMICONDUCTOR, N. \textbf{LM317 - 3-Terminal Adjustable Regulator}. 2012.
+Dispon{\'\i}vel em: $<$http://www.national.com/mpf/LM/LM317.html$>$. Acesso em:
+  21 de Março de 2012.}
+
+\bibitem[SHARPCORPORATION 2006]{datasheetsensor}
+\abntrefinfo{SHARPCORPORATION}{SHARPCORPORATION}{2006}
+{SHARPCORPORATION. \textbf{GP2Y0A02F98YK Datasheet}. 2006.
+Dispon{\'\i}vel em:
+  $<$http://www.mindsensors.com/index.php?module=documents\&JAS\_DocumentManager\_op=
+  \\ downloadFile\&JAS\_File\_id=335$>$. Acesso em: 1 de Agosto de 2011.}
+
+\bibitem[SILICONLABS 2006]{datasheetkit}
+\abntrefinfo{SILICONLABS}{SILICONLABS}{2006}
+{SILICONLABS. \textbf{C8051F340DK Datasheet}. 2006.
+Dispon{\'\i}vel em:
+  $<$http://datasheet.octopart.com/C8051F340DK-Silicon-Laboratories-datasheet-9512.pdf$>$.
+  Acesso em: 1 de Agosto de 2011.}
+
+\bibitem[Stylios e Groumpos 2000]{GROUMPOS}
+\abntrefinfo{Stylios e Groumpos}{STYLIOS; GROUMPOS}{2000}
+{STYLIOS, C.~D.; GROUMPOS, P.~P. Fuzzy cognitive maps in modeling supervisory
+  control systems.
+\textbf{Journal of Intelligent and Fuzzy Systems}, v.~8, n.~1, p. 83--98,
+  2000.}
+
+\bibitem[TECHNOLOGICSYSTEMS 2012]{CC}
+\abntrefinfo{TECHNOLOGICSYSTEMS}{TECHNOLOGICSYSTEMS}{2012}
+{TECHNOLOGICSYSTEMS. \textbf{Linux for ARM on TS-7000 Embedded Computers}.
+  2012.
+Dispon{\'\i}vel em:
+  $<$http://www.embeddedarm.com/software/software-arm-linux.php$>$. Acesso em:
+  27 de Fevereiro de 2012.}
+
+\bibitem[TEXASINSTRUMENTS]{LM324}
+\abntrefinfo{TEXASINSTRUMENTS}{TEXASINSTRUMENTS}{}
+{TEXASINSTRUMENTS. \textbf{LM124,LM224,LM324,LM2902 Low Power Quad Operational
+  Amplifiers}.
+Dispon{\'\i}vel em: $<$http://www.national.com/ds/LM/LM124.pdf$>$. Acesso em:
+  25 de fevereiro de 2012.}
+
+\bibitem[Zadeh 1965]{ZADEH}
+\abntrefinfo{Zadeh}{ZADEH}{1965}
+{ZADEH, L.~A. Fuzzy sets.
+\textbf{Information and Control}, v.~8, n.~3, p. 338--353, 1965.}
+
+\end{thebibliography}
