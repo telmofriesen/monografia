@@ -89,11 +89,39 @@ Dispon{\'\i}vel em: $<$http://help.github.com/$>$. Acesso em: 06 de Março de
 \textbf{International Journal Man-Machine Studie}, v.~24, n.~1, p. 65--75,
   1986.}
 
+\bibitem[Lin 2007]{USO-COMPONENTES-ELETRONICOS-2}
+\abntrefinfo{Lin}{LIN}{2007}
+{LIN, H.-D. Computer-aided visual inspection of surface defects in ceramic
+  capacitor chips.
+\textbf{Journal of Materials Processing Technology}, v.~189, p. 19 -- 25, 2007.
+ISSN 0924-0136.
+Dispon{\'\i}vel em:
+  $<$http://www.sciencedirect.com/science/article/pii/S0924013607000052$>$.}
+
+\bibitem[Lin 2008]{USO-COMPONENTES-ELETRONICOS}
+\abntrefinfo{Lin}{LIN}{2008}
+{LIN, H.-D. Tiny surface defect inspection of electronic passive components
+  using discrete cosine transform decomposition and cumulative sum techniques.
+\textbf{Image and Vision Computing}, v.~26, n.~5, p. 603 -- 621, 2008.
+ISSN 0262-8856.
+Dispon{\'\i}vel em:
+  $<$http://www.sciencedirect.com/science/article/pii/S0262885607001151$>$.}
+
 \bibitem[Mamdani e Assilian 1999]{MAMDAMI}
 \abntrefinfo{Mamdani e Assilian}{MAMDANI; ASSILIAN}{1999}
 {MAMDANI, E.~H.; ASSILIAN, S. An experiment in linguistic synthesis with a
   fuzzy logic controller.
 \textbf{Int. J. Hum.-Comput. Stud.}, Elsevier, v.~51, n.~2, p. 135--147, 1999.}
+
+\bibitem[Mar, Yarlagadda e Fookes 2011]{USO-INSPECAO-PCB}
+\abntrefinfo{Mar, Yarlagadda e Fookes}{MAR; YARLAGADDA; FOOKES}{2011}
+{MAR, N.; YARLAGADDA, P.; FOOKES, C. Design and development of automatic visual
+  inspection system for \{PCB\} manufacturing.
+\textbf{Robotics and Computer-Integrated Manufacturing}, v.~27, n.~5, p. 949 --
+  962, 2011.
+ISSN 0736-5845.
+Dispon{\'\i}vel em:
+  $<$http://www.sciencedirect.com/science/article/pii/S0736584511000457$>$.}
 
 \bibitem[Marin et al. 2010]{BELLATOR}
 \abntrefinfo{Marin et al.}{MARIN et al.}{2010}
@@ -103,9 +131,8 @@ Dispon{\'\i}vel em: $<$http://help.github.com/$>$. Acesso em: 06 de Março de
 \bibitem[MENDONÇA 2011]{FCMENDONCA}
 \abntrefinfo{MENDONÇA}{MENDONÇA}{2011}
 {MENDONÇA, M.
-\textbf{Uma Contribuição ao Desenvolvimento de Sistemas Inteligentes Utilizando
-  Redes Cognitivas Dinâmicas}.
-Doutorado --- Universidade Tecnológica Federal do Paraná, 2011.}
+Doutorado, \textbf{Uma Contribuição ao Desenvolvimento de Sistemas Inteligentes
+  Utilizando Redes Cognitivas Dinâmicas}. 2011.}
 
 \bibitem[MENDONÇA, ARRUDA e NEVES 2011]{MENDONCA}
 \abntrefinfo{MENDONÇA, ARRUDA e NEVES}{MENDONÇA; ARRUDA; NEVES}{2011}
@@ -171,5 +198,24 @@ Dispon{\'\i}vel em: $<$http://www.national.com/ds/LM/LM124.pdf$>$. Acesso em:
 \abntrefinfo{Zadeh}{ZADEH}{1965}
 {ZADEH, L.~A. Fuzzy sets.
 \textbf{Information and Control}, v.~8, n.~3, p. 338--353, 1965.}
+
+\bibitem[Zeng, Ma e Zheng 2011]{USO-INSPECAO-PCB-2}
+\abntrefinfo{Zeng, Ma e Zheng}{ZENG; MA; ZHENG}{2011}
+{ZENG, Z.; MA, L.; ZHENG, Z. Automated extraction of pcb components based on
+  specularity using layered illumination.
+\textbf{Journal of Intelligent Manufacturing}, Springer US, v.~22, n.~6, p.
+  919--932, 2011.
+ISSN 0956-5515.
+Dispon{\'\i}vel em: $<$http://dx.doi.org/10.1007/s10845-009-0367-6$>$.}
+
+\bibitem[Zheng, Kong e Nahavandi 2002]{USO-INSPECAO-SUPERFICIES}
+\abntrefinfo{Zheng, Kong e Nahavandi}{ZHENG; KONG; NAHAVANDI}{2002}
+{ZHENG, H.; KONG, L.; NAHAVANDI, S. Automatic inspection of metallic surface
+  defects using genetic algorithms.
+\textbf{Journal of Materials Processing Technology}, v. 125-126, n.~0, p. 427
+  -- 433, 2002.
+ISSN 0924-0136.
+Dispon{\'\i}vel em:
+  $<$http://www.sciencedirect.com/science/article/pii/S0924013602002947$>$.}
 
 \end{thebibliography}
