@@ -1,6 +1,6 @@
 \chapter{Fundamentação Teórica} \label{chap:fundteor}
 
-Este capítulo apresenta a fundamentação teórica, que consiste no estudo das técnicas e algoritmos utilizados. O capitulo divide-se em três seções. A seção \ref{sec:segmentacao} apresenta técnicas de subtração de fundo, limiarização, filtros morfológicos, esqueletonização e análise de componentes principais. A seção \ref{sec:descricao}  por sua vez apresenta propriedades de regiões em imagens e descritores de \emph{fourier}. Finalmente a seção \ref{sec:classificacao} apresenta uma visão geral de redes neurais e métodos de treinamento.
+Este capítulo apresenta a fundamentação teórica, que consiste no estudo das técnicas e algoritmos utilizados. O capitulo divide-se em três seções. A seção \ref{sec:segmentacao} apresenta técnicas de subtração de fundo, limiarização, operações morfológicas, esqueletonização e análise de componentes principais. A seção \ref{sec:descricao}  por sua vez apresenta propriedades de regiões em imagens e descritores de \emph{fourier}. Finalmente a seção \ref{sec:classificacao} apresenta uma visão geral de redes neurais e métodos de treinamento.
 
 
 \section{Segmentação} \label{sec:segmentacao}
@@ -139,13 +139,78 @@ Na figura \ref{fig:fundteor_fig_limiarizada} mostram-se as imagens da figura \re
 \end{figure}
 
 
-\subsection{Filtros morfológicos}
+\subsection{Operações morfológicas} \label{sub:fundteor_op_morfologicas}
+
+Para o estudo das operações morfológicas de abertura e fechamento precisa-se primeiramente esclarecer alguns pontos:
+
+\begin{itemize}
+\item Podemos representar imagens binárias como sendo um conjunto de pixeis no espaço $Z^2$, onde cada pixel é representado por uma tupla $(x,y)$ e $x$ e $y$ são as coordenadas do pixel.
+\item A translação de um conjunto $B$ para um ponto $z = (z_{1},z_{2})$, denotado por $(B)_z$ é o conjunto de pontos em $B$ com as respectivas coordenas $(x,y)$ tendo sido substituídas pela coordenadas $(x+z_{1}, y+z_{2})$.
+\item Elemento estrutural é uma mascara de pixeis que é utilizada para fazer operações sobre uma imagem. Cada elemento estrutural possui um pixel de origem. A figura \ref{fig:fundteor_elementos_estruturais} mostra exemplos de elementos estruturais e suas respectivas origens.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figs/elementos_estruturais.png}
+	\caption{Exemplos de elementos estruturais.}
+	\fonte{Autoria própria}
+	\label{fig:fundteor_elementos_estruturais}
+\end{figure}
+
+\item O elemento estrutural pode ser utilizado para fazer operações sobre uma imagem binária. Considere por exemplo a operação no conjunto $A$, feita pelo elemento estrutural $B$ (figuras \ref{fig:fundteor_elementos_estruturais_ex_A} e \ref{fig:fundteor_elementos_estruturais_ex_B}): Crie um novo conjunto $C$ sobrepondo $B$ em $A$ da maneira que a origem de $B$ passe  por todos os pixeis de $A$. Em cada ponto que a origem de $B$ passou verifique se $B$ está completamente contido em $A$. Se estiver marque o ponto no conjunto $C$. A figura \ref{fig:fundteor_elementos_estruturais_ex_C} mostra o resultado da operação, ou seja, o conjunto $C$.
+
+\begin{figure}[H]
+        \centering
+	\begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{./figs/elementos_estruturais_A.png}
+                \caption{Imagem binária $A$}
+                \label{fig:fundteor_elementos_estruturais_ex_A}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{./figs/elementos_estruturais_B.png}
+                \caption{Elemento estrutural $B$}
+                \label{fig:fundteor_elementos_estruturais_ex_B}
+        \end{subfigure}
+        %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+        %(or a blank line to force the subfigure onto a new line)
+        
+	\begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{./figs/elementos_estruturais_C.png}
+                \caption{$C$, resultado da operação de $B$ em $A$}
+                \label{fig:fundteor_elementos_estruturais_ex_C}
+        \end{subfigure}
+
+        \caption{Imagem binária, elemento estrutural e operação de $B$ em $A$}
+	\fonte{Autoria própria}
+	\label{fig:elementos_estruturais_ex}
+\end{figure}
+
+\end{itemize}
+
+A seguir apresenta-se as operações de erosão e de dilatação, que são necessárias para as operações de abertura e fechamento que são apresentadas na sequencia.
+
+\subsubsection{Erosão}
+%erosao
+Sendo $A$ e $B$ conjuntos no espaço $Z^2$, a erosão do conjunto $A$ pelo elemento estrutural $B$, denotada por $A \ominus B$ é definida na equação \ref{eq:fundteor_erosao} \cite{GONZALEZ-2006}.
+
+\begin{equation}
+A \ominus B = \left \{ z \mid (B)_z \subseteq A) \right \}
+\label{eq:fundteor_erosao}
+\end{equation}
+
+Ou seja, a erosão de $A$ por $B$ é o conjunto de todos os pontos $z$ tal que $B$, transladado por $z$, está contido em $A$.
+Na figura \ref{}.
 
 
 
-
-
-
+ 
+\subsubsection{Dilatação}
+%dilatacao
+\subsubsection{Abertura}
+%abertura
+\subsubsection{Fechamento}
+%fechamento
 
 \subsection{Esqueletonização}
 % esqueletonização
