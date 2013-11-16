@@ -190,9 +190,10 @@ Para o estudo das operações morfológicas de abertura e fechamento precisa-se pri
 
 A seguir apresenta-se as operações de erosão e de dilatação, que são necessárias para as operações de abertura e fechamento que são apresentadas na sequencia.
 
+
 \subsubsection{Erosão}
-%erosao
-Sendo $A$ e $B$ conjuntos no espaço $Z^2$, a erosão do conjunto $A$ pelo elemento estrutural $B$, denotada por $A \ominus B$ é definida na equação \ref{eq:fundteor_erosao} \cite{GONZALEZ-2006}.
+
+Sendo $A$ e $B$ conjuntos no espaço $Z^2$, a erosão do conjunto $A$ pelo elemento estrutural $B$, denotada por $A \ominus B$, é definida na equação \ref{eq:fundteor_erosao} \cite{GONZALEZ-2006}.
 
 \begin{equation}
 A \ominus B = \left \{ z \mid (B)_z \subseteq A) \right \}
@@ -200,15 +201,23 @@ A \ominus B = \left \{ z \mid (B)_z \subseteq A) \right \}
 \end{equation}
 
 Ou seja, a erosão de $A$ por $B$ é o conjunto de todos os pontos $z$ tal que $B$, transladado por $z$, está contido em $A$.
-Na figura \ref{}.
+Pode-se ver melhor esse processo na figura \ref{fig:fundteor_erosao_A_B}, onde o conjunto A é erodido pelo elemento estrutural B formando o conjunto $A \ominus B$.
 
-
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figs/erosao_A_B.png}
+	\caption{Exemplo de erosão do conjunto A por B.}
+	\fonte{\cite{GONZALEZ-2006}}
+	\label{fig:fundteor_erosao_A_B}
+\end{figure}
  
+
 \subsubsection{Dilatação}
 %dilatacao
+
 \subsubsection{Abertura}
 %abertura
+
 \subsubsection{Fechamento}
 %fechamento
 
