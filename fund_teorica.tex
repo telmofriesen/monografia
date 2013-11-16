@@ -234,14 +234,55 @@ A equação \ref{eq:fundteor_dilatacao} diz que a dilatação do conjunto $A$ pelo e
 \end{figure}
 
 
-\subsubsection{Abertura}
-%abertura
+\subsubsection{Abertura e Fechamento}
 
-\subsubsection{Fechamento}
-%fechamento
+A abertura do conjunto $A$ pelo elemento estruturante $B$ é definida pela equação \ref{eq:fundteor_abertura}  \cite{GONZALEZ-2006}.
+
+\begin{equation}
+A \circ B = \left ( A \ominus B \right ) \oplus B
+\label{eq:fundteor_abertura}
+\end{equation}
+
+E o fechamento do conjunto $A$ pelo elemento estruturante $B$ é definido pela equação \ref{eq:fundteor_fechamento}  \cite{GONZALEZ-2006}.
+
+\begin{equation}
+A \bullet B = \left ( A \oplus B \right ) \ominus B
+\label{eq:fundteor_fechamento}
+\end{equation}
+
+Na figura \ref{fig:regiao_abertura} pode-se ver o resultado da execução da operação de abertura em cima do conjunto $A$ da figura \ref{fig:regiao_teste_A}. Em seguida na figura \ref{fig:regiao_fechamento} pode-se ver o resultado da execução da operação de fechamento em cima do mesmo conjunto da figura \ref{fig:regiao_teste_A}. Como pode-se ver, a operação de abertura "abre" a imagem em pontos estreitos, já a operação de fechamento "fecha" a imagem onde existem concavidades pequenas.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figs/regiao_teste.png}
+	\caption{Conjunto $A$.}
+	\fonte{\cite{GONZALEZ-2006}}
+	\label{fig:regiao_teste_A}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figs/regiao_abertura.png}
+	\caption{Conjunto $A \circ B$.}
+	\fonte{\cite{GONZALEZ-2006}}
+	\label{fig:regiao_abertura}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figs/regiao_fechamento.png}
+	\caption{Conjunto $A \bullet B$.}
+	\fonte{\cite{GONZALEZ-2006}}
+	\label{fig:regiao_fechamento}
+\end{figure}
+
 
 \subsection{Esqueletonização}
-% esqueletonização
+
+
+
+
+
 \subsection{Análise de componentes principais}
 % análise de componentes principais
 
