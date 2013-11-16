@@ -1,47 +1,48 @@
 \select@language {brazil}
 \contentsline {figure}{\numberline {1}{\ignorespaces Imagens com e sem ru\IeC {\'\i }do e seus respectivos histogramas\relax }}{15}
 \contentsline {figure}{\numberline {2}{\ignorespaces Imagens limiarizadas pelo m\'etodo de \emph {Otsu} e seus respectivos histogramas\relax }}{16}
-\contentsline {figure}{\numberline {3}{\ignorespaces Exemplos de elementos estruturais.\relax }}{17}
-\contentsline {figure}{\numberline {4}{\ignorespaces Imagem bin\'aria, elemento estrutural e opera\c c\~ao de $B$ em $A$\relax }}{18}
+\contentsline {figure}{\numberline {3}{\ignorespaces Exemplos de elementos estruturantes.\relax }}{17}
+\contentsline {figure}{\numberline {4}{\ignorespaces Imagem bin\'aria, elemento estruturante e opera\c c\~ao de $B$ em $A$\relax }}{18}
 \contentsline {figure}{\numberline {5}{\ignorespaces Exemplo de eros\~ao do conjunto A por B.\relax }}{19}
-\contentsline {figure}{\numberline {6}{\ignorespaces Diagrama do projeto de oficina 3}}{20}
-\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama do projeto de oficina 3}}{21}
-\contentsline {figure}{\numberline {8}{\ignorespaces Curva de resposta do sensor de dist\^ancia}}{23}
-\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama esquem\'atico do regulador de tens\~ao dos sensores de dist\^ancia}}{24}
-\contentsline {figure}{\numberline {10}{\ignorespaces Formas de onda de sa\IeC {\'\i }da do \emph {encoder} \'optico}}{25}
-\contentsline {figure}{\numberline {11}{\ignorespaces Diagrama em blocos do kit C8051F340DK}}{26}
-\contentsline {figure}{\numberline {12}{\ignorespaces Foto da placa TS-7260}}{27}
-\contentsline {figure}{\numberline {13}{\ignorespaces Disposi\c c\~ao dos sensores infravermelhos e rodas}}{29}
-\contentsline {figure}{\numberline {14}{\ignorespaces Rob\^o Bellator montado}}{29}
-\contentsline {figure}{\numberline {15}{\ignorespaces Interruptor de a\c c\~ao muito r\'apida e o controle de pot\^encia atrav\'es de PWM}}{30}
-\contentsline {figure}{\numberline {16}{\ignorespaces Situa\c c\~ao na qual a pot\^encia m\'edia aplicada \`a carga \'e 50\% da pot\^encia m\'axima}}{30}
-\contentsline {figure}{\numberline {17}{\ignorespaces Ilustra\c c\~ao do ciclo ativo do PWM}}{31}
-\contentsline {figure}{\numberline {18}{\ignorespaces Varia\c c\~ao do ciclo ativo do PWM e controle da pot\^encia}}{31}
-\contentsline {figure}{\numberline {19}{\ignorespaces Exemplo de Pertin\^encias Fuzzy}}{33}
-\contentsline {figure}{\numberline {20}{\ignorespaces Exemplo de Pertin\^encias \emph {Fuzzy} - Defuzzifica\c c\~ao}}{34}
-\contentsline {figure}{\numberline {21}{\ignorespaces Exemplo de um FCM}}{36}
-\contentsline {figure}{\numberline {22}{\ignorespaces Aplica\c c\~ao do FCM em processo industrial}}{38}
-\contentsline {figure}{\numberline {23}{\ignorespaces Mapa Cognitivo Fuzzy}}{39}
-\contentsline {figure}{\numberline {24}{\ignorespaces Algoritmo de aprendizado por refor\c co}}{40}
-\contentsline {figure}{\numberline {25}{\ignorespaces ED-FCM do comportamento reativo do rob\^o}}{41}
-\contentsline {figure}{\numberline {26}{\ignorespaces Curva real dos sensores e interpola\c c\~ao polinomial}}{48}
-\contentsline {figure}{\numberline {27}{\ignorespaces Diagrama esquem\'atico da placa de roteamento.}}{53}
-\contentsline {figure}{\numberline {28}{\ignorespaces Roteamento final produzido pela equipe.}}{54}
-\contentsline {figure}{\numberline {29}{\ignorespaces Resultado do processo de confec\c c\~ao da placa de roteamento.}}{55}
-\contentsline {figure}{\numberline {30}{\ignorespaces Diagrama em blocos \emph {software} TS-7260}}{58}
-\contentsline {figure}{\numberline {31}{\ignorespaces Estrutura de uma Vari\'avel Lingu\IeC {\'\i }stica no FLIE.}}{60}
-\contentsline {figure}{\numberline {32}{\ignorespaces Defini\c c\~ao das Fun\c c\~oes de Pertin\^encia perto, m\'edio e longe.}}{61}
-\contentsline {figure}{\numberline {33}{\ignorespaces Defini\c c\~ao das Fun\c c\~oes de Pertin\^encia lento, m\'edio e r\'apido.}}{62}
-\contentsline {figure}{\numberline {34}{\ignorespaces Defini\c c\~ao das Fun\c c\~oes de Pertin\^encia de Dire\c c\~ao}}{62}
-\contentsline {figure}{\numberline {35}{\ignorespaces Estrutura de uma regra de infer\^encia no FLIE.}}{63}
-\contentsline {figure}{\numberline {36}{\ignorespaces ED-FCM proposto}}{68}
-\contentsline {figure}{\numberline {37}{\ignorespaces Configura\c c\~ao do primeiro teste inicial.}}{72}
-\contentsline {figure}{\numberline {38}{\ignorespaces Configura\c c\~ao do segundo teste inicial.}}{73}
-\contentsline {figure}{\numberline {39}{\ignorespaces Caminho percorrido pelo algoritmo \emph {Fuzzy} (vermelho) e o caminho esperado (Verde).}}{73}
-\contentsline {figure}{\numberline {40}{\ignorespaces Ilustra\c c\~ao do primeiro teste avan\c cado.}}{74}
-\contentsline {figure}{\numberline {41}{\ignorespaces Ilustra\c c\~ao do segundo teste avan\c cado.}}{75}
-\contentsline {figure}{\numberline {42}{\ignorespaces Ilustra\c c\~ao do corredor sem sa\IeC {\'\i }da.}}{76}
-\contentsline {figure}{\numberline {43}{\ignorespaces Esbo\c co do caminho percorrido pelo \emph {Fuzzy}(Vermelho) e ED-FCM(Azul).}}{77}
-\contentsline {figure}{\numberline {44}{\ignorespaces Esbo\c co do segundo teste comparativo.}}{78}
-\contentsline {figure}{\numberline {45}{\ignorespaces Esbo\c co do caminho percorrido pelo \emph {Fuzzy}(Vermelho) e ED-FCM(Azul).}}{78}
-\contentsline {figure}{\numberline {46}{\ignorespaces Refer\^encia de Montagem do Rob\^o}}{91}
+\contentsline {figure}{\numberline {6}{\ignorespaces Exemplo de dilata\c c\~ao do conjunto A por B.\relax }}{19}
+\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama do projeto de oficina 3}}{20}
+\contentsline {figure}{\numberline {8}{\ignorespaces Diagrama do projeto de oficina 3}}{21}
+\contentsline {figure}{\numberline {9}{\ignorespaces Curva de resposta do sensor de dist\^ancia}}{23}
+\contentsline {figure}{\numberline {10}{\ignorespaces Diagrama esquem\'atico do regulador de tens\~ao dos sensores de dist\^ancia}}{24}
+\contentsline {figure}{\numberline {11}{\ignorespaces Formas de onda de sa\IeC {\'\i }da do \emph {encoder} \'optico}}{25}
+\contentsline {figure}{\numberline {12}{\ignorespaces Diagrama em blocos do kit C8051F340DK}}{26}
+\contentsline {figure}{\numberline {13}{\ignorespaces Foto da placa TS-7260}}{27}
+\contentsline {figure}{\numberline {14}{\ignorespaces Disposi\c c\~ao dos sensores infravermelhos e rodas}}{29}
+\contentsline {figure}{\numberline {15}{\ignorespaces Rob\^o Bellator montado}}{29}
+\contentsline {figure}{\numberline {16}{\ignorespaces Interruptor de a\c c\~ao muito r\'apida e o controle de pot\^encia atrav\'es de PWM}}{30}
+\contentsline {figure}{\numberline {17}{\ignorespaces Situa\c c\~ao na qual a pot\^encia m\'edia aplicada \`a carga \'e 50\% da pot\^encia m\'axima}}{30}
+\contentsline {figure}{\numberline {18}{\ignorespaces Ilustra\c c\~ao do ciclo ativo do PWM}}{31}
+\contentsline {figure}{\numberline {19}{\ignorespaces Varia\c c\~ao do ciclo ativo do PWM e controle da pot\^encia}}{31}
+\contentsline {figure}{\numberline {20}{\ignorespaces Exemplo de Pertin\^encias Fuzzy}}{33}
+\contentsline {figure}{\numberline {21}{\ignorespaces Exemplo de Pertin\^encias \emph {Fuzzy} - Defuzzifica\c c\~ao}}{34}
+\contentsline {figure}{\numberline {22}{\ignorespaces Exemplo de um FCM}}{36}
+\contentsline {figure}{\numberline {23}{\ignorespaces Aplica\c c\~ao do FCM em processo industrial}}{38}
+\contentsline {figure}{\numberline {24}{\ignorespaces Mapa Cognitivo Fuzzy}}{39}
+\contentsline {figure}{\numberline {25}{\ignorespaces Algoritmo de aprendizado por refor\c co}}{40}
+\contentsline {figure}{\numberline {26}{\ignorespaces ED-FCM do comportamento reativo do rob\^o}}{41}
+\contentsline {figure}{\numberline {27}{\ignorespaces Curva real dos sensores e interpola\c c\~ao polinomial}}{48}
+\contentsline {figure}{\numberline {28}{\ignorespaces Diagrama esquem\'atico da placa de roteamento.}}{53}
+\contentsline {figure}{\numberline {29}{\ignorespaces Roteamento final produzido pela equipe.}}{54}
+\contentsline {figure}{\numberline {30}{\ignorespaces Resultado do processo de confec\c c\~ao da placa de roteamento.}}{55}
+\contentsline {figure}{\numberline {31}{\ignorespaces Diagrama em blocos \emph {software} TS-7260}}{58}
+\contentsline {figure}{\numberline {32}{\ignorespaces Estrutura de uma Vari\'avel Lingu\IeC {\'\i }stica no FLIE.}}{60}
+\contentsline {figure}{\numberline {33}{\ignorespaces Defini\c c\~ao das Fun\c c\~oes de Pertin\^encia perto, m\'edio e longe.}}{61}
+\contentsline {figure}{\numberline {34}{\ignorespaces Defini\c c\~ao das Fun\c c\~oes de Pertin\^encia lento, m\'edio e r\'apido.}}{62}
+\contentsline {figure}{\numberline {35}{\ignorespaces Defini\c c\~ao das Fun\c c\~oes de Pertin\^encia de Dire\c c\~ao}}{62}
+\contentsline {figure}{\numberline {36}{\ignorespaces Estrutura de uma regra de infer\^encia no FLIE.}}{63}
+\contentsline {figure}{\numberline {37}{\ignorespaces ED-FCM proposto}}{68}
+\contentsline {figure}{\numberline {38}{\ignorespaces Configura\c c\~ao do primeiro teste inicial.}}{72}
+\contentsline {figure}{\numberline {39}{\ignorespaces Configura\c c\~ao do segundo teste inicial.}}{73}
+\contentsline {figure}{\numberline {40}{\ignorespaces Caminho percorrido pelo algoritmo \emph {Fuzzy} (vermelho) e o caminho esperado (Verde).}}{73}
+\contentsline {figure}{\numberline {41}{\ignorespaces Ilustra\c c\~ao do primeiro teste avan\c cado.}}{74}
+\contentsline {figure}{\numberline {42}{\ignorespaces Ilustra\c c\~ao do segundo teste avan\c cado.}}{75}
+\contentsline {figure}{\numberline {43}{\ignorespaces Ilustra\c c\~ao do corredor sem sa\IeC {\'\i }da.}}{76}
+\contentsline {figure}{\numberline {44}{\ignorespaces Esbo\c co do caminho percorrido pelo \emph {Fuzzy}(Vermelho) e ED-FCM(Azul).}}{77}
+\contentsline {figure}{\numberline {45}{\ignorespaces Esbo\c co do segundo teste comparativo.}}{78}
+\contentsline {figure}{\numberline {46}{\ignorespaces Esbo\c co do caminho percorrido pelo \emph {Fuzzy}(Vermelho) e ED-FCM(Azul).}}{78}
+\contentsline {figure}{\numberline {47}{\ignorespaces Refer\^encia de Montagem do Rob\^o}}{91}
