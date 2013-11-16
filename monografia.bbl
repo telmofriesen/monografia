@@ -128,6 +128,13 @@ Dispon{\'\i}vel em:
 {MARIN, A.~J. et al. \textbf{Desenvolvimento do Projeto Bellator}. Curitiba,
   2010.}
 
+\bibitem[MathWorks 2013]{MATHWORKS-HELP}
+\abntrefinfo{MathWorks}{MATHWORKS}{2013}
+{MATHWORKS. \textbf{Image Enhancement and Analysis}. 2013.
+Dispon{\'\i}vel em:
+  $<$http://www.mathworks.com/help/images/image-enhancement-and-analysis.html$>$.
+  Acesso em: 06 de Março de 2012.}
+
 \bibitem[MENDONÇA 2011]{FCMENDONCA}
 \abntrefinfo{MENDONÇA}{MENDONÇA}{2011}
 {MENDONÇA, M.
@@ -200,13 +207,6 @@ Dispon{\'\i}vel em:
   Amplifiers}.
 Dispon{\'\i}vel em: $<$http://www.national.com/ds/LM/LM124.pdf$>$. Acesso em:
   25 de fevereiro de 2012.}
-
-\bibitem[WIKIPEDIA 2013]{IMAGEM-ARRANHA}
-\abntrefinfo{WIKIPEDIA}{WIKIPEDIA}{2013}
-{WIKIPEDIA. \textbf{Balanced histogram thresholding}. 2013.
-Dispon{\'\i}vel em:
-  $<$http://en.wikipedia.org/wiki/Balanced\_histogram\_thresholding$>$. Acesso
-  em: 29 de julho de 2011.}
 
 \bibitem[Zadeh 1965]{ZADEH}
 \abntrefinfo{Zadeh}{ZADEH}{1965}

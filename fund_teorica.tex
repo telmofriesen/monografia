@@ -36,15 +36,15 @@ Na figura \ref{fig:fundteor_fig_limiarizacao} mostra-se duas imagens e seus resp
 
 \begin{figure}[H]
         \centering
-	\begin{subfigure}[b]{0.3\textwidth}
+	\begin{subfigure}[b]{0.4\textwidth}
                 \includegraphics[width=\textwidth]{./figs/thresholding_sem_ruido.png}
                 \caption{Imagem sem ruido}
                 \label{fig:fundteor_sem_ruido}
-		\fonte{\cite{IMAGEM-ARRANHA}}
+		\fonte{\cite{MATHWORKS-HELP}}
         \end{subfigure}
        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.3\textwidth}
+        \begin{subfigure}[b]{0.4\textwidth}
                 \includegraphics[width=\textwidth]{./figs/thresholding_ruido.png}
                 \caption{Imagem com ruido}
                 \label{fig:fundteor_com_ruido}
@@ -53,7 +53,7 @@ Na figura \ref{fig:fundteor_fig_limiarizacao} mostra-se duas imagens e seus resp
         %add desired spacing between images, e. g. ~, \quad, \qquad etc.
         %(or a blank line to force the subfigure onto a new line)
         
-	\begin{subfigure}[b]{0.3\textwidth}
+	\begin{subfigure}[b]{0.4\textwidth}
                 \includegraphics[width=\textwidth]{./figs/thresholding_histograma_sem_ruido.png}
                 \caption{Histograma da imagem sem ruido}
                 \label{fig:fundteor_hist_sem_ruido}
@@ -61,7 +61,7 @@ Na figura \ref{fig:fundteor_fig_limiarizacao} mostra-se duas imagens e seus resp
         \end{subfigure}
        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.3\textwidth}
+        \begin{subfigure}[b]{0.4\textwidth}
                 \includegraphics[width=\textwidth]{./figs/thresholding_histograma_ruido.png}
                 \caption{Histograma da imagem com ruido}
                 \label{fig:fundteor_hist_com_ruido}
@@ -76,18 +76,77 @@ Na figura \ref{fig:fundteor_fig_limiarizacao} mostra-se duas imagens e seus resp
 
 %\subsubsection{Limiarização global}
 	% basic global thresholding
-\subsubsection{Limiarização global ótima}
+
+\subsubsection{Limiarização global pelo método de \emph{Otsu}}
 	% metodo de otsu
+O método para determinar o valor do limiar $T$ proposto por \emph{Otsu} é um método ótimo que busca maximizar a variância entre as duas classes. Isso baseia-se no fato de que classes bem divididas possuem valores de intensidades distintos, e o valor ótimo para $T$ é o valor tal que haja maior separação entre as intensidades \cite{GONZALEZ-2006}.
 
+O cálculo do valor limiar pelo método de \emph{Otsu} se dá pela equação \ref{eq:fundteor_otsu}.
 
+\begin{equation}
+\sigma _{B}^{2} (t) = \frac{\left [m_{G}P_{1}(t) - m(t)  \right ]^{2}}{P_{1}(t)\left [ 1 - P_{1}(t) \right ]}
+\label{eq:fundteor_otsu}
+\end{equation}
 
+Onde:
 
+\begin{itemize}
+\item $\sigma _{B}^{2} (t)$ é a variância entre as classes para um valor limiar t;
+\item $m_{G}$ é a média global de intensidades da imagem;
+\item $ m(t)$ é a média acumulada das intensidades de $t=0$ até a intensidade $t$;
+\item $P_{1}(t)$ é a probabilidade de um pixel qualquer da imagem estar na classe 1 dado o valor limiar $t$.
+\end{itemize}
 
+Portanto, para o cálculo do valor limiar pelo método de \emph{Otsu} basta encontrar o valor limiar $t$ tal que $\sigma _{B}^{2} (t)$ é máximo. A dedução da equação \ref{eq:fundteor_otsu} está fora do escopo deste projeto, mas pode ser encontrada em \cite{GONZALEZ-2006}. 
 
+Na figura \ref{fig:fundteor_fig_limiarizada} mostram-se as imagens da figura \ref{fig:fundteor_fig_limiarizacao} limiarizadas pelo método de \emph{Otsu} e seus respectivos valores de limiarização.
+
+\begin{figure}[H]
+        \centering
+	\begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{./figs/thresholded_sem_ruido.png}
+                \caption{Imagem sem ruido limiarizada}
+                \label{fig:fundteor_t_sem_ruido}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{./figs/thresholded_ruido.png}
+                \caption{Imagem com ruido limiarizada}
+                \label{fig:fundteor_t_com_ruido}
+        \end{subfigure}
+        %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+        %(or a blank line to force the subfigure onto a new line)
+        
+	\begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{./figs/thresholded_histograma_sem_ruido.png}
+                \caption{Histograma da imagem sem ruido com o valor do limiar T}
+                \label{fig:fundteor_t_hist_sem_ruido}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{./figs/thresholded_histograma_ruido.png}
+                \caption{Histograma da imagem com ruido com o valor do limiar T}
+                \label{fig:fundteor_t_hist_com_ruido}
+        \end{subfigure}
+        %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+        %(or a blank line to force the subfigure onto a new line)
+
+        \caption{Imagens limiarizadas pelo método de \emph{Otsu} e seus respectivos histogramas}
+	\fonte{Autoria própria}
+	\label{fig:fundteor_fig_limiarizada}
+\end{figure}
 
 
 \subsection{Filtros morfológicos}
-% filtros morfológicos
+
+
+
+
+
+
+
 \subsection{Esqueletonização}
 % esqueletonização
 \subsection{Análise de componentes principais}
