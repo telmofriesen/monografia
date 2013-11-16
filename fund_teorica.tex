@@ -18,8 +18,13 @@ D(t+1) = \left |V(x,y,t+1)-V(x,y,t)  \right |> Th
 Existem outros métodos mais complexos, como \emph{Running Gaussian average}, \emph{Temporal median filter}, entre outros, que geram melhores resultados com fundos que não são completamente estáticos \cite{BACKGROUND-SUBTRACTION}, porém não são de interesse para este projeto.
 
 \subsection{Limiarização} \label{sub:fundteor_limiarizacao}
-% limiarização
 
+Pela simplicidade na implementação e pela baixa complexidade computacional os algoritmos de limiarização são amplamente utilizados na segmentação de imagens. Os métodos de limiarização consistem na partição da imagem baseado na intensidade dos pixeis. Caso a partição seja feita com base em um único limiar de intensidade a limiarização se diz global. Caso a partição seja feita levando em conta os valores de intensidade dos pixeis em uma região de vizinhança de um certo pixel, então o método é chamado de limiarização local \cite{GONZALEZ-2006}. A seguir descreve-se dois métodos para obtenção do limiar para limiarização global.
+
+\subsubsection{Limiarização global}
+% basic global thresholding
+\subsubsection{Limiarização global ótima}
+% metodo de otsu
 
 
 
@@ -31,6 +36,8 @@ Existem outros métodos mais complexos, como \emph{Running Gaussian average}, \em
 % esqueletonização
 \subsection{Análise de componentes principais}
 % análise de componentes principais
+
+
 
 \section{Descrição} \label{sec:descricao}
 
@@ -53,7 +60,7 @@ Existem outros métodos mais complexos, como \emph{Running Gaussian average}, \em
 
 
 
-\cite{GONZALEZ-2006}
+
 
 
 %---------- Estado inicial do Projeto ----------
