@@ -279,9 +279,50 @@ Na figura \ref{fig:regiao_abertura} pode-se ver o resultado da execução da opera
 
 \subsection{Esqueletonização}
 
+Sendo $S(A)$ o esqueleto de $A$ e $(D)_{z}$ o maior disco centrado em $z$ e contido em $A$, pode se dizer que \cite{GONZALEZ-2006}:
 
+\begin{itemize}
+\item Se $z$ faz parte de $S(A)$ então não é possível encontrar um disco maior que $(D)_{z}$, não necessariamente centrado em $z$, que contenha $(D)_{z}$ e que esteja completamente incluso em $A$;
+\item O disco $(D)_{z}$ toca a borda de $A$ em pelo menos dois pontos distintos.
+\end{itemize}
 
+Isso pode ser visto melhor na figura \ref{fig:esqueletonizacao_exemplo}.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figs/esqueletonizacao_exemplo.png}
+	\caption{Conjunto $A$, disco máximo centrado em diversos pontos $z$ e esqueleto completo.}
+	\fonte{\cite{GONZALEZ-2006}}
+	\label{fig:esqueletonizacao_exemplo}
+\end{figure}
+
+Pode-se definir também o esqueleto $S(A)$ em função de erosões e aberturas sucessivas como mostrado nas equações \ref{eq:fundteor_esqueletonizacao_1}, \ref{eq:fundteor_esqueletonizacao_2}, \ref{eq:fundteor_esqueletonizacao_3} e \ref{eq:fundteor_esqueletonizacao_4} \cite{GONZALEZ-2006}.
+
+\begin{equation}
+S(A) = \bigcup_{k = 0}^{K} S_{k}(A)
+\label{eq:fundteor_esqueletonizacao_1}
+\end{equation}
+
+Com:
+
+\begin{equation}
+S_{k}(A) = (A \ominus k B) - (A \ominus k B) \circ B
+\label{eq:fundteor_esqueletonizacao_2}
+\end{equation}
+
+Onde $B$ é um elemento estruturante e $(A \ominus k B)$ indica $k$ sucessivas erosões de $A$:
+
+\begin{equation}
+(A \ominus k B) = ((...((A \ominus B) \ominus B) \ominus ...) \ominus B)
+\label{eq:fundteor_esqueletonizacao_3}
+\end{equation}
+
+Sendo K o ultimo passo antes de $A$ erodir para um conjunto vazio. Ou seja:
+
+\begin{equation}
+K = max \left \{ k \mid (A \ominus k B) \neq \varnothing  \right \}
+\label{eq:fundteor_esqueletonizacao_4}
+\end{equation}
 
 \subsection{Análise de componentes principais}
 % análise de componentes principais
