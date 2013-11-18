@@ -1,9 +1,9 @@
 \select@language {brazil}
-\contentsline {table}{\numberline {1}{\ignorespaces Rela\c c\~oes causais do controlador do rob\^o}}{46}
-\contentsline {table}{\numberline {2}{\ignorespaces Valores de convers\~ao dos sensores x dist\^ancia}}{51}
-\contentsline {table}{\numberline {3}{\ignorespaces Fun\c c\~oes de Pertin\^encia e Conjuntos Fuzzy dos Sensores}}{65}
-\contentsline {table}{\numberline {4}{\ignorespaces Regras de Infer\^encia - Algoritmo Fuzzy}}{68}
-\contentsline {table}{\numberline {5}{\ignorespaces Rela\c c\~oes causais do controlador ED-FCM proposto (Estado = FRENTE)}}{73}
-\contentsline {table}{\numberline {6}{\ignorespaces Rela\c c\~oes causais do controlador ED-FCM proposto (Estado = TR\'AS)}}{73}
-\contentsline {table}{\numberline {7}{\ignorespaces Valor num\'erico dos pesos}}{73}
-\contentsline {table}{\numberline {8}{\ignorespaces Valor num\'erico dos limiares L0 e L1}}{73}
+\contentsline {table}{\numberline {1}{\ignorespaces Rela\c c\~oes causais do controlador do rob\^o}}{48}
+\contentsline {table}{\numberline {2}{\ignorespaces Valores de convers\~ao dos sensores x dist\^ancia}}{53}
+\contentsline {table}{\numberline {3}{\ignorespaces Fun\c c\~oes de Pertin\^encia e Conjuntos Fuzzy dos Sensores}}{67}
+\contentsline {table}{\numberline {4}{\ignorespaces Regras de Infer\^encia - Algoritmo Fuzzy}}{70}
+\contentsline {table}{\numberline {5}{\ignorespaces Rela\c c\~oes causais do controlador ED-FCM proposto (Estado = FRENTE)}}{75}
+\contentsline {table}{\numberline {6}{\ignorespaces Rela\c c\~oes causais do controlador ED-FCM proposto (Estado = TR\'AS)}}{75}
+\contentsline {table}{\numberline {7}{\ignorespaces Valor num\'erico dos pesos}}{75}
+\contentsline {table}{\numberline {8}{\ignorespaces Valor num\'erico dos limiares L0 e L1}}{75}

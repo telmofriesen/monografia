@@ -139,7 +139,7 @@ Na figura \ref{fig:fundteor_fig_limiarizada} mostram-se as imagens da figura \re
 \end{figure}
 
 
-\subsection{Operações morfológicas} \label{sub:fundteor_op_morfologicas}
+\subsection{Operações morfológicas básicas} \label{sub:fundteor_op_morfologicas}
 
 Para o estudo das operações morfológicas de abertura e fechamento precisa-se primeiramente esclarecer alguns pontos:
 
@@ -324,8 +324,131 @@ K = max \left \{ k \mid (A \ominus k B) \neq \varnothing  \right \}
 \label{eq:fundteor_esqueletonizacao_4}
 \end{equation}
 
+
+\subsubsection {Poda (\emph{Pruning})}
+
+Aplicando-se o método de esqueletonização mencionado anteriormente em figuras reais, como a figura \ref{fig:fundteor_sketon_in}, pode-se obter resultados como a figura \ref{fig:fundteor_sketon_out}. Devido a esse tipo de resultados aplica-se após a esqueletonização um método de poda. A poda do esqueleto consiste em avaliar o tamanho dos ramos gerados, caso sejam menores que um valor limiar, são removidos. A figura \ref{fig:fundteor_sketon_out_20} mostra o método de poda aplicado com um limiar de 20 pixeis.
+
+\begin{figure}[H]
+        \centering
+	\begin{subfigure}[b]{0.49\textwidth}
+                \includegraphics[width=\textwidth]{./figs/skeleton_in.png}
+                \caption{Imagem de entrada}
+                \label{fig:fundteor_sketon_in}
+        \end{subfigure}
+
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.49\textwidth}
+               \includegraphics[width=\textwidth]{./figs/skeleton_out.png}
+                \caption{Imagem esqueletonizada}
+                \label{fig:fundteor_sketon_out}
+        \end{subfigure}
+        %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+        %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.49\textwidth}
+                \includegraphics[width=\textwidth]{./figs/skeleton_out_20.png}
+                \caption{Imagem esqueletonizada e podada}
+                \label{fig:fundteor_sketon_out_20}
+        \end{subfigure}
+
+        \caption{Exemplo de esqueletonização e poda.}
+	\fonte{Autoria própria}
+	\label{fig:fundteor_sketon}
+\end{figure}
+
+
 \subsection{Análise de componentes principais}
-% análise de componentes principais
+
+A análise de componentes principais pode ser empregada para normalizar imagens em função de rotação, translação e tamanho  \cite{GONZALEZ-2006}. Explica-se a seguir alguns conceitos necessários para efetuar a normalização utilizando componentes principais.
+
+\subsubsection{Matriz de covariâncias}
+
+Considere as imagens da figura \ref{fig:fundteor_pca}. Os pontos da imagem, podem ser considerados como sendo vetores $x=(x_{1},x_{2})^{T}$, onde $x_{1}$ e $x_{2}$ são as coordenadas do ponto $x$, e $T$ indica a matriz transposta. Os pontos $x$ portanto formam uma população de vetores no espaço $Z^{2}$. Sendo assim pode-se calcular a matriz de covariâncias $C_{x}$ e o vetor da média $m_{x}$ para a população de vetores.
+
+Para $K$ amostras de uma população aleatória pode-se aproximar a média $m_{x}$ pela equação \ref{eq:fundteor_mean} \cite{GONZALEZ-2006}.
+
+\begin{equation}
+m_{x} = \frac{1}{K} \sum_{k=1}^{K} x_{k}
+\label{eq:fundteor_mean}
+\end{equation}
+
+Agora utilizando a média $m_{x}$, pode-se aproximar a matriz de covariâncias $C_{x}$ pela equação \ref{eq:fundteor_cov} \cite{GONZALEZ-2006}.
+
+\begin{equation}
+C_{x} = \frac{1}{K} \sum_{k=1}^{K} x_{k} x_{k}^{T} - m_{x}m_{x}^{T}
+\label{eq:fundteor_cov}
+\end{equation}
+
+Na matriz de covariâncias os elementos $c_{ii}$ de $C_{x}$ representam a variância entre os valores na coordenada $x_{i}$. Os elementos $c_{ij}$ representam a covariância entre os valores na coordenada $x_{i}$ com os valores da coordenada $x_{j}$. Portanto, a matriz de covariância possui informações que dizem respeito à distribuição dos pixeis da imagem. 
+
+Pode-se ver isso melhor nas matrizes de covariância apresentadas nas figuras \ref{fig:fundteor_pca_xc}, \ref{fig:fundteor_pca_yc} e \ref{fig:fundteor_pca_xyc} que foram calculadas para as imagens das figuras \ref{fig:fundteor_pca_x}, \ref{fig:fundteor_pca_y} e \ref{fig:fundteor_pca_xy} respectivamente. Percebe-se que na figura \ref{fig:fundteor_pca_xc} a maior variância ocorre entre os elementos da coordenada $x_{1}$, visto que $c_{11}$ possui o maior valor na matriz de covariâncias. Semelhantemente percebe-se que na figura \ref{fig:fundteor_pca_yc} a maior variância ocorre entre os elementos da coordenada $x_2$. A terceira imagem, figura \ref{fig:fundteor_pca_xyc}, mostra uma distribuição mais continua em $x_{1}$ e $x_{2}$, mas valores maiores para as covariâncias entre os elementos das coordenadas $x_{1}$ e $x_{2}$. A terceira imagem mostra portanto o relacionamento entre as duas coordenadas na imagem, que poderia ser aproximado para uma relação do tipo $x_{2} = x_{1} \pm a$, onde $a$ representa um valor aleatório de ruido.
+
+\begin{figure}[H]
+        \centering
+	\begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/pca_x.png}
+	        \caption{}
+                \label{fig:fundteor_pca_x}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/pca_y.png}
+	        \caption{}
+                \label{fig:fundteor_pca_y}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/pca_xy.png}
+	        \caption{}
+                \label{fig:fundteor_pca_xy}
+        \end{subfigure}
+
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centerline{$\begin{bmatrix}
+			457 & -13.6 \\ 
+			-13.6 & 35
+		\end{bmatrix}$}
+	        \caption{}
+                \label{fig:fundteor_pca_xc}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.3\textwidth}
+		\centerline{$\begin{bmatrix}
+			39.1 & -8.30 \\ 
+			-8.30 & 263
+		\end{bmatrix}$}
+	        \caption{}
+                \label{fig:fundteor_pca_yc}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centerline{$\begin{bmatrix}
+			360 & -318 \\ 
+			-318 & 343
+		\end{bmatrix}$}
+	        \caption{}
+                \label{fig:fundteor_pca_xyc}
+        \end{subfigure}
+
+        \caption{Imagens de exemplo e suas respectivas matrizes de covariância.}
+	\fonte{Autoria própria}
+	\label{fig:fundteor_pca}
+\end{figure}
+
+\subsubsection{Autovetores e autovalores}
+
+Um autovetor de uma matriz $A$ é um vetor não nulo $v$, que quando a matriz é multiplicada por $v$ tem-se um vetor que é múltiplo de $v$ por uma constante $\lambda$ denominada autovalor. Ou seja, a equação \ref{eq:fundteor_eigen} é verdadeira.
+
+\begin{equation}
+Av = \lambda v
+\label{eq:fundteor_eigen}
+\end{equation}
+
 
 
 
