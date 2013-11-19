@@ -61,6 +61,14 @@ Dissertação (Mestrado) --- Universidade Estadual de Campinas. Faculdade de
   utilizando lógica nebulosa com regras ponderadas.
 \textbf{VII SBAI/ II IEEE LARS}, Setembro 2005.}
 
+\bibitem[Ghaoui 2013]{AUTOVETORES-DEDUCAO}
+\abntrefinfo{Ghaoui}{GHAOUI}{2013}
+{GHAOUI, L.~E. \textbf{Hyper-Textbook: Optimization Models and Applications}.
+  2013.
+Dispon{\'\i}vel em:
+  $<$https://inst.eecs.berkeley.edu/~ee127a/book/login/index.html$>$. Acesso
+  em: 30 de julho de 2011.}
+
 \bibitem[GIT 2012]{GIT}
 \abntrefinfo{GIT}{GIT}{2012}
 {GIT. \textbf{Git - Fast Version Control System}. 2012.
@@ -88,6 +96,12 @@ ISBN 013168728X.}
 {KOSKO, B. Fuzzy cognitive maps.
 \textbf{International Journal Man-Machine Studie}, v.~24, n.~1, p. 65--75,
   1986.}
+
+\bibitem[Leon 1998]{AUTOVETORES}
+\abntrefinfo{Leon}{LEON}{1998}
+{LEON, S. \textbf{Linear algebra with applications}. Prentice Hall, 1998.
+ISBN 9780138493080. Dispon{\'\i}vel em:
+  $<$http://books.google.ie/books?id=BeAZAQAAIAAJ$>$.}
 
 \bibitem[Lin 2007]{USO-COMPONENTES-ELETRONICOS-2}
 \abntrefinfo{Lin}{LIN}{2007}

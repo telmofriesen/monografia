@@ -360,7 +360,7 @@ Aplicando-se o método de esqueletonização mencionado anteriormente em figuras re
 
 \subsection{Análise de componentes principais}
 
-A análise de componentes principais pode ser empregada para normalizar imagens em função de rotação, translação e tamanho  \cite{GONZALEZ-2006}. Explica-se a seguir alguns conceitos necessários para efetuar a normalização utilizando componentes principais.
+A análise de componentes principais pode ser empregada para normalizar imagens em função de rotação, translação e tamanho  \cite{GONZALEZ-2006}. Explica-se a seguir alguns conceitos necessários para efetuar a normalização utilizando a analise de componentes principais e em seguida o processo de normalização utilizando componentes principais.
 
 \subsubsection{Matriz de covariâncias}
 
@@ -382,7 +382,7 @@ C_{x} = \frac{1}{K} \sum_{k=1}^{K} x_{k} x_{k}^{T} - m_{x}m_{x}^{T}
 
 Na matriz de covariâncias os elementos $c_{ii}$ de $C_{x}$ representam a variância entre os valores na coordenada $x_{i}$. Os elementos $c_{ij}$ representam a covariância entre os valores na coordenada $x_{i}$ com os valores da coordenada $x_{j}$. Portanto, a matriz de covariância possui informações que dizem respeito à distribuição dos pixeis da imagem. 
 
-Pode-se ver isso melhor nas matrizes de covariância apresentadas nas figuras \ref{fig:fundteor_pca_xc}, \ref{fig:fundteor_pca_yc} e \ref{fig:fundteor_pca_xyc} que foram calculadas para as imagens das figuras \ref{fig:fundteor_pca_x}, \ref{fig:fundteor_pca_y} e \ref{fig:fundteor_pca_xy} respectivamente. Percebe-se que na figura \ref{fig:fundteor_pca_xc} a maior variância ocorre entre os elementos da coordenada $x_{1}$, visto que $c_{11}$ possui o maior valor na matriz de covariâncias. Semelhantemente percebe-se que na figura \ref{fig:fundteor_pca_yc} a maior variância ocorre entre os elementos da coordenada $x_2$. A terceira imagem, figura \ref{fig:fundteor_pca_xyc}, mostra uma distribuição mais continua em $x_{1}$ e $x_{2}$, mas valores maiores para as covariâncias entre os elementos das coordenadas $x_{1}$ e $x_{2}$. A terceira imagem mostra portanto o relacionamento entre as duas coordenadas na imagem, que poderia ser aproximado para uma relação do tipo $x_{2} = x_{1} \pm a$, onde $a$ representa um valor aleatório de ruido.
+Pode-se ver isso melhor nas matrizes de covariância apresentadas nas figuras \ref{fig:fundteor_pca_xc}, \ref{fig:fundteor_pca_yc} e \ref{fig:fundteor_pca_xyc} que foram calculadas para as imagens das figuras \ref{fig:fundteor_pca_x}, \ref{fig:fundteor_pca_y} e \ref{fig:fundteor_pca_xy} respectivamente. Percebe-se que na figura \ref{fig:fundteor_pca_xc} a maior variância ocorre entre os elementos da coordenada $x_{1}$, visto que $c_{11}$ possui o maior valor na matriz de covariâncias. Semelhantemente percebe-se que na figura \ref{fig:fundteor_pca_yc} a maior variância ocorre entre os elementos da coordenada $x_2$. A terceira imagem, figura \ref{fig:fundteor_pca_xyc}, mostra uma distribuição mais continua em $x_{1}$ e $x_{2}$, mas valores maiores para as covariâncias entre os elementos das coordenadas $x_{1}$ e $x_{2}$. A terceira imagem mostra portanto o relacionamento entre as duas coordenadas da imagem: quando  $x_{1}$ aumenta,  $x_{2}$ tende a aumentar também, e vice-versa.
 
 \begin{figure}[H]
         \centering
@@ -442,15 +442,28 @@ Pode-se ver isso melhor nas matrizes de covariância apresentadas nas figuras \re
 
 \subsubsection{Autovetores e autovalores}
 
-Um autovetor de uma matriz $A$ é um vetor não nulo $v$, que quando a matriz é multiplicada por $v$ tem-se um vetor que é múltiplo de $v$ por uma constante $\lambda$ denominada autovalor. Ou seja, a equação \ref{eq:fundteor_eigen} é verdadeira.
+Um autovetor de uma matriz $A$ é um vetor não nulo $v$, que quando a matriz é multiplicada por $v$ tem-se um vetor que é múltiplo de $v$ por uma constante $\lambda$ denominada autovalor. Ou seja, a equação \ref{eq:fundteor_eigen} é verdadeira \cite{AUTOVETORES}.
 
 \begin{equation}
 Av = \lambda v
 \label{eq:fundteor_eigen}
 \end{equation}
 
+Algumas propriedades de autovetores:
 
+\begin{itemize}
+\item Os autovetores podem ser calculados apenas para matrizes quadradas \cite{AUTOVETORES};
+\item Para uma matriz $nxn$ existem $n$ autovetores \cite{AUTOVETORES};
+\item Todos os autovetores são ortogonais entre si \cite{GONZALEZ-2006}.
+\end{itemize}
 
+\subsubsection{Analise de componentes principais}
+
+Pode-se demonstrar que o autovetor associado ao maior autovalor de uma matriz de covariâncias aponta na direção de maior variação dos dados \cite{AUTOVETORES-DEDUCAO}. Considere por exemplo as imagens da figura \ref{fig:fundteor_pca}....
+
+% https://inst.eecs.berkeley.edu/~ee127a/book/login/l_sym_pca.html
+
+% http://www.cs.otago.ac.nz/cosc453/student_tutorials/principal_components.pdf
 
 \section{Descrição} \label{sec:descricao}
 
