@@ -585,22 +585,72 @@ Caso se deseje normalizar a imagem com relação ao tamanho pode-se dividir o valo
 
 \section{Descrição} \label{sec:descricao}
 
-Esta seção apresenta técnicas e algoritmos para realizar a descrição de imagens, tais como propriedades básicas de regiões e descritores de \emph{fourier}.
+Esta seção apresenta técnicas e algoritmos para realizar a descrição de imagens, tais como extração de propriedades básicas de regiões e descritores de \emph{fourier}.
 
 
 \subsection{Propriedades de regiões}
 
+Propriedades básicas de regiões, como área e excentricidade, podem ser usadas para descrever imagens. A seguir descrevemos algumas propriedades básicas de regiões, principalmente aquelas que possuem como saída um valor escalar, visto que são facilmente adicionados à um vetor descritor.
 
-%'Area', 'ConvexArea', 'Eccentricity', 'EulerNumber', 'Extent', 'FilledArea', 'MajorAxisLength', 'MinorAxisLength', 'Solidity'
+\subsubsection{Área}
 
+A área de uma região é o número de pixeis da região \cite{MATHWORKS-HELP-2}.
 
+\subsubsection{Área convexa}
 
+A área convexa é dada pela área do menor polígono capaz de conter a região \cite{MATHWORKS-HELP-2}.
 
+\subsubsection{Área Preenchida}
+
+Área preenchida corresponde a área da região cujas cavidades foram todas preenchidas \cite{MATHWORKS-HELP-2}.
+
+\subsubsection{Solidez}
+
+A solidez de uma região é dada pela razão Área / Área convexa \cite{MATHWORKS-HELP-2}.
+
+\subsubsection{Extensão}
+
+Semelhantemente à área convexa, a extensão é dada pela razão entre a área da região (definida anteriormente) e a área do menor retângulo capaz de conter a região \cite{MATHWORKS-HELP-2}.
+
+\subsubsection{Excentricidade}
+
+Para a obtenção da excentricidade de uma região deve-se primeiramente obter o momento de inércia de área da região \cite{MATHWORKS-HELP-2}. O momento de inércia de área para uma região qualquer no sistema de coordenadas polares é definido pela equação \ref{eq:fundteor_mom_in}:
+
+\begin{equation}
+J_{BB} = \int_{A}^{ } \rho ^{2} dA
+\label{eq:fundteor_mom_in}
+\end{equation}
+
+Onde $A$ é a área da região sobre a qual se deseja calcular o momento de inércia de área e $\rho$ é a distância do centro do sistema de coordenadas até $dA$. Uma representação da área pode ser vista na figura \ref{fig:fundteor_mom_in_fig}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{./figs/Polar_Moment_of_Inertia.png}
+	\caption{Representação da área para cálculo do momento de inércia.}
+	\fonte{\cite{IMAGEM-MOMENTO-INERCIA}}
+	\label{fig:fundteor_mom_in_fig}
+\end{figure}
+
+A excentricidade da região é então a excentricidade da elipse que possui o mesmo momento de inércia que a área da região.
+A excentricidade para uma elipse com semi-eixo maior $a$ e semi-eixo menor $b$ é dada pela equação \ref{eq:fundteor_exc}:
+
+\begin{equation}
+e = \sqrt{1 - \frac{b^2}{a^2}}
+\label{eq:fundteor_exc}
+\end{equation}
+
+\subsubsection{Tamanho do eixo principal e eixo secundário}
+
+O tamanho do eixo principal de uma região diz respeito ao tamanho do maior eixo da elipse que possui o mesmo momento de inércia que a área da região, conforme visto anteriormente na seção Excentricidade \cite{MATHWORKS-HELP-2}. Da mesma forma o tamanho do eixo secundário diz respeito ao tamanho do menor eixo da elipse que possui o mesmo momento de inércia que a área da região.
+
+\subsubsection{Número de Euler}
+
+O número de Euler é dado pelo total de objetos desconexos da região menos o total de cavidades da região \cite{MATHWORKS-HELP-2}.
 
 
 \subsection{Descritores de \emph{fourier}}
 
-Considere a figura \ref{fig:fundteor_fourier_desc_org}. Os pixeis com valor $1$ da imagem binária podem ser representados como sendo pares de coordenadas $(x_{0},y_{0}),(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{K-1},y_{K-1})$, onde $K$ é o numero de pixeis na imagem. Além disso os pixeis podem ser representados como uma sequencia $x(k) = x_{k}$ e $y(k) = y_{k}$ ou como $s(k) = \left [ x(k), y(k) \right ]$ para $k = 0,1,2,...,K-1$. Além disso pode-se tratar as coordenadas dos pixeis como números complexos: $s(k) = x(k) + j y(k)$.
+Considere a figura \ref{fig:fundteor_fourier_desc_org}. Os pixeis com valor $1$ da imagem binária podem ser representados como sendo pares de coordenadas $(x_{0},y_{0}),(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{K-1},y_{K-1})$, onde $K$ é o número de pixeis na imagem. Além disso os pixeis podem ser representados como uma sequencia $x(k) = x_{k}$ e $y(k) = y_{k}$ ou como $s(k) = \left [ x(k), y(k) \right ]$ para $k = 0,1,2,...,K-1$. Além disso pode-se tratar as coordenadas dos pixeis como números complexos: $s(k) = x(k) + j y(k)$.
 
 Tem-se que a transformada discreta de \emph{fourier} de um sinal $s(k)$ é dado pela equação \ref{eq:fundteor_dft} \cite{GONZALEZ-2006}:
 
@@ -742,6 +792,9 @@ Esta seção apresenta uma visão geral de reconhecimento de padrões utilizando red
 
 
 \subsection{Redes neurais}
+
+
+
 % redes neurais
 \subsection{Método de \emph{BR}}
 % trainbr

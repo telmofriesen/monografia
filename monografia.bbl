@@ -108,11 +108,18 @@ Dispon{\'\i}vel em:
   2010.}
 
 \bibitem[MathWorks 2013]{MATHWORKS-HELP}
-\abntrefinfo{MathWorks}{MATHWORKS}{2013}
+\abntrefinfo{MathWorks}{MATHWORKS}{2013a}
 {MATHWORKS. \textbf{Image Enhancement and Analysis}. 2013.
 Dispon{\'\i}vel em:
   $<$http://www.mathworks.com/help/images/image-enhancement-and-analysis.html$>$.
   Acesso em: 06 de Março de 2012.}
+
+\bibitem[MathWorks 2013]{MATHWORKS-HELP-2}
+\abntrefinfo{MathWorks}{MATHWORKS}{2013b}
+{MATHWORKS. \textbf{regionprops}. 2013.
+Dispon{\'\i}vel em:
+  $<$http://www.mathworks.com/help/images/ref/regionprops.html$>$. Acesso em:
+  06 de Março de 2012.}
 
 \bibitem[MENDONÇA, ARRUDA e NEVES 2011]{MENDONCA}
 \abntrefinfo{MENDONÇA, ARRUDA e NEVES}{MENDONÇA; ARRUDA; NEVES}{2011}
@@ -154,6 +161,13 @@ Dispon{\'\i}vel em:
   Amplifiers}.
 Dispon{\'\i}vel em: $<$http://www.national.com/ds/LM/LM124.pdf$>$. Acesso em:
   25 de fevereiro de 2012.}
+
+\bibitem[WIKIPEDIA 2013]{IMAGEM-MOMENTO-INERCIA}
+\abntrefinfo{WIKIPEDIA}{WIKIPEDIA}{2013}
+{WIKIPEDIA. \textbf{Second moment of area}. 2013.
+Dispon{\'\i}vel em:
+  $<$http://en.wikipedia.org/wiki/Second\_moment\_of\_area$>$. Acesso em: 29 de
+  julho de 2011.}
 
 \bibitem[Zeng, Ma e Zheng 2011]{USO-INSPECAO-PCB-2}
 \abntrefinfo{Zeng, Ma e Zheng}{ZENG; MA; ZHENG}{2011}
