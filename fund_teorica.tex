@@ -582,7 +582,139 @@ Caso se deseje normalizar a imagem com relação ao tamanho pode-se dividir o valo
 % propriedades de regiões
 \subsection{Descritores de \emph{fourier}}
 
-Considere a figura \ref{}. Os pixeis da imagem podem ser representados como sendo pares de coordenadas $(x_{0},y_{0}),(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{K-1},y_{K-1})$, onde $K$ é o numero de pixeis na imagem. Além disso os pixeis podem ser representados como uma sequencia $x(k) = x_{k}$ e $y(k) = y_{k}$ ou como $s(k) = \left \[ s(k), y(k)\right \]$ para $k = 0,1,2,...,K-1$. Além disso pode-se tratar as coordenadas dos pixeis como números complexos: $s(k) = x(k) + j y(k)$.
+Considere a figura \ref{fig:fundteor_fourier_desc_org}. Os pixeis com valor $1$ da imagem binária podem ser representados como sendo pares de coordenadas $(x_{0},y_{0}),(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{K-1},y_{K-1})$, onde $K$ é o numero de pixeis na imagem. Além disso os pixeis podem ser representados como uma sequencia $x(k) = x_{k}$ e $y(k) = y_{k}$ ou como $s(k) = \left [ x(k), y(k) \right ]$ para $k = 0,1,2,...,K-1$. Além disso pode-se tratar as coordenadas dos pixeis como números complexos: $s(k) = x(k) + j y(k)$.
+
+Tem-se que a transformada discreta de \emph{fourier} de um sinal $s(k)$ é dado pela equação \ref{eq:fundteor_dft} \cite{GONZALEZ-2006}:
+
+\begin{equation}
+a(u) = \sum_{k=0}^{K-1} s(k) e^{-j2 \pi u k / K} ~~~~~ ,u = 0,1,2,...,K-1
+\label{eq:fundteor_dft}
+\end{equation}
+
+Os coeficientes complexos $a(u)$ da transformada discreta de \emph{fourier} são chamados de descritores de \emph{fourier} \cite{GONZALEZ-2006}.
+
+Da mesma forma que se aplicou a transformada discreta de \emph{fourier} para obter os descritores de \emph{fourier} pode-se aplicar a transformada discreta inversa de \emph{fourier} nos coeficientes complexos para obter novamente os números complexos representando as coordenadas dos pixeis (equação \ref{eq:fundteor_idft}).
+
+\begin{equation}
+s(k) = \frac{1}{K} \sum_{u=0}^{K-1} a(u) e^{j2 \pi u k / K} ~~~~~ ,k = 0,1,2,...,K-1
+\label{eq:fundteor_idft}
+\end{equation}
+
+Suponha agora que ao invés de utilizar todos os descritores de \emph{fourier} utiliza-se apenas os $P$ primeiros descritores para reconstituir $s(k)$. Tem-se portanto uma aproximação para $s(k)$ dada por $\hat{s}(k)$ na equação \ref{eq:fundteor_idft_a}.
+
+\begin{equation}
+\hat{s}(k) = \frac{1}{P} \sum_{u=0}^{P-1} a(u) e^{j2 \pi u k / P} ~~~~~ ,k = 0,1,2,...,K-1
+\label{eq:fundteor_idft_a}
+\end{equation}
+
+Quando os $P$ coeficientes de menor frequência são escolhidos para reconstituir a imagem tem-se uma imagem aproximada da imagem original porém que mantém as principais características. Pode-se ver esse comportamento nas imagens da figura \ref{fig:fundteor_fourier_desc}. A imagem da figura \ref{fig:fundteor_fourier_desc_1} foi forma utilizando todos os 19410 coeficientes da imagem original, a imagem \ref{fig:fundteor_fourier_desc_2} foi formada com 9705 coeficientes, e assim por diante, até apenas 2 coeficientes na figura \ref{fig:fundteor_fourier_desc_8192}.
+
+\begin{figure}[H]
+        \centering
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/Ai.png}
+	        \caption{Imagem original}
+                \label{fig:fundteor_fourier_desc_org}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A1.png}
+	        \caption{19410 coeficientes}
+                \label{fig:fundteor_fourier_desc_1}
+        \end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A2.png}
+	        \caption{9705 coeficientes}
+                \label{fig:fundteor_fourier_desc_2}
+        \end{subfigure}
+
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A4.png}
+	        \caption{4852 coeficientes}
+                \label{fig:fundteor_fourier_desc_4}
+        \end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A8.png}
+	        \caption{2426 coeficientes}
+                \label{fig:fundteor_fourier_desc_8}
+        \end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A16.png}
+	        \caption{1213 coeficientes}
+                \label{fig:fundteor_fourier_desc_16}
+        \end{subfigure}
+
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A32.png}
+	        \caption{606 coeficientes}
+                \label{fig:fundteor_fourier_desc_32}
+        \end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A64.png}
+	        \caption{303 coeficientes}
+                \label{fig:fundteor_fourier_desc_64}
+        \end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A128.png}
+	        \caption{151 coeficientes}
+                \label{fig:fundteor_fourier_desc_128}
+        \end{subfigure}
+
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A256.png}
+	        \caption{75 coeficientes}
+                \label{fig:fundteor_fourier_desc_256}
+        \end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A512.png}
+	        \caption{37 coeficientes}
+                \label{fig:fundteor_fourier_desc_512}
+        \end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A1024.png}
+	        \caption{18 coeficientes}
+                \label{fig:fundteor_fourier_desc_1024}
+        \end{subfigure}
+
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A2048.png}
+	        \caption{9 coeficientes}
+                \label{fig:fundteor_fourier_desc_2048}
+        \end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A4096.png}
+	        \caption{4 coeficientes}
+                \label{fig:fundteor_fourier_desc_4096}
+        \end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.29\textwidth}
+                \includegraphics[width=\textwidth]{./figs/A8192.png}
+	        \caption{2 coeficientes}
+                \label{fig:fundteor_fourier_desc_8192}
+        \end{subfigure}
+
+        \caption{Imagem original e imagens reconstituídas utilizando $n$ descritores de \emph{fourier}.}
+	\fonte{Autoria própria}
+	\label{fig:fundteor_fourier_desc}
+\end{figure}
 
 
 
