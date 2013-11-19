@@ -5,6 +5,7 @@ Este capítulo apresenta a fundamentação teórica, que consiste no estudo das técn
 
 \section{Segmentação} \label{sec:segmentacao}
 
+%TODO: introdução a segmentacao de imagens
 
 \subsection{Subtração de fundo} \label{sub:fundteor_sub_fundo}
 
@@ -358,7 +359,7 @@ Aplicando-se o método de esqueletonização mencionado anteriormente em figuras re
 \end{figure}
 
 
-\subsection{Análise de componentes principais}
+\subsection{Normalização}
 
 A análise de componentes principais pode ser empregada para normalizar imagens em função de rotação, translação e tamanho  \cite{GONZALEZ-2006}. Explica-se a seguir alguns conceitos necessários para efetuar a normalização utilizando a analise de componentes principais e em seguida o processo de normalização utilizando componentes principais.
 
@@ -409,7 +410,7 @@ Pode-se ver isso melhor nas matrizes de covariância apresentadas nas figuras \re
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centerline{$\begin{bmatrix}
 			457 & -13.6 \\ 
-			-13.6 & 35
+			-13.6 & 35.0
 		\end{bmatrix}$}
 	        \caption{}
                 \label{fig:fundteor_pca_xc}
@@ -459,18 +460,131 @@ Algumas propriedades de autovetores:
 
 \subsubsection{Analise de componentes principais}
 
-Pode-se demonstrar que o autovetor associado ao maior autovalor de uma matriz de covariâncias aponta na direção de maior variação dos dados \cite{AUTOVETORES-DEDUCAO}. Considere por exemplo as imagens da figura \ref{fig:fundteor_pca}....
-
-% https://inst.eecs.berkeley.edu/~ee127a/book/login/l_sym_pca.html
-
 % http://www.cs.otago.ac.nz/cosc453/student_tutorials/principal_components.pdf
+% https://inst.eecs.berkeley.edu/~ee127a/book/login/l_sym_pca.html
+Pode-se demonstrar que o autovetor associado ao maior autovalor de uma matriz de covariâncias aponta na direção de maior variação dos dados \cite{AUTOVETORES-DEDUCAO}. Pode-se demonstrar também que o segundo autovetor, associado ao segundo maior autovalor, aponta na segunda direção de maior variação dos dados. A esses autovetores se dá o nome de componentes principais da imagem.
+
+Considere por exemplo as imagens da figura \ref{fig:fundteor_pca2}. Calculamos os autovetores para cada uma das imagens tomando como base as matrizes de covariância apresentadas nas figuras \ref{fig:fundteor_pca_xc}, \ref{fig:fundteor_pca_yc} e \ref{fig:fundteor_pca_xyc}. Os autovetores podem ser vistos nas figuras \ref{fig:fundteor_pca_xam}, \ref{fig:fundteor_pca_yam} e \ref{fig:fundteor_pca_xyam}. O autovetor associado ao maior autovalor está na primeira linha de cada matriz e o seguindo autovetor está na segunda linha. Os autovetores foram representados sobre as respectivas imagens nas figuras \ref{fig:fundteor_pca_xa}, \ref{fig:fundteor_pca_ya} e \ref{fig:fundteor_pca_xya}.
+
+\begin{figure}[H]
+        \centering
+	\begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/pca_xa.png}
+	        \caption{}
+                \label{fig:fundteor_pca_xa}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/pca_ya.png}
+	        \caption{}
+                \label{fig:fundteor_pca_ya}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/pca_xya.png}
+	        \caption{}
+                \label{fig:fundteor_pca_xya}
+        \end{subfigure}
+
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centerline{$\begin{bmatrix}
+			0.999 & 0.0321 \\ 
+			0.0321 & -0.999
+		\end{bmatrix}$}
+	        \caption{}
+                \label{fig:fundteor_pca_xam}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.3\textwidth}
+		\centerline{$\begin{bmatrix}
+			0.0369 & 0.999 \\ 
+			0.999 & -0.0369
+		\end{bmatrix}$}
+	        \caption{}
+                \label{fig:fundteor_pca_yam}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centerline{$\begin{bmatrix}
+			0.716 & 0.698 \\ 
+			0.698 & -0.716
+		\end{bmatrix}$}
+	        \caption{}
+                \label{fig:fundteor_pca_xyam}
+        \end{subfigure}
+
+        \caption{Imagens de exemplo e seus respectivos autovetores.}
+	\fonte{Autoria própria}
+	\label{fig:fundteor_pca2}
+\end{figure}
+
+Vê-se portanto que se pode definir um eixo absoluto para cada imagem com base na distribuição dos pixeis sobre a imagem.
+
+\subsubsection{Normalização}
+
+A normalização das imagens pode ser feita por meio de uma matriz de transformação que mapeia valores do sistema de coordenadas original da imagem para o sistema de coordenadas formado pelos autovetores da imagem \cite{GONZALEZ-2006}. A transformação em questão podes ser expressa pela equação \ref{eq:fundteor_transf}.
+
+\begin{equation}
+y = A ( x - m_{x} )
+\label{eq:fundteor_transf}
+\end{equation}
+
+Onde:
+
+\begin{itemize}
+\item $y$ é o valor no novo sistema de coordenadas formado pelos autovetores.
+\item $x$ o valor da coordenada no sistema original.
+\item $A$ a matriz de autovetores.
+\item $m_{x}$ vetor da média.
+\end{itemize}
+
+As imagens da figura \ref{fig:fundteor_pca} podem ser vistas normalizadas na figura \ref{fig:fundteor_pca3}.
+
+\begin{figure}[H]
+        \centering
+	\begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/pca_xn.png}
+	        \caption{}
+                \label{fig:fundteor_pca_xa}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/pca_yn.png}
+	        \caption{}
+                \label{fig:fundteor_pca_ya}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/pca_xyn.png}
+	        \caption{}
+                \label{fig:fundteor_pca_xya}
+        \end{subfigure}
+
+        \caption{Imagens normalizadas.}
+	\fonte{Autoria própria}
+	\label{fig:fundteor_pca3}
+\end{figure}
+
+Caso se deseje normalizar a imagem com relação ao tamanho pode-se dividir o valor das coordenadas $y$ pelos autovalores correspondentes \cite{GONZALEZ-2006}.
+
 
 \section{Descrição} \label{sec:descricao}
+
+%TODO: introdução a descrição de imagens
 
 \subsection{Propriedades de regiões}
 % propriedades de regiões
 \subsection{Descritores de \emph{fourier}}
-% descritores de fourier
+
+Considere a figura \ref{}. Os pixeis da imagem podem ser representados como sendo pares de coordenadas $(x_{0},y_{0}),(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{K-1},y_{K-1})$, onde $K$ é o numero de pixeis na imagem. Além disso os pixeis podem ser representados como uma sequencia $x(k) = x_{k}$ e $y(k) = y_{k}$ ou como $s(k) = \left \[ s(k), y(k)\right \]$ para $k = 0,1,2,...,K-1$. Além disso pode-se tratar as coordenadas dos pixeis como números complexos: $s(k) = x(k) + j y(k)$.
+
+
 
 \section{Classificação} \label{sec:classificacao}
 
