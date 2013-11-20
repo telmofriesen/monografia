@@ -877,16 +877,61 @@ Pode-se demonstrar que utilizando esse método para calcular os coeficientes, tem
 
 \subsubsection{Treinamento de \emph{multi-layer perceptrons}}
 
-O treinamento de redes multicamadas pode ser efetuado de maneira semelhante ao treinamento de um único \emph{perceptron}. Considere a equação \ref{eq:fundteor_nn_perceptron_error_multi}. O erro quadrático $E_{Q}$ obtido na camada de saída é dado pela soma dos erros quadráticos em todos os \emph{perceptrons} da camada de saída. O erro em cada \emph{perceptron} é dado pela diferença entre a saída desejada no perceptron $q$: $r_{q}, e a saída obtida no perceptron $q$: $O_{q}$.
+O treinamento de redes multicamadas pode ser efetuado de maneira semelhante ao treinamento de um único \emph{perceptron}. Considere a equação \ref{eq:fundteor_nn_perceptron_error_multi}. O erro quadrático $E_{Q}$ obtido na camada de saída é dado pela soma dos erros quadráticos em todos os \emph{perceptrons} da camada de saída (\emph{perceptrons} de $1$ a $N_{Q}$). O erro em cada \emph{perceptron} é dado pela diferença entre a saída desejada $r_{q}$, no perceptron $q$, e a saída obtida $O_{q}$.
 
 \begin{equation}
-E_{Q} = \fraq {1}{2} \sum_{q=1}^{N_{Q}} (r_{q} - O_{q})^{2}
-J(w) = \frac{1}{2} (r - w^{T}y)^2
+E_{Q} = \frac{1}{2} \sum_{q=1}^{N_{Q}} (r_{q} - O_{q})^{2}
 \label{eq:fundteor_nn_perceptron_error_multi}
 \end{equation}
 
-Novamente deseja-se minimizar o erro $E_{Q}$ em cada passo de treinamento.
+Novamente deseja-se minimizar o erro $E_{Q}$ em cada passo de treinamento. Não será mostrado aqui o processo completo para determinação dos coeficientes minimizando a equação \ref{eq:fundteor_nn_perceptron_error_multi}. Mas o desenvolvimento completo pode ser encontrado em \cite{GONZALEZ-2006}. 
 
+Os coeficientes $w(k+1)$ para um \emph{perceptron} na camada $J$, que é precedida por uma camada $K$, podem ser determinados pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_2}.
+
+\begin{equation}
+w(k+1) = w(k) + \alpha \delta _{j}O_{k}
+\label{eq:fundteor_nn_perceptron_error_multi_desc_2}
+\end{equation}
+
+Onde $O_{k}$ é a saída da camada $K$  e $\alpha > 0$ é uma constante escolhida de acordo com o grau de correção que se deseja a cada passo de treinamento. Se $J$ for a camada de saída da rede, ou seja, $J=Q$, então $\delta_{j}$ será dado pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_3}.
+
+\begin{equation}
+\delta_{j} = (r_{j} - O_{j})h'_{j}(I_{j})
+\label{eq:fundteor_nn_perceptron_error_multi_desc_3}
+\end{equation}
+
+Caso $J$ seja um perceptron em uma camada interna, e $P$ a camada imediatamente posterior a $J$, $\delta_{j}$ será dado pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_4}.
+
+\begin{equation}
+\delta_{j} = h'_{j}(I_{j}) \sum_{p=1}^{N_{P}} \delta_{p} \omega_{jp}
+\label{eq:fundteor_nn_perceptron_error_multi_desc_4}
+\end{equation}
+
+Ou seja, o calculo de $\delta$ para um \emph{perceptron} da camada $J$ depende dos pesos da camada seguinte para o \emph{perceptron} $j$, $\omega_{jp}$,  e do valor de $\delta$ da camada seguinte, $\delta_{p}$. $h'_{j}$ é a derivada da função de ativação $h_{j}$ e $I_{j}$ é a entrada da função de ativação. 
+
+Caso a função de ativação escolhida seja a função sigmoide, equação \ref{eq:fundteor_nn_perceptron_error_multi_sig}, a derivada $h'_{j}$ é dada pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_5}.
+
+\begin{equation}
+h(I_{j}) = 
+\label{eq:fundteor_nn_perceptron_error_multi_sig}
+\end{equation}
+
+\begin{equation}
+h'(I_{j}) = 
+\label{eq:fundteor_nn_perceptron_error_multi_desc_5}
+\end{equation}
+
+
+
+
+A entrada da função de ativação é a soma ponderada das saídas da camada $K$, $o_{k}$, utilizando os pesos atuais do perceptron que se deseja atualizar, $\omega_{jk}$, como mostrado na equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_5}.
+
+\begin{equation}
+I_{j} = \sum_{k=1}^{N_{K}} o_{k} \omega_{jk}
+\label{eq:fundteor_nn_perceptron_error_multi_desc_5}
+\end{equation}
+
+Tanto na equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_3} quanto na equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_4} 
 
 %$w(k)$ - vetor de pesos para época k
 %y(k) uma amostra que pertence a uma classe
