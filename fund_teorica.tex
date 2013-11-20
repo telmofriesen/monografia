@@ -814,7 +814,7 @@ Os coeficientes $w_{i}, i=1,2,...,n,n+1$, são chamados de pesos e modificam a so
 
 Esse tipo de abordagem formada por um único \emph{perceptron} não é capaz de separar mais do que duas classes e também não é capaz de separar classes que não são linearmente separáveis. Isso se dá devido ao fato de que a equação \ref{eq:fundteor_nn_perceptron} quando expandida define um hiperplano em um espaço $n$-dimensional.
 
-Utilizam-se portanto para problemas mais complexos redes de neurônios. Cada neurônio é formado por uma estrutura do mesmo tipo da estrutura do \emph{perceptron}, com a diferença de a função de ativação ser geralmente uma função sigmoide ao invés de um simples limiar. A saída dos neurônios estão interconectadas com as entradas de outros neurônio. Essa estrutura, também chamada de \emph{multi-layer feedforward network}, pode ser vista na figura \ref{fig:fundteor_nn_multilayer_perceptron_model}.
+Utilizam-se portanto para problemas mais complexos redes de neurônios, também chamada de \emph{multi-layer perceptron} ou \emph{multi-layer feedforward network}. Cada neurônio é formado por uma estrutura do mesmo tipo da estrutura do \emph{perceptron}, com a diferença de a função de ativação ser geralmente uma função sigmoide ao invés de um simples limiar. A saída dos neurônios estão interconectadas com as entradas de outros neurônio. Essa estrutura pode ser vista na figura \ref{fig:fundteor_nn_multilayer_perceptron_model}.
 
 \begin{figure}[H]
 	\centering
@@ -841,16 +841,44 @@ Pode-se demonstrar que redes desse tipo são capazes de separar regiões convexas 
 
 O treinamento de \emph{perceptrons} consiste em determinar os valores adequados de $\omega_{i}$ para que a soma ponderada das entradas forme a saída adequada para a função de ativação. Existem diversos métodos de treinamento para determinar os valores de $\omega_{i}$ para um único perceptron. Apresenta-se a seguir o método denominado \emph{delta rule} ou \emph{least-mean-square}.
 
-A principal característica do método \emph{delta rule} é que ele minimiza o erro entre a saída desejada e a saída real do \emph{perceptron} em cada passo de treinamento. Considere por exemplo a função da equação \ref{eq:fundteor_nn_perceptron_error}. 
+A principal característica do método \emph{delta rule} é que ele minimiza o erro entre a saída desejada e a saída real do \emph{perceptron} em cada passo de treinamento. Considere a função da equação \ref{eq:fundteor_nn_perceptron_error}. 
 
 \begin{equation}
 J(w) = \frac{1}{2} (r - w^{T}y)^2
 \label{eq:fundteor_nn_perceptron_error}
 \end{equation}
 
-$J(w)$ representa o erro quadrático para um dado conjunto de pesos $w$. O erro é calculado como sendo a diferença entre a saída desejada do \emph{perceptron} $r$ e a saída real dada pelo produto dos pesos $w^{T}$ com o valor de entrada do conjunto de treinamento $y$.
+$J(w)$ representa o erro quadrático para um dado conjunto de pesos $w$. O erro é calculado como sendo a diferença entre a saída desejada do \emph{perceptron} $r$ e a saída real dada pelo produto do vetor de pesos transposto $w^{T}$ com o valor de entrada do conjunto de treinamento $y$.
 
-O objetivo do treinamento é minimizar $J(w)$ ajustando $w$.
+O objetivo do treinamento pelo método \emph{delta rule} é minimizar $J(w)$ ajustando os valores dos pesos $w$.
+
+Se $w(k)$ representa o vetor de pesos no passo de treinamento $k$, então pode-se calcular $w(k+1)$ de forma a reduzir o valor de $J(w)$ utilizando a equação \ref{eq:fundteor_nn_perceptron_error_desc} \cite{GONZALEZ-2006}.
+
+\begin{equation}
+w(k+1) = w(k) - \alpha \left [ \frac{\partial J(w)}{\partial w} \right ] _{w=w(k)}
+\label{eq:fundteor_nn_perceptron_error_desc}
+\end{equation}
+
+Onde $\alpha > 0$ é uma constante escolhida de acordo com o grau de correção que se deseja a cada passo. Da equação \ref{eq:fundteor_nn_perceptron_error} tem se que:
+
+\begin{equation}
+\frac{\partial J(w)}{\partial w} = -(r - w^{T} y)y
+\label{eq:fundteor_nn_perceptron_error_der}
+\end{equation}
+
+Substituindo a equação \ref{eq:fundteor_nn_perceptron_error_der} na equação \ref{eq:fundteor_nn_perceptron_error_desc} resulta na equação \ref{eq:fundteor_nn_perceptron_error_desc_2} que pode ser utilizada para o cálculo dos coeficientes $w(k+1)$ dados os coeficientes $w(k)$, a saída desejada $r$ e o valor de entrada do conjunto de treinamento $y$. 
+
+\begin{equation}
+w(k+1) = w(k) + \alpha \left [ r(k) - w^{T} (k) y(k) \right ] y(k)
+\label{eq:fundteor_nn_perceptron_error_desc_2}
+\end{equation}
+
+Pode-se demonstrar que utilizando esse método para calcular os coeficientes, tem-se a redução do erro do $perceptron$ em um fator de $\alpha y(k)^{T} y(k)$ a cada ciclo de treinamento \cite{GONZALEZ-2006}.
+
+\subsubsection{Treinamento de \emph{multi-layer perceptrons}}
+
+O treinamento de redes multicamadas pode ser efetuado de maneira semelhante.
+
 
 
 
@@ -862,11 +890,6 @@ O objetivo do treinamento é minimizar $J(w)$ ajustando $w$.
 %existem diversos back propagations
 %dar uma visao geral do delta rule
 
-% redes neurais
-\subsection{Método de \emph{BR}}
-% trainbr
-\subsection{Método de \emph{LM}}
-% trainlm
 
 
 
