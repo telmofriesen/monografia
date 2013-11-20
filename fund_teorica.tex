@@ -814,7 +814,20 @@ Os coeficientes $w_{i}, i=1,2,...,n,n+1$, são chamados de pesos e modificam a so
 
 Esse tipo de abordagem formada por um único \emph{perceptron} não é capaz de separar mais do que duas classes e também não é capaz de separar classes que não são linearmente separáveis. Isso se dá devido ao fato de que a equação \ref{eq:fundteor_nn_perceptron} quando expandida define um hiperplano em um espaço $n$-dimensional.
 
-Utilizam-se portanto para problemas mais complexos redes de neurônios, também chamada de \emph{multi-layer perceptron} ou \emph{multi-layer feedforward network}. Cada neurônio é formado por uma estrutura do mesmo tipo da estrutura do \emph{perceptron}, com a diferença de a função de ativação ser geralmente uma função sigmoide ao invés de um simples limiar. A saída dos neurônios estão interconectadas com as entradas de outros neurônio. Essa estrutura pode ser vista na figura \ref{fig:fundteor_nn_multilayer_perceptron_model}.
+Utilizam-se portanto para problemas mais complexos redes de neurônios, também chamada de \emph{multi-layer perceptron} ou \emph{multi-layer feedforward network}. Cada neurônio é formado por uma estrutura do mesmo tipo da estrutura do \emph{perceptron}, com a diferença de a função de ativação ser geralmente uma função sigmoide ao invés de um simples limiar. A função sigmoide pode ser vista na equação \ref{}  e na figura \ref{}. A saída dos neurônios estão interconectadas com as entradas de outros neurônio. Essa estrutura pode ser vista na figura \ref{fig:fundteor_nn_multilayer_perceptron_model}.
+
+\begin{equation}
+h_{j}(I_{j}) = \frac {1}{1+e^{-(I_{j} + \theta_{j})/\theta_{O}}}
+\label{eq:fundteor_nn_perceptron_sigmoide}
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/multilayer_perceptron_sigmoide.png}
+	\caption{Gráfico da função de ativação sigmoide.}
+	\fonte{\cite{GONZALEZ-2006}}
+	\label{fig:fundteor_nn_multilayer_perceptron_sigmoide}
+\end{figure}
 
 \begin{figure}[H]
 	\centering
@@ -909,12 +922,7 @@ Caso $J$ seja um perceptron em uma camada interna, e $P$ a camada imediatamente 
 
 Ou seja, o calculo de $\delta$ para um \emph{perceptron} da camada $J$ depende dos pesos da camada seguinte para o \emph{perceptron} $j$, $\omega_{jp}$,  e do valor de $\delta$ da camada seguinte, $\delta_{p}$. $h'_{j}$ é a derivada da função de ativação $h_{j}$ e $I_{j}$ é a entrada da função de ativação. 
 
-Caso a função de ativação escolhida seja a função sigmoide, equação \ref{eq:fundteor_nn_perceptron_error_multi_sig}, a derivada $h'_{j}$ é dada pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_5}.
-
-\begin{equation}
-h(I_{j}) = 
-\label{eq:fundteor_nn_perceptron_error_multi_sig}
-\end{equation}
+Caso a função de ativação escolhida seja a função sigmoide, a derivada $h'_{j}$ é dada pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_5}.
 
 \begin{equation}
 h'(I_{j}) = 
