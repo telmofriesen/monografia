@@ -793,6 +793,24 @@ Esta seção apresenta uma visão geral de reconhecimento de padrões utilizando red
 
 \subsection{Redes neurais}
 
+Redes neurais são elementos não lineares (chamados neurônios) interconectados da mesma maneira que se acredita que os neurônios estão conectados no cérebro. Usam-se essas redes para tomadas de decisão após seus coeficientes terem sido ajustados por meio de apresentações sucessivas de conjuntos de dados de treinamento \cite{GONZALEZ-2006}.
+
+Na forma mais simples a rede é composta por um único neurônio chamado \emph{perceptron}. Esse neurônio então aprende uma função linear para separar dois conjuntos de dados de treinamento linearmente separáveis. A figura \ref{fig:fundteor_nn_perceptron_model} apresenta o modelo básico para um \emph{perceptron}. A resposta desse \emph{perceptron} é baseada na soma ponderada das entradas, dada pela equação \ref{eq:fundteor_nn_perceptron}.
+
+\begin{equation}
+d(x) = \sum_{i=1}^{n} \omega _{i} x_{i} + \omega _{n+1}
+\label{eq:fundteor_nn_perceptron}
+\end{equation}
+
+Os coeficientes $w_{i}, i=1,2,...,n,n+1$, são chamados de pesos e modificam a soma antes que os valores de entrada passem pelo elemento de ativação, também chamado de função de ativação. Os pesos podem ser comparados às sinapses que ocorrem no cérebro humano.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/perceptron_model.png}
+	\caption{Modelo de \emph{perceptron}.}
+	\fonte{\cite{GONZALEZ-2006}}
+	\label{fig:fundteor_nn_perceptron_model}
+\end{figure}
 
 
 % redes neurais

@@ -29,44 +29,44 @@
 \contentsline {subsubsection}{Extens\~ao}{28}
 \contentsline {subsubsection}{Excentricidade}{28}
 \contentsline {subsubsection}{Tamanho do eixo principal e eixo secund\'ario}{29}
-\contentsline {subsubsection}{Numero de Euler}{29}
+\contentsline {subsubsection}{N\'umero de Euler}{29}
 \contentsline {subsection}{\numberline {2.2.2}Descritores de \emph {fourier}}{29}
 \contentsline {section}{\numberline {2.3}Classifica\c c\~ao}{32}
 \contentsline {subsection}{\numberline {2.3.1}Redes neurais}{32}
-\contentsline {subsection}{\numberline {2.3.2}M\'etodo de \emph {BR}}{32}
-\contentsline {subsection}{\numberline {2.3.3}M\'etodo de \emph {LM}}{32}
-\contentsline {chapter}{\numberline {3}Desenvolvimento}{34}
-\contentsline {section}{\numberline {3.1}Reconstru\c c\~ao da Plataforma Rob\'otica Bellator}{34}
-\contentsline {subsection}{\numberline {3.1.1}Teste dos Componentes}{34}
-\contentsline {subsection}{\numberline {3.1.2}Levantamento da curva dos sensores}{36}
-\contentsline {subsection}{\numberline {3.1.3}Reposit\'orio de trabalho}{38}
-\contentsline {subsection}{\numberline {3.1.4}C\'odigo do microcontrolador C8051F340}{39}
-\contentsline {subsection}{\numberline {3.1.5}Protocolo de comunica\c c\~ao}{40}
-\contentsline {subsection}{\numberline {3.1.6}Placa de Roteamento}{41}
-\contentsline {subsection}{\numberline {3.1.7}Placa TS-7260}{45}
-\contentsline {subsection}{\numberline {3.1.8}Configura\c c\~ao da TS-7260}{45}
-\contentsline {subsection}{\numberline {3.1.9}Software da TS-7260}{47}
-\contentsline {subsection}{\numberline {3.1.10}Considera\c c\~oes}{48}
-\contentsline {section}{\numberline {3.2}Algoritmos de Navega\c c\~ao}{49}
-\contentsline {subsection}{\numberline {3.2.1}Algoritmo de Navega\c c\~ao Fuzzy}{49}
-\contentsline {subsubsection}{Vari\'aveis Lingu\IeC {\'\i }sticas}{49}
-\contentsline {subsubsection}{Regras de Infer\^encia}{53}
-\contentsline {subsubsection}{Considera\c c\~oes}{55}
-\contentsline {subsection}{\numberline {3.2.2}Algoritmo de Navega\c c\~ao Baseado em ED-FCM}{55}
-\contentsline {subsubsection}{Conceitos}{56}
-\contentsline {subsubsection}{Rela\c c\~oes Causais}{58}
-\contentsline {subsubsection}{Ativa\c c\~ao dos Conceitos}{60}
-\contentsline {subsubsection}{Considera\c c\~oes}{60}
-\contentsline {section}{\numberline {3.3}Testes e An\'alise de Resultados}{61}
-\contentsline {subsection}{\numberline {3.3.1}Elabora\c c\~ao dos Testes}{61}
-\contentsline {subsection}{\numberline {3.3.2}Testes Iniciais}{62}
-\contentsline {subsection}{\numberline {3.3.3}Testes Avan\c cados}{64}
-\contentsline {subsection}{\numberline {3.3.4}Testes Comparativos}{66}
-\contentsline {subsection}{\numberline {3.3.5}Considera\c c\~oes}{69}
-\contentsline {chapter}{\numberline {4}Conclus\~ao}{71}
-\contentsline {section}{\numberline {4.1}Objetivos Iniciais e Resultados Alcan\c cados}{71}
-\contentsline {section}{\numberline {4.2}Uso de Algoritmos de Navega\c c\~ao em Plataformas Rob\'oticas Reais}{73}
-\contentsline {section}{\numberline {4.3}Dificuldades Encontradas}{75}
-\contentsline {section}{\numberline {4.4}Trabalhos Futuros}{76}
-\contentsline {chapter}{REFER\^ENCIAS}{77}
-\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Refer\^encia de Montagem do Rob\^o}{79}
+\contentsline {subsection}{\numberline {2.3.2}M\'etodo de \emph {BR}}{33}
+\contentsline {subsection}{\numberline {2.3.3}M\'etodo de \emph {LM}}{33}
+\contentsline {chapter}{\numberline {3}Desenvolvimento}{35}
+\contentsline {section}{\numberline {3.1}Reconstru\c c\~ao da Plataforma Rob\'otica Bellator}{35}
+\contentsline {subsection}{\numberline {3.1.1}Teste dos Componentes}{35}
+\contentsline {subsection}{\numberline {3.1.2}Levantamento da curva dos sensores}{37}
+\contentsline {subsection}{\numberline {3.1.3}Reposit\'orio de trabalho}{39}
+\contentsline {subsection}{\numberline {3.1.4}C\'odigo do microcontrolador C8051F340}{40}
+\contentsline {subsection}{\numberline {3.1.5}Protocolo de comunica\c c\~ao}{41}
+\contentsline {subsection}{\numberline {3.1.6}Placa de Roteamento}{42}
+\contentsline {subsection}{\numberline {3.1.7}Placa TS-7260}{46}
+\contentsline {subsection}{\numberline {3.1.8}Configura\c c\~ao da TS-7260}{46}
+\contentsline {subsection}{\numberline {3.1.9}Software da TS-7260}{48}
+\contentsline {subsection}{\numberline {3.1.10}Considera\c c\~oes}{49}
+\contentsline {section}{\numberline {3.2}Algoritmos de Navega\c c\~ao}{50}
+\contentsline {subsection}{\numberline {3.2.1}Algoritmo de Navega\c c\~ao Fuzzy}{50}
+\contentsline {subsubsection}{Vari\'aveis Lingu\IeC {\'\i }sticas}{50}
+\contentsline {subsubsection}{Regras de Infer\^encia}{54}
+\contentsline {subsubsection}{Considera\c c\~oes}{56}
+\contentsline {subsection}{\numberline {3.2.2}Algoritmo de Navega\c c\~ao Baseado em ED-FCM}{56}
+\contentsline {subsubsection}{Conceitos}{57}
+\contentsline {subsubsection}{Rela\c c\~oes Causais}{59}
+\contentsline {subsubsection}{Ativa\c c\~ao dos Conceitos}{61}
+\contentsline {subsubsection}{Considera\c c\~oes}{61}
+\contentsline {section}{\numberline {3.3}Testes e An\'alise de Resultados}{62}
+\contentsline {subsection}{\numberline {3.3.1}Elabora\c c\~ao dos Testes}{62}
+\contentsline {subsection}{\numberline {3.3.2}Testes Iniciais}{63}
+\contentsline {subsection}{\numberline {3.3.3}Testes Avan\c cados}{65}
+\contentsline {subsection}{\numberline {3.3.4}Testes Comparativos}{67}
+\contentsline {subsection}{\numberline {3.3.5}Considera\c c\~oes}{70}
+\contentsline {chapter}{\numberline {4}Conclus\~ao}{72}
+\contentsline {section}{\numberline {4.1}Objetivos Iniciais e Resultados Alcan\c cados}{72}
+\contentsline {section}{\numberline {4.2}Uso de Algoritmos de Navega\c c\~ao em Plataformas Rob\'oticas Reais}{74}
+\contentsline {section}{\numberline {4.3}Dificuldades Encontradas}{76}
+\contentsline {section}{\numberline {4.4}Trabalhos Futuros}{77}
+\contentsline {chapter}{REFER\^ENCIAS}{78}
+\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Refer\^encia de Montagem do Rob\^o}{80}
