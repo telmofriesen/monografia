@@ -795,14 +795,14 @@ Esta seção apresenta uma visão geral de reconhecimento de padrões utilizando red
 
 Redes neurais são elementos não lineares (chamados neurônios) interconectados da mesma maneira que se acredita que os neurônios estão conectados no cérebro. Usam-se essas redes para tomadas de decisão após seus coeficientes terem sido ajustados por meio de apresentações sucessivas de conjuntos de dados de treinamento \cite{GONZALEZ-2006}.
 
-Na forma mais simples a rede é composta por um único neurônio chamado \emph{perceptron}. Esse neurônio então aprende uma função linear para separar dois conjuntos de dados de treinamento linearmente separáveis. A figura \ref{fig:fundteor_nn_perceptron_model} apresenta o modelo básico para um \emph{perceptron}. A resposta desse \emph{perceptron} é baseada na soma ponderada das entradas, dada pela equação \ref{eq:fundteor_nn_perceptron}.
+Na forma mais simples no entanto a rede é um elemento linear e é composta por um único neurônio, também chamado \emph{perceptron}. Esse neurônio então aprende uma função linear para separar dois conjuntos de dados de treinamento linearmente separáveis. A figura \ref{fig:fundteor_nn_perceptron_model} apresenta o modelo básico para um \emph{perceptron}. A resposta desse \emph{perceptron} é baseada na soma ponderada das entradas, dada pela equação \ref{eq:fundteor_nn_perceptron}.
 
 \begin{equation}
-d(x) = \sum_{i=1}^{n} \omega _{i} x_{i} + \omega _{n+1}
+d(x) = \sum_{i=1}^{n} (\omega _{i} x_{i}) + \omega _{n+1}
 \label{eq:fundteor_nn_perceptron}
 \end{equation}
 
-Os coeficientes $w_{i}, i=1,2,...,n,n+1$, são chamados de pesos e modificam a soma antes que os valores de entrada passem pelo elemento de ativação, também chamado de função de ativação. Os pesos podem ser comparados às sinapses que ocorrem no cérebro humano.
+Os coeficientes $w_{i}, i=1,2,...,n,n+1$, são chamados de pesos e modificam a soma antes que os valores de entrada passem pelo elemento de ativação, também chamado de função de ativação. Os pesos podem ser comparados às sinapses que ocorrem no cérebro humano. No caso particular da figura \ref{fig:fundteor_nn_perceptron_model} a saída do \emph{perceptron} será $+1$ caso a entrada pertença a classe $\omega_{1}$ e $-1$ caso a entrada pertença a classe $\omega_{2}$.
 
 \begin{figure}[H]
 	\centering
@@ -812,6 +812,55 @@ Os coeficientes $w_{i}, i=1,2,...,n,n+1$, são chamados de pesos e modificam a so
 	\label{fig:fundteor_nn_perceptron_model}
 \end{figure}
 
+Esse tipo de abordagem formada por um único \emph{perceptron} não é capaz de separar mais do que duas classes e também não é capaz de separar classes que não são linearmente separáveis. Isso se dá devido ao fato de que a equação \ref{eq:fundteor_nn_perceptron} quando expandida define um hiperplano em um espaço $n$-dimensional.
+
+Utilizam-se portanto para problemas mais complexos redes de neurônios. Cada neurônio é formado por uma estrutura do mesmo tipo da estrutura do \emph{perceptron}, com a diferença de a função de ativação ser geralmente uma função sigmoide ao invés de um simples limiar. A saída dos neurônios estão interconectadas com as entradas de outros neurônio. Essa estrutura, também chamada de \emph{multi-layer feedforward network}, pode ser vista na figura \ref{fig:fundteor_nn_multilayer_perceptron_model}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/multilayer_perceptron_model.png}
+	\caption{Modelo de \emph{multi-layer feedforward network}.}
+	\fonte{\cite{GONZALEZ-2006}}
+	\label{fig:fundteor_nn_multilayer_perceptron_model}
+\end{figure}
+
+Nesse tipo de rede a primeira camada, $A$, possui o mesmo número de neurônios que a dimensão do vetor descritor da entrada, $N_{A} = n$. Semelhantemente o número de neurônios da camada de saída, $Q$, é igual ao número de classes que a rede deve reconhecer, $N_{Q} = {W}$. A rede reconhece uma entrada como sendo parte de uma classe quando a saída da classe é um e as demais saídas são zero.
+
+Pode-se demonstrar que redes desse tipo são capazes de separar regiões convexas no espaço $n$-dimensional de entradas utilizando duas camadas de neurônios. São também capazes de separar classes em regiões arbitrárias utilizando três camadas de neurônios  \cite{GONZALEZ-2006}. A complexidade das regiões separadas por uma rede de três camadas se dá pelo número de neurônios em cada camada. Isso está resumido na figura \ref{fig:fundteor_nn_multilayer_perceptron_decision}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/multilayer_perceptron_decision.png}
+	\caption{Estruturas de redes neurais e sua respectiva capacidade de decisão.}
+	\fonte{\cite{GONZALEZ-2006}}
+	\label{fig:fundteor_nn_multilayer_perceptron_decision}
+\end{figure}
+
+
+\subsubsection{Treinamento de \emph{perceptrons}}
+
+O treinamento de \emph{perceptrons} consiste em determinar os valores adequados de $\omega_{i}$ para que a soma ponderada das entradas forme a saída adequada para a função de ativação. Existem diversos métodos de treinamento para determinar os valores de $\omega_{i}$ para um único perceptron. Apresenta-se a seguir o método denominado \emph{delta rule} ou \emph{least-mean-square}.
+
+A principal característica do método \emph{delta rule} é que ele minimiza o erro entre a saída desejada e a saída real do \emph{perceptron} em cada passo de treinamento. Considere por exemplo a função da equação \ref{eq:fundteor_nn_perceptron_error}. 
+
+\begin{equation}
+J(w) = \frac{1}{2} (r - w^{T}y)^2
+\label{eq:fundteor_nn_perceptron_error}
+\end{equation}
+
+$J(w)$ representa o erro quadrático para um dado conjunto de pesos $w$. O erro é calculado como sendo a diferença entre a saída desejada do \emph{perceptron} $r$ e a saída real dada pelo produto dos pesos $w^{T}$ com o valor de entrada do conjunto de treinamento $y$.
+
+O objetivo do treinamento é minimizar $J(w)$ ajustando $w$.
+
+
+
+%$w(k)$ - vetor de pesos para época k
+%y(k) uma amostra que pertence a uma classe
+%c - constante de aprendizagem
+%
+%
+%existem diversos back propagations
+%dar uma visao geral do delta rule
 
 % redes neurais
 \subsection{Método de \emph{BR}}
