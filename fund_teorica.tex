@@ -877,9 +877,15 @@ Pode-se demonstrar que utilizando esse método para calcular os coeficientes, tem
 
 \subsubsection{Treinamento de \emph{multi-layer perceptrons}}
 
-O treinamento de redes multicamadas pode ser efetuado de maneira semelhante.
+O treinamento de redes multicamadas pode ser efetuado de maneira semelhante ao treinamento de um único \emph{perceptron}. Considere a equação \ref{eq:fundteor_nn_perceptron_error_multi}. O erro quadrático $E_{Q}$ obtido na camada de saída é dado pela soma dos erros quadráticos em todos os \emph{perceptrons} da camada de saída. O erro em cada \emph{perceptron} é dado pela diferença entre a saída desejada no perceptron $q$: $r_{q}, e a saída obtida no perceptron $q$: $O_{q}$.
 
+\begin{equation}
+E_{Q} = \fraq {1}{2} \sum_{q=1}^{N_{Q}} (r_{q} - O_{q})^{2}
+J(w) = \frac{1}{2} (r - w^{T}y)^2
+\label{eq:fundteor_nn_perceptron_error_multi}
+\end{equation}
 
+Novamente deseja-se minimizar o erro $E_{Q}$ em cada passo de treinamento.
 
 
 %$w(k)$ - vetor de pesos para época k
