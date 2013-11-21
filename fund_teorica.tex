@@ -909,14 +909,16 @@ w(k+1) = w(k) + \alpha \delta _{j}O_{k}
 Onde $O_{k}$ é a saída da camada $K$  e $\alpha > 0$ é uma constante escolhida de acordo com o grau de correção que se deseja a cada passo de treinamento. Se $J$ for a camada de saída da rede, ou seja, $J=Q$, então $\delta_{j}$ será dado pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_3}.
 
 \begin{equation}
-\delta_{j} = (r_{j} - O_{j})h'_{j}(I_{j})
+%\delta_{j} = (r_{j}-O_{j}) h'_{j}(I_{j})
+w(k+1) = w(k) + \alpha (r_{j}-O_{j}) h'_{j}(I_{j}) O_{k}
 \label{eq:fundteor_nn_perceptron_error_multi_desc_3}
 \end{equation}
 
 Caso $J$ seja um perceptron em uma camada interna, e $P$ a camada imediatamente posterior a $J$, $\delta_{j}$ será dado pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_4}.
 
 \begin{equation}
-\delta_{j} = h'_{j}(I_{j}) \sum_{p=1}^{N_{P}} \delta_{p} \omega_{jp}
+%\delta_{j} = h'_{j}(I_{j}) \sum_{p=1}^{N_{P}} \delta_{p} \omega_{jp}
+w(k+1) = w(k) + \alpha  h'_{j}(I_{j}) O_{k} (\sum_{p=1}^{N_{P}}\delta _{P}\omega _{jp})
 \label{eq:fundteor_nn_perceptron_error_multi_desc_4}
 \end{equation}
 
