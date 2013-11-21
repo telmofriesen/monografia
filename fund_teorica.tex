@@ -4,9 +4,9 @@ Este capítulo apresenta a fundamentação teórica, ou seja, o estudo das técnicas 
 
 A seção \ref{sec:segmentacao} apresenta técnicas e algoritmos que serão úteis para para realizar a segmentação de imagens. A segmentação de imagens consiste em subdividir a imagem original em regiões ou objetos até que se tenha identificado a região ou objeto de interesse.
 
-A seção \ref{sec:descricao} apresenta técnicas e algoritmos para realizar a descrição de imagens. Após a segmentação de uma imagem é necessário representar a imagem para que se possa efetuar posteriores processamentos em cima dela. Existem duas abordagem para esse problema \cite{GONZALEZ-2006}: representação por meio de características externas da região, como bordas, ou representação por meio de características internas, como textura. A representação por características externas normalmente é utilizada quando se está interessado na forma da região. Já a representação por características internas é utilizada quando o foco está na cor ou textura da região. Nessa seção aborda-se principalmente características externas de imagens.
+A seção \ref{sec:descricao} apresenta técnicas e algoritmos para realizar a descrição de imagens. Após a segmentação de uma imagem é necessário representar a imagem para que se possa processá-la. Existem duas abordagem para esse problema \cite{GONZALEZ-2006}: representação por meio de características externas da região, como bordas, ou representação por meio de características internas, como textura. A representação por características externas normalmente é utilizada quando se está interessado na forma da região. Já a representação por características internas é utilizada quando o foco está na cor ou textura da região. Nessa seção aborda-se principalmente a representação por meio de características externas de imagens.
 
-Finalmente a seção \ref{sec:classificacao} apresenta uma visão geral de reconhecimento de padrões utilizando redes neurais. O reconhecimento de padrões é feito tomando como base os descritores obtidos a partir de técnicas como as vistas na seção \ref{sec:descricao}.
+Finalmente a seção \ref{sec:classificacao} apresenta uma visão geral de reconhecimento de padrões utilizando redes neurais. O reconhecimento de padrões é feito tomando como base descritores, que podem ser obtidos a partir de técnicas como as vistas na seção \ref{sec:descricao}.
 
 
 \section{Segmentação} \label{sec:segmentacao}
@@ -30,7 +30,7 @@ Existem outros métodos mais complexos, como \emph{Running Gaussian average}, \em
 
 \subsection{Limiarização} \label{sub:fundteor_limiarizacao}
 
-Pela simplicidade na implementação e pela baixa complexidade computacional os algoritmos de limiarização são amplamente utilizados na segmentação de imagens. Os métodos de limiarização consistem na partição da imagem baseado na intensidade dos pixeis. Caso a partição seja feita com base em um único limiar de intensidade a limiarização se diz global. Caso a partição seja feita levando em conta os valores de intensidade dos pixeis em uma região de vizinhança de um certo pixel, então o método é chamado de limiarização local \cite{GONZALEZ-2006}. A equação \ref{eq:fundteor_thresholding} descreve esse processo, $g(x,y)$ é a imagem limiarizada, $f(x,y)$ é a imagem de entrada e $T$ é um limiar, que pode variar para diferentes valores de $x$ e $y$ caso a limiarização seja local.
+Pela simplicidade na implementação e pela baixa complexidade computacional os algoritmos de limiarização são bastante utilizados na segmentação de imagens. Os métodos de limiarização consistem na partição da imagem baseado na intensidade dos pixeis. Caso a partição seja feita com base em um único limiar de intensidade a limiarização se diz global. Caso a partição seja feita levando em conta os valores de intensidade dos pixeis em uma região de vizinhança de um certo pixel, então o método é chamado de limiarização local \cite{GONZALEZ-2006}. A equação \ref{eq:fundteor_thresholding} descreve esse processo, $g(x,y)$ é a imagem limiarizada, $f(x,y)$ é a imagem de entrada e $T$ é um limiar, que pode variar para diferentes valores de $x$ e $y$ caso a limiarização seja local.
 
 \begin{equation}
 g(x,y) =\left\{\begin{matrix}
@@ -40,7 +40,7 @@ g(x,y) =\left\{\begin{matrix}
 \label{eq:fundteor_thresholding}
 \end{equation}
 
-Na figura \ref{fig:fundteor_fig_limiarizacao} mostra-se duas imagens e seus respectivos histogramas. A figura \ref{fig:fundteor_hist_sem_ruido} mostra o histograma para uma imagem sem ruído e a figura \ref{fig:fundteor_hist_com_ruido} mostra o histograma para uma imagem com ruido gaussiano. Como pode-se ver na figura \ref{fig:fundteor_hist_sem_ruido} a escolha de um valor para limiar $T$ é uma tarefa fácil, porém para a imagem da figura \ref{fig:fundteor_hist_com_ruido} a escolha do limiar $T$ não é mais trivial. A seguir descreve-se um métodos para obtenção de limiar para limiarização global que pode ser aplicado nos dois casos vistos. 
+Na figura \ref{fig:fundteor_fig_limiarizacao} mostra-se duas imagens e seus respectivos histogramas. A figura \ref{fig:fundteor_hist_sem_ruido} mostra o histograma para a imagem sem ruído e a figura \ref{fig:fundteor_hist_com_ruido} mostra o histograma para a imagem com ruido gaussiano. Como pode-se ver na figura \ref{fig:fundteor_hist_sem_ruido}, a escolha de um valor para o limiar $T$ para a imagem sem ruído é uma tarefa fácil, porém a escolha do limiar para a imagem com ruído da figura \ref{fig:fundteor_hist_com_ruido} não é mais trivial. A seguir descreve-se um métodos para obtenção de limiar para limiarização global que pode ser aplicado nos dois casos. 
 
 \begin{figure}[H]
         \centering
@@ -101,11 +101,11 @@ Onde:
 \begin{itemize}
 \item $\sigma _{B}^{2} (t)$ é a variância entre as classes para um valor limiar t;
 \item $m_{G}$ é a média global de intensidades da imagem;
-\item $ m(t)$ é a média acumulada das intensidades de $t=0$ até a intensidade $t$;
 \item $P_{1}(t)$ é a probabilidade de um pixel qualquer da imagem estar na classe 1 dado o valor limiar $t$.
+\item $ m(t)$ é a média acumulada das intensidades de $t=0$ até a intensidade $t$;
 \end{itemize}
 
-Portanto, para o cálculo do valor limiar pelo método de \emph{Otsu} basta encontrar o valor limiar $t$ tal que $\sigma _{B}^{2} (t)$ é máximo. A dedução da equação \ref{eq:fundteor_otsu} está fora do escopo deste projeto, mas pode ser encontrada em \cite{GONZALEZ-2006}. 
+Portanto, para o cálculo do valor limiar pelo método de \emph{Otsu} basta encontrar o valor limiar $t$ tal que q variância entre as classes, $\sigma _{B}^{2} (t)$, é máximo. A dedução da equação \ref{eq:fundteor_otsu} está fora do escopo deste projeto, mas pode ser encontrada em \cite{GONZALEZ-2006}. 
 
 Na figura \ref{fig:fundteor_fig_limiarizada} mostram-se as imagens da figura \ref{fig:fundteor_fig_limiarizacao} limiarizadas pelo método de \emph{Otsu} e seus respectivos valores de limiarização.
 
@@ -210,8 +210,7 @@ A \ominus B = \left \{ z \mid (B)_z \subseteq A) \right \}
 \label{eq:fundteor_erosao}
 \end{equation}
 
-Ou seja, a erosão de $A$ por $B$ é o conjunto de todos os pontos $z$ tal que $B$, transladado por $z$, está contido em $A$.
-Pode-se ver melhor esse processo na figura \ref{fig:fundteor_erosao_A_B}, onde o conjunto A é erodido pelo elemento estruturante B formando o conjunto $A \ominus B$.
+Ou seja, a erosão de $A$ por $B$ é o conjunto de todos os pontos $z$ tal que $B$, transladado por $z$, está completamente contido em $A$. Pode-se ver melhor esse processo na figura \ref{fig:fundteor_erosao_A_B}, onde o conjunto A é erodido pelo elemento estruturante B formando o conjunto $A \ominus B$.
 
 \begin{figure}[H]
 	\centering
@@ -253,14 +252,14 @@ A \circ B = \left ( A \ominus B \right ) \oplus B
 \label{eq:fundteor_abertura}
 \end{equation}
 
-E o fechamento do conjunto $A$ pelo elemento estruturante $B$ é definido pela equação \ref{eq:fundteor_fechamento}  \cite{GONZALEZ-2006}.
+O fechamento do conjunto $A$ pelo elemento estruturante $B$ é definido pela equação \ref{eq:fundteor_fechamento}  \cite{GONZALEZ-2006}.
 
 \begin{equation}
 A \bullet B = \left ( A \oplus B \right ) \ominus B
 \label{eq:fundteor_fechamento}
 \end{equation}
 
-Na figura \ref{fig:regiao_abertura} pode-se ver o resultado da execução da operação de abertura em cima do conjunto $A$ da figura \ref{fig:regiao_teste_A}. Em seguida na figura \ref{fig:regiao_fechamento} pode-se ver o resultado da execução da operação de fechamento em cima do mesmo conjunto da figura \ref{fig:regiao_teste_A}. Como pode-se ver, a operação de abertura "abre" a imagem em pontos estreitos, já a operação de fechamento "fecha" a imagem onde existem concavidades pequenas.
+Na figura \ref{fig:regiao_abertura} pode-se ver o resultado da execução da operação de abertura em cima do conjunto $A$ da figura \ref{fig:regiao_teste_A}. Em seguida na figura \ref{fig:regiao_fechamento} pode-se ver o resultado da execução da operação de fechamento em cima do mesmo conjunto da figura \ref{fig:regiao_teste_A}. Como pode-se ver, a operação de abertura "abre" a imagem em pontos estreitos, já a operação de fechamento "fecha" a imagem onde existem cavidades pequenas.
 
 \begin{figure}[H]
 	\centering
@@ -289,7 +288,9 @@ Na figura \ref{fig:regiao_abertura} pode-se ver o resultado da execução da opera
 
 \subsection{Esqueletonização}
 
-Sendo $S(A)$ o esqueleto de $A$ e $(D)_{z}$ o maior disco centrado em $z$ e contido em $A$, pode se dizer que \cite{GONZALEZ-2006}:
+Define-se esqueleto conforme segue \cite{GONZALEZ-2006}.
+
+Se $S(A)$ é o esqueleto de $A$ e $(D)_{z}$ o maior disco centrado em $z$ e contido em $A$, pode se dizer que :
 
 \begin{itemize}
 \item Se $z$ faz parte de $S(A)$ então não é possível encontrar um disco maior que $(D)_{z}$, não necessariamente centrado em $z$, que contenha $(D)_{z}$ e que esteja completamente incluso em $A$;
@@ -337,7 +338,7 @@ K = max \left \{ k \mid (A \ominus k B) \neq \varnothing  \right \}
 
 \subsubsection {Poda (\emph{Pruning})}
 
-Aplicando-se o método de esqueletonização mencionado anteriormente em figuras reais, como a figura \ref{fig:fundteor_sketon_in}, pode-se obter resultados como a figura \ref{fig:fundteor_sketon_out}. Devido a esse tipo de resultados aplica-se após a esqueletonização um método de poda. A poda do esqueleto consiste em avaliar o tamanho dos ramos gerados, caso sejam menores que um valor limiar, são removidos. A figura \ref{fig:fundteor_sketon_out_20} mostra o método de poda aplicado com um limiar de 20 pixeis.
+Aplicando-se o método de esqueletonização mencionado anteriormente em figuras reais, como a figura \ref{fig:fundteor_sketon_in}, pode-se obter resultados como a figura \ref{fig:fundteor_sketon_out}. Devido a esse tipo de resultados aplica-se após a esqueletonização um método de poda. A poda do esqueleto consiste em avaliar o tamanho dos ramos gerados, caso sejam menores que um valor limiar são removidos. A figura \ref{fig:fundteor_sketon_out_20} mostra o método de poda aplicado com um limiar de 20 pixeis.
 
 \begin{figure}[H]
         \centering
@@ -374,7 +375,7 @@ A análise de componentes principais pode ser empregada para normalizar imagens e
 
 \subsubsection{Matriz de covariâncias}
 
-Considere as imagens da figura \ref{fig:fundteor_pca}. Os pontos da imagem, podem ser considerados como sendo vetores $x=(x_{1},x_{2})^{T}$, onde $x_{1}$ e $x_{2}$ são as coordenadas do ponto $x$, e $T$ indica a matriz transposta. Os pontos $x$ portanto formam uma população de vetores no espaço $Z^{2}$. Sendo assim pode-se calcular a matriz de covariâncias $C_{x}$ e o vetor da média $m_{x}$ para a população de vetores.
+Considere as imagens da figura \ref{fig:fundteor_pca}. Os pontos da imagem, podem ser considerados como sendo vetores $x_{k}=(x_{1},x_{2})^{T}$, onde $x_{1}$ e $x_{2}$ são as coordenadas do ponto $x_{k}$, e $T$ indica a matriz transposta. Os pontos $x$ portanto formam uma população de vetores no espaço $Z^{2}$. Sendo assim pode-se calcular a matriz de covariâncias $C_{x}$ e o vetor da média $m_{x}$ para a população de vetores.
 
 Para $K$ amostras de uma população aleatória pode-se aproximar a média $m_{x}$ pela equação \ref{eq:fundteor_mean} \cite{GONZALEZ-2006}.
 
@@ -386,7 +387,7 @@ m_{x} = \frac{1}{K} \sum_{k=1}^{K} x_{k}
 Agora utilizando a média $m_{x}$, pode-se aproximar a matriz de covariâncias $C_{x}$ pela equação \ref{eq:fundteor_cov} \cite{GONZALEZ-2006}.
 
 \begin{equation}
-C_{x} = \frac{1}{K} \sum_{k=1}^{K} x_{k} x_{k}^{T} - m_{x}m_{x}^{T}
+C_{x} = \frac{1}{K} \sum_{k=1}^{K} (x_{k} x_{k}^{T}) - m_{x}m_{x}^{T}
 \label{eq:fundteor_cov}
 \end{equation}
 
@@ -473,7 +474,7 @@ Algumas propriedades de autovetores:
 % https://inst.eecs.berkeley.edu/~ee127a/book/login/l_sym_pca.html
 Pode-se demonstrar que o autovetor associado ao maior autovalor de uma matriz de covariâncias aponta na direção de maior variação dos dados \cite{AUTOVETORES-DEDUCAO}. Pode-se demonstrar também que o segundo autovetor, associado ao segundo maior autovalor, aponta na segunda direção de maior variação dos dados. A esses autovetores se dá o nome de componentes principais da imagem.
 
-Considere por exemplo as imagens da figura \ref{fig:fundteor_pca2}. Calculamos os autovetores para cada uma das imagens tomando como base as matrizes de covariância apresentadas nas figuras \ref{fig:fundteor_pca_xc}, \ref{fig:fundteor_pca_yc} e \ref{fig:fundteor_pca_xyc}. Os autovetores podem ser vistos nas figuras \ref{fig:fundteor_pca_xam}, \ref{fig:fundteor_pca_yam} e \ref{fig:fundteor_pca_xyam}. O autovetor associado ao maior autovalor está na primeira linha de cada matriz e o seguindo autovetor está na segunda linha. Os autovetores foram representados sobre as respectivas imagens nas figuras \ref{fig:fundteor_pca_xa}, \ref{fig:fundteor_pca_ya} e \ref{fig:fundteor_pca_xya}.
+Considere por exemplo as imagens da figura \ref{fig:fundteor_pca2}. Calculamos os autovetores para cada uma das imagens tomando como base as matrizes de covariância apresentadas nas figuras \ref{fig:fundteor_pca_xc}, \ref{fig:fundteor_pca_yc} e \ref{fig:fundteor_pca_xyc}. Os autovetores podem ser vistos nas figuras \ref{fig:fundteor_pca_xam}, \ref{fig:fundteor_pca_yam} e \ref{fig:fundteor_pca_xyam}. O autovetor associado ao maior autovalor está na primeira linha de cada matriz e o segundo autovetor está na segunda linha. Os autovetores foram representados sobre as respectivas imagens nas figuras \ref{fig:fundteor_pca_xa}, \ref{fig:fundteor_pca_ya} e \ref{fig:fundteor_pca_xya}.
 
 \begin{figure}[H]
         \centering
@@ -531,7 +532,7 @@ Considere por exemplo as imagens da figura \ref{fig:fundteor_pca2}. Calculamos o
 	\label{fig:fundteor_pca2}
 \end{figure}
 
-Vê-se portanto que se pode definir um eixo absoluto para cada imagem com base na distribuição dos pixeis sobre a imagem.
+Vê-se portanto que é possível definir um eixo absoluto para cada imagem com base na distribuição dos pixeis sobre a imagem.
 
 \subsubsection{Normalização}
 
@@ -590,7 +591,7 @@ Esta seção apresenta técnicas e algoritmos para realizar a descrição de imagens,
 
 \subsection{Propriedades de regiões}
 
-Propriedades básicas de regiões, como área e excentricidade, podem ser usadas para descrever imagens. A seguir descrevemos algumas propriedades básicas de regiões, principalmente aquelas que possuem como saída um valor escalar, visto que são facilmente adicionados à um vetor descritor.
+Propriedades básicas de regiões, como área e excentricidade, podem ser usadas para descrever imagens. A seguir descreve-se algumas propriedades básicas de regiões, principalmente aquelas que possuem como saída um valor escalar, visto que são facilmente adicionados à um vetor descritor.
 
 \subsubsection{Área}
 
@@ -641,11 +642,11 @@ e = \sqrt{1 - \frac{b^2}{a^2}}
 
 \subsubsection{Tamanho do eixo principal e eixo secundário}
 
-O tamanho do eixo principal de uma região diz respeito ao tamanho do maior eixo da elipse que possui o mesmo momento de inércia que a área da região, conforme visto anteriormente na seção Excentricidade \cite{MATHWORKS-HELP-2}. Da mesma forma o tamanho do eixo secundário diz respeito ao tamanho do menor eixo da elipse que possui o mesmo momento de inércia que a área da região.
+O tamanho do eixo principal de uma região diz respeito ao tamanho do maior eixo da elipse que possui o mesmo momento de inércia de área que a área da região, conforme visto anteriormente na seção Excentricidade \cite{MATHWORKS-HELP-2}. Da mesma forma o tamanho do eixo secundário diz respeito ao tamanho do menor eixo da elipse que possui o mesmo momento de inércia de área que a área da região.
 
 \subsubsection{Número de Euler}
 
-O número de Euler é dado pelo total de objetos desconexos da região menos o total de cavidades da região \cite{MATHWORKS-HELP-2}.
+O número de Euler é dado pelo total de objetos desconexos da região subtraindo o total de cavidades da região \cite{MATHWORKS-HELP-2}.
 
 
 \subsection{Descritores de \emph{fourier}}
@@ -814,7 +815,7 @@ Os coeficientes $w_{i}, i=1,2,...,n,n+1$, são chamados de pesos e modificam a so
 
 Esse tipo de abordagem formada por um único \emph{perceptron} não é capaz de separar mais do que duas classes e também não é capaz de separar classes que não são linearmente separáveis. Isso se dá devido ao fato de que a equação \ref{eq:fundteor_nn_perceptron} quando expandida define um hiperplano em um espaço $n$-dimensional.
 
-Utilizam-se portanto para problemas mais complexos redes de neurônios, também chamada de \emph{multi-layer perceptron} ou \emph{multi-layer feedforward network}. Cada neurônio é formado por uma estrutura do mesmo tipo da estrutura do \emph{perceptron}, com a diferença de a função de ativação ser geralmente uma função sigmoide ao invés de um simples limiar. A função sigmoide pode ser vista na equação \ref{}  e na figura \ref{}. A saída dos neurônios estão interconectadas com as entradas de outros neurônio. Essa estrutura pode ser vista na figura \ref{fig:fundteor_nn_multilayer_perceptron_model}.
+Utilizam-se portanto para problemas mais complexos redes de neurônios, também chamada de \emph{multi-layer perceptron} ou \emph{multi-layer feedforward network}. Cada neurônio é formado por uma estrutura do mesmo tipo da estrutura do \emph{perceptron}, com a diferença de a função de ativação ser geralmente uma função sigmoide ao invés de um simples limiar. A função sigmoide pode ser vista na equação \ref{eq:fundteor_nn_perceptron_sigmoide} e na figura \ref{fig:fundteor_nn_multilayer_perceptron_sigmoide}. As saídas dos neurônios estão interconectadas com as entradas de outros neurônios. Essa estrutura pode ser vista na figura \ref{fig:fundteor_nn_multilayer_perceptron_model}.
 
 \begin{equation}
 h_{j}(I_{j}) = \frac {1}{1+e^{-(I_{j} + \theta_{j})/\theta_{O}}}
@@ -897,129 +898,78 @@ E_{Q} = \frac{1}{2} \sum_{q=1}^{N_{Q}} (r_{q} - O_{q})^{2}
 \label{eq:fundteor_nn_perceptron_error_multi}
 \end{equation}
 
-Novamente deseja-se minimizar o erro $E_{Q}$ em cada passo de treinamento. Minimizando a equação \ref{eq:fundteor_nn_perceptron_error_multi} chega-se a dois casos. O primeiro é quando o \emph{perceptron} está na última camada da rede. Nesse casos sabe-se o valor esperando na saída do perceptron, que é dado por $O_{Q}$. Por outro lado quando o \emph{perceptron} está em uma camada intermediária é necessário que primeiro se defina o erro em função de parâmetros conhecidos na rede. Esse processo foi desenvolvido por \cite{GONZALEZ-2006} e a seguir apresenta se o resultado.
+Novamente deseja-se minimizar o erro $E_{Q}$ em cada passo de treinamento. Minimizando a equação \ref{eq:fundteor_nn_perceptron_error_multi} chega-se a dois casos. O primeiro é quando o \emph{perceptron} está na última camada da rede. Nesse casos sabe-se o valor esperando na saída do perceptron, que é dado por $O_{q}$. Por outro lado quando o \emph{perceptron} está em uma camada intermediária é necessário que primeiro se defina o erro em função de parâmetros conhecidos na rede. Esse processo foi desenvolvido por \cite{GONZALEZ-2006} e a seguir apresenta-se o resultado.
 
-Para \emph{perceptrons} na camada de saída $Q$ os pesos $w(k+1)$ podem ser calculado pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_2}.
+Para \emph{perceptrons} na camada de saída $Q$ os pesos $w(k+1)$ podem ser calculado pelas equações \ref{eq:fundteor_nn_perceptron_error_multi_desc_2} e \ref{eq:fundteor_nn_perceptron_error_multi_desc_3}. $K$ é a camada que precede a camada de saída $Q$.
 
 \begin{equation}
-w(k+1) = w(k) + \alpha (r_{j}-O_{j}) h'_{j}(I_{j}) O_{k}
+w_{q}(k+1) = w_{q}(k) + \alpha \delta_{q} O_{K}
 \label{eq:fundteor_nn_perceptron_error_multi_desc_2}
+\end{equation}
+
+\begin{equation}
+\delta_{q} =  (r_{q}-O_{q}) h'_{q}(I_{q})
+\label{eq:fundteor_nn_perceptron_error_multi_desc_3}
 \end{equation}
 
 Onde:
 
 \begin{itemize}
-\item $w(k+1)$ são os pesos atualizados do \emph{perceptron} $q$;
-\item Para uma matriz $nxn$ existem $n$ autovetores \cite{AUTOVETORES};
-\item Todos os autovetores são ortogonais entre si \cite{GONZALEZ-2006}.
+\item $w_{q}(k+1)$ são os pesos atualizados do \emph{perceptron} $q$;
+\item $w_{q}(k)$ são os pesos antigos do \emph{perceptron} $q$;
+\item $\alpha > 0$ é uma constante escolhida de acordo com o grau de correção que se deseja a cada passo;
+\item $O_{K}$ são as saídas dos \emph{perceptrons} da camada $K$;
+\item $r_{q}$ é a saída esperada do \emph{perceptron}, dada pelo conjunto de treinamento;
+\item $O_{q}$ é a saída atual no \emph{perceptron} $q$;
+\item $h'_{q}(I_{q})$ é a derivada da função de ativação do \emph{perceptron} $q$ para a entrada $I_{q}$.
 \end{itemize}
 
-
-
-
-Os coeficientes $w(k+1)$ para um \emph{perceptron} na camada $J$, que é precedido por uma camada $K$, podem ser determinados pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_2}.
+Para \emph{perceptrons} em uma camada intermediária $J$, onde a camada seguinte é a camada $P$ e a camada antecedente é a camada $K$, os pesos $w(k+1)$ podem ser calculados pelas equações \ref{eq:fundteor_nn_perceptron_error_multi_desc_4} e \ref{eq:fundteor_nn_perceptron_error_multi_desc_5}.
 
 \begin{equation}
-w(k+1) = w(k) + \alpha \delta _{j}O_{k}
-\label{eq:fundteor_nn_perceptron_error_multi_desc_2}
-\end{equation}
-
-Onde $O_{k}$ é a saída da camada $K$  e $\alpha > 0$ é uma constante escolhida de acordo com o grau de correção que se deseja a cada passo de treinamento. Se $J$ for a camada de saída da rede, ou seja, $J=Q$, então $\delta_{j}$ será dado pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_3}.
-
-\begin{equation}
-%\delta_{j} = (r_{j}-O_{j}) h'_{j}(I_{j})
-w(k+1) = w(k) + \alpha (r_{j}-O_{j}) h'_{j}(I_{j}) O_{k}
-\label{eq:fundteor_nn_perceptron_error_multi_desc_3}
-\end{equation}
-
-Caso $J$ seja um perceptron em uma camada interna, e $P$ a camada imediatamente posterior a $J$, $\delta_{j}$ será dado pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_4}.
-
-\begin{equation}
-%\delta_{j} = h'_{j}(I_{j}) \sum_{p=1}^{N_{P}} \delta_{p} \omega_{jp}
-w(k+1) = w(k) + \alpha  h'_{j}(I_{j}) O_{k} (\sum_{p=1}^{N_{P}}\delta _{P}\omega _{jp})
+w_{j}(k+1) = w_{j}(k) + \alpha \delta_{j} O_{K}
 \label{eq:fundteor_nn_perceptron_error_multi_desc_4}
 \end{equation}
 
-Ou seja, o calculo de $\delta$ para um \emph{perceptron} da camada $J$ depende dos pesos da camada seguinte para o \emph{perceptron} $j$, $\omega_{jp}$,  e do valor de $\delta$ da camada seguinte, $\delta_{p}$. $h'_{j}$ é a derivada da função de ativação $h_{j}$ e $I_{j}$ é a entrada da função de ativação. 
-
-Caso a função de ativação escolhida seja a função sigmoide, a derivada $h'_{j}$ é dada pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_5}.
-
 \begin{equation}
-h'(I_{j}) = 
+\delta_{j} =  h'_{j}(I_{j}) \sum_{p=1}^{N_{P}} \delta _{P} \omega _{jp}
 \label{eq:fundteor_nn_perceptron_error_multi_desc_5}
 \end{equation}
 
+Onde:
 
+\begin{itemize}
+\item $w_{j}(k+1)$ são os pesos atualizados do \emph{perceptron} $j$;
+\item $w_{j}(k)$ são os pesos antigos do \emph{perceptron} $j$;
+\item $\alpha > 0$ é uma constante escolhida de acordo com o grau de correção que se deseja a cada passo;
+\item $O_{K}$ são as saídas dos \emph{perceptrons} da camada $K$;
+\item $h'_{j}(I_{j})$ é a derivada da função de ativação para a entrada $I_{j}$;
+\item $p$ até $N_{P}$ são todos os \emph{perceptrons} da camada $P$;
+\item $\delta _{P}$ é o valor de $\delta$ que havia sido calculado para o perceptron $p$ da camada $P$ quando os pesos da camada $P$ foram atualizados.
+\item $\omega _{jp}$ é o valor do peso $\omega$ que havia sido calculado para o \emph{perceptron} $j$ em cada perceptron da camada $P$.
+\end{itemize}
 
-
-A entrada da função de ativação é a soma ponderada das saídas da camada $K$, $o_{k}$, utilizando os pesos atuais do perceptron que se deseja atualizar, $\omega_{jk}$, como mostrado na equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_5}.
+Caso a função de ativação escolhida seja a função sigmoide da equação \ref{eq:fundteor_nn_perceptron_sigmoide}, com $\theta_{O} = 1$, pode-se demonstrar que $h'_{j}(I_{j})$ assume o valor da equação \ref{eq:fundteor_nn_perceptron_sigmoide_der} e semelhantemente $h'_{q}(I_{q})$ assume o valor da equação \ref{eq:fundteor_nn_perceptron_sigmoide_der2} \cite{GONZALEZ-2006}.
 
 \begin{equation}
-I_{j} = \sum_{k=1}^{N_{K}} o_{k} \omega_{jk}
-\label{eq:fundteor_nn_perceptron_error_multi_desc_5}
+h'_{j}(I_{j}) = O_{j}(1-O_{j});
+\label{eq:fundteor_nn_perceptron_sigmoide_der}
 \end{equation}
 
-Tanto na equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_3} quanto na equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_4} 
+Onde:
+\begin{itemize}
+\item $O_{j}$ é a saída atual no \emph{perceptron} $j$;
+\end{itemize}
 
-%$w(k)$ - vetor de pesos para época k
-%y(k) uma amostra que pertence a uma classe
-%c - constante de aprendizagem
-%
-%
-%existem diversos back propagations
-%dar uma visao geral do delta rule
-
-
-
-
-
-
-
-
-
-
-
-\begin{equation}\label{W-matrix}
-    W^{inicial}=\left(
-       \begin{array}{ccccc}
-         0,00 & -0,40 & -0,25 & 0,00 & 0,30 \\
-         0,36 & 0,00 & 0,00 & 0,00 & w0,00 \\
-         0,45 & 0,00 & 0,00 & 0,00 & 0,00 \\
-         -0,90 & 0,00 & 0,00 & 0,00 & 0,00 \\
-         0,00 & 0,60 & 0,00 & 0,30 & 0,00 \\
-       \end{array}
-     \right)
+\begin{equation}
+h'_{q}(I_{q}) = O_{q}(1-O_{q});
+\label{eq:fundteor_nn_perceptron_sigmoide_der2}
 \end{equation}
 
-\begin{enumerate}
-\item SE a intensidade do sensor frontal (FS) for maior que um limiar médio ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_3$ é o valor máximo de $WF_{max}$;
-\item SE a intensidade do sensor frontal (FS) for menor que um limiar mínimo ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_3$ é o valor mínimo de $WF_{min}$;
-\item SE a intensidade do sensor direito (RS) for maior que um limiar médio ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_1$ é o valor máximo de $WR_{max}$;
-\item SE a intensidade do sensor direito (RS) for menor que um limiar mínimo ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_1$ é o valor mínimo de $WR_{min}$;
-\item SE a intensidade do sensor esquerdo (LS) for maior que um limiar médio ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_5$ é o valor máximo de $WL_{max}$;
-\item SE a intensidade do sensor direito (LS) for menor que um limiar mínimo ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_5$ é o valor mínimo de $WL_{min}$.
-\end{enumerate}
+Onde:
+\begin{itemize}
+\item $O_{q}$ é a saída atual no \emph{perceptron} $q$;
+\end{itemize}
 
-\begin{table}[htb!]
-	\centering
-	\caption[Relações causais do controlador do robô]{Relações causais do controlador do robô.}		
-	\begin{tabular}[H]{ l l l l }
-	  \hline
-	  Relação causal & Descrição & Efeito & Intensidade \\
-	  \hline
-	  $w_1$ & Sensor direito (RS) influencia a saída esquerda (LO) & Positivo & Forte \\
-	  $w_2$ & Sensor frontal (FS) influencia a saída esquerda (LO) & Positivo & Médio \\
-	  $w_3$ & Sensor frontal (FS) influencia a saída frontal (FO) & Positivo & Forte \\
-	  $w_4$ & Sensor frontal (FS) influencia a saída direita (RO) & Positivo & Médio \\
-	  $w_5$ & Sensor esquerdo (LS) influencia a saída direita (RO) & Positivo & Forte \\
-	  $w_6$ & Saída esquerda (LO) influencia a saída direita (RO) & Negativo & Fraco \\
-	  $w_7$ & Saída direita (RO) influencia a saída esquerda (LO) & Negativo & Fraco \\
-	  $w_8$ & Sensor direito (RS) influencia a saída direita (RO) & Negativo & Fraco \\
-	  $w_9$ & Sensor esquerdo (LS) influencia a saída esquerda (LO) & Negativo & Fraco \\
-	  \hline  	
-	\end{tabular}
-	\fonte{\cite{MENDONCA}}
-	\label{tab:causal-relations}
-\end{table}
-
+Como se pode ver é necessário iniciar o processo de atualização dos pesos da rede pela camada de saída. Na camada de saída da rede é o único lugar onde se sabe qual é a saída que cada \emph{perceptron} deveria ter. Para as camadas antecedentes a atualização deve ser feita em função dessas saídas. Portanto cada camada depende de parâmetros da camada seguinte na rede. Esse processo de atualização dos pesos iniciando pela ultima camada e voltando até a primeira recebe o nome de \emph{back propagation}. O método mencionado anteriormente recebe o nome de \emph{delta rule}, no entanto existem diversos métodos diferentes mas que utilizam a mesma estratégia de propagação das correções na rede. Todos esses métodos são classificados como métodos de \emph{back propagation}.
 
