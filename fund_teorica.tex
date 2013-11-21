@@ -897,9 +897,27 @@ E_{Q} = \frac{1}{2} \sum_{q=1}^{N_{Q}} (r_{q} - O_{q})^{2}
 \label{eq:fundteor_nn_perceptron_error_multi}
 \end{equation}
 
-Novamente deseja-se minimizar o erro $E_{Q}$ em cada passo de treinamento. Não será mostrado aqui o processo completo para determinação dos coeficientes minimizando a equação \ref{eq:fundteor_nn_perceptron_error_multi}. Mas o desenvolvimento completo pode ser encontrado em \cite{GONZALEZ-2006}. 
+Novamente deseja-se minimizar o erro $E_{Q}$ em cada passo de treinamento. Minimizando a equação \ref{eq:fundteor_nn_perceptron_error_multi} chega-se a dois casos. O primeiro é quando o \emph{perceptron} está na última camada da rede. Nesse casos sabe-se o valor esperando na saída do perceptron, que é dado por $O_{Q}$. Por outro lado quando o \emph{perceptron} está em uma camada intermediária é necessário que primeiro se defina o erro em função de parâmetros conhecidos na rede. Esse processo foi desenvolvido por \cite{GONZALEZ-2006} e a seguir apresenta se o resultado.
 
-Os coeficientes $w(k+1)$ para um \emph{perceptron} na camada $J$, que é precedida por uma camada $K$, podem ser determinados pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_2}.
+Para \emph{perceptrons} na camada de saída $Q$ os pesos $w(k+1)$ podem ser calculado pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_2}.
+
+\begin{equation}
+w(k+1) = w(k) + \alpha (r_{j}-O_{j}) h'_{j}(I_{j}) O_{k}
+\label{eq:fundteor_nn_perceptron_error_multi_desc_2}
+\end{equation}
+
+Onde:
+
+\begin{itemize}
+\item $w(k+1)$ são os pesos atualizados do \emph{perceptron} $q$;
+\item Para uma matriz $nxn$ existem $n$ autovetores \cite{AUTOVETORES};
+\item Todos os autovetores são ortogonais entre si \cite{GONZALEZ-2006}.
+\end{itemize}
+
+
+
+
+Os coeficientes $w(k+1)$ para um \emph{perceptron} na camada $J$, que é precedido por uma camada $K$, podem ser determinados pela equação \ref{eq:fundteor_nn_perceptron_error_multi_desc_2}.
 
 \begin{equation}
 w(k+1) = w(k) + \alpha \delta _{j}O_{k}
