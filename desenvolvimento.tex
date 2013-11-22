@@ -1,6 +1,36 @@
 %---------- Segundo Capitulo ----------
-\chapter{Desenvolvimento}
-\label{chap:desenv}
+\chapter{Desenvolvimento} \label{chap:desenv}
+
+Este capítulo apresenta a o desenvolvimento do projeto, detalhando cada parte do sistema desenvolvido. A descrição apresentada a seguir referencia os conceitos apresentados no capítulo \ref{chap:fundteor}. 
+
+A figura \ref{fig:desenv_overview} apresenta uma visão geral do sistema desenvolvido.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/visao_geral.png}
+	\caption{Visão geral do sistema desenvolvido.}
+	\fonte{Autoria própria}
+	\label{fig:desenv_overview}
+\end{figure}
+
+
+
+ O capitulo divide-se em três seções. 
+
+A seção \ref{sec:segmentacao} apresenta técnicas e algoritmos que serão úteis para para realizar a segmentação de imagens. A segmentação de imagens consiste em subdividir a imagem original em regiões ou objetos até que se tenha identificado a região ou objeto de interesse.
+
+A seção \ref{sec:descricao} apresenta técnicas e algoritmos para realizar a descrição de imagens. Após a segmentação de uma imagem é necessário representar a imagem para que se possa processá-la. Existem duas abordagem para esse problema \cite{GONZALEZ-2006}: representação por meio de características externas da região, como bordas, ou representação por meio de características internas, como textura. A representação por características externas normalmente é utilizada quando se está interessado na forma da região. Já a representação por características internas é utilizada quando o foco está na cor ou textura da região. Nessa seção aborda-se principalmente a representação por meio de características externas de imagens.
+
+Finalmente a seção \ref{sec:classificacao} apresenta uma visão geral de reconhecimento de padrões utilizando redes neurais. O reconhecimento de padrões é feito tomando como base descritores, que podem ser obtidos a partir de técnicas como as vistas na seção \ref{sec:descricao}.
+
+
+
+\section{Considerações} \label{sec:consideracoes}
+% fechamento com relacao aos objetivos do capitulo
+% deve ser parte da conclusao final
+% podem aparecer consideracoes pessoais
+
+
 
 Este capítulo contém, em detalhes, o desenvolvimento do trabalho realizado pela equipe, dividido nas seguintes seções:
 \begin{itemize}
