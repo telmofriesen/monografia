@@ -13,11 +13,17 @@ A figura \ref{fig:desenv_overview} apresenta uma visão geral do sistema desenvol
 	\label{fig:desenv_overview}
 \end{figure}
 
-O capitulo divide-se em oito seções. As primeiras seis seções apresentam os blocos da figura \ref{fig:desenv_overview}: A seção \ref{sec:desenv_seg1} e a seção \ref{sec:desenv_seg2} mostram como os conceitos da seção \ref{sec:segmentacao} foram aplicados para segmentar a imagem capturada. A seção \ref{sec:desenv_desc1} e a seção \ref{sec:desenv_desc2} apresentam como os descritores de \emph{fourier} e as propriedades estudados na seção  \ref{sec:descricao} foram aplicados para formar um descritor para as imagens. As seções \ref{sec:desenv_class1} e \ref{sec:desenv_class2} apresentam como os descritores foram utilizados para classificar e determinar o ângulo das imagens.
+O capitulo divide-se em oito seções. As primeiras seis seções apresentam os blocos da figura \ref{fig:desenv_overview}: A seção \ref{sec:desenv_seg1} e a seção \ref{sec:desenv_seg2} mostram como os conceitos da seção \ref{sec:segmentacao} foram aplicados para segmentar a imagem capturada. A seção \ref{sec:desenv_desc1} e a seção \ref{sec:desenv_desc2} apresentam como os descritores de \emph{fourier} e as propriedades estudados na seção \ref{subsec:propriedades} foram aplicados para formar um descritor para as imagens. As seções \ref{sec:desenv_class1} e \ref{sec:desenv_class2} apresentam como os descritores foram utilizados para classificar e determinar o ângulo das imagens.
 Na seção \ref{sec:desenv_class3} apresenta-se o processo de treinamento do sistema e ao final, na seção \ref{sec:desenv_consideracoes}, algumas considerações sobre o desenvolvimento do projeto.
 
 
 \section{Segmentação: etapa 1} \label{sec:desenv_seg1}
+
+A primeira etapa da segmentação consiste em uma série de limiarizações e filtros para localizar a região de interesse na imagem. A saída da primeira etapa é uma imagem binária contendo a região de interesse. O processo da primeira etapa pode ser visto na figura \ref{fig:desenv_seg1}.
+
+O processo inicia pela subtração da imagem RGB de fundo da imagem RGB com o objeto. Como resultado tem-se uma imagem RGB contendo as diferenças inseridas pelo objeto na imagem. Para não perder informações intrínsecas da imagem RGB no processo de conversão para escala de cinza dividem-se os canais R, G e B da imagem. Cada canal é processado separadamente. Primeiramente os canais são limiarizados utilizando o método global de \emph{Otsu}, discutido na seção \ref{sub:fundteor_limiarizacao}. Em seguida os canais são submetidos à operação morfológica de fechamento, vista na seção \ref{sub:fundteor_op_morfologicas}. A operação de fechamento é aplicado para reduzir o ruido do tipo pimenta (pixeis pretos espalhados aleatoriamente pela imagem). Na sequencia os três canais processados separadamente são unidos através da operação lógica OU para formar uma única imagem. Finalmente a maior região conexa da imagem é selecionada para ser a região de interesse.
+
+Embora não se possa ver visualmente nenhum progresso significativo em alguns passos da sequencia de imagens da figura \ref{fig:desenv_seg1}, a primeira etapa da segmentação necessita de todos eles. Todos os passos apresentados anteriormente garantem a robustez do sistema, fornecendo a região de interesse para a etapa seguinte.
 
 \begin{figure}[H]
 	\centering
@@ -27,25 +33,98 @@ Na seção \ref{sec:desenv_class3} apresenta-se o processo de treinamento do siste
 	\label{fig:desenv_seg1}
 \end{figure}
 
+
 \section{Segmentação: etapa 2} \label{sec:desenv_seg2}
+
+A segunda etapa da segmentação é responsável por normalizar a imagem. Esta etapa recebe como entrada a região de interesse e apresenta como saída duas opções de normalização da imagem, além de um autovetor e seu oposto. O processo pode ser visto na figura \ref{fig:desenv_seg2}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{./figs/segmentacao_2.jpg}
 	\caption{Segunda etapa da segmentação.}
 	\fonte{Autoria própria}
-	\label{fig:desenv_seg1}
+	\label{fig:desenv_seg2}
 \end{figure}
+
+A região de interesse obtida da primeira etapa de segmentação é esqueletonizada e podada pelos processos descritos na seção \ref{sub:fundteor_esqueletonizacao}. Em seguida o processo de normalização da seção \ref{sub:fundteor_normalizacao} é aplicado.
+
+Como dito na seção \ref{sub:fundteor_normalizacao}, o autovetor associado ao maior autovalor da matriz de covariâncias aponta na direção de maior variação dos dados. Porém o autovetor não aponta no sentido de maior variação dos dados. Empiricamente percebe-se que o autovetor aponta sempre no sentido positivo dos eixos da imagem. Esse comportamento leva a duas possíveis normalizações para cada imagem. A normalização obtida utilizando o autovetor $A$ e a normalização pelo oposto do autovetor, $A'=-A$. 
+
+Essas duas opções de normalização são então apresentadas a etapa seguinte juntamente com os respectivos autovetores.
+
 
 \section{Descrição: etapa 1} \label{sec:desenv_desc1}
 
+Essa etapa de descrição é responsável por gerar um descritor para a imagem normalizada utilizando o autovetor $A$ (chamada mais adiante de imagem pré-normalizada). A imagem normalizada utilizando o autovetor $A'$ não é utilizada. A figura \ref{fig:desenv_desc1} resume o processo desta etapa.
+
+O descritor é composto por 20 descritores de \emph{fourier}, $d1,d2,...,d20$, concatenados com 9 propriedades básicas da imagem, $p1,p2,...,p9$. A tabela \ref{tab:descritores-etapa1} detalha o descritor gerado.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/descricao_1.jpg}
+	\caption{Primeira etapa da descrição.}
+	\fonte{Autoria própria}
+	\label{fig:desenv_desc1}
+\end{figure}
+
+\begin{table}[htb!]
+	\centering
+	\caption[Descritor para primeira etapa]{Descritor para primeira etapa.}		
+	\begin{tabular}[H]{ l l l l }
+	  \hline
+	  Descritor & Descrição \\
+	  \hline
+	  $d1 ... d20$ & 20 descritores de \emph{fourier} \\
+	  $p1$ & Área \\
+	  $p2$ & Área convexa \\
+	  $p3$ & Excentricidade \\
+	  $p4$ & Número de Euler \\
+	  $p5$ & Extensão \\
+	  $p6$ & Área preenchida \\
+	  $p7$ & Tamanho do eixo principal \\
+	  $p8$ & Tamanho do eixo secundário \\
+	  $p9$ & Solidez \\
+	  \hline  	
+	\end{tabular}
+	\fonte{Autoria própria}
+	\label{tab:descritores-etapa1}
+\end{table}
+
+
 \section{Classificação: etapa 1} \label{sec:desenv_class1}
+
+A função da primeira etapa de classificação é tomar como entrada o descritor da imagem pré-normalizada e fornecer como saída a classe a qual a imagem pertence. Além disso é responsável por dizer qual a normalização correta para a imagem. Ou seja, se a imagem normalizada corretamente utiliza o autovetor $A$ ou o oposto $A'$. Esse processo é mostrado na figura \ref{desenv_class1}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/classificacao_1.jpg}
+	\caption{Primeira etapa da classificação.}
+	\fonte{Autoria própria}
+	\label{fig:desenv_class1}
+\end{figure}
 
 \section{Descrição: etapa 2} \label{sec:desenv_desc2}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/descricao_2.jpg}
+	\caption{Segunda etapa da descrição.}
+	\fonte{Autoria própria}
+	\label{fig:desenv_desc2}
+\end{figure}
+
 \section{Classificação: etapa 2} \label{sec:desenv_class2}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/classificacao_2.jpg}
+	\caption{Segunda etapa da classificação.}
+	\fonte{Autoria própria}
+	\label{fig:desenv_class2}
+\end{figure}
+
 \section{Classificação: treinamento} \label{sec:desenv_class3}
+
 
 \section{Considerações} \label{sec:desenv_consideracoes}
 % fechamento com relacao aos objetivos do capitulo
