@@ -93,7 +93,10 @@ O descritor é composto por 20 descritores de \emph{fourier}, $d1,d2,...,d20$, co
 
 \section{Classificação: etapa 1} \label{sec:desenv_class1}
 
-A função da primeira etapa de classificação é tomar como entrada o descritor da imagem pré-normalizada e fornecer como saída a classe a qual a imagem pertence. Além disso é responsável por dizer qual a normalização correta para a imagem. Ou seja, se a imagem normalizada corretamente utiliza o autovetor $A$ ou o oposto $A'$. Esse processo é mostrado na figura \ref{desenv_class1}.
+A função da primeira etapa de classificação é tomar como entrada o descritor da imagem pré-normalizada e fornecer como saída a classe a qual a imagem pertence. Além disso é responsável por dizer qual a normalização correta para a imagem. Ou seja, se a imagem normalizada corretamente utiliza o autovetor $A$ ou o oposto $A'$. Esse processo é mostrado na figura \ref{fig:desenv_class1}.
+
+Para essa tarefa foi utilizada uma rede neural, que é detalhada mais a frente na seção \ref{sec:desenv_class3}.
+%TODO: detalhar a rede
 
 \begin{figure}[H]
 	\centering
@@ -105,6 +108,20 @@ A função da primeira etapa de classificação é tomar como entrada o descritor da 
 
 \section{Descrição: etapa 2} \label{sec:desenv_desc2}
 
+A segunda etapa da descrição recebe como entrada a imagem normalizada pelo autovetor correto. A função desta etapa é gerar um descritor para a imagem normalizada, que auxiliará na segunda etapa de classificação para determinação do ângulo do objeto.
+
+Tanto esta etapa, quanto a classificação descrita na próxima seção, seriam desnecessárias em ambientes ideais. Veja por exemplo as imagens da figura \ref{fig:desenv_desc3}. Todas as imagens foram obtidas para um mesmo objeto, sujeito às mesmas condições gerais, mas em rotações diferentes. Mudanças pequenas, como ruído ou pequenas diferenças na iluminação, influenciaram a direção do autovetor calculado produzindo resultados diferentes.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/normalizacoes_A.png}
+	\caption{Imagens normalizadas para diferentes entradas do mesmo objeto.}
+	\fonte{Autoria própria}
+	\label{fig:desenv_desc3}
+\end{figure}
+
+A diferença entre o autovetor calculado para cada caso é tratada utilizando uma segunda rede neural, específica para cada classe. O descritor obtido nessa etapa portanto deve conter informações relacionadas à posição do objeto na imagem. Utilizou-se portanto para essa tarefa um descritor contendo 10 descritores de \emph{fourier}, conforme representado na figura \ref{fig:desenv_desc2}.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{./figs/descricao_2.jpg}
@@ -115,6 +132,33 @@ A função da primeira etapa de classificação é tomar como entrada o descritor da 
 
 \section{Classificação: etapa 2} \label{sec:desenv_class2}
 
+Finalmente a última etapa recebe como entrada um descritor da imagem normalizada, a classe a qual pertence o objeto e o autovetor utilizado na normalização. O objetivo dessa etapa é fornecer o angulo de rotação do objeto na imagem.
+
+Considere a figura \ref{fig:desenv_class3}. Os eixos $x,y$ são as coordenadas da imagem. O eixo $x'$ é o eixo que foi assumido como sendo o zero para o objeto da figura. Pela figura tem-se então a equação \ref{eq:desenv_beta}.
+
+\begin{equation}
+\beta = \alpha - k
+\label{eq:desenv_beta}
+\end{equation}
+
+Onde:
+
+\begin{itemize}
+\item $\beta$ é o ângulo entre as coordenadas da imagem e o zero do objeto. Ou seja, o valor que se deseja obter;
+\item $\alpha$ é o ângulo dado pelo autovetor;
+\item $k$ é a diferença entre o angulo do autovetor e o zero do objeto. Valor este que pode variar de normalização para normalização conforme visto na figura \ref{fig:desenv_desc3}.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/classificacao_3.jpg}
+	\caption{Representação do autovetor (em vermelho), eixos da imagem (em amarelo) e eixo do objeto (em azul).}
+	\fonte{Autoria própria}
+	\label{fig:desenv_class3}
+\end{figure}
+
+É necessário portanto determinar o valor $k$ para cada imagem normalizada. Utilizou-se para essa tarefa uma segunda rede neural. Essa rede recebe como entrada um descritor da imagem normalizada e informa na saída o valor de $k$. Para cada classe é gerada uma rede diferente, visto que as variações são diferentes de classe para classe. Após obter o valor $k$ da rede basta utilizar a equação \ref{eq:desenv_beta} para determinar o angulo $\beta$ do objeto.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{./figs/classificacao_2.jpg}
@@ -123,8 +167,11 @@ A função da primeira etapa de classificação é tomar como entrada o descritor da 
 	\label{fig:desenv_class2}
 \end{figure}
 
-\section{Classificação: treinamento} \label{sec:desenv_class3}
 
+
+\section{Classificação: treinamento e topologia} \label{sec:desenv_class3}
+
+Pode-se utilizar de maneira genérica os descritores de \emph{fourier} para esse caso. Como cada classe tem sua própria rede para cálculo dos desvios do autovetor pode-se optar por uma rede simples 
 
 \section{Considerações} \label{sec:desenv_consideracoes}
 % fechamento com relacao aos objetivos do capitulo
