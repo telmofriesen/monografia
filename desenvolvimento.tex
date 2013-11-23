@@ -94,24 +94,24 @@ O descritor é composto por 20 descritores de \emph{fourier}, $d1,d2,...,d20$, co
 A função da etapa de classificação é tomar como entrada o descritor da imagem pré-normalizada e fornecer como saída a classe a qual o objeto da imagem pertence. Além disso é responsável por dizer qual a normalização correta para a imagem. Ou seja, se a imagem normalizada corretamente utiliza o autovetor $A$ ou o oposto $A'$. Esse processo é mostrado na figura \ref{fig:desenv_class1}.
 
 Para essa tarefa foi utilizada uma rede neural de duas camadas, 29 entradas e $2N$ saídas. Onde $N$ é o número de classes a serem identificadas pelo sistema. A primeira camada possui 20 \emph{perceptrons} e a camada de saída possui $2N$ perceptrons.
-O número de \emph{perceptrons} na primeira camada foi escolhido empiricamente. A função de ativação para as duas camadas é a função sigmoide vista na seção \ref{subsec:fundteor_redes_neurais}. A função sigmoide é uma boa escolha para redes de classificação pois possui uma transição rápida entre -1 e 1 para entradas de $\infty-$ a $\infty+$ \cite{MATHWORKS-HELP-3}.
+O número de \emph{perceptrons} na primeira camada foi escolhido empiricamente. O número de saídas é $2N$ pois a rede deve ser capaz de identificar imagens normalizadas pelo autovetor $A$ e imagens normalizadas pelo oposto $A'$. A função de ativação para as duas camadas é a função sigmoide vista na seção \ref{subsec:fundteor_redes_neurais}. A função sigmoide é uma boa escolha para redes de classificação pois possui uma transição rápida entre -1 e 1 para entradas de $-\infty$ a $+\infty$ \cite{MATHWORKS-HELP-3}.
 
-
-
+Para formar o conjunto de treinamento da rede é necessário que se obtenha amostras de imagens com as respectivas classes.  Em seguida deve-se executar todos os passos até obter as duas possibilidades de normalização de cada imagem, e os descritores tomando a normalização dada pelo autovetor $A$. O descritor é então fornecido como entrada da rede e a saída da rede é dada pelo autovetor que leva a normalização correta da imagem. Por exemplo, se a normalização correta da classe $n$ é dada pelo autovetor $A$, a posição $2n$ da saída é um e o restante zero. Se a normalização correta é dada pelo oposto do autovetor, $A'$, então a posição "2n+1" é um e o restante zero. Esse último passo necessita ser executado manualmente para que se possa "ensinar" a rede qual a normalização correta para cada classe.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{./figs/classificacao_1.jpg}
-	\caption{Primeira etapa da classificação.}
+	\caption{Etapa de classificação.}
 	\fonte{Autoria própria}
 	\label{fig:desenv_class1}
 \end{figure}
 
+
 \section{Descrição: etapa 2} \label{sec:desenv_desc2}
 
-A segunda etapa da descrição recebe como entrada a imagem normalizada pelo autovetor correto. A função desta etapa é gerar um descritor para a imagem normalizada, que auxiliará na etapa de previsão para determinação do ângulo do objeto.
+A segunda etapa da descrição recebe como entrada a imagem normalizada pelo autovetor correto. A função desta etapa é gerar um descritor para a imagem normalizada, que auxiliará na etapa de estimativa do ângulo do objeto.
 
-Tanto esta etapa, quanto previsão descrita na próxima seção, seriam desnecessárias em ambientes ideais. Veja por exemplo as imagens da figura \ref{fig:desenv_desc3}. Todas as imagens foram obtidas para um mesmo objeto, sujeito às mesmas condições gerais, mas em rotações diferentes. Mudanças pequenas, como ruído ou pequenas diferenças na iluminação, influenciaram a direção do autovetor calculado produzindo resultados diferentes.
+Tanto esta etapa, quanto a estimativa de angulo descrita na próxima seção, seriam desnecessárias em ambientes ideais. Veja por exemplo as imagens da figura \ref{fig:desenv_desc3}. Todas as imagens foram obtidas para um mesmo objeto, sujeito às mesmas condições gerais, mas em rotações diferentes. Mudanças pequenas, como ruído ou pequenas diferenças na iluminação, influenciaram a direção do autovetor calculado produzindo resultados diferentes.
 
 \begin{figure}[H]
 	\centering
@@ -121,7 +121,7 @@ Tanto esta etapa, quanto previsão descrita na próxima seção, seriam desnecessári
 	\label{fig:desenv_desc3}
 \end{figure}
 
-A diferença entre o autovetor calculado para cada caso é tratada na próxima etapa. O descritor obtido nessa etapa portanto deve conter informações relacionadas à posição do objeto na imagem. Sendo assim utilizou-se para essa tarefa um descritor contendo 10 descritores de \emph{fourier}, conforme representado na figura \ref{fig:desenv_desc2}.
+A diferença entre o autovetor calculado para cada caso é tratada na etapa de estimativa de ângulo e recebe como entrada o descritor calculado aqui. O descritor portanto deve conter informações relacionadas à posição do objeto na imagem normalizada. Sendo assim utilizou-se para essa tarefa um descritor contendo 10 descritores de \emph{fourier}, conforme representado na figura \ref{fig:desenv_desc2}.
 
 \begin{figure}[H]
 	\centering
@@ -171,7 +171,6 @@ Onde:
 
 \section{Classificação: treinamento e topologia} \label{sec:desenv_class3}
 
-Para formar o conjunto de treinamento das redes é necessário que se obtenha amostras de imagens com classes e ângulos conhecidos.  Em seguida basta executar todos os passos até obter os descritores de entrada das redes e calcular o valor de $k$ para o treinamento da segunda rede.
 
 Pode-se utilizar de maneira genérica os descritores de \emph{fourier} para esse caso. Como cada classe tem sua própria rede para cálculo dos desvios do autovetor pode-se optar por uma rede simples 
 

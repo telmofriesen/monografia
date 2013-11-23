@@ -44,7 +44,7 @@
 \contentsline {section}{\numberline {3.5}Descri\c c\~ao: etapa 2}{47}
 \contentsline {section}{\numberline {3.6}Estimativa de \^angulo}{48}
 \contentsline {section}{\numberline {3.7}Classifica\c c\~ao: treinamento e topologia}{50}
-\contentsline {section}{\numberline {3.8}Considera\c c\~oes}{51}
+\contentsline {section}{\numberline {3.8}Considera\c c\~oes}{50}
 \contentsline {section}{\numberline {3.9}Reconstru\c c\~ao da Plataforma Rob\'otica Bellator}{51}
 \contentsline {subsection}{\numberline {3.9.1}Teste dos Componentes}{52}
 \contentsline {subsection}{\numberline {3.9.2}Levantamento da curva dos sensores}{53}
