@@ -1,9 +1,7 @@
 %---------- Segundo Capitulo ----------
 \chapter{Desenvolvimento} \label{chap:desenv}
 
-Este capítulo apresenta a o desenvolvimento do projeto, detalhando cada parte do sistema desenvolvido. A descrição apresentada a seguir referencia os conceitos apresentados no capítulo \ref{chap:fundteor}. 
-
-A figura \ref{fig:desenv_overview} apresenta uma visão geral do sistema desenvolvido.
+Este capítulo apresenta a o desenvolvimento do projeto, detalhando cada parte do sistema desenvolvido. A descrição apresentada a seguir referencia os conceitos apresentados no capítulo \ref{chap:fundteor}. A figura \ref{fig:desenv_overview} apresenta uma visão geral do sistema desenvolvido.
 
 \begin{figure}[H]
 	\centering
@@ -13,7 +11,7 @@ A figura \ref{fig:desenv_overview} apresenta uma visão geral do sistema desenvol
 	\label{fig:desenv_overview}
 \end{figure}
 
-O capitulo divide-se em oito seções. As primeiras seis seções apresentam os blocos da figura \ref{fig:desenv_overview}: A seção \ref{sec:desenv_seg1} e a seção \ref{sec:desenv_seg2} mostram como os conceitos da seção \ref{sec:segmentacao} foram aplicados para segmentar a imagem capturada. A seção \ref{sec:desenv_desc1} e a seção \ref{sec:desenv_desc2} apresentam como os descritores de \emph{fourier} e as propriedades estudados na seção \ref{subsec:propriedades} foram aplicados para formar um descritor para as imagens. As seções \ref{sec:desenv_class1} e \ref{sec:desenv_class2} apresentam como os descritores foram utilizados para classificar e determinar o ângulo das imagens.
+O capitulo divide-se em oito seções. As primeiras seis seções apresentam com detalhes os blocos da figura \ref{fig:desenv_overview}: A seção \ref{sec:desenv_seg1} e a seção \ref{sec:desenv_seg2} mostram como os conceitos da seção \ref{sec:segmentacao} foram aplicados para segmentar a imagem capturada. A seção \ref{sec:desenv_desc1} e a seção \ref{sec:desenv_desc2} apresentam como os descritores de \emph{fourier} e as propriedades estudados na seção \ref{subsec:propriedades} foram aplicados para formar um descritor para as imagens. As seções \ref{sec:desenv_class1} e \ref{sec:desenv_class2} apresentam como os descritores foram utilizados para classificar e determinar o ângulo das imagens.
 Na seção \ref{sec:desenv_class3} apresenta-se o processo de treinamento do sistema e ao final, na seção \ref{sec:desenv_consideracoes}, algumas considerações sobre o desenvolvimento do projeto.
 
 
@@ -36,7 +34,7 @@ Embora não se possa ver visualmente nenhum progresso significativo em alguns pas
 
 \section{Segmentação: etapa 2} \label{sec:desenv_seg2}
 
-A segunda etapa da segmentação é responsável por normalizar a imagem. Esta etapa recebe como entrada a região de interesse e apresenta como saída duas opções de normalização da imagem, além de um autovetor e seu oposto. O processo pode ser visto na figura \ref{fig:desenv_seg2}.
+A segunda etapa da segmentação é responsável por normalizar a imagem. Esta etapa recebe como entrada a região de interesse e apresenta como saída duas opções de normalização, além de um autovetor e seu oposto. O processo pode ser visto na figura \ref{fig:desenv_seg2}.
 
 \begin{figure}[H]
 	\centering
@@ -91,12 +89,15 @@ O descritor é composto por 20 descritores de \emph{fourier}, $d1,d2,...,d20$, co
 \end{table}
 
 
-\section{Classificação: etapa 1} \label{sec:desenv_class1}
+\section{Classificação} \label{sec:desenv_class1}
 
-A função da primeira etapa de classificação é tomar como entrada o descritor da imagem pré-normalizada e fornecer como saída a classe a qual a imagem pertence. Além disso é responsável por dizer qual a normalização correta para a imagem. Ou seja, se a imagem normalizada corretamente utiliza o autovetor $A$ ou o oposto $A'$. Esse processo é mostrado na figura \ref{fig:desenv_class1}.
+A função da etapa de classificação é tomar como entrada o descritor da imagem pré-normalizada e fornecer como saída a classe a qual o objeto da imagem pertence. Além disso é responsável por dizer qual a normalização correta para a imagem. Ou seja, se a imagem normalizada corretamente utiliza o autovetor $A$ ou o oposto $A'$. Esse processo é mostrado na figura \ref{fig:desenv_class1}.
 
-Para essa tarefa foi utilizada uma rede neural, que é detalhada mais a frente na seção \ref{sec:desenv_class3}.
-%TODO: detalhar a rede
+Para essa tarefa foi utilizada uma rede neural de duas camadas, 29 entradas e $2N$ saídas. Onde $N$ é o número de classes a serem identificadas pelo sistema. A primeira camada possui 20 \emph{perceptrons} e a camada de saída possui $2N$ perceptrons.
+O número de \emph{perceptrons} na primeira camada foi escolhido empiricamente. A função de ativação para as duas camadas é a função sigmoide vista na seção \ref{subsec:fundteor_redes_neurais}. A função sigmoide é uma boa escolha para redes de classificação pois possui uma transição rápida entre -1 e 1 para entradas de $\infty-$ a $\infty+$ \cite{MATHWORKS-HELP-3}.
+
+
+
 
 \begin{figure}[H]
 	\centering
@@ -108,9 +109,9 @@ Para essa tarefa foi utilizada uma rede neural, que é detalhada mais a frente na
 
 \section{Descrição: etapa 2} \label{sec:desenv_desc2}
 
-A segunda etapa da descrição recebe como entrada a imagem normalizada pelo autovetor correto. A função desta etapa é gerar um descritor para a imagem normalizada, que auxiliará na segunda etapa de classificação para determinação do ângulo do objeto.
+A segunda etapa da descrição recebe como entrada a imagem normalizada pelo autovetor correto. A função desta etapa é gerar um descritor para a imagem normalizada, que auxiliará na etapa de previsão para determinação do ângulo do objeto.
 
-Tanto esta etapa, quanto a classificação descrita na próxima seção, seriam desnecessárias em ambientes ideais. Veja por exemplo as imagens da figura \ref{fig:desenv_desc3}. Todas as imagens foram obtidas para um mesmo objeto, sujeito às mesmas condições gerais, mas em rotações diferentes. Mudanças pequenas, como ruído ou pequenas diferenças na iluminação, influenciaram a direção do autovetor calculado produzindo resultados diferentes.
+Tanto esta etapa, quanto previsão descrita na próxima seção, seriam desnecessárias em ambientes ideais. Veja por exemplo as imagens da figura \ref{fig:desenv_desc3}. Todas as imagens foram obtidas para um mesmo objeto, sujeito às mesmas condições gerais, mas em rotações diferentes. Mudanças pequenas, como ruído ou pequenas diferenças na iluminação, influenciaram a direção do autovetor calculado produzindo resultados diferentes.
 
 \begin{figure}[H]
 	\centering
@@ -120,7 +121,7 @@ Tanto esta etapa, quanto a classificação descrita na próxima seção, seriam desne
 	\label{fig:desenv_desc3}
 \end{figure}
 
-A diferença entre o autovetor calculado para cada caso é tratada utilizando uma segunda rede neural, específica para cada classe. O descritor obtido nessa etapa portanto deve conter informações relacionadas à posição do objeto na imagem. Utilizou-se portanto para essa tarefa um descritor contendo 10 descritores de \emph{fourier}, conforme representado na figura \ref{fig:desenv_desc2}.
+A diferença entre o autovetor calculado para cada caso é tratada na próxima etapa. O descritor obtido nessa etapa portanto deve conter informações relacionadas à posição do objeto na imagem. Sendo assim utilizou-se para essa tarefa um descritor contendo 10 descritores de \emph{fourier}, conforme representado na figura \ref{fig:desenv_desc2}.
 
 \begin{figure}[H]
 	\centering
@@ -130,11 +131,11 @@ A diferença entre o autovetor calculado para cada caso é tratada utilizando uma 
 	\label{fig:desenv_desc2}
 \end{figure}
 
-\section{Classificação: etapa 2} \label{sec:desenv_class2}
+\section{Estimativa de ângulo} \label{sec:desenv_class2}
 
 Finalmente a última etapa recebe como entrada um descritor da imagem normalizada, a classe a qual pertence o objeto e o autovetor utilizado na normalização. O objetivo dessa etapa é fornecer o angulo de rotação do objeto na imagem.
 
-Considere a figura \ref{fig:desenv_class3}. Os eixos $x,y$ são as coordenadas da imagem. O eixo $x'$ é o eixo que foi assumido como sendo o zero para o objeto da figura. Pela figura tem-se então a equação \ref{eq:desenv_beta}.
+Considere a figura \ref{fig:desenv_class3}. Os eixos $x,y$ são as coordenadas da imagem. O eixo $x'$ é o eixo que foi assumido como sendo o zero para o objeto da figura. $A$ é o autovetor calculado na etapa de normalização. Pela figura tem-se então a equação \ref{eq:desenv_beta}.
 
 \begin{equation}
 \beta = \alpha - k
@@ -146,7 +147,7 @@ Onde:
 \begin{itemize}
 \item $\beta$ é o ângulo entre as coordenadas da imagem e o zero do objeto. Ou seja, o valor que se deseja obter;
 \item $\alpha$ é o ângulo dado pelo autovetor;
-\item $k$ é a diferença entre o angulo do autovetor e o zero do objeto. Valor este que pode variar de normalização para normalização conforme visto na figura \ref{fig:desenv_desc3}.
+\item $k$ é a diferença entre o angulo do autovetor e o zero do objeto. Este valor pode variar de normalização para normalização, conforme visto na figura \ref{fig:desenv_desc3}.
 \end{itemize}
 
 \begin{figure}[H]
@@ -157,7 +158,7 @@ Onde:
 	\label{fig:desenv_class3}
 \end{figure}
 
-É necessário portanto determinar o valor $k$ para cada imagem normalizada. Utilizou-se para essa tarefa uma segunda rede neural. Essa rede recebe como entrada um descritor da imagem normalizada e informa na saída o valor de $k$. Para cada classe é gerada uma rede diferente, visto que as variações são diferentes de classe para classe. Após obter o valor $k$ da rede basta utilizar a equação \ref{eq:desenv_beta} para determinar o angulo $\beta$ do objeto.
+É necessário portanto determinar o valor $k$ para cada imagem normalizada. Utilizou-se para essa tarefa uma segunda rede neural. Essa rede recebe como entrada um descritor da imagem normalizada e informa na saída o valor de $k$. Para cada classe é gerada uma rede diferente, visto que as variações são diferentes de classe para classe. Após obter o valor $k$ da rede basta utilizar a equação \ref{eq:desenv_beta} para determinar o angulo $\beta$ do objeto. Esse processo está resumido na figura \ref{fig:desenv_class2}.
 
 \begin{figure}[H]
 	\centering
@@ -168,8 +169,9 @@ Onde:
 \end{figure}
 
 
-
 \section{Classificação: treinamento e topologia} \label{sec:desenv_class3}
+
+Para formar o conjunto de treinamento das redes é necessário que se obtenha amostras de imagens com classes e ângulos conhecidos.  Em seguida basta executar todos os passos até obter os descritores de entrada das redes e calcular o valor de $k$ para o treinamento da segunda rede.
 
 Pode-se utilizar de maneira genérica os descritores de \emph{fourier} para esse caso. Como cada classe tem sua própria rede para cálculo dos desvios do autovetor pode-se optar por uma rede simples 
 

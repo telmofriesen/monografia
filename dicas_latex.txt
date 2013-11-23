@@ -1,0 +1,51 @@
+
+
+
+
+
+
+
+
+\begin{equation}\label{W-matrix}
+    W^{inicial}=\left(
+       \begin{array}{ccccc}
+         0,00 & -0,40 & -0,25 & 0,00 & 0,30 \\
+         0,36 & 0,00 & 0,00 & 0,00 & w0,00 \\
+         0,45 & 0,00 & 0,00 & 0,00 & 0,00 \\
+         -0,90 & 0,00 & 0,00 & 0,00 & 0,00 \\
+         0,00 & 0,60 & 0,00 & 0,30 & 0,00 \\
+       \end{array}
+     \right)
+\end{equation}
+
+\begin{enumerate}
+\item SE a intensidade do sensor frontal (FS) for maior que um limiar médio ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_3$ é o valor máximo de $WF_{max}$;
+\item SE a intensidade do sensor frontal (FS) for menor que um limiar mínimo ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_3$ é o valor mínimo de $WF_{min}$;
+\item SE a intensidade do sensor direito (RS) for maior que um limiar médio ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_1$ é o valor máximo de $WR_{max}$;
+\item SE a intensidade do sensor direito (RS) for menor que um limiar mínimo ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_1$ é o valor mínimo de $WR_{min}$;
+\item SE a intensidade do sensor esquerdo (LS) for maior que um limiar médio ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_5$ é o valor máximo de $WL_{max}$;
+\item SE a intensidade do sensor direito (LS) for menor que um limiar mínimo ENTÃO $W_{lim}$ aplicado para computar o relacionamento $w_5$ é o valor mínimo de $WL_{min}$.
+\end{enumerate}
+
+\begin{table}[htb!]
+	\centering
+	\caption[Relações causais do controlador do robô]{Relações causais do controlador do robô.}		
+	\begin{tabular}[H]{ l l l l }
+	  \hline
+	  Relação causal & Descrição & Efeito & Intensidade \\
+	  \hline
+	  $w_1$ & Sensor direito (RS) influencia a saída esquerda (LO) & Positivo & Forte \\
+	  $w_2$ & Sensor frontal (FS) influencia a saída esquerda (LO) & Positivo & Médio \\
+	  $w_3$ & Sensor frontal (FS) influencia a saída frontal (FO) & Positivo & Forte \\
+	  $w_4$ & Sensor frontal (FS) influencia a saída direita (RO) & Positivo & Médio \\
+	  $w_5$ & Sensor esquerdo (LS) influencia a saída direita (RO) & Positivo & Forte \\
+	  $w_6$ & Saída esquerda (LO) influencia a saída direita (RO) & Negativo & Fraco \\
+	  $w_7$ & Saída direita (RO) influencia a saída esquerda (LO) & Negativo & Fraco \\
+	  $w_8$ & Sensor direito (RS) influencia a saída direita (RO) & Negativo & Fraco \\
+	  $w_9$ & Sensor esquerdo (LS) influencia a saída esquerda (LO) & Negativo & Fraco \\
+	  \hline  	
+	\end{tabular}
+	\fonte{\cite{MENDONCA}}
+	\label{tab:causal-relations}
+\end{table}
+
