@@ -92,9 +92,7 @@ O descritor é composto por 20 descritores de \emph{fourier}, $d1,d2,...,d20$, co
 
 A função da etapa de classificação é tomar como entrada o descritor da imagem pré-normalizada e fornecer como saída a classe a qual o objeto da imagem pertence. Além disso é responsável por dizer qual a normalização correta para a imagem. Ou seja, se a imagem normalizada corretamente utiliza o autovetor $A$ ou o oposto $A'$. Esse processo é mostrado na figura \ref{fig:desenv_class1}.
 
-%TODO: por que foi utilizada rede neural e não outra coisa como SVM
-
-Para essa tarefa foi utilizada uma rede neural de duas camadas, 29 entradas e $2N$ saídas. Onde $N$ é o número de classes a serem identificadas pelo sistema. A primeira camada possui 20 \emph{perceptrons} e a camada de saída possui $2N$ perceptrons.
+Para essa tarefa foi utilizada uma rede neural pois ela fornece um método de classificação baseado em treinamento onde não é necessário que se tenha conhecimento prévio das propriedades estatísticas de cada classe de padrões \cite{GONZALEZ-2006}. A rede utilizada é formada por duas camadas, 29 entradas e $2N$ saídas. Onde $N$ é o número de classes a serem identificadas pelo sistema. A primeira camada possui 20 \emph{perceptrons} e a camada de saída possui $2N$ perceptrons.
 O número de \emph{perceptrons} na primeira camada foi escolhido empiricamente. O número de saídas é $2N$ pois a rede deve ser capaz de identificar imagens normalizadas pelo autovetor $A$ e imagens normalizadas pelo oposto $A'$. A função de ativação para as duas camadas é a função sigmoide vista na seção \ref{subsec:fundteor_redes_neurais}. A função sigmoide é uma boa escolha para redes de classificação pois possui uma transição rápida entre -1 e 1 para entradas de $-\infty$ a $+\infty$ \cite{MATHWORKS-HELP-3}.
 
 Para formar o conjunto de treinamento da rede é necessário que se obtenha amostras de imagens com as respectivas classes.  Em seguida deve-se executar todos os passos até obter as duas possibilidades de normalização de cada imagem, e os descritores tomando a normalização dada pelo autovetor $A$. O descritor é então fornecido como entrada da rede e a saída da rede é dada pelo autovetor que leva a normalização correta da imagem. Por exemplo, se a normalização correta da classe $n$ é dada pelo autovetor $A$, a posição $2n$ da saída é um e o restante zero. Se a normalização correta é dada pelo oposto do autovetor, $A'$, então a posição "2n+1" é um e o restante zero. Esse último passo necessita ser executado manualmente para que se possa "ensinar" a rede qual a normalização correta para cada classe.
@@ -163,8 +161,6 @@ Onde:
 
 É necessário portanto determinar o valor de $k$ para cada imagem normalizada. Utilizou-se para essa tarefa uma segunda rede neural. Essa rede recebe como entrada um descritor da imagem normalizada e informa na saída o valor de $k$. Para cada classe é gerada uma rede diferente, visto que as variações são diferentes de classe para classe. Após obter o valor $k$ da rede basta utilizar a equação \ref{eq:desenv_beta} para determinar o angulo $\beta$ do objeto. Esse processo está resumido na figura \ref{fig:desenv_class2}.
 
-%TODO: por que foi utilizada rede neural e não outra coisa como SVM
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{./figs/classificacao_2.jpg}
@@ -173,30 +169,18 @@ Onde:
 	\label{fig:desenv_class2}
 \end{figure}
 
-A rede utilizada nessa etapa possui duas camadas, 12 entradas e uma saída. A primeira camada é formada por 7 \emph{perceptrons}. A melhor quantidade de perceptrons foi determinada empiricamente. A saída da rede possui um único perceptron pois a única saída da rede é o valor de $k$. A função de ativação da primeira camada da rede é a sigmoide pois permite o aprendizado de não linearidades. A segunda camada da rede possui uma função linear, $y=x$, favorecendo uma ampla faixa de valores de saída para $k$ \cite{MATHWORKS-HELP-3}.
+Foi escolhida uma rede neural para essa tarefa pois assumindo que redes neurais mostram bons resultados para aproximação de funções \cite{MATHWORKS-HELP-6}, supôs-se que também geram bons resultados para o problema exposto. A rede utilizada nessa etapa possui duas camadas, 12 entradas e uma saída. A primeira camada é formada por 7 \emph{perceptrons}. A melhor quantidade de perceptrons foi determinada empiricamente. A saída da rede possui um único perceptron pois a única saída da rede é o valor de $k$. A função de ativação da primeira camada da rede é a sigmoide pois permite o aprendizado de não linearidades. A segunda camada da rede possui uma função linear, $y=x$, favorecendo uma ampla faixa de valores de saída para $k$ \cite{MATHWORKS-HELP-3}.
 
 Para o processo de treinamento da rede são utilizadas as mesmas amostras que foram utilizadas para o treinamento da rede responsável pela classificação do objeto. Em seguida são executadas as etapas descritas nas seções anteriores até a obtenção do descritor de entrada da rede. Além disso é necessário o conhecimento do ângulo em que o objeto se encontra para o cálculo de $k$ pela equação \ref{eq:desenv_beta}. Uma vez tendo o valor de $k$ e o descritor de entrada é possível treinar a rede.
 
 A rede é treinada utilizando um algoritmo de \emph{back propagation} conforme visto na seção \ref{subsec:fundteor_redes_neurais}. O algoritmo utilizado para esta rede em específico utiliza a otimização de \emph{Levenberg-Marquardt}. A escolha foi baseada na documentação presente em \cite{MATHWORKS-HELP-5} que afirma que esta deveria ser a primeira opção de treinamento para qualquer rede devido a alta velocidade de convergência no treinamento.
 
 \section{Considerações} \label{sec:desenv_consideracoes}
+
+Expôs-se nesse capítulo a arquitetura do sistema desenvolvido. Inicialmente foi mostrado como a imagem de entrada foi segmentada utilizando técnicas de subtração de fundo, limiarização, filtros morfológicos, operações lógicas e seleção de maior região. Foi mostrado também como a imagem foi descrita utilizando propriedades de regiões e descritores de \emph{fourier}. E finalmente como os descritores foram aplicados nas redes neurais obtendo assim a classe dos objetos e a respectiva orientação.
+
+Embora tenha sido apresentado apenas a arquitetura final do sistema, ao longo do desenvolvimento do projeto diversas arquiteturas foram utilizadas. A cada ciclo de desenvolvimento da metodologia em espiral adotada novos algoritmos foram acrescentados, substituídos ou otimizados.
+
 % fechamento com relacao aos objetivos do capitulo
 % deve ser parte da conclusao final
 % podem aparecer consideracoes pessoais
-
-% foi desenvolvido um sistema robusto
-% a versão apresentada não é a primeira desenvolvida
-% foram implementados algoritmos de crescimento de regiao mas nao agregaram
-
-
-Este capítulo apresenta o desenvolvimento do projeto, detalhando cada parte do sistema desenvolvido. A descrição apresentada a seguir referencia os conceitos apresentados no capítulo \ref{chap:fundteor}. A figura \ref{fig:desenv_overview} apresenta uma visão geral do sistema desenvolvido.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{./figs/visao_geral.jpg}
-	\caption{Visão geral do sistema desenvolvido.}
-	\fonte{Autoria própria}
-	\label{fig:desenv_overview}
-\end{figure}
-
-O capitulo divide-se em sete seções. As primeiras seis seções apresentam com detalhes os blocos da figura \ref{fig:desenv_overview}: A seção \ref{sec:desenv_seg1} e a seção \ref{sec:desenv_seg2} mostram como os conceitos da seção \ref{sec:segmentacao} foram aplicados para segmentar a imagem capturada. A seção \ref{sec:desenv_desc1} e a seção \ref{sec:desenv_desc2} apresentam como os descritores de \emph{fourier} e as propriedades estudados na seção \ref{subsec:propriedades} foram aplicados para formar um descritor para as imagens. As seções \ref{sec:desenv_class1} e \ref{sec:desenv_class2} apresentam como os descritores foram utilizados para classificar e determinar o ângulo das imagens. Finalmente, na seção \ref{sec:desenv_consideracoes}, algumas considerações sobre o desenvolvimento do projeto são apresentadas.

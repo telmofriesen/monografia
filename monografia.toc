@@ -42,7 +42,7 @@
 \contentsline {section}{\numberline {3.2}Segmenta\c c\~ao: etapa 2}{40}
 \contentsline {section}{\numberline {3.3}Descri\c c\~ao: etapa 1}{41}
 \contentsline {section}{\numberline {3.4}Classifica\c c\~ao}{42}
-\contentsline {section}{\numberline {3.5}Descri\c c\~ao: etapa 2}{43}
+\contentsline {section}{\numberline {3.5}Descri\c c\~ao: etapa 2}{44}
 \contentsline {section}{\numberline {3.6}Estimativa de \^angulo}{45}
 \contentsline {section}{\numberline {3.7}Considera\c c\~oes}{48}
 \contentsline {chapter}{\numberline {4}Testes e An\'alise de Resultados}{49}
