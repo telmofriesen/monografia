@@ -8,7 +8,7 @@ Técnicas de visão computacional podem ser ferramentas úteis para a automação de 
 
 Muitas vezes, existem etapas da produção em indústrias metalúrgicas, nas quais se necessita identificar objetos metálicos e sua respectiva orientação angular, seja para análise, separação ou mesmo somente para classificação desses objetos. 
 
-A grande quantidade de objetos distintos que podem estar em uma mesma linha de produção ou linha de montagem podem confundir os trabalhadores, estando estes portanto sujeitos a erros e falhas. A identificação automática de objetos, assim como a identificação automática de sua posição, tendem a diminuir o erro cometido na classificação ou reposicionamento manual para cada objeto. Diminuindo o erro de classificação diminui se consequentemente o custo gerado por uma linha de montagem parada e dispensa-se a necessidade de parte dos operadores.
+A grande quantidade de objetos distintos que podem estar em uma mesma linha de produção ou linha de montagem podem confundir os trabalhadores, estando estes portanto sujeitos a erros e falhas. A identificação automática de objetos, assim como a identificação automática de sua posição, tendem a diminuir o erro cometido na classificação ou reposicionamento manual para cada objeto. Diminuindo o erro de classificação diminui-se consequentemente o custo gerado por uma linha de montagem parada e dispensa-se a necessidade de parte dos operadores.
 
 % problema de classificação de objetos - VER NO LIVRO DO GONZALES
 %	pesquisar principais problemas iluminação/etc
@@ -38,35 +38,22 @@ A grande quantidade de objetos distintos que podem estar em uma mesma linha de p
 %3 Objetivos: geral
 O objetivo geral deste trabalho é desenvolver um sistema capaz de classificar objetos metálicos e medir seu respectivo ângulo de rotação com relação ao eixo x do plano cartesiano, sendo os objetos previamente conhecidos pelo sistema utilizando-se técnicas de aprendizagem de máquina.
 
-\emph{TODO: ACRESCENTAR CASO SEJA FEITA A IMPLEMENTAÇÃO EM C++}
-
 Para tanto, temos como objetivos específicos três objetivos que possibilitarão o cumprimento do objetivo geral.
 O primeiro objetivo específico é analisar e aplicar técnicas de segmentação de imagens, como algoritmos de
 detecção de bordas, algoritmos de limiarização, segmentação baseada em crescimento de regiões.
 O segundo objetivo é analisar e aplicar técnicas de descrição de imagens, como algoritmos de descrição de contornos, descrição de regiões, entre outros.
-O terceiro objetivo é o emprego de uma técnica de aprendizagem de máquina, como redes neurais ou maquina de vetores de suporte, que possibilite a classificação de objetos previamente conhecidos pelo sistema.
+O terceiro objetivo é o emprego de uma técnica de aprendizagem de máquina, como redes neurais, que possibilite a classificação de objetos previamente conhecidos pelo sistema.
 
 \section{Metodologia}
 
-\emph{TODO: REMOVER CASO NÃO SEJA FEITA A IMPLEMENTAÇÃO EM C++}
+O desenvolvimento do projeto é dividido em três etapas. A primeira etapa consiste no estudo de técnicas de segmentação de imagem e implementação no software MATLAB. A segunda etapa consiste no estudo de técnicas de descrição de imagens e também implementação no MATLAB. Finalmente, na terceira etapa é implementado no MATLAB um sistema de redes neurais capazes de classificar o objeto e medir seu ângulo.
+Para cada etapa do desenvolvimento do projeto adota-se a metodologia de desenvolvimento em espiral, onde a cada ciclo de desenvolvimento são agregadas novas funcionalidades ao sistema.
 
-O desenvolvimento do projeto é dividido em quatro etapas. A primeira etapa consiste no estudo
-de técnicas de segmentação de imagem e implementação no software MATLAB. A segunda
-etapa consiste no estudo de técnicas de descrição de imagens e também implementação no
-MATLAB. Na terceira etapa é implementado no MATLAB um método de classificação.
-Finalmente, as técnicas das etapas anteriores que apresentarem os melhores resultados são
-implementadas utilizando-se linguagens como C, C++ ou Java, com o objetivo de construir
-um protótipo funcional a ser utilizado no ambiente de chão de fábrica.
+Para o teste e a validação do sistema é desenvolvido um ambiente de testes, onde objetos especificamente selecionados são posicionados de forma automática, possibilitando a captura de imagens do objeto em diversas posições angulares. 
 
 \section{Estrutura do Documento}
 %5 apresentacao do documento: no cap tal, etc - pode absorver a metodologia
 
-\emph{TODO: REVISAR DEPOIS DE PRONTO}
-
-Esta monografia está dividida em quatro capítulos: o primeiro corresponde à introdução, na qual são
+Esta monografia está dividida em cinco capítulos: o primeiro corresponde à introdução, na qual são
 apresentadas a motivação, os objetivos e a metodologia empregada. O segundo capítulo contém a fundamentação
-teórica do projeto, em que são apresentados o estado inicial e o estado final do robô após a
-reconstrução e adequação, a explicação da Lógica \emph{Fuzzy} e da abordagem ED-FCM. O terceiro capítulo
-é o desenvolvimento do trabalho, no qual são descritas as atividades realizadas pela equipe, incluindo
-a reconstrução e adequação do robô, o projeto e a implemen\-ta\-ção dos algoritmos, o desenvolvimento
-dos testes em campo e análise dos resultados. O quarto capítulo contém a conclusão do projeto.
+teórica do projeto, ou seja, o estudo das técnicas e algoritmos utilizados durante o trabalho. Nesse capitulo são abordados técnicas de segmentação de imagens, de descrição e de classificação de imagens. O terceiro capítulo apresenta o desenvolvimento do projeto, detalhando cada parte do sistema desenvolvido. O quarto capitulo apresenta o ambiente de testes desenvolvido para validar o sistema, os testes efetuados e os resultados obtidos. Finalmente o quinto capítulo contém considerações finais sobre o projeto.

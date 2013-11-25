@@ -5,56 +5,13 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{1.45.2.1 }
 
-\bibitem[CADSOFT 2012]{EAGLE}
-\abntrefinfo{CADSOFT}{CADSOFT}{2012}
-{CADSOFT. \textbf{CadSoft EAGLE Freeware Version}. 2012.
-Dispon{\'\i}vel em:
-  $<$http://www.cadsoftusa.com/downloads/freeware/?language=en$>$. Acesso em:
-  05 de Março de 2012.}
-
-\bibitem[DEVANTECHELETRONIC 2012]{SRF06}
-\abntrefinfo{DEVANTECHELETRONIC}{DEVANTECHELETRONIC}{2012}
-{DEVANTECHELETRONIC. \textbf{SRF06 Ultra-Sonic Ranger with 4-20mA Output}.
-  2012.
-Dispon{\'\i}vel em: $<$http://www.robot-electronics.co.uk/htm/srf06tech.htm$>$.
-  Acesso em: 29 de Fevereiro de 2012.}
-
-\bibitem[Fabro 1996]{FABRO}
-\abntrefinfo{Fabro}{FABRO}{1996}
-{FABRO, J.~A.
-\textbf{Grupos neurais e sistemas nebulosos: aplicação a navegação autonoma}.
-Dissertação (Mestrado) --- Universidade Estadual de Campinas. Faculdade de
-  Engenharia Elétrica, Fevereiro 1996.}
-
-\bibitem[FRACASSO e COSTA 2005]{FRACASSO}
-\abntrefinfo{FRACASSO e COSTA}{FRACASSO; COSTA}{2005}
-{FRACASSO, P.~T.; COSTA, A.~H. Navegação reativa de robôs móveis autônomos
-  utilizando lógica nebulosa com regras ponderadas.
-\textbf{VII SBAI/ II IEEE LARS}, Setembro 2005.}
-
 \bibitem[Ghaoui 2013]{AUTOVETORES-DEDUCAO}
 \abntrefinfo{Ghaoui}{GHAOUI}{2013}
 {GHAOUI, L.~E. \textbf{Hyper-Textbook: Optimization Models and Applications}.
   2013.
 Dispon{\'\i}vel em:
   $<$https://inst.eecs.berkeley.edu/~ee127a/book/login/index.html$>$. Acesso
-  em: 30 de julho de 2011.}
-
-\bibitem[GIT 2012]{GIT}
-\abntrefinfo{GIT}{GIT}{2012}
-{GIT. \textbf{Git - Fast Version Control System}. 2012.
-Dispon{\'\i}vel em: $<$http://git-scm.com/$>$. Acesso em: 06 de Março de 2012.}
-
-\bibitem[GITHUB 2012]{GITHUB}
-\abntrefinfo{GITHUB}{GITHUB}{2012a}
-{GITHUB. \textbf{GitHub}. 2012.
-Dispon{\'\i}vel em: $<$https://github.com/$>$. Acesso em: 06 de Março de 2012.}
-
-\bibitem[GITHUB 2012]{GITHELP}
-\abntrefinfo{GITHUB}{GITHUB}{2012b}
-{GITHUB. \textbf{Help.GitHub}. 2012.
-Dispon{\'\i}vel em: $<$http://help.github.com/$>$. Acesso em: 06 de Março de
-  2012.}
+  em: 13 de novembro de 2013.}
 
 \bibitem[Gonzalez e Woods 2006]{GONZALEZ-2006}
 \abntrefinfo{Gonzalez e Woods}{GONZALEZ; WOODS}{2006}
@@ -64,9 +21,9 @@ ISBN 013168728X.}
 
 \bibitem[Leon 1998]{AUTOVETORES}
 \abntrefinfo{Leon}{LEON}{1998}
-{LEON, S. \textbf{Linear algebra with applications}. Prentice Hall, 1998.
-ISBN 9780138493080. Dispon{\'\i}vel em:
-  $<$http://books.google.ie/books?id=BeAZAQAAIAAJ$>$.}
+{LEON, S. \textbf{Linear algebra with applications}. [S.l.]: Prentice Hall,
+  1998.
+ISBN 9780138493080.}
 
 \bibitem[Lin 2007]{USO-COMPONENTES-ELETRONICOS-2}
 \abntrefinfo{Lin}{LIN}{2007}
@@ -86,12 +43,6 @@ ISSN 0262-8856.
 Dispon{\'\i}vel em:
   $<$http://www.sciencedirect.com/science/article/pii/S0262885607001151$>$.}
 
-\bibitem[Mamdani e Assilian 1999]{MAMDAMI}
-\abntrefinfo{Mamdani e Assilian}{MAMDANI; ASSILIAN}{1999}
-{MAMDANI, E.~H.; ASSILIAN, S. An experiment in linguistic synthesis with a
-  fuzzy logic controller.
-\textbf{Int. J. Hum.-Comput. Stud.}, Elsevier, v.~51, n.~2, p. 135--147, 1999.}
-
 \bibitem[Mar, Yarlagadda e Fookes 2011]{USO-INSPECAO-PCB}
 \abntrefinfo{Mar, Yarlagadda e Fookes}{MAR; YARLAGADDA; FOOKES}{2011}
 {MAR, N.; YARLAGADDA, P.; FOOKES, C. Design and development of automatic visual
@@ -102,43 +53,38 @@ ISSN 0736-5845.
 Dispon{\'\i}vel em:
   $<$http://www.sciencedirect.com/science/article/pii/S0736584511000457$>$.}
 
-\bibitem[Marin et al. 2010]{BELLATOR}
-\abntrefinfo{Marin et al.}{MARIN et al.}{2010}
-{MARIN, A.~J. et al. \textbf{Desenvolvimento do Projeto Bellator}. Curitiba,
-  2010.}
+\bibitem[MathWorks 2013]{MATHWORKS-HELP-4}
+\abntrefinfo{MathWorks}{MATHWORKS}{2013a}
+{MATHWORKS. \textbf{Bayesian regulation backpropagation}. 2013.
+Dispon{\'\i}vel em: $<$http://www.mathworks.com/help/nnet/ref/trainbr.html$>$.
+  Acesso em: 25 de novembro de 2013.}
 
 \bibitem[MathWorks 2013]{MATHWORKS-HELP}
-\abntrefinfo{MathWorks}{MATHWORKS}{2013a}
+\abntrefinfo{MathWorks}{MATHWORKS}{2013b}
 {MATHWORKS. \textbf{Image Enhancement and Analysis}. 2013.
 Dispon{\'\i}vel em:
   $<$http://www.mathworks.com/help/images/image-enhancement-and-analysis.html$>$.
   Acesso em: 06 de Março de 2012.}
 
+\bibitem[MathWorks 2013]{MATHWORKS-HELP-5}
+\abntrefinfo{MathWorks}{MATHWORKS}{2013c}
+{MATHWORKS. \textbf{Levenberg-Marquardt backpropagation}. 2013.
+Dispon{\'\i}vel em: $<$http://www.mathworks.com/help/nnet/ref/trainlm.html$>$.
+  Acesso em: 25 de novembro de 2013.}
+
 \bibitem[MathWorks 2013]{MATHWORKS-HELP-3}
-\abntrefinfo{MathWorks}{MATHWORKS}{2013b}
+\abntrefinfo{MathWorks}{MATHWORKS}{2013d}
 {MATHWORKS. \textbf{Multilayer Neural Network Architecture}. 2013.
 Dispon{\'\i}vel em:
   $<$http://www.mathworks.com/help/nnet/ug/multilayer-neural-network-architecture.html$>$.
-  Acesso em: 06 de Março de 2012.}
+  Acesso em: 17 de novembro de 2013.}
 
 \bibitem[MathWorks 2013]{MATHWORKS-HELP-2}
-\abntrefinfo{MathWorks}{MATHWORKS}{2013c}
+\abntrefinfo{MathWorks}{MATHWORKS}{2013e}
 {MATHWORKS. \textbf{regionprops}. 2013.
 Dispon{\'\i}vel em:
   $<$http://www.mathworks.com/help/images/ref/regionprops.html$>$. Acesso em:
-  06 de Março de 2012.}
-
-\bibitem[MENDONÇA, ARRUDA e NEVES 2011]{MENDONCA}
-\abntrefinfo{MENDONÇA, ARRUDA e NEVES}{MENDONÇA; ARRUDA; NEVES}{2011}
-{MENDONÇA, M.; ARRUDA, L.; NEVES, F. Autonomous navigation system using event
-  driven-fuzzy cognitive maps.
-\textbf{© Springer Science+Business Media}, Outubro 2011.}
-
-\bibitem[PHILIPS]{74LS244}
-\abntrefinfo{PHILIPS}{PHILIPS}{}
-{PHILIPS. \textbf{74LS244 Octal buffer,line driver; 3-state}.
-Dispon{\'\i}vel em: $<$http://www.learn-c.com/74ls244.pdf$>$. Acesso em: 26 de
-  Fevereiro de 2012.}
+  16 de novembro de 2013.}
 
 \bibitem[Piccardi 2004]{BACKGROUND-SUBTRACTION}
 \abntrefinfo{Piccardi}{PICCARDI}{2004}
@@ -147,34 +93,12 @@ Dispon{\'\i}vel em: $<$http://www.learn-c.com/74ls244.pdf$>$. Acesso em: 26 de
   [S.l.: s.n.], 2004. v.~4, p. 3099--3104 vol.4.
 ISSN 1062-922X.}
 
-\bibitem[SHARPCORPORATION 2006]{datasheetsensor}
-\abntrefinfo{SHARPCORPORATION}{SHARPCORPORATION}{2006}
-{SHARPCORPORATION. \textbf{GP2Y0A02F98YK Datasheet}. 2006.
-Dispon{\'\i}vel em:
-  $<$http://www.mindsensors.com/index.php?module=documents\&JAS\_DocumentManager\_op=
-  \\ downloadFile\&JAS\_File\_id=335$>$. Acesso em: 1 de Agosto de 2011.}
-
-\bibitem[TECHNOLOGICSYSTEMS 2012]{CC}
-\abntrefinfo{TECHNOLOGICSYSTEMS}{TECHNOLOGICSYSTEMS}{2012}
-{TECHNOLOGICSYSTEMS. \textbf{Linux for ARM on TS-7000 Embedded Computers}.
-  2012.
-Dispon{\'\i}vel em:
-  $<$http://www.embeddedarm.com/software/software-arm-linux.php$>$. Acesso em:
-  27 de Fevereiro de 2012.}
-
-\bibitem[TEXASINSTRUMENTS]{LM324}
-\abntrefinfo{TEXASINSTRUMENTS}{TEXASINSTRUMENTS}{}
-{TEXASINSTRUMENTS. \textbf{LM124,LM224,LM324,LM2902 Low Power Quad Operational
-  Amplifiers}.
-Dispon{\'\i}vel em: $<$http://www.national.com/ds/LM/LM124.pdf$>$. Acesso em:
-  25 de fevereiro de 2012.}
-
 \bibitem[WIKIPEDIA 2013]{IMAGEM-MOMENTO-INERCIA}
 \abntrefinfo{WIKIPEDIA}{WIKIPEDIA}{2013}
 {WIKIPEDIA. \textbf{Second moment of area}. 2013.
 Dispon{\'\i}vel em:
-  $<$http://en.wikipedia.org/wiki/Second\_moment\_of\_area$>$. Acesso em: 29 de
-  julho de 2011.}
+  $<$http://en.wikipedia.org/wiki/Second\_moment\_of\_area$>$. Acesso em: 15 de
+  novembro de 2013.}
 
 \bibitem[Zeng, Ma e Zheng 2011]{USO-INSPECAO-PCB-2}
 \abntrefinfo{Zeng, Ma e Zheng}{ZENG; MA; ZHENG}{2011}

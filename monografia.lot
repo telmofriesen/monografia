@@ -1,9 +1,2 @@
 \select@language {brazil}
-\contentsline {table}{\numberline {1}{\ignorespaces Descritor para primeira etapa}}{46}
-\contentsline {table}{\numberline {2}{\ignorespaces Valores de convers\~ao dos sensores x dist\^ancia}}{54}
-\contentsline {table}{\numberline {3}{\ignorespaces Fun\c c\~oes de Pertin\^encia e Conjuntos Fuzzy dos Sensores}}{68}
-\contentsline {table}{\numberline {4}{\ignorespaces Regras de Infer\^encia - Algoritmo Fuzzy}}{71}
-\contentsline {table}{\numberline {5}{\ignorespaces Rela\c c\~oes causais do controlador ED-FCM proposto (Estado = FRENTE)}}{76}
-\contentsline {table}{\numberline {6}{\ignorespaces Rela\c c\~oes causais do controlador ED-FCM proposto (Estado = TR\'AS)}}{76}
-\contentsline {table}{\numberline {7}{\ignorespaces Valor num\'erico dos pesos}}{76}
-\contentsline {table}{\numberline {8}{\ignorespaces Valor num\'erico dos limiares L0 e L1}}{76}
+\contentsline {table}{\numberline {1}{\ignorespaces Descritor para primeira etapa}}{45}

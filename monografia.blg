@@ -2,8 +2,14 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: monografia.aux
 The style file: abnt-alf.bst
 Database file #1: abnt-options.bib
 Database file #2: reflatex.bib
+Warning--I didn't find a database entry for "MENDONCA"
+Warning--I didn't find a database entry for "BELLATOR"
+Warning--I didn't find a database entry for "FRACASSO"
+Warning--I didn't find a database entry for "datasheetsensor"
+Warning--I didn't find a database entry for "SRF06"
 +---------------------------------------------------------+
 | Estilo bibliográfico abnt-alf.bst versão 1.45.2.1           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex.codigolivre.org.br                        |
 +---------------------------------------------------------+
+(There were 5 warnings)
