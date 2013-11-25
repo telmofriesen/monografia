@@ -19,6 +19,11 @@ Dispon{\'\i}vel em:
   Upper Saddle River, NJ, USA: Prentice-Hall, Inc., 2006.
 ISBN 013168728X.}
 
+\bibitem[Lego 2013]{MINDSTORMS}
+\abntrefinfo{Lego}{LEGO}{2013}
+{LEGO. \textbf{Mindstorms}. 2013.
+Dispon{\'\i}vel em: $<$http://mindstorms.lego.com$>$.}
+
 \bibitem[Leon 1998]{AUTOVETORES}
 \abntrefinfo{Leon}{LEON}{1998}
 {LEON, S. \textbf{Linear algebra with applications}. [S.l.]: Prentice Hall,
@@ -79,15 +84,20 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em: $<$http://www.mathworks.com/help/nnet/ref/trainlm.html$>$.
   Acesso em: 25 de novembro de 2013.}
 
-\bibitem[MathWorks 2013]{MATHWORKS-HELP-3}
+\bibitem[MathWorks 2013]{MATLAB}
 \abntrefinfo{MathWorks}{MATHWORKS}{2013e}
+{MATHWORKS. \textbf{Matlab}. 2013.
+Dispon{\'\i}vel em: $<$http://www.mathworks.com/products/matlab/$>$.}
+
+\bibitem[MathWorks 2013]{MATHWORKS-HELP-3}
+\abntrefinfo{MathWorks}{MATHWORKS}{2013f}
 {MATHWORKS. \textbf{Multilayer Neural Network Architecture}. 2013.
 Dispon{\'\i}vel em:
   $<$http://www.mathworks.com/help/nnet/ug/multilayer-neural-network-architecture.html$>$.
   Acesso em: 17 de novembro de 2013.}
 
 \bibitem[MathWorks 2013]{MATHWORKS-HELP-2}
-\abntrefinfo{MathWorks}{MATHWORKS}{2013f}
+\abntrefinfo{MathWorks}{MATHWORKS}{2013g}
 {MATHWORKS. \textbf{regionprops}. 2013.
 Dispon{\'\i}vel em:
   $<$http://www.mathworks.com/help/images/ref/regionprops.html$>$. Acesso em:

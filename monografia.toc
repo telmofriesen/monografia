@@ -47,9 +47,9 @@
 \contentsline {section}{\numberline {3.7}Considera\c c\~oes}{48}
 \contentsline {chapter}{\numberline {4}Testes e An\'alise de Resultados}{49}
 \contentsline {section}{\numberline {4.1}Ambiente de testes}{49}
-\contentsline {section}{\numberline {4.2}Testes}{49}
-\contentsline {section}{\numberline {4.3}Considera\c c\~oes}{49}
-\contentsline {chapter}{\numberline {5}Considera\c c\~oes finais}{50}
-\contentsline {section}{\numberline {5.1}Considera\c c\~oes finais}{50}
-\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{50}
-\contentsline {chapter}{REFER\^ENCIAS}{51}
+\contentsline {section}{\numberline {4.2}Testes}{50}
+\contentsline {section}{\numberline {4.3}Considera\c c\~oes}{50}
+\contentsline {chapter}{\numberline {5}Considera\c c\~oes finais}{51}
+\contentsline {section}{\numberline {5.1}Considera\c c\~oes finais}{51}
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{51}
+\contentsline {chapter}{REFER\^ENCIAS}{52}

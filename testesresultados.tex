@@ -1,17 +1,74 @@
 \chapter{Testes e Análise de Resultados} \label{chap:testes}
 
 Este capitulo apresenta o ambiente de testes desenvolvido para validar o sistema, os testes efetuados e os resultados obtidos.
-A seção \ref{sec:testes_ambiente} apresenta uma ambiente de testes para validação do sistema, que possibilita a captura de imagens de forma automatizada. Em seguida, na seção \ref{sec:testes_testes}, são apresentados os testes aos quais o sistema foi submetido e os respectivos resultados obtidos. Ao final, na seção \ref{sec:testes_consideracoes}, são apresentadas algumas considerações.
+A seção \ref{sec:testes_ambiente} apresenta um ambiente de testes, que possibilita a captura de imagens de forma automatizada e os objetos utilizados para validação do sistema. Em seguida, na seção \ref{sec:testes_testes}, são apresentados os testes aos quais o sistema foi submetido e os respectivos resultados obtidos. Ao final, na seção \ref{sec:testes_consideracoes}, são apresentadas algumas considerações.
 
 
 \section{Ambiente de testes} \label{sec:testes_ambiente}
 
-Inicialmente para validar o sistema proposto é necessário a definição dos objetos reconhecidos. Com o objetivo de possibilitar a validação do sistema porém sem comprometer a aplicação real do projeto utiliza-se os objetos dispostos na figura \ref{}.
+Inicialmente para validar o sistema proposto é necessário a definição dos objetos reconhecidos. Com o objetivo de possibilitar a validação do sistema porém sem comprometer a aplicação real do projeto utilizam-se os objetos dispostos na figura \ref{fig:testes_objetos}. Os objetos são caracteres alfanuméricos, formas geométricas básicas e algumas formas aleatórias. Os objetos foram selecionados com o objetivo de testar a robustez do sistema. Portanto foram utilizadas formas semelhantes, como o carácter 'S' e o número '5'. Além disso existem algumas peculiaridades em alguns caracteres. O carácter 'S', por exemplo, possui a parte superior ligeiramente menor que a inferior, avaliando a robustez e precisão da estimativa de ângulo.
 
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.9\textwidth]{./figs/testes_objetos.jpg}
+%	\caption{Objetos de teste.}
+%	\fonte{Autoria própria}
+%	\label{fig:testes_objetos}
+%\end{figure}
 
+Para facilitar a execução de testes o ambiente deve permitir a captura de imagens dos objetos em diversas orientações angulares, e possibilitar também o reposicionamento automático dos objetos para outros ângulos. Um ambiente que atende a esses requisitos foi montado utilizando o kit de montagem de robôs da LEGO chamado \emph{Mindstorms} \cite{MINDSTORMS}. O ambiente foi montado conforme mostra a figura \ref{fig:testes_ambiente}.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/ambiente_teste.jpg}
+	\caption{Montagem do ambiente de testes.}
+	\fonte{Autoria própria}
+	\label{fig:testes_ambiente}
+\end{figure}
 
-Para validar o sistema desenvolvido é necessário um ambiente que permita a captura de imagens de objetos em diversas orientações angulares. É necessário também a definição de um conjunto de objetos que serão reconhecidos 
+O sistema desenvolvido em MATLAB comunica-se com a unidade programável do \emph{Mindstorms}, também chamada de \emph{brick}, através de uma conexão \emph{bluetooth}. A comunicação é unidirecional do ponto de vista do MATLAB. O \emph{brick} comunica-se com um servo-motor que fornece realimentação por meio de um \emph{encoder}. Além da realimentação do \emph{encoder} foi adicionada uma malha de realimentação externa para fornecer um referencial absoluto ao sistema por meio de uma chave de fim de curso.
+
+As funções implementadas dentro do \emph{brick} são as seguintes:
+
+\begin{itemize}
+\item Reset: Gira o objeto no sentido anti-horário até atingir o zero absoluto definido pelo acionamento da chave de fim de curso.
+\item Step: Gira o objeto no sentido anti-horário até um ângulo especificado por meio de parâmetros. A posição do servo-motor é obtida pela realimentação do \emph{encoder}.
+\end{itemize}
+
+Para completar o ambiente de testes foi utilizado uma \emph{webcam} acessada pelo MATLAB para captura de imagens e foi montado um sistema de iluminação. O sistema de iluminação foi montado ao redor da câmera de maneira a não formar sombras visíveis a partir do ponto de vista da \emph{webcam}. A montagem completa pode ser vista nas imagens da figura \ref{fig:testes_ambiente_completo}.
+
+\begin{figure}[H]
+        \centering
+	\begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/ambiente_completo_teste_1.png}
+	        \caption{}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/ambiente_completo_teste_2.png}
+	        \caption{}
+        \end{subfigure}
+       ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figs/ambiente_completo_teste_3.png}
+	        \caption{}
+        \end{subfigure}
+
+	\caption{Montagem completa do ambiente de testes.}
+	\fonte{Autoria própria}
+	\label{fig:testes_ambiente_completo}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/ambiente_completo_teste.jpg}
+	\caption{Montagem completa do ambiente de testes.}
+	\fonte{Autoria própria}
+	\label{fig:testes_ambiente_completo}
+\end{figure}
+
 
 \section{Testes} \label{sec:testes_testes}
 \section{Considerações} \label{sec:testes_consideracoes}
