@@ -8,6 +8,7 @@ A seção \ref{sec:testes_ambiente} apresenta um ambiente de testes, que possibili
 
 Inicialmente para validar o sistema proposto é necessário a definição dos objetos reconhecidos. Com o objetivo de possibilitar a validação do sistema porém sem comprometer a aplicação real do projeto utilizam-se os objetos dispostos na figura \ref{fig:testes_objetos}. Os objetos são caracteres alfanuméricos, formas geométricas básicas e algumas formas aleatórias. Os objetos foram selecionados com o objetivo de testar a robustez do sistema. Portanto foram utilizadas formas semelhantes, como o carácter 'S' e o número '5'. Além disso existem algumas peculiaridades em alguns caracteres. O carácter 'S', por exemplo, possui a parte superior ligeiramente menor que a inferior, avaliando a robustez e precisão da estimativa de ângulo.
 
+TODO: inserir imagem.
 %\begin{figure}[H]
 %	\centering
 %	\includegraphics[width=0.9\textwidth]{./figs/testes_objetos.jpg}
@@ -39,38 +40,95 @@ Para completar o ambiente de testes foi utilizado uma \emph{webcam} acessada pel
 
 \begin{figure}[H]
         \centering
-	\begin{subfigure}[b]{0.3\textwidth}
-                \includegraphics[width=\textwidth]{./figs/ambiente_completo_teste_1.png}
-	        \caption{}
+	\begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{./figs/ambiente_completo_teste_camera.jpg}
+	        \caption{Câmera com iluminação ao redor.}
         \end{subfigure}
        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.3\textwidth}
-                \includegraphics[width=\textwidth]{./figs/ambiente_completo_teste_2.png}
-	        \caption{}
+        \begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{./figs/ambiente_completo_teste_objeto.jpg}
+	        \caption{Objeto posicionado.}
+        \end{subfigure}
+       
+	\begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{./figs/ambiente_completo_teste_mindstorms.jpg}
+	        \caption{\emph{Mindstorms.}}
         \end{subfigure}
        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
           %(or a blank line to force the subfigure onto a new line)
-	\begin{subfigure}[b]{0.3\textwidth}
-                \includegraphics[width=\textwidth]{./figs/ambiente_completo_teste_3.png}
-	        \caption{}
+	\begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{./figs/ambiente_completo_teste_tudo.jpg}
+	        \caption{Montagem completa.}
         \end{subfigure}
 
-	\caption{Montagem completa do ambiente de testes.}
+	\caption{Montagem do ambiente de testes.}
 	\fonte{Autoria própria}
 	\label{fig:testes_ambiente_completo}
 \end{figure}
+
+\section{Testes} \label{sec:testes_testes}
+
+O sistema foi testado com duas configurações diferentes. A primeira configuração foi formada por todos os objetos mostrados na figura \ref{fig:testes_teste1_objetos}. Ou seja, oito caracteres alfa-numéricos. O segundo teste foi efetuado com ... TODO
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./figs/ambiente_completo_teste.jpg}
-	\caption{Montagem completa do ambiente de testes.}
+	\includegraphics[width=0.5\textwidth]{./figs/testes_teste1_objetos.jpg}
+	\caption{Objetos para o primeiro teste.}
 	\fonte{Autoria própria}
-	\label{fig:testes_ambiente_completo}
+	\label{fig:testes_teste1_objetos}
 \end{figure}
 
 
-\section{Testes} \label{sec:testes_testes}
+\subsection{Primeiro teste: oito classes}
+
+Inicialmente cada objeto foi posicionado no ambiente de testes e foram efetuadas $360$ capturas. Uma captura a cada $1^o$, tanto para o fundo, quanto para o objeto. As imagens foram salvas e a classe e ângulo de captura armazenados. Após capturar as imagens para todos os objetos os descritores foram calculados conforme exposto no capitulo \ref{chap:desenv}. Tanto a rede de classificação quanto as redes de estimativa de ângulo foram treinadas.
+Na sequencia foram capturas 20 imagens em rotações aleatórias de cada objeto e as respectivas imagens de fundo para testar o sistema. Novamente os dados foram armazenados. O sistema foi executado para o total de 160 imagens de teste (20 para cada classe) e o resultado foi comparado com os valores esperados. A comparação entre valores de classe esperados e obtidos pode ser visto na matriz de confusão apresentada na figura \ref{}. Para a estimativa do ângulo o resultado pode ser visto na figura \ref{}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/8-classes.png}
+	\caption{Matriz de confusão para 8 objetos (formando 16 classes).}
+	\fonte{Autoria própria}
+	\label{fig:testes_teste1_matriz}
+\end{figure}
+
+
+\begin{figure}[H]
+        \centering
+	\begin{subfigure}[b]{0.6\textwidth}
+                \includegraphics[width=\textwidth]{./figs/8-classes-erro-medio.png}
+	        \caption{Erro médio da estimativa do ângulo para 8 objetos.}
+		\label{fig:testes_teste1_medio}
+        \end{subfigure}
+
+        \begin{subfigure}[b]{0.6\textwidth}
+                \includegraphics[width=\textwidth]{./figs/8-classes-desvio.png}
+	        \caption{Desvio padrão do erro da estimativa do ângulo para 8 objetos.}
+		\label{fig:testes_teste1_desvio}
+        \end{subfigure}
+       
+	\begin{subfigure}[b]{0.6\textwidth}
+                \includegraphics[width=\textwidth]{./figs/8-classes-erro-maximo.png}
+	        \caption{Erro máximo da estimativa do ângulo para 8 objetos.}
+		\label{fig:testes_teste1_maximo}
+        \end{subfigure}
+
+	\caption{Erros e desvios para cada classe de objetos.}
+	\fonte{Autoria própria}
+	\label{fig:testes_teste1_erros}
+\end{figure}
+
+
+
+
+% treinamento
+% amostra de 1 em 1 grau
+% 20 amostras aleatórias para teste
+
+
+
+
 \section{Considerações} \label{sec:testes_consideracoes}
 
 Nesse capítulo apresentou-se um ambiente de testes que possibilitou a validação do sistema apresentado no capitulo \ref{chap:desenv}.
