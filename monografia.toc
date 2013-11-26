@@ -48,9 +48,10 @@
 \contentsline {chapter}{\numberline {4}Testes e An\'alise de Resultados}{50}
 \contentsline {section}{\numberline {4.1}Ambiente de testes}{50}
 \contentsline {section}{\numberline {4.2}Testes}{52}
-\contentsline {subsection}{\numberline {4.2.1}Primeiro teste: oito classes}{53}
-\contentsline {section}{\numberline {4.3}Considera\c c\~oes}{56}
-\contentsline {chapter}{\numberline {5}Considera\c c\~oes finais}{57}
-\contentsline {section}{\numberline {5.1}Considera\c c\~oes finais}{57}
-\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{57}
-\contentsline {chapter}{REFER\^ENCIAS}{58}
+\contentsline {subsection}{\numberline {4.2.1}Primeiro teste: 8 objetos}{53}
+\contentsline {subsection}{\numberline {4.2.2}Segundo teste: 16 objetos}{56}
+\contentsline {section}{\numberline {4.3}Considera\c c\~oes}{58}
+\contentsline {chapter}{\numberline {5}Considera\c c\~oes finais}{59}
+\contentsline {section}{\numberline {5.1}Considera\c c\~oes finais}{59}
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{59}
+\contentsline {chapter}{REFER\^ENCIAS}{60}

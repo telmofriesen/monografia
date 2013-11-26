@@ -32,4 +32,7 @@
 \contentsline {figure}{\numberline {31}{\ignorespaces Montagem do ambiente de testes.\relax }}{52}
 \contentsline {figure}{\numberline {32}{\ignorespaces Objetos para o primeiro teste.\relax }}{53}
 \contentsline {figure}{\numberline {33}{\ignorespaces Matriz de confus\~ao para 8 objetos (formando 16 classes).\relax }}{54}
-\contentsline {figure}{\numberline {34}{\ignorespaces Erros e desvios para cada classe de objetos.\relax }}{55}
+\contentsline {figure}{\numberline {34}{\ignorespaces Erros e desvios para cada objeto.\relax }}{55}
+\contentsline {figure}{\numberline {35}{\ignorespaces Matriz de confus\~ao para 16 objetos (formando 32 classes).\relax }}{56}
+\contentsline {figure}{\numberline {36}{\ignorespaces Erros e desvios para cada objeto.\relax }}{57}
+\contentsline {figure}{\numberline {37}{\ignorespaces Matriz de confus\~ao para 8 objetos - rede com 1 sa\IeC {\'\i }da.\relax }}{58}
