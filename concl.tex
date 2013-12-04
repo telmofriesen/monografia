@@ -4,9 +4,62 @@ Este capítulo apresenta as considerações finais da monografia. Aqui são discutid
 
 \section{Considerações finais}
 
-%Este projeto surgiu a partir da inspiração em testar, empiricamente, a eficiência de uma metodologia de navegação chamada \emph{Event-Driven Fuzzy Cognitive Maps} (ED-FCM) comparada à metodologia \emph{Fuzzy}, que levou a equipe a desenvolver um trabalho de conclusão de curso com objetivos abrangentes, envolvendo desenvolvimento de \emph{hardware} e \emph{software}. No contexto da navegação robótica, surgiu a necessidade de se utilizar um robô real com a fi\-na\-li\-da\-de de se obterem resultados mais significativos, visto que o ED-FCM não havia ainda sido testado em ambientes reais, apenas em um ambiente simulado. O ambiente simulado da tese de \cite{MENDONCA} não levou em consideração ruídos dos sensores e diferenças mecânicas dos atuadores do robô. No Bellator, os motores DC tinham uma resposta diferente para um derterminado nível de tensão, sendo necessário implementar um ajuste via sistema microcontrolado para manter as velocidades das rodas em um mesmo nível. Outros problemas inerentes ao uso de uma plataforma real puderam ser observados, como a mudança de comportamento dos algoritmos quando a bateria dos motores foi trocada. Com a nova bateria, as ações do robô tornaram-se mais rápidas, exigindo que os algoritmos fossem modificados para manter o movimento suave do robô. Com a finalidade de observar esses efeitos nos algoritmos \emph{Fuzzy} e ED-FCM, foi elaborado um projeto cujo escopo também foi reconstruir e adequar uma plataforma robótica previamente disponível, que é descrita na seção \ref{sec:estpro}, contudo, que não estava em condições de uso imediato. A equipe procedeu com testes em laboratório de eletrônica afim de avaliar as condições iniciais do robô, conforme foi descrito na seção \ref{sec:testecomp}. Uma análise de \emph{software} foi efetuada e o código original do microcontrolador C8051F340DK, disponibilizado como parte integrante do robô Bellator \cite{BELLATOR}, foi avaliado e reconfigurado de acordo com as necessidades do projeto, o que é descrito em detalhes na seção \ref{sec:codmicro}. Havendo necessidade de implementação de \emph{hardware}, a equipe projetou e construiu uma placa de roteamento para alimentar os sensores e \emph{encoders}, assim como tratar os sinais destes e os de PWM, como é descrito na seção \ref{sec:desroteamento}. Finalmente, o \emph{hardware} acoplado foi configurado e o \emph{software} responsável pela execução dos algortimos de navegação foi desenvolvido, conforme a seção \ref{sec:ts}. Com isso, a equipe foi capaz de obter uma plataforma robótica apropriada para o restante do projeto e possíveis utilizações futuras, concluindo a primeira parte do projeto.
-%
-%Estando a plataforma robótica funcional, seguiram-se o projeto e implementação dos algoritmos de navegação propostos. A Lógica \emph{Fuzzy} foi estudada e apresentada na seção \ref{sec:logfuzzy} e a metodologia \emph{Event-Driven Fuzzy Congnitive Maps} (ED-FCM) foi estudada e apresentada na seção \ref{sec:fcm}, proporcionando à equipe a fundamentação teórica necessária para o desenvolvimento e aprimoramento dos algoritmos. Com a teoria fundamentada, a equipe projetou os algoritmos estudados e implementou-os na linguagem C++, compilando-os para execução na plataforma Linux embarcada da TS-7260, como descrito nas seções \ref{sec:algfuzzy} e \ref{sec:algedfcm}. Após a implementação, a equipe submeteu os algoritmos a uma série de testes básicos, denominada Testes Iniciais, que serviram para fornecer a primeira realimentação do projeto dos algoritmos, que permitiu o ajuste inicial dos mesmos e pode ser lido na seção \ref{sec:testesini}. Finalizados esses testes, foram elaborados testes complexos, denominados Testes Avançados, para estressar os sistemas de navegação propostos e fornecer a segunda realimentação do projeto dos algoritmos, conforme foi descrito na seção \ref{sec:testesavan}, e que permitiu o aprimoramento dos algoritmos até a versão definitiva utilizada para obtenção dos resultados finais. Finalmente, após os testes avançados, os algoritmos resolviam problemas complexos de navegação, como o corredor sem saída e o pro\-ble\-ma de decisão quando dois obstáculos laterais e um frontal eram colocados diante do robô, e poderiam ser usados nos testes finais, que forneceram os dados para a análise de resultados e foram denominados Testes Comparativos, conforme foi descrito na seção \ref{sec:testescomp}. Com isso a equipe concluiu a segunda parte, que foi composta pelo projeto e implementação dos algoritmos de navegação e a elaboração e execução de uma metodologia de testes comparativos entre os algoritmos.
+% introdução?
+Desenvolveu-se ao 
+
+%3 Objetivos: geral
+O objetivo geral deste trabalho é desenvolver um sistema capaz de classificar objetos metálicos e medir seu respectivo ângulo de rotação com relação ao eixo x do plano cartesiano, sendo os objetos previamente conhecidos pelo sistema utilizando-se técnicas de aprendizagem de máquina.
+
+Para tanto, temos como objetivos específicos três objetivos que possibilitarão o cumprimento do objetivo geral.
+O primeiro objetivo específico é analisar e aplicar técnicas de segmentação de imagens, como algoritmos de
+detecção de bordas, algoritmos de limiarização, segmentação baseada em crescimento de regiões.
+O segundo objetivo é analisar e aplicar técnicas de descrição de imagens, como algoritmos de descrição de contornos, descrição de regiões, entre outros.
+O terceiro objetivo é o emprego de uma técnica de aprendizagem de máquina, como redes neurais, que possibilite a classificação de objetos previamente conhecidos pelo sistema.
+
+
+
+%\section{Metodologia}
+
+O desenvolvimento do projeto é dividido em três etapas. A primeira etapa consiste no estudo de técnicas de segmentação de imagem e implementação no software MATLAB. A segunda etapa consiste no estudo de técnicas de descrição de imagens e também implementação no MATLAB. Finalmente, na terceira etapa é implementado no MATLAB um sistema de redes neurais capazes de classificar o objeto e medir seu ângulo.
+Para cada etapa do desenvolvimento do projeto adota-se a metodologia de desenvolvimento em espiral, onde a cada ciclo de desenvolvimento são agregadas novas funcionalidades ao sistema.
+
+Para o teste e a validação do sistema é desenvolvido um ambiente de testes, onde objetos especificamente selecionados são posicionados de forma automática, possibilitando a captura de imagens do objeto em diversas posições angulares. 
+
+
+% censiderações fundamentacao
+
+Apresentou-se nesse capitulo embasamento teórico para o desenvolvimento do projeto, abrangendo as três áreas fundamentais de sistemas de processamento de imagens: segmentação, descrição e classificação. 
+Foram estudadas técnicas de segmentação de imagens que permitem, através da combinação de diversas delas, a identificação de regiões de interesse. Além da identificação da região de interesse foi apresentada a técnica de normalização de imagens utilizando a análise de componentes principais.
+Foi fornecido embasamento teórico para efetuar a descrição de imagens utilizando propriedades de regiões, como área, solidez, posição do centroide, entre outros além dos conceitos para efetuar a descrição utilizando descritores de \emph{fourier}.
+Por fim apresentou-se uma visão geral de redes neurais e foram apresentadas noções sobre treinamento de redes utilizando algoritmos do tipo \emph{back propagation}.
+
+% considerações desenvolvimento
+
+
+Expôs-se nesse capítulo a arquitetura do sistema desenvolvido. Inicialmente foi mostrado como a imagem de entrada foi segmentada utilizando técnicas de subtração de fundo, limiarização, filtros morfológicos, operações lógicas e seleção de maior região. Foi mostrado também como a imagem foi descrita utilizando propriedades de regiões e descritores de \emph{fourier}. E finalmente como os descritores foram aplicados nas redes neurais obtendo assim a classe dos objetos e a respectiva orientação.
+
+Embora tenha sido apresentado apenas a arquitetura final do sistema, ao longo do desenvolvimento do projeto diversas arquiteturas foram utilizadas. A cada ciclo de desenvolvimento da metodologia em espiral adotada novos algoritmos foram acrescentados, substituídos ou otimizados.
+
+% considerações testes e resultados
+Nesse capítulo apresentou-se um ambiente de testes automatizado que possibilitou a validação do sistema apresentado no capitulo \ref{chap:desenv}. Utilizando o ambiente foram executados dois grupos de testes. O primeiro com 8 objetos e o segundo com 16 objetos. 
+
+O sistema mostrou-se capaz de classificar todos os objetos corretamente com $100\%$ de acerto. Isso se deu devido à qualidade dos descritores calculados, que permitiram resumir as principais características de cada classe. Além disso a topologia da rede de classificação teve papel fundamental para a convergência do treinamento e para a qualidade de decisão. Inicialmente havia sido utilizada uma rede com apenas uma saída, onde cada classe estava associada a uma faixa de valores entre $0$ e $1$. O resultado dessa abordagem inicial está exposto na figura \ref{fig:testes_teste0_matriz}. Como se pode ver, a taxa de acerto foi de apenas $78\%$, o que é inaceitável para o problema, visto que um erro na classificação automaticamente resultará em falha na estimativa do ângulo.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.45\textwidth]{./figs/6-hiddenlayers.png}
+	\caption{Matriz de confusão para 8 objetos - rede com 1 saída.}
+	\fonte{Autoria própria}
+	\label{fig:testes_teste0_matriz}
+\end{figure}
+
+Na estimativa do ângulo obteve-se a precisão de $\pm4.1^o$ nos dois testes, o que representa $2.25\%$ do total de $360^o$ possíveis. O erro médio manteve-se em $1.3^o$, com desvio de $0.85^o$ para o primeiro teste e $1.1^o$, com desvio de $0.8^o$ para o segundo teste. O erro na estimativa do ângulo é bastante influenciado pelo sucesso na etapa de segmentação e normalização da imagem. É necessário portanto para obter bons resultados controlar ao máximo as condições externas de captura das imagens. Condições boas de iluminação por exemplo tendem a melhorar o resultado da etapa de segmentação. 
+
+Pode-se observar também que o erro na estimativa do ângulo não aumentou com a inserção de mais objetos no sistema. Isso se deu devido a estimativa ser feita com uma rede neural específica para cada objeto.
+
+Os testes mostraram portanto que o sistema foi capaz de identificar os objetos corretamente e estimar a posição angular com precisão de $\pm4.1^o$.
+
+
 %
 %A equipe conclui esta monografia justificando que os objetivos descritos na introdução, seção \ref{rec:obj}, foram alcançados e estão de acordo com os requisitos mínimos de um curso de Engenharia de Computação.
 
