@@ -112,7 +112,7 @@ Na sequencia foram capturas 20 imagens em rotações aleatórias de cada objeto e a
 
 \subsection{Segundo teste: 16 objetos}
 
-O mesmo procedimento executado para o primeiro teste foi executado para o segundo, no entanto com algumas diferenças. Foram utilizados 16 objetos distintos. Para o objeto $q$ foram efetuadas $450$ capturas de $0$ a $90^o$ por se tratar de um objeto simétrico. Para o objeto $l$ foram efetuadas $180$ capturas de $0$ a $180^o$ pelo mesmo motivo. Para os demais objetos foram efetuadas $360$ capturas. Após a captura as redes de classificação e estimativa de angulo foram treinadas.
+O mesmo procedimento executado para o primeiro teste foi executado para o segundo, no entanto com algumas diferenças. Foram utilizados 16 objetos distintos. Para o objeto $q$ foram efetuadas $450$ capturas de $0$ a $90^o$ por se tratar de um objeto simétrico. Para o objeto $l$ foram efetuadas $180$ capturas de $0$ a $180^o$ pelo mesmo motivo. Para os demais objetos foram efetuadas $360$ capturas. Após a captura as redes de classificação e estimativa de ângulo foram treinadas.
 
 Em seguida foram capturadas 20 imagens em rotações aleatórias para cada objeto, totalizando 320 imagens de teste. O sistema foi executado e os resultados foram comparados com os valores esperados conforme a matriz de confusão apresentada na figura \ref{fig:testes_teste2_matriz}. A matriz de confusão apresentada mostra apenas 30 classes ao invés de 32 como esperado. Isso se dá pelo fato dos objetos $q$ e $l$ serem simétricos resultando sempre em um autovetor correto para a normalização. Para a estimativa do ângulo o resultado pode ser visto nas figuras \ref{fig:testes_teste2_medio}, \ref{fig:testes_teste2_desvio} e \ref{fig:testes_teste2_maximo}.
 

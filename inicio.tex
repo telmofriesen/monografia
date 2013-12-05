@@ -51,7 +51,7 @@ O objetivo deste trabalho é desenvolver um sistema capaz de classificar objetos 
 % Metodologia
 O desenvolvimento do projeto é dividido em três etapas. A primeira etapa consiste no estudo de técnicas de segmentação de imagem e implementação no software MATLAB. A segunda etapa consiste no estudo de técnicas de descrição de imagens e também implementação no MATLAB. Finalmente, na terceira etapa é implementado no MATLAB um sistema de redes neurais capazes de classificar o objeto e medir seu ângulo. Para cada etapa do desenvolvimento do projeto adota-se a metodologia de desenvolvimento em espiral, onde a cada ciclo de desenvolvimento são agregadas novas funcionalidades ao sistema. Para o teste e a validação do sistema é desenvolvido um ambiente de testes, onde objetos especificamente selecionados são posicionados de forma automática, possibilitando a captura de imagens do objeto em diversas posições angulares. 
 % Desenvolvimento
-O sistema é dividido em três módulos: segmentação, descrição e classificação dos objetos. Após a aquisição da imagem do objeto a ser classificado o módulo de segmentação seleciona a área de interesse da imagem. No módulo de descrição são extraídas características da área de interesse da imagem, as quais são fornecidas ao terceiro módulo do sistema que classifica o objeto e mede a sua respectiva orientação angular. 
+O sistema é dividido em três módulos: segmentação, descrição e classificação dos objetos. Após a aquisição da imagem do objeto a ser classificado o módulo de segmentação seleciona a área de interesse da imagem. No módulo de descrição são extraídas características da área de interesse da imagem, formando um descritor que é fornecido ao terceiro módulo do sistema que classifica o objeto e mede a sua respectiva orientação angular. 
 % Resultados
 Portanto, o resultado do trabalho é um sistema capaz de classificar objetos e medir o ângulo desses objetos utilizando técnicas de processamento de imagens e aprendizado de máquina.
 
@@ -60,7 +60,16 @@ Portanto, o resultado do trabalho é um sistema capaz de classificar objetos e me
 %abstract
 \begin{abstract}
 
-\emph{TODO: TRADUZIR}
+Computer vision technics can be useful tools for production line automation on tasks like, for example, electronic components manufacturing, inspection of finishing on metallic objects, printed circuit boards manufacturing and others.
+%Técnicas de visão computacional podem ser ferramentas úteis para a automação de linhas de produção em tarefas como, por exemplo, a fabricação de componentes eletrônicos, a inspeção do acabamento em objetos metálicos, a produção de circuitos impressos, entre outros. 
+Many times there are production steps in metallurgical industries where the identification of metallic objects, and their respective angular orientation, is needed for analysis, separation or even just for classification.
+%Muitas vezes, existem etapas da produção em indústrias metalúrgicas, nas quais se necessita identificar objetos metálicos e sua respectiva orientação angular, seja para análise, separação ou mesmo somente para classificação desses objetos. 
+The objective of this project is to develop a system capable of classifying metallic objects and to mesure its rotation angle with respect to the x axis of the Cartesian plane. The objects are previouly known by the system using machine learning technics.
+%O objetivo deste trabalho é desenvolver um sistema capaz de classificar objetos metálicos e medir seu respectivo ângulo de rotação com relação ao eixo x do plano cartesiano, sendo os objetos previamente conhecidos pelo sistema utilizando-se técnicas de aprendizagem de máquina. 
+
+O desenvolvimento do projeto é dividido em três etapas. A primeira etapa consiste no estudo de técnicas de segmentação de imagem e implementação no software MATLAB. A segunda etapa consiste no estudo de técnicas de descrição de imagens e também implementação no MATLAB. Finalmente, na terceira etapa é implementado no MATLAB um sistema de redes neurais capazes de classificar o objeto e medir seu ângulo. Para cada etapa do desenvolvimento do projeto adota-se a metodologia de desenvolvimento em espiral, onde a cada ciclo de desenvolvimento são agregadas novas funcionalidades ao sistema. Para o teste e a validação do sistema é desenvolvido um ambiente de testes, onde objetos especificamente selecionados são posicionados de forma automática, possibilitando a captura de imagens do objeto em diversas posições angulares. 
+O sistema é dividido em três módulos: segmentação, descrição e classificação dos objetos. Após a aquisição da imagem do objeto a ser classificado o módulo de segmentação seleciona a área de interesse da imagem. No módulo de descrição são extraídas características da área de interesse da imagem, formando um descritor que é fornecido ao terceiro módulo do sistema que classifica o objeto e mede a sua respectiva orientação angular. 
+Portanto, o resultado do trabalho é um sistema capaz de classificar objetos e medir o ângulo desses objetos utilizando técnicas de processamento de imagens e aprendizado de máquina.
 
 \end{abstract}
 

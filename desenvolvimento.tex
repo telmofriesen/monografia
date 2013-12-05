@@ -112,7 +112,7 @@ A rede é treinada utilizando um algoritmo de \emph{back propagation} conforme vi
 
 A segunda etapa da descrição recebe como entrada a imagem normalizada pelo autovetor correto. A função desta etapa é gerar um descritor para a imagem normalizada, que auxiliará na etapa de estimativa do ângulo do objeto.
 
-Tanto esta etapa, quanto a estimativa de angulo descrita na próxima seção, seriam desnecessárias em ambientes ideais. Veja por exemplo as imagens da figura \ref{fig:desenv_desc3}. Todas as imagens foram obtidas para um mesmo objeto, sujeito às mesmas condições gerais, mas em rotações diferentes. Mudanças pequenas, como ruído ou pequenas diferenças na iluminação, influenciaram a direção do autovetor calculado produzindo resultados diferentes.
+Tanto esta etapa, quanto a estimativa de ângulo descrita na próxima seção, seriam desnecessárias em ambientes ideais. Veja por exemplo as imagens da figura \ref{fig:desenv_desc3}. Todas as imagens foram obtidas para um mesmo objeto, sujeito às mesmas condições gerais, mas em rotações diferentes. Mudanças pequenas, como ruído ou pequenas diferenças na iluminação, influenciaram a direção do autovetor calculado produzindo resultados diferentes.
 
 \begin{figure}[H]
 	\centering
@@ -148,7 +148,7 @@ Onde:
 \begin{itemize}
 \item $\beta$ é o ângulo entre as coordenadas da imagem e o zero do objeto. Ou seja, o valor que se deseja obter;
 \item $\alpha$ é o ângulo dado pelo autovetor;
-\item $k$ é a diferença entre o angulo do autovetor e o zero do objeto. Este valor pode variar de normalização para normalização, conforme visto na figura \ref{fig:desenv_desc3}.
+\item $k$ é a diferença entre o ângulo do autovetor e o zero do objeto. Este valor pode variar de normalização para normalização, conforme visto na figura \ref{fig:desenv_desc3}.
 \end{itemize}
 
 \begin{figure}[H]
@@ -159,7 +159,7 @@ Onde:
 	\label{fig:desenv_class3}
 \end{figure}
 
-É necessário portanto determinar o valor de $k$ para cada imagem normalizada. Utilizou-se para essa tarefa uma segunda rede neural. Essa rede recebe como entrada um descritor da imagem normalizada e informa na saída o valor de $k$. Para cada classe é gerada uma rede diferente, visto que as variações são diferentes de classe para classe. Após obter o valor $k$ da rede basta utilizar a equação \ref{eq:desenv_beta} para determinar o angulo $\beta$ do objeto. Esse processo está resumido na figura \ref{fig:desenv_class2}.
+É necessário portanto determinar o valor de $k$ para cada imagem normalizada. Utilizou-se para essa tarefa uma segunda rede neural. Essa rede recebe como entrada um descritor da imagem normalizada e informa na saída o valor de $k$. Para cada classe é gerada uma rede diferente, visto que as variações são diferentes de classe para classe. Após obter o valor $k$ da rede basta utilizar a equação \ref{eq:desenv_beta} para determinar o ângulo $\beta$ do objeto. Esse processo está resumido na figura \ref{fig:desenv_class2}.
 
 \begin{figure}[H]
 	\centering
