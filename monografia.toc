@@ -53,5 +53,5 @@
 \contentsline {section}{\numberline {4.3}Considera\c c\~oes}{59}
 \contentsline {chapter}{\numberline {5}Considera\c c\~oes finais}{61}
 \contentsline {section}{\numberline {5.1}Considera\c c\~oes finais}{61}
-\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{61}
-\contentsline {chapter}{REFER\^ENCIAS}{62}
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{63}
+\contentsline {chapter}{REFER\^ENCIAS}{64}

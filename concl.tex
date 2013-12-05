@@ -5,53 +5,67 @@ Este capítulo apresenta as considerações finais da monografia. Aqui são discutid
 \section{Considerações finais}
 
 % introdução?
-Desenvolveu-se ao 
-
+Como foi visto foi desenvolvido um sistema capaz de ser integrado em uma linha de produção minimizando falhas e erros de classificação de objetos além de gerar uma estimativa da orientação de cada objeto para posterior reposicionamento caso necessário.
+Atingiu-se portanto o objetivo geral do trabalho visto que através da utilização de um sistema de redes neurais o sistema desenvolvido foi capaz de classificar objetos metálicos com $100\%$ de acerto e foi capaz de medir o ângulo de rotação com erro médio de aproximadamente $1.2^o$.
 %3 Objetivos: geral
-O objetivo geral deste trabalho é desenvolver um sistema capaz de classificar objetos metálicos e medir seu respectivo ângulo de rotação com relação ao eixo x do plano cartesiano, sendo os objetos previamente conhecidos pelo sistema utilizando-se técnicas de aprendizagem de máquina.
+%O objetivo geral deste trabalho é desenvolver um sistema capaz de classificar objetos metálicos e medir seu respectivo ângulo de rotação com relação ao eixo x do plano cartesiano, sendo os objetos previamente conhecidos pelo sistema utilizando-se técnicas de aprendizagem de máquina.
+Como pôde ser visto nas seções \label{sec:desenv_seg1} e \label{sec:desenv_seg2} foram analisadas e aplicadas técnicas de segmentação de imagens que permitiram a identificação da região de interesse, atingindo portanto o primeiro objetivo específico.
+%Para tanto, temos como objetivos específicos três objetivos que possibilitarão o cumprimento do objetivo geral.
+%O primeiro objetivo específico é analisar e aplicar técnicas de segmentação de imagens, como algoritmos de detecção de bordas, algoritmos de limiarização, segmentação baseada em crescimento de regiões.
+O segundo objetivo específico foi cumprido utilizando descritores de \emph{fourier} e propriedades de regiões gerando descritores contendo informações suficientes para classificar os objetos com sucesso.
+%O segundo objetivo é analisar e aplicar técnicas de descrição de imagens, como algoritmos de descrição de contornos, descrição de regiões, entre outros.
+O terceiro objetivo foi contemplado pelo emprego de redes neurais para classificação dos objetos e estimativa de ângulo.
+%O terceiro objetivo é o emprego de uma técnica de aprendizagem de máquina, como redes neurais, que possibilite a classificação de objetos previamente conhecidos pelo sistema.
 
-Para tanto, temos como objetivos específicos três objetivos que possibilitarão o cumprimento do objetivo geral.
-O primeiro objetivo específico é analisar e aplicar técnicas de segmentação de imagens, como algoritmos de
-detecção de bordas, algoritmos de limiarização, segmentação baseada em crescimento de regiões.
-O segundo objetivo é analisar e aplicar técnicas de descrição de imagens, como algoritmos de descrição de contornos, descrição de regiões, entre outros.
-O terceiro objetivo é o emprego de uma técnica de aprendizagem de máquina, como redes neurais, que possibilite a classificação de objetos previamente conhecidos pelo sistema.
+O desenvolvimento do projeto foi dividido em três etapas conforme proposto na metodologia. Porém foi necessário a volta a etapa de descrição para ajustes durante o desenvolvimento da terceira etapa. Cada etapa foi executada utilizando a metodologia de desenvolvimento em espiral, onde a cada ciclo de desenvolvimento foram agregadas novas funcionalidades ao sistema. As atividades desenvolvidas em cada ciclo estão dispostas na tabela \ref{tab:etapas-espiral}.
 
-
+\begin{table}[htb!]
+	\centering
+	\caption[Etapas do desenvolvimento em espiral]{Etapas do desenvolvimento em espiral.}		
+	\begin{tabular}[H]{ l l l l }
+	  \hline
+	  Etapa-Ciclo & Descrição \\
+	  \hline
+	  1-1 & Implementação da subtração de fundo.\\
+	  1-2 & Implementação da limiarização utilizando aproximações sucessivas e \\ & separação dos canais RGB.\\
+	  1-3 & Implementação da limiarização pelo método de Otsu e separação dos canais \\ & RGB.\\
+	  1-4 & Implementação do filtro de maior região conexa.\\
+	  1-5 & Implementação de crescimento de regiões baseado em características locais.\\
+	  1-6 & Remoção de crescimento de regiões  e implementação de esqueletonização e \\ & poda.\\
+	  1-7 & Implementação de normalização utilizando PCA.\\
+	  2-1 & Implementação de descrição utilizando descritores de \emph{fourier}.\\
+	  2-2 & Implementação de descrição utilizando propriedades de regiões.\\
+	  3-1 & Implementação de classificação utilizando redes neurais com uma única saída.\\
+	  3-2 & Adaptação da estrutura da rede para uma saída para cada classe.\\
+	  3-3 & Utilização de duas saídas da rede para cada classe. Uma para normalização \\ & utilizando o autovetor e outra para o autovetor oposto.\\
+	  2-3 & Adição de propriedades da imagem pré-normalizada ao descritor de \\ & classificação.\\
+	  3-4 & Implementação da estimativa de angulo utilizando redes neurais com uma \\ & única saída.\\
+	  \hline  	
+	\end{tabular}
+	\fonte{Autoria própria}
+	\label{tab:etapas-espiral}
+\end{table}
 
 %\section{Metodologia}
+%O desenvolvimento do projeto é dividido em três etapas. A primeira etapa consiste no estudo de técnicas de segmentação de imagem e implementação no software MATLAB. A segunda etapa consiste no estudo de técnicas de descrição de imagens e também implementação no MATLAB. Finalmente, na terceira etapa é implementado no MATLAB um sistema de redes neurais capazes de classificar o objeto e medir seu ângulo.
+%Para cada etapa do desenvolvimento do projeto adota-se a metodologia de desenvolvimento em espiral, onde a cada ciclo de desenvolvimento são agregadas novas funcionalidades ao sistema.
+%Para o teste e a validação do sistema é desenvolvido um ambiente de testes, onde objetos especificamente selecionados são posicionados de forma automática, possibilitando a captura de imagens do objeto em diversas posições angulares. 
 
-O desenvolvimento do projeto é dividido em três etapas. A primeira etapa consiste no estudo de técnicas de segmentação de imagem e implementação no software MATLAB. A segunda etapa consiste no estudo de técnicas de descrição de imagens e também implementação no MATLAB. Finalmente, na terceira etapa é implementado no MATLAB um sistema de redes neurais capazes de classificar o objeto e medir seu ângulo.
-Para cada etapa do desenvolvimento do projeto adota-se a metodologia de desenvolvimento em espiral, onde a cada ciclo de desenvolvimento são agregadas novas funcionalidades ao sistema.
-
-Para o teste e a validação do sistema é desenvolvido um ambiente de testes, onde objetos especificamente selecionados são posicionados de forma automática, possibilitando a captura de imagens do objeto em diversas posições angulares. 
-
-
-% censiderações fundamentacao
-
-Apresentou-se nesse capitulo embasamento teórico para o desenvolvimento do projeto, abrangendo as três áreas fundamentais de sistemas de processamento de imagens: segmentação, descrição e classificação. 
+% considerações fundamentacao
+No capitulo \ref{chap:fundteor} apresentou-se embasamento teórico para o desenvolvimento do projeto, abrangendo as três áreas fundamentais de sistemas de processamento de imagens: segmentação, descrição e classificação. 
 Foram estudadas técnicas de segmentação de imagens que permitem, através da combinação de diversas delas, a identificação de regiões de interesse. Além da identificação da região de interesse foi apresentada a técnica de normalização de imagens utilizando a análise de componentes principais.
 Foi fornecido embasamento teórico para efetuar a descrição de imagens utilizando propriedades de regiões, como área, solidez, posição do centroide, entre outros além dos conceitos para efetuar a descrição utilizando descritores de \emph{fourier}.
 Por fim apresentou-se uma visão geral de redes neurais e foram apresentadas noções sobre treinamento de redes utilizando algoritmos do tipo \emph{back propagation}.
 
 % considerações desenvolvimento
-
-
-Expôs-se nesse capítulo a arquitetura do sistema desenvolvido. Inicialmente foi mostrado como a imagem de entrada foi segmentada utilizando técnicas de subtração de fundo, limiarização, filtros morfológicos, operações lógicas e seleção de maior região. Foi mostrado também como a imagem foi descrita utilizando propriedades de regiões e descritores de \emph{fourier}. E finalmente como os descritores foram aplicados nas redes neurais obtendo assim a classe dos objetos e a respectiva orientação.
+No capitulo \ref{chap:desenv} foi exposto a arquitetura do sistema desenvolvido. Inicialmente foi mostrado como a imagem de entrada foi segmentada utilizando técnicas de subtração de fundo, limiarização, filtros morfológicos, operações lógicas e seleção de maior região. Foi mostrado também como a imagem foi descrita utilizando propriedades de regiões e descritores de \emph{fourier}. E finalmente como os descritores foram aplicados nas redes neurais obtendo assim a classe dos objetos e a respectiva orientação.
 
 Embora tenha sido apresentado apenas a arquitetura final do sistema, ao longo do desenvolvimento do projeto diversas arquiteturas foram utilizadas. A cada ciclo de desenvolvimento da metodologia em espiral adotada novos algoritmos foram acrescentados, substituídos ou otimizados.
 
 % considerações testes e resultados
-Nesse capítulo apresentou-se um ambiente de testes automatizado que possibilitou a validação do sistema apresentado no capitulo \ref{chap:desenv}. Utilizando o ambiente foram executados dois grupos de testes. O primeiro com 8 objetos e o segundo com 16 objetos. 
+Finalmente no capitulo \ref{chap:testes} apresentou-se um ambiente de testes automatizado que possibilitou a validação do sistema apresentado no capitulo \ref{chap:desenv}. Utilizando o ambiente foram executados dois grupos de testes. O primeiro com 8 objetos e o segundo com 16 objetos. 
 
-O sistema mostrou-se capaz de classificar todos os objetos corretamente com $100\%$ de acerto. Isso se deu devido à qualidade dos descritores calculados, que permitiram resumir as principais características de cada classe. Além disso a topologia da rede de classificação teve papel fundamental para a convergência do treinamento e para a qualidade de decisão. Inicialmente havia sido utilizada uma rede com apenas uma saída, onde cada classe estava associada a uma faixa de valores entre $0$ e $1$. O resultado dessa abordagem inicial está exposto na figura \ref{fig:testes_teste0_matriz}. Como se pode ver, a taxa de acerto foi de apenas $78\%$, o que é inaceitável para o problema, visto que um erro na classificação automaticamente resultará em falha na estimativa do ângulo.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.45\textwidth]{./figs/6-hiddenlayers.png}
-	\caption{Matriz de confusão para 8 objetos - rede com 1 saída.}
-	\fonte{Autoria própria}
-	\label{fig:testes_teste0_matriz}
-\end{figure}
+O sistema mostrou-se capaz de classificar todos os objetos corretamente com $100\%$ de acerto. Isso se deu devido à qualidade dos descritores calculados, que permitiram resumir as principais características de cada classe. Além disso a topologia da rede de classificação teve papel fundamental para a convergência do treinamento e para a qualidade de decisão.
 
 Na estimativa do ângulo obteve-se a precisão de $\pm4.1^o$ nos dois testes, o que representa $2.25\%$ do total de $360^o$ possíveis. O erro médio manteve-se em $1.3^o$, com desvio de $0.85^o$ para o primeiro teste e $1.1^o$, com desvio de $0.8^o$ para o segundo teste. O erro na estimativa do ângulo é bastante influenciado pelo sucesso na etapa de segmentação e normalização da imagem. É necessário portanto para obter bons resultados controlar ao máximo as condições externas de captura das imagens. Condições boas de iluminação por exemplo tendem a melhorar o resultado da etapa de segmentação. 
 
@@ -59,12 +73,8 @@ Pode-se observar também que o erro na estimativa do ângulo não aumentou com a in
 
 Os testes mostraram portanto que o sistema foi capaz de identificar os objetos corretamente e estimar a posição angular com precisão de $\pm4.1^o$.
 
-
-%
-%A equipe conclui esta monografia justificando que os objetivos descritos na introdução, seção \ref{rec:obj}, foram alcançados e estão de acordo com os requisitos mínimos de um curso de Engenharia de Computação.
+Portanto, os objetivos do projeto foram alcançados e a metodologia proposta foi seguida com algumas adaptações.
 
 \section{Trabalhos Futuros}
-
-%TODO
 
 Futuramente o projeto será implementado em uma linguagem de programação convencional. Isso faz se necessário para implantação do sistema em ambiente industrial real, onde ele fará parte de uma linha de produção. Mais detalhes da futura aplicação do projeto não podem ser apresentados devido ao interesse comercial no projeto.
