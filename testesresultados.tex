@@ -1,6 +1,6 @@
 \chapter{Testes e Análise de Resultados} \label{chap:testes}
 
-Este capitulo apresenta o ambiente de testes desenvolvido para validar o sistema, os testes efetuados e os resultados obtidos.
+Este capítulo apresenta o ambiente de testes desenvolvido para validar o sistema, os testes efetuados e os resultados obtidos.
 A seção \ref{sec:testes_ambiente} apresenta um ambiente de testes, que possibilita a captura de imagens de forma automatizada e os objetos utilizados para validação do sistema. Em seguida, na seção \ref{sec:testes_testes}, são apresentados os testes aos quais o sistema foi submetido e os respectivos resultados obtidos. Ao final, na seção \ref{sec:testes_consideracoes}, são apresentadas algumas considerações.
 
 
@@ -72,7 +72,7 @@ O sistema foi testado com duas configurações diferentes. A primeira configuração
 
 \subsection{Primeiro teste: 8 objetos}
 
-Inicialmente cada objeto foi posicionado no ambiente de testes e foram efetuadas $360$ capturas. Uma captura a cada $1^o$, tanto para o fundo, quanto para o objeto. As imagens foram salvas e a classe e ângulo de captura armazenados. Após capturar as imagens para todos os objetos os descritores foram calculados conforme exposto no capitulo \ref{chap:desenv}. Tanto a rede de classificação quanto as redes de estimativa de ângulo foram treinadas.
+Inicialmente cada objeto foi posicionado no ambiente de testes e foram efetuadas $360$ capturas. Uma captura a cada $1^o$, tanto para o fundo, quanto para o objeto. As imagens foram salvas e a classe e ângulo de captura armazenados. Após capturar as imagens para todos os objetos os descritores foram calculados conforme exposto no capítulo \ref{chap:desenv}. Tanto a rede de classificação quanto as redes de estimativa de ângulo foram treinadas.
 
 Na sequência foram capturas 20 imagens em rotações aleatórias de cada objeto e as respectivas imagens de fundo. Novamente os dados foram armazenados. O sistema foi executado para as 160 imagens de teste capturadas e o resultado foi comparado com os valores esperados. A comparação entre valores de classe esperados e obtidos pode ser visto na matriz de confusão apresentada na figura \ref{fig:testes_teste1_matriz}. Para cada objeto existem duas classes na matriz de confusão. Uma para a normalização utilizando o autovetor $A$ e outra para o autovetor $A'=-A$. Para a estimativa do ângulo o resultado pode ser visto nas figuras \ref{fig:testes_teste1_medio}, \ref{fig:testes_teste1_desvio} e \ref{fig:testes_teste1_maximo}.
 
@@ -151,7 +151,7 @@ Em seguida foram capturadas 20 imagens em rotações aleatórias para cada objeto, 
 
 \section{Considerações} \label{sec:testes_consideracoes}
 
-Nesse capítulo apresentou-se um ambiente de testes automatizado que possibilitou a validação do sistema apresentado no capitulo \ref{chap:desenv}. Utilizando o ambiente foram executados dois grupos de testes. O primeiro com 8 objetos e o segundo com 16 objetos. 
+Nesse capítulo apresentou-se um ambiente de testes automatizado que possibilitou a validação do sistema apresentado no capítulo \ref{chap:desenv}. Utilizando o ambiente foram executados dois grupos de testes. O primeiro com 8 objetos e o segundo com 16 objetos. 
 
 O sistema mostrou-se capaz de classificar todos os objetos corretamente com $100\%$ de acerto. Isso se deu devido à qualidade dos descritores calculados, que permitiram resumir as principais características de cada classe. Além disso a topologia da rede de classificação teve papel fundamental para a convergência do treinamento e para a qualidade de decisão. Inicialmente havia sido utilizada uma rede com apenas uma saída, onde cada classe estava associada a uma faixa de valores entre $0$ e $1$. O resultado dessa abordagem inicial está exposto na figura \ref{fig:testes_teste0_matriz}. Como se pode ver, a taxa de acerto foi de apenas $78\%$, o que é inaceitável para o problema, visto que um erro na classificação automaticamente resultará em falha na estimativa do ângulo.
 

@@ -1,12 +1,12 @@
 \chapter{Fundamentação Teórica} \label{chap:fundteor}
 
-Este capítulo apresenta a fundamentação teórica, ou seja, o estudo das técnicas e algoritmos utilizados durante o trabalho. O capitulo divide-se em três seções. 
+Este capítulo apresenta a fundamentação teórica, ou seja, o estudo das técnicas e algoritmos utilizados durante o trabalho. O capítulo divide-se em três seções. 
 
 A seção \ref{sec:segmentacao} apresenta técnicas e algoritmos que serão úteis para para realizar a segmentação de imagens. A segmentação de imagens consiste em subdividir a imagem original em regiões ou objetos até que se tenha identificado a região ou objeto de interesse.
 
 A seção \ref{sec:descricao} apresenta técnicas e algoritmos para realizar a descrição de imagens. Após a segmentação de uma imagem é necessário representar a imagem para que se possa processá-la. Existem duas abordagem para esse problema \cite{GONZALEZ-2006}: representação por meio de características externas da região, como bordas, ou representação por meio de características internas, como textura. A representação por características externas normalmente é utilizada quando se está interessado na forma da região. Já a representação por características internas é utilizada quando o foco está na cor ou textura da região. Nessa seção aborda-se principalmente a representação por meio de características externas de imagens.
 
-Finalmente a seção \ref{sec:classificacao} apresenta uma visão geral de reconhecimento de padrões utilizando redes neurais. O reconhecimento de padrões é feito tomando como base descritores, que podem ser obtidos a partir de técnicas como as vistas na seção \ref{sec:descricao}.
+Finalmente, a seção \ref{sec:classificacao} apresenta uma visão geral de reconhecimento de padrões utilizando redes neurais. O reconhecimento de padrões é feito tomando como base descritores, que podem ser obtidos a partir de técnicas como as vistas na seção \ref{sec:descricao}.
 
 
 \section{Segmentação} \label{sec:segmentacao}
@@ -16,9 +16,9 @@ Esta seção apresenta técnicas e algoritmos para realizar a segmentação de imagen
 
 \subsection{Subtração de fundo} \label{sub:fundteor_sub_fundo}
 
-Técnicas de subtração de fundo são amplamente empregadas para a detecção de movimento em sequencias de imagens de vídeo. A detecção do movimento se dá pela subtração da imagem de referencia chamada "fundo", ou em inglês \emph{background image}, da imagem a ser segmentada. A imagem de fundo não deve possuir objetos em movimento e deve estar sempre atualizada com relação à variações de iluminação \cite{BACKGROUND-SUBTRACTION}.
+Técnicas de subtração de fundo são amplamente empregadas para a detecção de movimento em sequencias de imagens de vídeo. A detecção do movimento se dá pela subtração da imagem de referência chamada ``fundo", ou em inglês \emph{background image}, da imagem a ser segmentada. A imagem de fundo não deve possuir objetos em movimento e deve estar sempre atualizada com relação às variações de iluminação \cite{BACKGROUND-SUBTRACTION}.
 
-O método mais simples de subtração de fundo consiste em subtrair a imagem de fundo da imagem a ser segmentada e em seguida aplicar  um limiar no resultado. Pode-se resumir esse método na equação \ref{eq:fundteor_background_sub}. Onde, $D(t+1)$ é a imagem segmentada, $V(x,y,t+1)$ é a imagem de entrada, $V(x,y,t)$ é a imagem de referencia, ou fundo e $Th$ é um limiar, que pode ser escolhido conforme os métodos apresentados na seção \ref{sub:fundteor_limiarizacao}.
+O método mais simples de subtração de fundo consiste em subtrair a imagem de fundo da imagem a ser segmentada e em seguida aplicar  um limiar no resultado. Pode-se resumir esse método na equação \ref{eq:fundteor_background_sub}. Onde, $D(t+1)$ é a imagem segmentada, $V(x,y,t+1)$ é a imagem de entrada, $V(x,y,t)$ é a imagem de referência, ou fundo, e $Th$ é um limiar, que pode ser escolhido conforme os métodos apresentados na seção \ref{sub:fundteor_limiarizacao}.
 
 \begin{equation}
 D(t+1) = \left |V(x,y,t+1)-V(x,y,t)  \right |> Th
@@ -30,7 +30,7 @@ Existem outros métodos mais complexos, como \emph{Running Gaussian average}, \em
 
 \subsection{Limiarização} \label{sub:fundteor_limiarizacao}
 
-Pela simplicidade na implementação e pela baixa complexidade computacional os algoritmos de limiarização são bastante utilizados na segmentação de imagens. Os métodos de limiarização consistem na partição da imagem baseado na intensidade dos pixeis. Caso a partição seja feita com base em um único limiar de intensidade a limiarização se diz global. Caso a partição seja feita levando em conta os valores de intensidade dos pixeis em uma região de vizinhança de um certo pixel, então o método é chamado de limiarização local \cite{GONZALEZ-2006}. A equação \ref{eq:fundteor_thresholding} descreve esse processo, $g(x,y)$ é a imagem limiarizada, $f(x,y)$ é a imagem de entrada e $T$ é um limiar, que pode variar para diferentes valores de $x$ e $y$ caso a limiarização seja local.
+Pela simplicidade na implementação e pela baixa complexidade computacional os algoritmos de limiarização são bastante utilizados na segmentação de imagens. Os métodos de limiarização consistem na partição da imagem baseado na intensidade dos pixels. Caso a partição seja feita com base em um único limiar de intensidade a limiarização se diz global. Caso a partição seja feita levando em conta os valores de intensidade dos pixels em uma região de vizinhança de um certo pixel, então o método é chamado de limiarização local \cite{GONZALEZ-2006}. A equação \ref{eq:fundteor_thresholding} descreve esse processo, $g(x,y)$ é a imagem limiarizada, $f(x,y)$ é a imagem de entrada e $T$ é um limiar, que pode variar para diferentes valores de $x$ e $y$ caso a limiarização seja local.
 
 \begin{equation}
 g(x,y) =\left\{\begin{matrix}
@@ -40,7 +40,7 @@ g(x,y) =\left\{\begin{matrix}
 \label{eq:fundteor_thresholding}
 \end{equation}
 
-Na figura \ref{fig:fundteor_fig_limiarizacao} mostra-se duas imagens e seus respectivos histogramas. A figura \ref{fig:fundteor_hist_sem_ruido} mostra o histograma para a imagem sem ruído e a figura \ref{fig:fundteor_hist_com_ruido} mostra o histograma para a imagem com ruido gaussiano. Como pode-se ver na figura \ref{fig:fundteor_hist_sem_ruido}, a escolha de um valor para o limiar $T$ para a imagem sem ruído é uma tarefa fácil, porém a escolha do limiar para a imagem com ruído da figura \ref{fig:fundteor_hist_com_ruido} não é mais trivial. A seguir descreve-se um métodos para obtenção de limiar para limiarização global que pode ser aplicado nos dois casos. 
+Na figura \ref{fig:fundteor_fig_limiarizacao} mostram-se duas imagens e seus respectivos histogramas. A figura \ref{fig:fundteor_hist_sem_ruido} mostra o histograma para a imagem sem ruído (figura \ref{fig:fundteor_sem_ruido}) e a figura \ref{fig:fundteor_hist_com_ruido} mostra o histograma para a imagem com ruido gaussiano (figura \ref{fig:fundteor_com_ruido}). Como pode-se ver na figura \ref{fig:fundteor_hist_sem_ruido}, a escolha de um valor para o limiar $T$ para a imagem sem ruído é uma tarefa fácil, porém a escolha do limiar para a imagem com ruído da figura \ref{fig:fundteor_hist_com_ruido} não é trivial. A seguir descreve-se um método para obtenção de limiar para limiarização global que pode ser aplicado nos dois casos. 
 
 \begin{figure}[H]
         \centering
@@ -99,13 +99,13 @@ O cálculo do valor limiar pelo método de \emph{Otsu} se dá pela equação \ref{eq:
 Onde:
 
 \begin{itemize}
-\item $\sigma _{B}^{2} (t)$ é a variância entre as classes para um valor limiar t;
+\item $\sigma _{B}^{2} (t)$ é a variância entre as classes para um valor limiar $t$;
 \item $m_{G}$ é a média global de intensidades da imagem;
 \item $P_{1}(t)$ é a probabilidade de um pixel qualquer da imagem estar na classe 1 dado o valor limiar $t$.
 \item $ m(t)$ é a média acumulada das intensidades de $t=0$ até a intensidade $t$;
 \end{itemize}
 
-Portanto, para o cálculo do valor limiar pelo método de \emph{Otsu} basta encontrar o valor limiar $t$ tal que q variância entre as classes, $\sigma _{B}^{2} (t)$, é máximo. A dedução da equação \ref{eq:fundteor_otsu} está fora do escopo deste projeto, mas pode ser encontrada em \cite{GONZALEZ-2006}. 
+Portanto, para o cálculo do valor limiar pelo método de \emph{Otsu} basta encontrar o valor limiar $t$ tal que a variância entre as classes, $\sigma _{B}^{2} (t)$, é máximo. A dedução da equação \ref{eq:fundteor_otsu} está fora do escopo deste projeto, mas pode ser encontrada em \cite{GONZALEZ-2006}. 
 
 Na figura \ref{fig:fundteor_fig_limiarizada} mostram-se as imagens da figura \ref{fig:fundteor_fig_limiarizacao} limiarizadas pelo método de \emph{Otsu} e seus respectivos valores de limiarização.
 
@@ -149,14 +149,14 @@ Na figura \ref{fig:fundteor_fig_limiarizada} mostram-se as imagens da figura \re
 
 \subsection{Operações morfológicas básicas} \label{sub:fundteor_op_morfologicas}
 
-Operações morfológicas como abertura e fechamento podem ser úteis para filtrar imagens. Principalmente para filtrar imagens binárias onde a operação de fechamento pode ser aplicada para diminuir ruido.
+Operações morfológicas como abertura e fechamento podem ser úteis para filtrar imagens. Principalmente para filtrar imagens binárias onde a operação de fechamento pode ser aplicada para reduzir ruido do tipo pimenta (pixels pretos espalhados aleatoriamente pela imagem).
 
 Para o estudo das operações morfológicas de abertura e fechamento precisa-se primeiramente esclarecer alguns pontos:
 
 \begin{itemize}
-\item Podemos representar imagens binárias como sendo um conjunto de pixeis no espaço $Z^2$, onde cada pixel é representado por uma tupla $(x,y)$ e $x$ e $y$ são as coordenadas do pixel.
+\item Podemos representar imagens binárias como sendo um conjunto de pixels no espaço $Z^2$, onde cada pixel é representado por uma tupla $(x,y)$ e $x$ e $y$ são as coordenadas do pixel.
 \item A translação de um conjunto $B$ para um ponto $z = (z_{1},z_{2})$, denotado por $(B)_z$ é o conjunto de pontos em $B$ com as respectivas coordenas $(x,y)$ tendo sido substituídas pela coordenadas $(x+z_{1}, y+z_{2})$.
-\item Elemento estruturante é um conjunto de pixeis que é utilizado para fazer operações sobre uma imagem. Cada elemento estruturante possui um pixel de origem. A figura \ref{fig:fundteor_elementos_estruturantes} mostra exemplos de elementos estruturantes e suas respectivas origens.
+\item Elemento estruturante é um conjunto de pixels que é utilizado para fazer operações sobre uma imagem. Cada elemento estruturante possui um pixel de origem. A figura \ref{fig:fundteor_elementos_estruturantes} mostra exemplos de elementos estruturantes e suas respectivas origens.
 
 \begin{figure}[H]
 	\centering
@@ -166,7 +166,7 @@ Para o estudo das operações morfológicas de abertura e fechamento precisa-se pri
 	\label{fig:fundteor_elementos_estruturantes}
 \end{figure}
 
-\item O elemento estruturante pode ser utilizado para fazer operações sobre uma imagem binária. Considere por exemplo a operação no conjunto $A$, feita pelo elemento estruturante $B$ (figuras \ref{fig:fundteor_elementos_estruturantes_ex_A} e \ref{fig:fundteor_elementos_estruturantes_ex_B}): Cria-se um novo conjunto $C$ sobrepondo $B$ em $A$ da maneira que a origem de $B$ passe por todos os pixeis de $A$. Em cada ponto que a origem de $B$ passa verifica-se se $B$ está completamente contido em $A$. Se estiver marca-se esse ponto no conjunto $C$. A figura \ref{fig:fundteor_elementos_estruturantes_ex_C} mostra o resultado da operação, ou seja, o conjunto $C$.
+\item O elemento estruturante pode ser utilizado para fazer operações sobre uma imagem binária. Considere por exemplo a operação no conjunto $A$, feita pelo elemento estruturante $B$ (figuras \ref{fig:fundteor_elementos_estruturantes_ex_A} e \ref{fig:fundteor_elementos_estruturantes_ex_B}): Cria-se um novo conjunto $C$ sobrepondo $B$ em $A$ da maneira que a origem de $B$ passe por todos os pixels de $A$. Em cada ponto que a origem de $B$ passa verifica-se se $B$ está completamente contido em $A$. Se estiver marca-se esse ponto no conjunto $C$. A figura \ref{fig:fundteor_elementos_estruturantes_ex_C} mostra o resultado da operação, ou seja, o conjunto $C$ (como será descrito adiante em mais detalhes, esta é uma operação morfológica de erosão).
 
 \begin{figure}[H]
         \centering
@@ -191,7 +191,7 @@ Para o estudo das operações morfológicas de abertura e fechamento precisa-se pri
                 \label{fig:fundteor_elementos_estruturantes_ex_C}
         \end{subfigure}
 
-        \caption{Imagem binária, elemento estruturante e operação de $B$ em $A$}
+        \caption{Exemplo de operação morfológica: erosão.}
 	\fonte{Autoria própria}
 	\label{fig:elementos_estruturantes_ex}
 \end{figure}
@@ -232,7 +232,7 @@ A \oplus B = \left \{ z\mid \left [(\hat{B})_{z} \cap A  \right ] \subseteq A \r
 
 Onde $\hat{B}$ é o conjunto $B$ espelhado. Quando o elemento estruturante é simétrico então $\hat{B}=B$. 
 
-A equação \ref{eq:fundteor_dilatacao} diz que a dilatação do conjunto $A$ pelo elemento estruturante $B$ é o conjunto de todos os pontos $z$ tal que se $\hat{B}$ e $A$ se sobrepõem em pelo menos um ponto, então $z$ faz parte de $A \oplus B$. Pode-se ver melhor esse processo na figura \ref{fig:fundteor_dilatacao_A_B}, onde o conjunto $A$ é dilatado pelo elemento estruturante $B$ formando o conjunto $A \oplus B$.
+A equação \ref{eq:fundteor_dilatacao} estabelece que a dilatação do conjunto $A$ pelo elemento estruturante $B$ é o conjunto de todos os pontos $z$ tal que se $\hat{B}$ e $A$ se sobrepõem em pelo menos um ponto, então $z$ faz parte de $A \oplus B$. Pode-se ver melhor esse processo na figura \ref{fig:fundteor_dilatacao_A_B}, onde o conjunto $A$ é dilatado pelo elemento estruturante $B$ formando o conjunto $A \oplus B$.
 
 \begin{figure}[H]
 	\centering
@@ -259,7 +259,7 @@ A \bullet B = \left ( A \oplus B \right ) \ominus B
 \label{eq:fundteor_fechamento}
 \end{equation}
 
-Na figura \ref{fig:regiao_abertura} pode-se ver o resultado da execução da operação de abertura em cima do conjunto $A$ da figura \ref{fig:regiao_teste_A}. Em seguida na figura \ref{fig:regiao_fechamento} pode-se ver o resultado da execução da operação de fechamento em cima do mesmo conjunto da figura \ref{fig:regiao_teste_A}. Como pode-se ver, a operação de abertura "abre" a imagem em pontos estreitos, já a operação de fechamento "fecha" a imagem onde existem cavidades pequenas.
+Na figura \ref{fig:regiao_abertura} pode-se ver o resultado da execução da operação de abertura em cima do conjunto $A$ da figura \ref{fig:regiao_teste_A}. Em seguida na figura \ref{fig:regiao_fechamento} pode-se ver o resultado da execução da operação de fechamento em cima do mesmo conjunto da figura \ref{fig:regiao_teste_A}. Como pode-se ver, a operação de abertura ``abre" a imagem em pontos estreitos, já a operação de fechamento ``fecha" a imagem onde existem cavidades pequenas.
 
 \begin{figure}[H]
 	\centering
@@ -338,7 +338,7 @@ K = max \left \{ k \mid (A \ominus k B) \neq \varnothing  \right \}
 
 \subsubsection {Poda (\emph{Pruning})}
 
-Aplicando-se o método de esqueletonização mencionado anteriormente em figuras reais, como a figura \ref{fig:fundteor_sketon_in}, pode-se obter resultados como a figura \ref{fig:fundteor_sketon_out}. Devido a esse tipo de resultados aplica-se após a esqueletonização um método de poda. A poda do esqueleto consiste em avaliar o tamanho dos ramos gerados, caso sejam menores que um valor limiar são removidos. A figura \ref{fig:fundteor_sketon_out_20} mostra o método de poda aplicado com um limiar de 20 pixeis.
+Aplicando-se o método de esqueletonização mencionado anteriormente em figuras reais, como a figura \ref{fig:fundteor_sketon_in}, pode-se obter resultados como a figura \ref{fig:fundteor_sketon_out}. Devido a esse tipo de resultados aplica-se após a esqueletonização um método de poda. A poda do esqueleto consiste em avaliar o tamanho dos ramos gerados, caso sejam menores que um valor limiar são removidos. A figura \ref{fig:fundteor_sketon_out_20} mostra o método de poda aplicado com um limiar de 20 pixels.
 
 \begin{figure}[H]
         \centering
@@ -391,7 +391,7 @@ C_{x} = \frac{1}{K} \sum_{k=1}^{K} (x_{k} x_{k}^{T}) - m_{x}m_{x}^{T}
 \label{eq:fundteor_cov}
 \end{equation}
 
-Na matriz de covariâncias os elementos $c_{ii}$ de $C_{x}$ representam a variância entre os valores na coordenada $x_{i}$. Os elementos $c_{ij}$ representam a covariância entre os valores na coordenada $x_{i}$ com os valores da coordenada $x_{j}$. Portanto, a matriz de covariância possui informações que dizem respeito à distribuição dos pixeis da imagem. 
+Na matriz de covariâncias os elementos $c_{ii}$ de $C_{x}$ representam a variância entre os valores na coordenada $x_{i}$. Os elementos $c_{ij}$ representam a covariância entre os valores na coordenada $x_{i}$ com os valores da coordenada $x_{j}$. Portanto, a matriz de covariância possui informações que dizem respeito à distribuição dos pixels da imagem. 
 
 Pode-se ver isso melhor nas matrizes de covariância apresentadas nas figuras \ref{fig:fundteor_pca_xc}, \ref{fig:fundteor_pca_yc} e \ref{fig:fundteor_pca_xyc} que foram calculadas para as imagens das figuras \ref{fig:fundteor_pca_x}, \ref{fig:fundteor_pca_y} e \ref{fig:fundteor_pca_xy} respectivamente. Percebe-se que na figura \ref{fig:fundteor_pca_xc} a maior variância ocorre entre os elementos da coordenada $x_{1}$, visto que $c_{11}$ possui o maior valor na matriz de covariâncias. Semelhantemente percebe-se que na figura \ref{fig:fundteor_pca_yc} a maior variância ocorre entre os elementos da coordenada $x_2$. A terceira imagem, figura \ref{fig:fundteor_pca_xyc}, mostra uma distribuição mais continua em $x_{1}$ e $x_{2}$, mas valores maiores para as covariâncias entre os elementos das coordenadas $x_{1}$ e $x_{2}$. A terceira imagem mostra portanto o relacionamento entre as duas coordenadas da imagem: quando  $x_{1}$ aumenta,  $x_{2}$ tende a aumentar também, e vice-versa.
 
@@ -532,7 +532,7 @@ Considere por exemplo as imagens da figura \ref{fig:fundteor_pca2}. Calculamos o
 	\label{fig:fundteor_pca2}
 \end{figure}
 
-Vê-se portanto que é possível definir um eixo absoluto para cada imagem com base na distribuição dos pixeis sobre a imagem.
+Vê-se portanto que é possível definir um eixo absoluto para cada imagem com base na distribuição dos pixels sobre a imagem.
 
 \subsubsection{Normalização}
 
@@ -595,7 +595,7 @@ Propriedades básicas de regiões, como área e excentricidade, podem ser usadas pa
 
 \subsubsection{Área}
 
-A área de uma região é o número de pixeis da região \cite{MATHWORKS-HELP-2}.
+A área de uma região é o número de pixels da região \cite{MATHWORKS-HELP-2}.
 
 \subsubsection{Área convexa}
 
@@ -654,7 +654,7 @@ O centroide de uma imagem é dado pelo centro de massa da imagem \cite{MATHWORKS-
 
 \subsection{Descritores de \emph{fourier}}
 
-Considere a figura \ref{fig:fundteor_fourier_desc_org}. Os pixeis com valor $1$ da imagem binária podem ser representados como sendo pares de coordenadas $(x_{0},y_{0}),(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{K-1},y_{K-1})$, onde $K$ é o número de pixeis na imagem. Além disso os pixeis podem ser representados como uma sequência $x(k) = x_{k}$ e $y(k) = y_{k}$ ou como $s(k) = \left [ x(k), y(k) \right ]$ para $k = 0,1,2,...,K-1$. Além disso pode-se tratar as coordenadas dos pixeis como números complexos: $s(k) = x(k) + j y(k)$.
+Considere a figura \ref{fig:fundteor_fourier_desc_org}. Os pixels com valor $1$ da imagem binária podem ser representados como sendo pares de coordenadas $(x_{0},y_{0}),(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{K-1},y_{K-1})$, onde $K$ é o número de pixels na imagem. Além disso os pixels podem ser representados como uma sequência $x(k) = x_{k}$ e $y(k) = y_{k}$ ou como $s(k) = \left [ x(k), y(k) \right ]$ para $k = 0,1,2,...,K-1$. Além disso pode-se tratar as coordenadas dos pixels como números complexos: $s(k) = x(k) + j y(k)$.
 
 Tem-se que a transformada discreta de \emph{fourier} de um sinal $s(k)$ é dado pela equação \ref{eq:fundteor_dft} \cite{GONZALEZ-2006}:
 
@@ -665,7 +665,7 @@ a(u) = \sum_{k=0}^{K-1} s(k) e^{-j2 \pi u k / K} ~~~~~ ,u = 0,1,2,...,K-1
 
 Os coeficientes complexos $a(u)$ da transformada discreta de \emph{fourier} são chamados de descritores de \emph{fourier} \cite{GONZALEZ-2006}.
 
-Da mesma forma que se aplicou a transformada discreta de \emph{fourier} para obter os descritores de \emph{fourier} pode-se aplicar a transformada discreta inversa de \emph{fourier} nos coeficientes complexos para obter novamente os números complexos representando as coordenadas dos pixeis (equação \ref{eq:fundteor_idft}).
+Da mesma forma que se aplicou a transformada discreta de \emph{fourier} para obter os descritores de \emph{fourier} pode-se aplicar a transformada discreta inversa de \emph{fourier} nos coeficientes complexos para obter novamente os números complexos representando as coordenadas dos pixels (equação \ref{eq:fundteor_idft}).
 
 \begin{equation}
 s(k) = \frac{1}{K} \sum_{u=0}^{K-1} a(u) e^{j2 \pi u k / K} ~~~~~ ,k = 0,1,2,...,K-1
@@ -978,12 +978,12 @@ Como se pode ver é necessário iniciar o processo de atualização dos pesos da red
 
 \section{Considerações} \label{sec:consideracoes}
 
-Apresentou-se nesse capitulo embasamento teórico para o desenvolvimento do projeto, abrangendo as três áreas fundamentais de sistemas de processamento de imagens: segmentação, descrição e classificação. 
+Apresentou-se nesse capítulo embasamento teórico para o desenvolvimento do projeto, abrangendo as três áreas fundamentais de sistemas de processamento de imagens: segmentação, descrição e classificação. 
 Foram estudadas técnicas de segmentação de imagens que permitem, através da combinação de diversas delas, a identificação de regiões de interesse. Além da identificação da região de interesse foi apresentada a técnica de normalização de imagens utilizando a análise de componentes principais.
 Foi fornecido embasamento teórico para efetuar a descrição de imagens utilizando propriedades de regiões, como área, solidez, posição do centroide, entre outros além dos conceitos para efetuar a descrição utilizando descritores de \emph{fourier}.
 Por fim apresentou-se uma visão geral de redes neurais e foram apresentadas noções sobre treinamento de redes utilizando algoritmos do tipo \emph{back propagation}.
 
-% fechamento com relacao aos objetivos do capitulo
+% fechamento com relacao aos objetivos do capítulo
 % deve ser parte da conclusao final
 % podem aparecer consideracoes pessoais
 % TODO.
