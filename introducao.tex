@@ -8,7 +8,7 @@ Técnicas de visão computacional podem ser ferramentas úteis para a automação de 
 
 Muitas vezes, existem etapas da produção em indústrias metalúrgicas, nas quais se necessita identificar objetos metálicos e sua respectiva orientação angular, seja para análise, separação ou mesmo somente para classificação desses objetos. 
 
-A grande quantidade de objetos distintos que podem estar em uma mesma linha de produção ou linha de montagem podem confundir os trabalhadores, estando estes portanto sujeitos a erros e falhas. A identificação automática de objetos, assim como a identificação automática de sua posição, tendem a diminuir o erro cometido na classificação ou reposicionamento manual para cada objeto. Diminuindo o erro de classificação diminui-se consequentemente o custo gerado por uma linha de montagem parada e dispensa-se a necessidade de parte dos operadores.
+A grande quantidade de objetos distintos que podem estar em uma mesma linha de produção ou linha de montagem pode confundir os trabalhadores, estando estes portanto sujeitos a erros e falhas. A identificação automática de objetos, assim como a identificação automática de sua posição, tendem a diminuir o erro cometido na classificação ou reposicionamento manual para cada objeto. Diminuindo o erro de classificação diminui-se consequentemente o custo gerado por uma linha de montagem parada e dispensa-se a necessidade de parte dos operadores.
 
 % problema de classificação de objetos - VER NO LIVRO DO GONZALES
 %	pesquisar principais problemas iluminação/etc
@@ -38,15 +38,15 @@ A grande quantidade de objetos distintos que podem estar em uma mesma linha de p
 %3 Objetivos: geral
 O objetivo geral deste trabalho é desenvolver um sistema capaz de classificar objetos metálicos e medir seu respectivo ângulo de rotação com relação ao eixo x do plano cartesiano, sendo os objetos previamente conhecidos pelo sistema utilizando-se técnicas de aprendizagem de máquina.
 
-Para tanto, temos como objetivos específicos três objetivos que possibilitarão o cumprimento do objetivo geral.
-O primeiro objetivo específico é analisar e aplicar técnicas de segmentação de imagens, como algoritmos de
+Para tanto, tem-se como objetivos específicos três objetivos que possibilitarão o cumprimento do objetivo geral.
+O primeiro objetivo específico é a analise e aplicação de técnicas de segmentação de imagens, como algoritmos de
 detecção de bordas, algoritmos de limiarização, segmentação baseada em crescimento de regiões.
 O segundo objetivo é analisar e aplicar técnicas de descrição de imagens, como algoritmos de descrição de contornos, descrição de regiões, entre outros.
 O terceiro objetivo é o emprego de uma técnica de aprendizagem de máquina, como redes neurais, que possibilite a classificação de objetos previamente conhecidos pelo sistema.
 
 \section{Metodologia}
 
-O desenvolvimento do projeto é dividido em três etapas. A primeira etapa consiste no estudo de técnicas de segmentação de imagem e implementação no software MATLAB. A segunda etapa consiste no estudo de técnicas de descrição de imagens e também implementação no MATLAB. Finalmente, na terceira etapa é implementado no MATLAB um sistema de redes neurais capazes de classificar o objeto e medir seu ângulo.
+O desenvolvimento do projeto é dividido em três etapas. A primeira etapa consiste no estudo de técnicas de segmentação de imagem e implementação no software Matlab. A segunda etapa consiste no estudo de técnicas de descrição de imagens e também implementação no Matlab. Finalmente, na terceira etapa é implementado no Matlab um sistema de redes neurais capazes de classificar o objeto e medir seu ângulo.
 Para cada etapa do desenvolvimento do projeto adota-se a metodologia de desenvolvimento em espiral, onde a cada ciclo de desenvolvimento são agregadas novas funcionalidades ao sistema.
 
 Para o teste e a validação do sistema é desenvolvido um ambiente de testes, onde objetos especificamente selecionados são posicionados de forma automática, possibilitando a captura de imagens do objeto em diversas posições angulares. 

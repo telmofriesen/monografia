@@ -6,7 +6,7 @@ A seção \ref{sec:testes_ambiente} apresenta um ambiente de testes, que possibili
 
 \section{Ambiente de testes} \label{sec:testes_ambiente}
 
-Inicialmente para validar o sistema proposto é necessária a definição dos objetos a serem reconhecidos. Com o objetivo de possibilitar a validação do sistema porém sem comprometer a aplicação futuramente pretendida para o projeto selecionou-se os objetos dispostos na figura \ref{fig:testes_objetos}. Os objetos são caracteres alfanuméricos, formas geométricas básicas e algumas formas aleatórias. Os objetos foram selecionados com o objetivo de testar a robustez do sistema. Portanto foram utilizadas formas semelhantes, como o carácter ``S'' e o número ``5'', o carácter ``A'' e sua forma em negrito ``{\bf A}'', um triangulo retângulo e um triângulo isósceles. Além disso existem algumas peculiaridades em alguns caracteres. O carácter ``S'', por exemplo, possui a parte superior ligeiramente menor que a inferior, avaliando a robustez e precisão da estimativa de ângulo. Para posteriores referências nomeou-se os objetos da figura \ref{fig:testes_objetos} como segue, da esquerda para a direita e de cima para baixo tem-se:  $A$, $C$, $5$, $T$, $R$, $G$, $S$, $6$, $q$, $tr$, $l$, $Ab$, $ti$, $bn$, $\$$, $sn$.
+Inicialmente para validar o sistema proposto é necessária a definição dos objetos a serem reconhecidos. Com o objetivo de possibilitar a validação do sistema porém sem comprometer a aplicação futuramente pretendida para o projeto selecionou-se os objetos dispostos na figura \ref{fig:testes_objetos}. Os objetos são caracteres alfanuméricos, formas geométricas básicas e algumas formas aleatórias. Os objetos foram selecionados com o objetivo de testar a robustez do sistema. Portanto foram utilizadas formas semelhantes, como o carácter ``S'' e o número ``5'', o carácter ``A'' e sua forma em negrito ``{\bf A}'', um triangulo retângulo e um triângulo isósceles. Além disso existem algumas peculiaridades em alguns caracteres. O carácter ``S'', por exemplo, possui a parte superior ligeiramente menor que a inferior, avaliando a robustez e precisão da estimativa de ângulo. Para posteriores referências nomeou-se os objetos da figura \ref{fig:testes_objetos} como segue, da esquerda para a direita e de cima para baixo tem-se:  $A$, $C$, $5$, $T$, $R$, $G$, $S$, $6$, $Bb$, $tr$, $l$, $Ab$, $ti$, $bn$, $\$$, $sn$.
 
 \begin{figure}[H]
 	\centering
@@ -26,16 +26,16 @@ Para facilitar a execução de testes o ambiente deve permitir a captura de imagen
 	\label{fig:testes_ambiente}
 \end{figure}
 
-O sistema desenvolvido em MATLAB comunica-se com a unidade programável do \emph{Mindstorms}, também chamada de \emph{brick}, através de uma conexão \emph{bluetooth}. A comunicação é unidirecional do ponto de vista do MATLAB. O \emph{brick} comunica-se com um servo-motor que fornece realimentação por meio de um \emph{encoder}. Além da realimentação do \emph{encoder} foi adicionada uma malha de realimentação externa para fornecer um referencial absoluto ao sistema por meio de uma chave de fim de curso.
+O sistema desenvolvido em Matlab comunica-se com a unidade programável do \emph{Mindstorms}, também chamada de \emph{brick}, através de uma conexão \emph{bluetooth}. A comunicação é unidirecional do ponto de vista do Matlab. O \emph{brick} comunica-se com um servo-motor que fornece realimentação por meio de um \emph{encoder}. Além da realimentação do \emph{encoder} foi adicionada uma malha de realimentação externa para fornecer um referencial absoluto ao sistema por meio de uma chave de fim de curso.
 
 As funções implementadas dentro do \emph{brick} são as seguintes:
 
 \begin{itemize}
 \item Reset: Gira o objeto no sentido anti-horário até atingir o zero absoluto definido pelo acionamento da chave de fim de curso.
-\item Step: Gira o objeto no sentido anti-horário até um ângulo especificado por meio de parâmetros. A posição do servo-motor é obtida pela realimentação do \emph{encoder}.
+\item Step: Gira o objeto no sentido anti-horário até um ângulo especificado por meio de um parâmetro. A posição do servo-motor é obtida pela realimentação do \emph{encoder}.
 \end{itemize}
 
-Para completar o ambiente de testes foi utilizado uma \emph{webcam} acessada pelo MATLAB para captura de imagens e foi montado um sistema de iluminação. O sistema de iluminação foi montado ao redor da câmera de maneira a não formar sombras visíveis a partir do ponto de vista da \emph{webcam}. A montagem completa pode ser vista nas imagens da figura \ref{fig:testes_ambiente_completo}.
+Para completar o ambiente de testes foi utilizado uma \emph{webcam} acessada pelo Matlab para captura de imagens e foi montado um sistema de iluminação. O sistema de iluminação foi montado ao redor da câmera de maneira a não formar sombras visíveis a partir do ponto de vista da \emph{webcam}. A montagem completa pode ser vista nas imagens da figura \ref{fig:testes_ambiente_completo}.
 
 \begin{figure}[H]
         \centering
@@ -68,13 +68,13 @@ Para completar o ambiente de testes foi utilizado uma \emph{webcam} acessada pel
 
 \section{Testes} \label{sec:testes_testes}
 
-O sistema foi testado com duas configurações diferentes. A primeira configuração foi formada pelos oito primeiros objetos da figura \ref{fig:testes_objetos}. Ou seja:  $A$, $C$, $5$, $T$, $R$, $G$, $S$, $6$. A segunda configuração foi formada com todos os objetos apresentados na figura, ou seja:  $A$, $C$, $5$, $T$, $R$, $G$, $S$, $6$, $q$, $tr$, $l$, $Ab$, $ti$, $bn$, $\$$, $sn$.
+O sistema foi testado com duas configurações diferentes. A primeira configuração foi formada pelos oito primeiros objetos da figura \ref{fig:testes_objetos}. Ou seja:  $A$, $C$, $5$, $T$, $R$, $G$, $S$, $6$. A segunda configuração foi formada com todos os objetos apresentados na figura, ou seja:  $A$, $C$, $5$, $T$, $R$, $G$, $S$, $6$, $Bb$, $tr$, $l$, $Ab$, $ti$, $bn$, $\$$, $sn$.
 
 \subsection{Primeiro teste: 8 objetos}
 
 Inicialmente cada objeto foi posicionado no ambiente de testes e foram efetuadas $360$ capturas. Uma captura a cada $1^o$, tanto para o fundo, quanto para o objeto. As imagens foram salvas e a classe e ângulo de captura armazenados. Após capturar as imagens para todos os objetos os descritores foram calculados conforme exposto no capitulo \ref{chap:desenv}. Tanto a rede de classificação quanto as redes de estimativa de ângulo foram treinadas.
 
-Na sequencia foram capturas 20 imagens em rotações aleatórias de cada objeto e as respectivas imagens de fundo. Novamente os dados foram armazenados. O sistema foi executado para as 160 imagens de teste capturadas e o resultado foi comparado com os valores esperados. A comparação entre valores de classe esperados e obtidos pode ser visto na matriz de confusão apresentada na figura \ref{fig:testes_teste1_matriz}. Para a estimativa do ângulo o resultado pode ser visto nas figuras \ref{fig:testes_teste1_medio}, \ref{fig:testes_teste1_desvio} e \ref{fig:testes_teste1_maximo}.
+Na sequência foram capturas 20 imagens em rotações aleatórias de cada objeto e as respectivas imagens de fundo. Novamente os dados foram armazenados. O sistema foi executado para as 160 imagens de teste capturadas e o resultado foi comparado com os valores esperados. A comparação entre valores de classe esperados e obtidos pode ser visto na matriz de confusão apresentada na figura \ref{fig:testes_teste1_matriz}. Para cada objeto existem duas classes na matriz de confusão. Uma para a normalização utilizando o autovetor $A$ e outra para o autovetor $A'=-A$. Para a estimativa do ângulo o resultado pode ser visto nas figuras \ref{fig:testes_teste1_medio}, \ref{fig:testes_teste1_desvio} e \ref{fig:testes_teste1_maximo}.
 
 \begin{figure}[H]
 	\centering
@@ -112,14 +112,14 @@ Na sequencia foram capturas 20 imagens em rotações aleatórias de cada objeto e a
 
 \subsection{Segundo teste: 16 objetos}
 
-O mesmo procedimento executado para o primeiro teste foi executado para o segundo, no entanto com algumas diferenças. Foram utilizados 16 objetos distintos. Para o objeto $q$ foram efetuadas $450$ capturas de $0$ a $90^o$ por se tratar de um objeto simétrico. Para o objeto $l$ foram efetuadas $180$ capturas de $0$ a $180^o$ pelo mesmo motivo. Para os demais objetos foram efetuadas $360$ capturas. Após a captura as redes de classificação e estimativa de ângulo foram treinadas.
+O mesmo procedimento executado para o primeiro teste foi executado para o segundo, no entanto com algumas diferenças. Foram utilizados todos os 16 objetos mostrados na figura \ref{fig:testes_objetos}. Para o objeto $l$ foram efetuadas apenas $180$ capturas de $0$ a $180^o$ por se tratar de um objeto simétrico. Para os demais objetos foram efetuadas $360$ capturas. Após a captura as redes de classificação e estimativa de ângulo foram treinadas.
 
-Em seguida foram capturadas 20 imagens em rotações aleatórias para cada objeto, totalizando 320 imagens de teste. O sistema foi executado e os resultados foram comparados com os valores esperados conforme a matriz de confusão apresentada na figura \ref{fig:testes_teste2_matriz}. A matriz de confusão apresentada mostra apenas 30 classes ao invés de 32 como esperado. Isso se dá pelo fato dos objetos $q$ e $l$ serem simétricos resultando sempre em um autovetor correto para a normalização. Para a estimativa do ângulo o resultado pode ser visto nas figuras \ref{fig:testes_teste2_medio}, \ref{fig:testes_teste2_desvio} e \ref{fig:testes_teste2_maximo}.
+Em seguida foram capturadas 20 imagens em rotações aleatórias para cada objeto, totalizando 320 imagens de teste. O sistema foi executado e os resultados foram comparados com os valores esperados conforme a matriz de confusão apresentada na figura \ref{fig:testes_teste2_matriz}. A matriz de confusão apresentada mostra apenas 31 classes ao invés de 32 como esperado. Isso se dá pelo fato do objetos $l$ ser simétrico, resultando sempre em um autovetor correto para a normalização. Para a estimativa do ângulo o resultado pode ser visto nas figuras \ref{fig:testes_teste2_medio}, \ref{fig:testes_teste2_desvio} e \ref{fig:testes_teste2_maximo}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{./figs/16-classes.png}
-	\caption{Matriz de confusão para 16 objetos (formando 30 classes).}
+	\caption{Matriz de confusão para 16 objetos (formando 31 classes).}
 	\fonte{Autoria própria}
 	\label{fig:testes_teste2_matriz}
 \end{figure}
@@ -163,9 +163,9 @@ O sistema mostrou-se capaz de classificar todos os objetos corretamente com $100
 	\label{fig:testes_teste0_matriz}
 \end{figure}
 
-Na estimativa do ângulo obteve-se a precisão de $\pm4.1^o$ nos dois testes, o que representa $2.25\%$ do total de $360^o$ possíveis. O erro médio manteve-se em $1.3^o$, com desvio de $0.85^o$ para o primeiro teste e $1.1^o$, com desvio de $0.8^o$ para o segundo teste. O erro na estimativa do ângulo é bastante influenciado pelo sucesso na etapa de segmentação e normalização da imagem. É necessário portanto para obter bons resultados controlar ao máximo as condições externas de captura das imagens. Condições boas de iluminação por exemplo tendem a melhorar o resultado da etapa de segmentação. 
+Na estimativa do ângulo obteve-se a precisão de $\pm4.1^o$ para o teste com 8 objetos e $\pm4.5^o$ para o teste com 16 objetos. O erro médio manteve-se em $1.3^o$, com desvio de $0.85^o$ para o primeiro teste e $1.1^o$, com desvio de $0.8^o$ para o segundo teste. O erro médio geral ficou portanto em $1.2^o$. O erro na estimativa do ângulo é bastante influenciado pelo sucesso na etapa de segmentação e normalização da imagem. Sendo assim, para obter bons resultados é necessário controlar ao máximo as condições externas de captura das imagens. Condições boas de iluminação por exemplo tendem a melhorar o resultado da etapa de segmentação. 
 
-Pode-se observar também que o erro na estimativa do ângulo não aumentou com a inserção de mais objetos no sistema. Isso se deu devido a estimativa ser feita com uma rede neural específica para cada objeto.
+Pôde-se observar também que o erro médio na estimativa do ângulo não aumentou com a inserção de mais objetos no sistema. Isso se deu devido a estimativa ser feita com uma rede neural específica para cada objeto. O erro máximo aumentou devido aos pesos iniciais das redes neurais que são escolhidos aleatoriamente antes do treinamento. Essa aleatoriedade pode influenciar o resultado entre redes treinadas e testadas com o mesmo conjunto de treinamento e teste.
 
-Os testes mostraram portanto que o sistema foi capaz de identificar os objetos corretamente e estimar a posição angular com precisão de $\pm4.1^o$.
+Os testes mostraram portanto que o sistema foi capaz de identificar os objetos corretamente e estimar a posição angular com precisão de $\pm4.5^o$ no pior caso.
 

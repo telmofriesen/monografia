@@ -1,26 +1,26 @@
 %---------- Segundo Capitulo ----------
 \chapter{Desenvolvimento} \label{chap:desenv}
 
-Este capítulo apresenta o desenvolvimento do projeto, detalhando cada parte do sistema desenvolvido. A descrição apresentada a seguir referencia os conceitos apresentados no capítulo \ref{chap:fundteor}. O sistema foi implementado no software Matlab \cite{MATLAB} permitindo a execução de diversos testes para validação conforme será visto no capitulo \ref{chap:testes}. A figura \ref{fig:desenv_overview} apresenta uma visão geral do sistema desenvolvido.
+Este capítulo apresenta o desenvolvimento do projeto, detalhando cada parte do sistema desenvolvido. A descrição apresentada a seguir referencia os conceitos apresentados no capítulo \ref{chap:fundteor}. O sistema foi implementado no software Matlab \cite{Matlab} permitindo a execução de diversos testes para validação conforme será visto no capitulo \ref{chap:testes}. A figura \ref{fig:desenv_overview} apresenta uma visão geral do sistema desenvolvido.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{./figs/visao_geral.jpg}
+	\includegraphics[width=1\textwidth]{./figs/visao_geral.png}
 	\caption{Visão geral do sistema desenvolvido.}
 	\fonte{Autoria própria}
 	\label{fig:desenv_overview}
 \end{figure}
 
-O capitulo divide-se em sete seções. As primeiras seis seções apresentam com detalhes os blocos da figura \ref{fig:desenv_overview}: A seção \ref{sec:desenv_seg1} e a seção \ref{sec:desenv_seg2} mostram como os conceitos da seção \ref{sec:segmentacao} foram aplicados para segmentar a imagem capturada. A seção \ref{sec:desenv_desc1} e a seção \ref{sec:desenv_desc2} apresentam como os descritores de \emph{fourier} e as propriedades estudados na seção \ref{subsec:propriedades} foram aplicados para formar um descritor para as imagens. As seções \ref{sec:desenv_class1} e \ref{sec:desenv_class2} apresentam como os descritores foram utilizados para classificar e determinar o ângulo das imagens. Finalmente, na seção \ref{sec:desenv_consideracoes}, algumas considerações sobre o desenvolvimento do projeto são apresentadas.
+O capitulo divide-se em sete seções. As primeiras seis seções apresentam com detalhes os blocos da figura \ref{fig:desenv_overview}: A seção \ref{sec:desenv_seg1} e a seção \ref{sec:desenv_seg2} mostram como os conceitos da seção \ref{sec:segmentacao} foram aplicados para segmentar a imagem capturada. A seção \ref{sec:desenv_desc1} e a seção \ref{sec:desenv_desc2} apresentam como os descritores de \emph{fourier} e as propriedades estudadas na seção \ref{subsec:propriedades} foram aplicados para formar um descritor para as imagens. As seções \ref{sec:desenv_class1} e \ref{sec:desenv_class2} apresentam como os descritores foram utilizados para classificar e determinar o ângulo das imagens. Finalmente, na seção \ref{sec:desenv_consideracoes}, algumas considerações sobre o desenvolvimento do projeto são apresentadas.
 
 
 \section{Segmentação: etapa 1} \label{sec:desenv_seg1}
 
 A primeira etapa da segmentação consiste em uma série de limiarizações e filtros para localizar a região de interesse na imagem. A saída da primeira etapa é uma imagem binária contendo a região de interesse. O processo da primeira etapa pode ser visto na figura \ref{fig:desenv_seg1}.
 
-O processo inicia pela subtração da imagem RGB de fundo da imagem RGB com o objeto. Como resultado tem-se uma imagem RGB contendo as diferenças inseridas pelo objeto na imagem. Para não perder informações intrínsecas da imagem RGB no processo de conversão para escala de cinza dividem-se os canais R, G e B da imagem. Cada canal é processado separadamente. Primeiramente os canais são limiarizados utilizando o método global de \emph{Otsu}, discutido na seção \ref{sub:fundteor_limiarizacao}. Em seguida os canais são submetidos à operação morfológica de fechamento, vista na seção \ref{sub:fundteor_op_morfologicas}. A operação de fechamento é aplicado para reduzir o ruido do tipo pimenta (pixeis pretos espalhados aleatoriamente pela imagem). Na sequencia os três canais processados separadamente são unidos através da operação lógica OU para formar uma única imagem. Finalmente a maior região conexa da imagem é selecionada para ser a região de interesse.
+O processo inicia pela subtração da imagem RGB de fundo da imagem RGB com o objeto. Como resultado tem-se uma imagem RGB contendo as diferenças inseridas pelo objeto na imagem. Para não perder informações intrínsecas da imagem RGB no processo de conversão para escala de cinza dividem-se os canais R, G e B da imagem. Cada canal é processado separadamente. Primeiramente os canais são limiarizados utilizando o método global de \emph{Otsu}, discutido na seção \ref{sub:fundteor_limiarizacao}. Em seguida os canais são submetidos à operação morfológica de fechamento, vista na seção \ref{sub:fundteor_op_morfologicas}. A operação de fechamento é aplicado para reduzir o ruido do tipo pimenta (pixeis pretos espalhados aleatoriamente pela imagem). Na sequência os três canais processados separadamente são unidos através da operação lógica OU para formar uma única imagem. Finalmente a maior região conexa da imagem é selecionada para ser a região de interesse.
 
-Embora não se possa ver visualmente nenhum progresso significativo em alguns passos da sequencia de imagens da figura \ref{fig:desenv_seg1}, a primeira etapa da segmentação necessita de todos eles. Todos os passos apresentados anteriormente garantem a robustez do sistema, fornecendo a região de interesse para a etapa seguinte.
+Embora não se possa ver visualmente nenhum progresso significativo em alguns passos da sequência de imagens da figura \ref{fig:desenv_seg1}, a primeira etapa da segmentação necessita de todos os passos apresentados. Todos eles garantem a robustez do sistema, fornecendo a região de interesse para a etapa seguinte.
 
 \begin{figure}[H]
 	\centering
@@ -52,9 +52,9 @@ Essas duas opções de normalização são então apresentadas a etapa seguinte juntam
 
 \section{Descrição: etapa 1} \label{sec:desenv_desc1}
 
-Essa etapa de descrição é responsável por gerar um descritor para a imagem normalizada utilizando o autovetor $A$ (chamada mais adiante de imagem pré-normalizada). A imagem normalizada utilizando o autovetor $A'$ não é utilizada. A figura \ref{fig:desenv_desc1} resume o processo desta etapa.
+Essa etapa de descrição é responsável por gerar um descritor para o objeto. O descritor é formado a partir da  imagem normalizada utilizando o autovetor $A$ (chamada mais adiante de imagem pré-normalizada) e utilizando também a imagem pré-segmentada da etapa 1 de segmentação. A imagem normalizada utilizando o autovetor $A'$ não é utilizada. A figura \ref{fig:desenv_desc1} resume o processo dessa etapa.
 
-O descritor é composto por 20 descritores de \emph{fourier}, $d1,d2,...,d20$, concatenados com 9 propriedades básicas da imagem, $p1,p2,...,p9$. A tabela \ref{tab:descritores-etapa1} detalha o descritor gerado.
+O descritor é composto por 20 descritores de \emph{fourier}, $d1,d2,...,d20$, concatenados com 9 propriedades básicas da imagem pré-normalizadas, $p1,p2,...,p9$ e 9 propriedades da imagem pré-segmentada, $q1,q2,...,q9$. A tabela \ref{tab:descritores-etapa1} detalha o descritor gerado.
 
 \begin{figure}[H]
 	\centering
@@ -72,15 +72,15 @@ O descritor é composto por 20 descritores de \emph{fourier}, $d1,d2,...,d20$, co
 	  Descritor & Descrição \\
 	  \hline
 	  $d1 ... d20$ & 20 descritores de \emph{fourier} \\
-	  $p1$ & Área \\
-	  $p2$ & Área convexa \\
-	  $p3$ & Excentricidade \\
-	  $p4$ & Número de Euler \\
-	  $p5$ & Extensão \\
-	  $p6$ & Área preenchida \\
-	  $p7$ & Tamanho do eixo principal \\
-	  $p8$ & Tamanho do eixo secundário \\
-	  $p9$ & Solidez \\
+	  $p1$ e $q1$ & Área \\
+	  $p2$ e $q2$ & Área convexa \\
+	  $p3$ e $q3$ & Excentricidade \\
+	  $p4$ e $q4$ & Número de Euler \\
+	  $p5$ e $q5$ & Extensão \\
+	  $p6$ e $q6$ & Área preenchida \\
+	  $p7$ e $q7$ & Tamanho do eixo principal \\
+	  $p8$ e $q8$ & Tamanho do eixo secundário \\
+	  $p9$ e $q9$ & Solidez \\
 	  \hline  	
 	\end{tabular}
 	\fonte{Autoria própria}
@@ -90,14 +90,14 @@ O descritor é composto por 20 descritores de \emph{fourier}, $d1,d2,...,d20$, co
 
 \section{Classificação} \label{sec:desenv_class1}
 
-A função da etapa de classificação é tomar como entrada o descritor da imagem pré-normalizada e fornecer como saída a classe a qual o objeto da imagem pertence. Além disso é responsável por dizer qual a normalização correta para a imagem. Ou seja, se a imagem normalizada corretamente utiliza o autovetor $A$ ou o oposto $A'$. Esse processo é mostrado na figura \ref{fig:desenv_class1}.
+A função da etapa de classificação é tomar como entrada o descritor gerado na etapa anterior e fornecer como saída a classe a qual o objeto da imagem pertence. Além disso é responsável por dizer qual a normalização correta para a imagem. Ou seja, se a imagem normalizada corretamente utiliza o autovetor $A$ ou o oposto $A'$. Esse processo é mostrado na figura \ref{fig:desenv_class1}.
 
-Para essa tarefa foi utilizada uma rede neural pois ela fornece um método de classificação baseado em treinamento onde não é necessário que se tenha conhecimento prévio das propriedades estatísticas de cada classe de padrões \cite{GONZALEZ-2006}. A rede utilizada é formada por duas camadas, 29 entradas e $2N$ saídas. Onde $N$ é o número de classes a serem identificadas pelo sistema. A primeira camada possui 20 \emph{perceptrons} e a camada de saída possui $2N$ perceptrons.
-O número de \emph{perceptrons} na primeira camada foi escolhido empiricamente. O número de saídas é $2N$ pois a rede deve ser capaz de identificar imagens normalizadas pelo autovetor $A$ e imagens normalizadas pelo oposto $A'$. A função de ativação para as duas camadas é a função sigmoide vista na seção \ref{subsec:fundteor_redes_neurais}. A função sigmoide é uma boa escolha para redes de classificação pois possui uma transição rápida entre -1 e 1 para entradas de $-\infty$ a $+\infty$ \cite{MATHWORKS-HELP-3}.
+Para essa tarefa foi utilizada uma rede neural pois ela fornece um método de classificação baseado em treinamento onde não é necessário que se tenha conhecimento prévio das propriedades estatísticas de cada classe de padrões \cite{GONZALEZ-2006}. A rede utilizada é formada por duas camadas, 38 entradas e $2N$ saídas. Onde $N$ é o número de classes a serem identificadas pelo sistema. Quando o objeto a ser identificado é simétrico, não há necessidade de duas saídas para a mesma classe pois tanto a normalização utilizando $A$ quanto a normalização utilizando $A'$ retornam o mesmo resultado. Nesse caso o número de saídas é menor. A primeira camada possui $4N$ \emph{perceptrons} e a camada de saída possui $2N$ perceptrons.
+O número de \emph{perceptrons} na primeira camada foi escolhido empiricamente. O número de saídas é $2N$ pois a rede deve ser capaz de identificar imagens normalizadas pelo autovetor $A$ e imagens normalizadas pelo oposto $A'$. A função de ativação para as duas camadas é a função sigmoide vista na seção \ref{subsec:fundteor_redes_neurais}. A função sigmoide é uma boa escolha para redes de classificação pois possui uma transição rápida entre 0 e 1 para entradas de $-\infty$ a $+\infty$ \cite{MATHWORKS-HELP-3}.
 
-Para formar o conjunto de treinamento da rede é necessário que se obtenha amostras de imagens com as respectivas classes.  Em seguida deve-se executar todos os passos até obter as duas possibilidades de normalização de cada imagem, e os descritores tomando a normalização dada pelo autovetor $A$. O descritor é então fornecido como entrada da rede e a saída da rede é dada pelo autovetor que leva a normalização correta da imagem. Por exemplo, se a normalização correta da classe $n$ é dada pelo autovetor $A$, a posição $2n$ da saída é um e o restante zero. Se a normalização correta é dada pelo oposto do autovetor, $A'$, então a posição "2n+1" é um e o restante zero. Esse último passo necessita ser executado manualmente para que se possa "ensinar" a rede qual a normalização correta para cada classe.
+Para formar o conjunto de treinamento da rede é necessário que se obtenha amostras de imagens com as respectivas classes.  Em seguida deve-se executar todos os passos até obter as duas possibilidades de normalização de cada imagem, e os descritores relativos à normalização dada pelo autovetor $A$. O descritor é então fornecido como entrada da rede e a saída da rede é dada pelo autovetor que leva a normalização correta da imagem. Por exemplo, se a normalização correta da classe $n$ é dada pelo autovetor $A$, a posição $2n$ da saída é um e o restante zero. Se a normalização correta é dada pelo oposto do autovetor, $A'$, então a posição "2n+1" é um e o restante zero. Esse último passo necessita ser executado manualmente para que se possa "ensinar" a rede qual a normalização correta para cada classe.
 
-A rede é treinada utilizando um algoritmo de \emph{back propagation} conforme visto na seção \ref{subsec:fundteor_redes_neurais}. O algoritmo utilizado para esta rede em específico utiliza o método chamado \emph{Bayesian regularization}. O método em questão não é aprofundado aqui. A escolha foi baseada na documentação presente em \cite{MATHWORKS-HELP-4} que afirma que redes treinadas utilizando essa otimização possuem boa capacidade de generalização.
+A rede é treinada utilizando um algoritmo de \emph{back propagation} conforme visto na seção \ref{subsec:fundteor_redes_neurais}. O algoritmo utilizado para esta rede em específico utiliza o método chamado \emph{Resilient Backpropagation}. Esse método não apresenta bons resultados para redes de aproximação de funções, no entanto, é indicado para redes de classificação grandes com centenas de pesos por possuir baixo consumo de memória \cite{MATHWORKS-HELP-4}.
 
 \begin{figure}[H]
 	\centering
@@ -159,7 +159,7 @@ Onde:
 	\label{fig:desenv_class3}
 \end{figure}
 
-É necessário portanto determinar o valor de $k$ para cada imagem normalizada. Utilizou-se para essa tarefa uma segunda rede neural. Essa rede recebe como entrada um descritor da imagem normalizada e informa na saída o valor de $k$. Para cada classe é gerada uma rede diferente, visto que as variações são diferentes de classe para classe. Após obter o valor $k$ da rede basta utilizar a equação \ref{eq:desenv_beta} para determinar o ângulo $\beta$ do objeto. Esse processo está resumido na figura \ref{fig:desenv_class2}.
+É necessário portanto determinar o valor de $k$ para cada imagem normalizada. Utilizou-se para essa tarefa uma segunda rede neural para cada objeto. Essa rede recebe como entrada um descritor da imagem normalizada e informa na saída o valor de $k$. Para cada classe é gerada uma rede diferente, visto que as variações são diferentes de classe para classe. Após obter o valor $k$ da rede basta utilizar a equação \ref{eq:desenv_beta} para determinar o ângulo $\beta$ do objeto. Esse processo está resumido na figura \ref{fig:desenv_class2}.
 
 \begin{figure}[H]
 	\centering
@@ -173,13 +173,13 @@ Foi escolhida uma rede neural para essa tarefa pois assumindo que redes neurais 
 
 Para o processo de treinamento da rede são utilizadas as mesmas amostras que foram utilizadas para o treinamento da rede responsável pela classificação do objeto. Em seguida são executadas as etapas descritas nas seções anteriores até a obtenção do descritor de entrada da rede. Além disso é necessário o conhecimento do ângulo em que o objeto se encontra para o cálculo de $k$ pela equação \ref{eq:desenv_beta}. Uma vez tendo o valor de $k$ e o descritor de entrada é possível treinar a rede.
 
-A rede é treinada utilizando um algoritmo de \emph{back propagation} conforme visto na seção \ref{subsec:fundteor_redes_neurais}. O algoritmo utilizado para esta rede em específico utiliza a otimização de \emph{Levenberg-Marquardt}. A escolha foi baseada na documentação presente em \cite{MATHWORKS-HELP-5} que afirma que esta deveria ser a primeira opção de treinamento para qualquer rede devido a alta velocidade de convergência no treinamento.
+A rede é treinada utilizando um algoritmo de \emph{back propagation} conforme visto na seção \ref{subsec:fundteor_redes_neurais}. O algoritmo utilizado para esta rede em específico utiliza a otimização de \emph{Levenberg-Marquardt}. A escolha foi baseada na velocidade de convergência do treinamento e nos bons resultados apresentados por esse método para o problema de aproximação de funções \cite{MATHWORKS-HELP-5}.
 
 \section{Considerações} \label{sec:desenv_consideracoes}
 
 Expôs-se nesse capítulo a arquitetura do sistema desenvolvido. Inicialmente foi mostrado como a imagem de entrada foi segmentada utilizando técnicas de subtração de fundo, limiarização, filtros morfológicos, operações lógicas e seleção de maior região. Foi mostrado também como a imagem foi descrita utilizando propriedades de regiões e descritores de \emph{fourier}. E finalmente como os descritores foram aplicados nas redes neurais obtendo assim a classe dos objetos e a respectiva orientação.
 
-Embora tenha sido apresentado apenas a arquitetura final do sistema, ao longo do desenvolvimento do projeto diversas arquiteturas foram utilizadas. A cada ciclo de desenvolvimento da metodologia em espiral adotada novos algoritmos foram acrescentados, substituídos ou otimizados.
+Embora tenha sido apresentado apenas a arquitetura final do sistema, ao longo do desenvolvimento do projeto diversas arquiteturas foram utilizadas. A cada ciclo de desenvolvimento da metodologia em espiral novos algoritmos foram acrescentados, substituídos ou otimizados.
 
 % fechamento com relacao aos objetivos do capitulo
 % deve ser parte da conclusao final
