@@ -338,13 +338,9 @@ K = max \left \{ k \mid (A \ominus k B) \neq \varnothing  \right \}
 
 \subsubsection {Poda (\emph{Pruning})}
 
-Aplicando-se o método de esqueletonização mencionado anteriormente em figuras reais, como a figura \ref{fig:fundteor_sketon_in}, pode-se obter resultados como a figura \ref{fig:fundteor_sketon_out}. Devido a esse tipo de resultados aplica-se após a esqueletonização um método de poda. A poda do esqueleto consiste em avaliar o tamanho dos ramos gerados, caso sejam menores que um valor limiar são removidos.
+Aplicando-se o método de esqueletonização mencionado anteriormente em figuras reais, como a figura \ref{fig:fundteor_sketon_in}, pode-se obter resultados como a figura \ref{fig:fundteor_sketon_out}. Devido a esse tipo de resultados aplica-se após a esqueletonização um método de poda. A poda do esqueleto consiste em avaliar o tamanho dos ramos gerados, caso sejam menores que um valor limiar $n$ são removidos. Isso pode ser feito conforme explicado a seguir.
 
-Para isso pode-se aplicar uma operação sobre o conjunto $A$ com um elemento estruturante $B$ tal que o elemento estruturante detecte apenas pontos finais de ramos. Pode-se expressar isso pela equação \ref{}.
-
-
-
-
+Considere todos os pixels finais dos ramos, ou seja, os pixels do esqueleto que possuem somente um pixel como vizinho. A partir de cada pixel final remove-se o pixel e chama-se seu vizinho de pixel final. Esse passo é executado por $n$ vezes para cada ramo, ou até que o novo pixel final tenha mais de um pixel vizinho, não sendo mais chamado de pixel final a partir desse ponto. Em seguida os pixels finais resultantes são dilatados com um elemento estruturante quadrado de uns com tamanho $2n+1$. Finalmente o conjunto resultante é interseccionado com o conjunto original do esqueleto formando o esqueleto podado com limiar $n$.
 
 A figura \ref{fig:fundteor_sketon_out_20} mostra o método de poda aplicado com um limiar de 20 pixels.
 
