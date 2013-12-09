@@ -259,7 +259,7 @@ A \bullet B = \left ( A \oplus B \right ) \ominus B
 \label{eq:fundteor_fechamento}
 \end{equation}
 
-Na figura \ref{fig:regiao_abertura} pode-se ver o resultado da execução da operação de abertura em cima do conjunto $A$ da figura \ref{fig:regiao_teste_A}. Em seguida na figura \ref{fig:regiao_fechamento} pode-se ver o resultado da execução da operação de fechamento em cima do mesmo conjunto da figura \ref{fig:regiao_teste_A}. Como pode-se ver, a operação de abertura ``abre" a imagem em pontos estreitos, já a operação de fechamento ``fecha" a imagem onde existem cavidades pequenas.
+Na figura \ref{fig:regiao_abertura} pode-se ver o resultado da execução da operação de abertura sobre o conjunto $A$ da figura \ref{fig:regiao_teste_A}. Na figura \ref{fig:regiao_fechamento} pode-se ver o resultado da execução da operação de fechamento sobre o mesmo conjunto. Como pode-se ver, a operação de abertura ``abre" a imagem em pontos estreitos, já a operação de fechamento ``fecha" a imagem onde existem cavidades pequenas.
 
 \begin{figure}[H]
 	\centering
@@ -302,7 +302,7 @@ Isso pode ser visto melhor na figura \ref{fig:esqueletonizacao_exemplo}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./figs/esqueletonizacao_exemplo.png}
-	\caption{Conjunto $A$, disco máximo centrado em diversos pontos $z$ e esqueleto completo.}
+	\caption{Conjunto $A$, disco máximo centrado em diversos pontos $z$ e esqueleto representado pelas linhas tracejadas.}
 	\fonte{\cite{GONZALEZ-2006}}
 	\label{fig:esqueletonizacao_exemplo}
 \end{figure}
@@ -338,7 +338,15 @@ K = max \left \{ k \mid (A \ominus k B) \neq \varnothing  \right \}
 
 \subsubsection {Poda (\emph{Pruning})}
 
-Aplicando-se o método de esqueletonização mencionado anteriormente em figuras reais, como a figura \ref{fig:fundteor_sketon_in}, pode-se obter resultados como a figura \ref{fig:fundteor_sketon_out}. Devido a esse tipo de resultados aplica-se após a esqueletonização um método de poda. A poda do esqueleto consiste em avaliar o tamanho dos ramos gerados, caso sejam menores que um valor limiar são removidos. A figura \ref{fig:fundteor_sketon_out_20} mostra o método de poda aplicado com um limiar de 20 pixels.
+Aplicando-se o método de esqueletonização mencionado anteriormente em figuras reais, como a figura \ref{fig:fundteor_sketon_in}, pode-se obter resultados como a figura \ref{fig:fundteor_sketon_out}. Devido a esse tipo de resultados aplica-se após a esqueletonização um método de poda. A poda do esqueleto consiste em avaliar o tamanho dos ramos gerados, caso sejam menores que um valor limiar são removidos.
+
+Para isso pode-se aplicar uma operação sobre o conjunto $A$ com um elemento estruturante $B$ tal que o elemento estruturante detecte apenas pontos finais de ramos. Pode-se expressar isso pela equação \ref{}.
+
+
+
+
+
+A figura \ref{fig:fundteor_sketon_out_20} mostra o método de poda aplicado com um limiar de 20 pixels.
 
 \begin{figure}[H]
         \centering
@@ -371,11 +379,11 @@ Aplicando-se o método de esqueletonização mencionado anteriormente em figuras re
 
 \subsection{Normalização} \label{sub:fundteor_normalizacao}
 
-A análise de componentes principais pode ser empregada para normalizar imagens em função de rotação, translação e tamanho  \cite{GONZALEZ-2006}. Explica-se a seguir alguns conceitos necessários para efetuar a normalização utilizando a analise de componentes principais e em seguida o processo de normalização utilizando componentes principais.
+A análise de componentes principais pode ser empregada para normalizar imagens em função de rotação, translação e tamanho  \cite{GONZALEZ-2006}. Explica-se a seguir alguns conceitos necessários para efetuar a normalização utilizando a análise de componentes principais e em seguida o processo de normalização utilizando componentes principais.
 
 \subsubsection{Matriz de covariâncias}
 
-Considere as imagens da figura \ref{fig:fundteor_pca}. Os pontos da imagem, podem ser considerados como sendo vetores $x_{k}=(x_{1},x_{2})^{T}$, onde $x_{1}$ e $x_{2}$ são as coordenadas do ponto $x_{k}$, e $T$ indica a matriz transposta. Os pontos $x$ portanto formam uma população de vetores no espaço $Z^{2}$. Sendo assim pode-se calcular a matriz de covariâncias $C_{x}$ e o vetor da média $m_{x}$ para a população de vetores.
+Considere as imagens da figura \ref{fig:fundteor_pca}. Os pontos (pixels) da imagem, podem ser considerados como sendo vetores $x_{k}=(x_{1},x_{2})^{T}$, onde $x_{1}$ e $x_{2}$ são as coordenadas do ponto $x_{k}$, e $T$ indica a matriz transposta. Os pontos $x$ portanto formam uma população de vetores no espaço $Z^{2}$. Sendo assim pode-se calcular a matriz de covariâncias $C_{x}$ e o vetor da média $m_{x}$ para a população de vetores.
 
 Para $K$ amostras de uma população aleatória pode-se aproximar a média $m_{x}$ pela equação \ref{eq:fundteor_mean} \cite{GONZALEZ-2006}.
 
@@ -453,7 +461,7 @@ Pode-se ver isso melhor nas matrizes de covariância apresentadas nas figuras \re
 
 \subsubsection{Autovetores e autovalores}
 
-Um autovetor de uma matriz $A$ é um vetor não nulo $v$, que quando a matriz é multiplicada por $v$ tem-se um vetor que é múltiplo de $v$ por uma constante $\lambda$ denominada autovalor. Ou seja, a equação \ref{eq:fundteor_eigen} é verdadeira \cite{AUTOVETORES}.
+Um autovetor de uma matriz $A$ é um vetor não nulo $v$, tal que quando a matriz é multiplicada por $v$ tem-se um vetor que é múltiplo de $v$ por uma constante $\lambda$ denominada autovalor. Ou seja, a equação \ref{eq:fundteor_eigen} é verdadeira \cite{AUTOVETORES}.
 
 \begin{equation}
 Av = \lambda v
@@ -654,7 +662,7 @@ O centroide de uma imagem é dado pelo centro de massa da imagem \cite{MATHWORKS-
 
 \subsection{Descritores de \emph{fourier}}
 
-Considere a figura \ref{fig:fundteor_fourier_desc_org}. Os pixels com valor $1$ da imagem binária podem ser representados como sendo pares de coordenadas $(x_{0},y_{0}),(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{K-1},y_{K-1})$, onde $K$ é o número de pixels na imagem. Além disso os pixels podem ser representados como uma sequência $x(k) = x_{k}$ e $y(k) = y_{k}$ ou como $s(k) = \left [ x(k), y(k) \right ]$ para $k = 0,1,2,...,K-1$. Além disso pode-se tratar as coordenadas dos pixels como números complexos: $s(k) = x(k) + j y(k)$.
+Considere a figura \ref{fig:fundteor_fourier_desc_org}. Os pixels com valor $1$ da imagem binária podem ser representados como sendo pares de coordenadas $(x_{0},y_{0}),(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{K-1},y_{K-1})$, onde $K$ é o número de pixels na imagem. Os pixels também podem ser representados como uma sequência $x(k) = x_{k}$ e $y(k) = y_{k}$ ou como $s(k) = \left [ x(k), y(k) \right ]$ para $k = 0,1,2,...,K-1$. Além disso pode-se tratar as coordenadas dos pixels como números complexos: $s(k) = x(k) + j y(k)$.
 
 Tem-se que a transformada discreta de \emph{fourier} de um sinal $s(k)$ é dado pela equação \ref{eq:fundteor_dft} \cite{GONZALEZ-2006}:
 
@@ -679,7 +687,7 @@ Suponha agora que ao invés de utilizar todos os descritores de \emph{fourier} ut
 \label{eq:fundteor_idft_a}
 \end{equation}
 
-Quando os $P$ coeficientes de menor frequência são escolhidos para reconstituir a imagem tem-se uma imagem aproximada da imagem original porém que mantém as principais características. Pode-se ver esse comportamento nas imagens da figura \ref{fig:fundteor_fourier_desc}. A imagem da figura \ref{fig:fundteor_fourier_desc_1} foi forma utilizando todos os 19410 coeficientes da imagem original, a imagem \ref{fig:fundteor_fourier_desc_2} foi formada com 9705 coeficientes, e assim por diante, até apenas 2 coeficientes na figura \ref{fig:fundteor_fourier_desc_8192}.
+Quando os $P$ coeficientes de menor frequência são escolhidos para reconstituir a imagem tem-se uma imagem aproximada da imagem original porém que mantém as principais características. Pode-se ver esse comportamento nas imagens da figura \ref{fig:fundteor_fourier_desc}. A imagem da figura \ref{fig:fundteor_fourier_desc_1} foi reconstruída utilizando todos os 19410 coeficientes da imagem original, a imagem \ref{fig:fundteor_fourier_desc_2} foi reconstruída com 9705 coeficientes, e assim por diante, até apenas 2 coeficientes na figura \ref{fig:fundteor_fourier_desc_8192}.
 
 \begin{figure}[H]
         \centering
@@ -806,7 +814,7 @@ d(x) = \sum_{i=1}^{n} (\omega _{i} x_{i}) + \omega _{n+1}
 \label{eq:fundteor_nn_perceptron}
 \end{equation}
 
-Os coeficientes $w_{i}, i=1,2,...,n,n+1$, são chamados de pesos e modificam a soma antes que os valores de entrada passem pelo elemento de ativação, também chamado de função de ativação. Os pesos podem ser comparados às sinapses que ocorrem no cérebro humano. No caso particular da figura \ref{fig:fundteor_nn_perceptron_model} a saída do \emph{perceptron} será $+1$ caso a entrada pertença a classe $\omega_{1}$ e $-1$ caso a entrada pertença a classe $\omega_{2}$.
+Os coeficientes $w_{i}, i=1,2,...,n,n+1$, são chamados de pesos e modificam a soma antes que os valores de entrada passem pelo elemento de ativação, também chamado de função de ativação. Os pesos podem ser comparados às sinapses que ocorrem no cérebro humano. No caso particular da figura \ref{fig:fundteor_nn_perceptron_model} a saída do \emph{perceptron} será $+1$ caso a entrada pertença à classe $\omega_{1}$ e $-1$ caso a entrada pertença à classe $\omega_{2}$.
 
 \begin{figure}[H]
 	\centering
@@ -816,7 +824,7 @@ Os coeficientes $w_{i}, i=1,2,...,n,n+1$, são chamados de pesos e modificam a so
 	\label{fig:fundteor_nn_perceptron_model}
 \end{figure}
 
-Esse tipo de abordagem formada por um único \emph{perceptron} não é capaz de separar mais do que duas classes e também não é capaz de separar classes que não são linearmente separáveis. Isso se dá devido ao fato de que a equação \ref{eq:fundteor_nn_perceptron} quando expandida define um hiperplano em um espaço $n$-dimensional.
+Esse tipo de abordagem formada por um único \emph{perceptron} não é capaz de separar mais do que duas classes e também não é capaz de separar classes que não são linearmente separáveis. Isso se dá devido ao fato de que a equação \ref{eq:fundteor_nn_perceptron}, quando expandida, define um hiperplano em um espaço $n$-dimensional.
 
 Utilizam-se portanto para problemas mais complexos redes de neurônios, também chamada de \emph{multi-layer perceptron} ou \emph{multi-layer feedforward network}. Cada neurônio é formado por uma estrutura do mesmo tipo da estrutura do \emph{perceptron}, com a diferença de a função de ativação ser geralmente uma função sigmoide ao invés de um simples limiar. A função sigmoide pode ser vista na equação \ref{eq:fundteor_nn_perceptron_sigmoide} e na figura \ref{fig:fundteor_nn_multilayer_perceptron_sigmoide}. As saídas dos neurônios estão interconectadas com as entradas de outros neurônios. Essa estrutura pode ser vista na figura \ref{fig:fundteor_nn_multilayer_perceptron_model}.
 
@@ -841,7 +849,7 @@ h_{j}(I_{j}) = \frac {1}{1+e^{-(I_{j} + \theta_{j})/\theta_{O}}}
 	\label{fig:fundteor_nn_multilayer_perceptron_model}
 \end{figure}
 
-Nesse tipo de rede a primeira camada, $A$, possui o mesmo número de neurônios que a dimensão do vetor descritor da entrada, $N_{A} = n$. Semelhantemente o número de neurônios da camada de saída, $Q$, é igual ao número de classes que a rede deve reconhecer, $N_{Q} = {W}$. A rede reconhece uma entrada como sendo parte de uma classe quando a saída da classe é um e as demais saídas são zero.
+Nesse tipo de rede a primeira camada, $A$, possui o mesmo número de neurônios que a dimensão do vetor descritor da entrada, $N_{A} = n$. Semelhantemente o número de neurônios da camada de saída, $Q$, é igual ao número de classes que a rede deve reconhecer, $N_{Q} = {W}$. A rede reconhece uma entrada como sendo parte de uma classe quando a saída da classe está próxima de um e as demais saídas estão próximas de zero.
 
 Pode-se demonstrar que redes desse tipo são capazes de separar regiões convexas no espaço $n$-dimensional de entradas utilizando duas camadas de neurônios. São também capazes de separar classes em regiões arbitrárias utilizando três camadas de neurônios  \cite{GONZALEZ-2006}. A complexidade das regiões separadas por uma rede de três camadas se dá pelo número de neurônios em cada camada. Isso está resumido na figura \ref{fig:fundteor_nn_multilayer_perceptron_decision}.
 
@@ -856,7 +864,7 @@ Pode-se demonstrar que redes desse tipo são capazes de separar regiões convexas 
 
 \subsubsection{Treinamento de \emph{perceptrons}}
 
-O treinamento de \emph{perceptrons} consiste em determinar os valores adequados de $\omega_{i}$ para que a soma ponderada das entradas forme a saída adequada para a função de ativação. Existem diversos métodos de treinamento para determinar os valores de $\omega_{i}$ para um único perceptron. Apresenta-se a seguir o método denominado \emph{delta rule} ou \emph{least-mean-square}.
+O treinamento de \emph{perceptrons} consiste em determinar os valores adequados de $\omega_{i}$ (da equação \ref{eq:fundteor_nn_perceptron}) para que a soma ponderada das entradas forme a saída adequada para a função de ativação. Existem diversos métodos de treinamento para determinar os valores de $\omega_{i}$ para um único perceptron. Apresenta-se a seguir o método denominado \emph{delta rule} ou \emph{least-mean-square}.
 
 A principal característica do método \emph{delta rule} é que ele minimiza o erro entre a saída desejada e a saída real do \emph{perceptron} em cada passo de treinamento. Considere a função da equação \ref{eq:fundteor_nn_perceptron_error}. 
 
@@ -901,7 +909,7 @@ E_{Q} = \frac{1}{2} \sum_{q=1}^{N_{Q}} (r_{q} - O_{q})^{2}
 \label{eq:fundteor_nn_perceptron_error_multi}
 \end{equation}
 
-Novamente deseja-se minimizar o erro $E_{Q}$ em cada passo de treinamento. Minimizando a equação \ref{eq:fundteor_nn_perceptron_error_multi} chega-se a dois casos. O primeiro é quando o \emph{perceptron} está na última camada da rede. Nesse casos sabe-se o valor esperando na saída do perceptron, que é dado por $O_{q}$. Por outro lado quando o \emph{perceptron} está em uma camada intermediária é necessário que primeiro se defina o erro em função de parâmetros conhecidos na rede. Esse processo foi desenvolvido por \cite{GONZALEZ-2006} e a seguir apresenta-se o resultado.
+Novamente deseja-se minimizar o erro $E_{Q}$ em cada passo de treinamento. Minimizando a equação \ref{eq:fundteor_nn_perceptron_error_multi} chega-se a dois casos. O primeiro é quando o \emph{perceptron} está na última camada da rede. Nesse casos sabe-se o valor esperando na saída do perceptron, que é dado por $O_{q}$. Por outro lado quando o \emph{perceptron} está em uma camada intermediária é necessário que primeiro se defina o erro em função de parâmetros conhecidos na rede \cite{GONZALEZ-2006}.
 
 Para \emph{perceptrons} na camada de saída $Q$ os pesos $w(k+1)$ podem ser calculado pelas equações \ref{eq:fundteor_nn_perceptron_error_multi_desc_2} e \ref{eq:fundteor_nn_perceptron_error_multi_desc_3}. $K$ é a camada que precede a camada de saída $Q$.
 
@@ -974,7 +982,7 @@ Onde:
 \item $O_{q}$ é a saída atual no \emph{perceptron} $q$;
 \end{itemize}
 
-Como se pode ver é necessário iniciar o processo de atualização dos pesos da rede pela camada de saída. Na camada de saída da rede é o único lugar onde se sabe qual é a saída que cada \emph{perceptron} deveria ter. Para as camadas antecedentes a atualização deve ser feita em função dessas saídas. Portanto cada camada depende de parâmetros da camada seguinte na rede. Esse processo de atualização dos pesos iniciando pela ultima camada e voltando até a primeira recebe o nome de \emph{back propagation}. O método mencionado anteriormente recebe o nome de \emph{delta rule}, no entanto existem diversos métodos diferentes mas que utilizam a mesma estratégia de propagação das correções na rede. Todos esses métodos são classificados como métodos de \emph{back propagation}.
+Como se pode ver é necessário iniciar o processo de atualização dos pesos da rede pela camada de saída. A camada de saída da rede é o único lugar onde se sabe qual é a saída que cada \emph{perceptron} deveria ter. Para as camadas antecedentes a atualização deve ser feita em função dessas saídas. Portanto cada camada depende de parâmetros da camada seguinte na rede. Esse processo de atualização dos pesos iniciando pela ultima camada e voltando até a primeira recebe o nome de \emph{back propagation}. O método mencionado anteriormente recebe o nome de \emph{delta rule}, no entanto existem diversos métodos diferentes mas que utilizam a mesma estratégia de propagação das correções na rede. Todos esses métodos são classificados como métodos de \emph{back propagation}.
 
 \section{Considerações} \label{sec:consideracoes}
 
