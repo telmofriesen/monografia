@@ -540,7 +540,7 @@ Vê-se portanto que é possível definir um eixo absoluto para cada imagem com base
 
 \subsubsection{Normalização}
 
-A normalização das imagens pode ser feita por meio de uma matriz de transformação que mapeia valores do sistema de coordenadas original da imagem para o sistema de coordenadas formado pelos autovetores da imagem \cite{GONZALEZ-2006}. A transformação em questão podes ser expressa pela equação \ref{eq:fundteor_transf}.
+A normalização das imagens pode ser feita por meio de uma matriz de transformação que mapeia valores do sistema de coordenadas original da imagem para o sistema de coordenadas formado pelos autovetores da imagem \cite{GONZALEZ-2006}. A transformação em questão pode ser expressa pela equação \ref{eq:fundteor_transf}.
 
 \begin{equation}
 y = A ( x - m_{x} )
@@ -553,7 +553,7 @@ Onde:
 \item $y$ é o valor no novo sistema de coordenadas formado pelos autovetores.
 \item $x$ o valor da coordenada no sistema original.
 \item $A$ a matriz de autovetores.
-\item $m_{x}$ vetor da média.
+\item $m_{x}$ o vetor da média.
 \end{itemize}
 
 As imagens da figura \ref{fig:fundteor_pca} podem ser vistas normalizadas na figura \ref{fig:fundteor_pca3}.
@@ -590,7 +590,7 @@ Caso se deseje normalizar a imagem com relação ao tamanho pode-se dividir o valo
 
 \section{Descrição} \label{sec:descricao}
 
-Esta seção apresenta técnicas e algoritmos para realizar a descrição de imagens, tais como extração de propriedades básicas de regiões e descritores de \emph{fourier}.
+Esta seção apresenta técnicas e algoritmos para realizar a descrição de imagens, tais como extração de propriedades básicas de regiões e descritores de \emph{Fourier}.
 
 
 \subsection{Propriedades de regiões} \label{subsec:propriedades}
@@ -656,27 +656,27 @@ O número de Euler é dado pelo total de objetos desconexos da região subtraindo o
 
 O centroide de uma imagem é dado pelo centro de massa da imagem \cite{MATHWORKS-HELP-2}.
 
-\subsection{Descritores de \emph{fourier}}
+\subsection{Descritores de \emph{Fourier}}
 
 Considere a figura \ref{fig:fundteor_fourier_desc_org}. Os pixels com valor $1$ da imagem binária podem ser representados como sendo pares de coordenadas $(x_{0},y_{0}),(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{K-1},y_{K-1})$, onde $K$ é o número de pixels na imagem. Os pixels também podem ser representados como uma sequência $x(k) = x_{k}$ e $y(k) = y_{k}$ ou como $s(k) = \left [ x(k), y(k) \right ]$ para $k = 0,1,2,...,K-1$. Além disso pode-se tratar as coordenadas dos pixels como números complexos: $s(k) = x(k) + j y(k)$.
 
-Tem-se que a transformada discreta de \emph{fourier} de um sinal $s(k)$ é dado pela equação \ref{eq:fundteor_dft} \cite{GONZALEZ-2006}:
+Tem-se que a transformada discreta de \emph{Fourier} de um sinal $s(k)$ é dado pela equação \ref{eq:fundteor_dft} \cite{GONZALEZ-2006}:
 
 \begin{equation}
 a(u) = \sum_{k=0}^{K-1} s(k) e^{-j2 \pi u k / K} ~~~~~ ,u = 0,1,2,...,K-1
 \label{eq:fundteor_dft}
 \end{equation}
 
-Os coeficientes complexos $a(u)$ da transformada discreta de \emph{fourier} são chamados de descritores de \emph{fourier} \cite{GONZALEZ-2006}.
+Os coeficientes complexos $a(u)$ da transformada discreta de \emph{Fourier} são chamados de descritores de \emph{Fourier} \cite{GONZALEZ-2006}.
 
-Da mesma forma que se aplicou a transformada discreta de \emph{fourier} para obter os descritores de \emph{fourier} pode-se aplicar a transformada discreta inversa de \emph{fourier} nos coeficientes complexos para obter novamente os números complexos representando as coordenadas dos pixels (equação \ref{eq:fundteor_idft}).
+Da mesma forma que se aplicou a transformada discreta de \emph{Fourier} para obter os descritores de \emph{Fourier} pode-se aplicar a transformada discreta inversa de \emph{Fourier} nos coeficientes complexos para obter novamente os números complexos representando as coordenadas dos pixels (equação \ref{eq:fundteor_idft}).
 
 \begin{equation}
 s(k) = \frac{1}{K} \sum_{u=0}^{K-1} a(u) e^{j2 \pi u k / K} ~~~~~ ,k = 0,1,2,...,K-1
 \label{eq:fundteor_idft}
 \end{equation}
 
-Suponha agora que ao invés de utilizar todos os descritores de \emph{fourier} utiliza-se apenas os $P$ primeiros descritores para reconstituir $s(k)$. Tem-se portanto uma aproximação para $s(k)$ dada por $\hat{s}(k)$ na equação \ref{eq:fundteor_idft_a}.
+Suponha agora que ao invés de utilizar todos os descritores de \emph{Fourier} utiliza-se apenas os $P$ primeiros descritores para reconstituir $s(k)$. Tem-se portanto uma aproximação para $s(k)$ dada por $\hat{s}(k)$ na equação \ref{eq:fundteor_idft_a}.
 
 \begin{equation}
 \hat{s}(k) = \frac{1}{P} \sum_{u=0}^{P-1} a(u) e^{j2 \pi u k / P} ~~~~~ ,k = 0,1,2,...,K-1
@@ -787,7 +787,7 @@ Quando os $P$ coeficientes de menor frequência são escolhidos para reconstituir 
                 \label{fig:fundteor_fourier_desc_8192}
         \end{subfigure}
 
-        \caption{Imagem original e imagens reconstituídas utilizando $n$ descritores de \emph{fourier}.}
+        \caption{Imagem original e imagens reconstituídas utilizando $n$ descritores de \emph{Fourier}.}
 	\fonte{Autoria própria}
 	\label{fig:fundteor_fourier_desc}
 \end{figure}
@@ -984,7 +984,7 @@ Como se pode ver é necessário iniciar o processo de atualização dos pesos da red
 
 Apresentou-se nesse capítulo embasamento teórico para o desenvolvimento do projeto, abrangendo as três áreas fundamentais de sistemas de processamento de imagens: segmentação, descrição e classificação. 
 Foram estudadas técnicas de segmentação de imagens que permitem, através da combinação de diversas delas, a identificação de regiões de interesse. Além da identificação da região de interesse foi apresentada a técnica de normalização de imagens utilizando a análise de componentes principais.
-Foi fornecido embasamento teórico para efetuar a descrição de imagens utilizando propriedades de regiões, como área, solidez, posição do centroide, entre outros além dos conceitos para efetuar a descrição utilizando descritores de \emph{fourier}.
+Foi fornecido embasamento teórico para efetuar a descrição de imagens utilizando propriedades de regiões, como área, solidez, posição do centroide, entre outros além dos conceitos para efetuar a descrição utilizando descritores de \emph{Fourier}.
 Por fim apresentou-se uma visão geral de redes neurais e foram apresentadas noções sobre treinamento de redes utilizando algoritmos do tipo \emph{back propagation}.
 
 % fechamento com relacao aos objetivos do capítulo

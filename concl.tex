@@ -12,7 +12,7 @@ Atingiu-se portanto o objetivo geral do trabalho visto que através da utilização
 Como pôde ser visto nas seções \ref{sec:desenv_seg1} e \ref{sec:desenv_seg2} foram analisadas e aplicadas técnicas de segmentação de imagens que permitiram a identificação da região de interesse, atingindo portanto o primeiro objetivo específico.
 %Para tanto, temos como objetivos específicos três objetivos que possibilitarão o cumprimento do objetivo geral.
 %O primeiro objetivo específico é analisar e aplicar técnicas de segmentação de imagens, como algoritmos de detecção de bordas, algoritmos de limiarização, segmentação baseada em crescimento de regiões.
-O segundo objetivo específico foi cumprido utilizando descritores de \emph{fourier} e propriedades de regiões gerando descritores contendo informações suficientes para classificar os objetos com sucesso.
+O segundo objetivo específico foi cumprido utilizando descritores de \emph{Fourier} e propriedades de regiões gerando descritores contendo informações suficientes para classificar os objetos com sucesso.
 %O segundo objetivo é analisar e aplicar técnicas de descrição de imagens, como algoritmos de descrição de contornos, descrição de regiões, entre outros.
 O terceiro objetivo foi contemplado pelo emprego de redes neurais para classificação dos objetos e estimativa de ângulo.
 %O terceiro objetivo é o emprego de uma técnica de aprendizagem de máquina, como redes neurais, que possibilite a classificação de objetos previamente conhecidos pelo sistema.
@@ -34,7 +34,7 @@ O desenvolvimento do projeto foi dividido em três etapas conforme proposto na me
 	  1-6 & Implementação de crescimento de regiões baseado em características locais.\\
 	  1-7 & Remoção de crescimento de regiões  e implementação de esqueletonização e \\ & poda.\\
 	  1-8 & Implementação de normalização utilizando PCA.\\
-	  2-1 & Implementação de descrição utilizando descritores de \emph{fourier}.\\
+	  2-1 & Implementação de descrição utilizando descritores de \emph{Fourier}.\\
 	  2-2 & Implementação de descrição utilizando propriedades de regiões.\\
 	  3-1 & Implementação de classificação utilizando redes neurais com uma única saída.\\
 	  3-2 & Adaptação da estrutura da rede para uma saída para cada classe.\\
@@ -48,18 +48,18 @@ O desenvolvimento do projeto foi dividido em três etapas conforme proposto na me
 \end{table}
 
 %\section{Metodologia}
-%O desenvolvimento do projeto é dividido em três etapas. A primeira etapa consiste no estudo de técnicas de segmentação de imagem e implementação no software Matlab. A segunda etapa consiste no estudo de técnicas de descrição de imagens e também implementação no Matlab. Finalmente, na terceira etapa é implementado no Matlab um sistema de redes neurais capazes de classificar o objeto e medir seu ângulo.
+%O desenvolvimento do projeto é dividido em três etapas. A primeira etapa consiste no estudo de técnicas de segmentação de imagem e implementação no software MATLAB. A segunda etapa consiste no estudo de técnicas de descrição de imagens e também implementação no MATLAB. Finalmente, na terceira etapa é implementado no MATLAB um sistema de redes neurais capazes de classificar o objeto e medir seu ângulo.
 %Para cada etapa do desenvolvimento do projeto adota-se a metodologia de desenvolvimento em espiral, onde a cada ciclo de desenvolvimento são agregadas novas funcionalidades ao sistema.
 %Para o teste e a validação do sistema é desenvolvido um ambiente de testes, onde objetos especificamente selecionados são posicionados de forma automática, possibilitando a captura de imagens do objeto em diversas posições angulares. 
 
 % considerações fundamentacao
 No capítulo \ref{chap:fundteor} apresentou-se embasamento teórico para o desenvolvimento do projeto, abrangendo as três áreas fundamentais de sistemas de processamento de imagens: segmentação, descrição e classificação. 
 Foram estudadas técnicas de segmentação de imagens que permitem, através da combinação de diversas delas, a identificação de regiões de interesse. Além da identificação da região de interesse foi apresentada a técnica de normalização de imagens utilizando a análise de componentes principais.
-Foi fornecido embasamento teórico para efetuar a descrição de imagens utilizando propriedades de regiões, como área, solidez, posição do centroide, entre outros além dos conceitos para efetuar a descrição utilizando descritores de \emph{fourier}.
+Foi fornecido embasamento teórico para efetuar a descrição de imagens utilizando propriedades de regiões, como área, solidez, posição do centroide, entre outros além dos conceitos para efetuar a descrição utilizando descritores de \emph{Fourier}.
 Por fim apresentou-se uma visão geral de redes neurais e foram apresentadas noções sobre treinamento de redes utilizando algoritmos do tipo \emph{back propagation}.
 
 % considerações desenvolvimento
-No capítulo \ref{chap:desenv} foi exposto a arquitetura do sistema desenvolvido. Inicialmente foi mostrado como a imagem de entrada foi segmentada utilizando técnicas de subtração de fundo, limiarização, filtros morfológicos, operações lógicas e seleção de maior região. Foi mostrado também como a imagem foi descrita utilizando propriedades de regiões e descritores de \emph{fourier}. E finalmente como os descritores foram aplicados nas redes neurais obtendo assim a classe dos objetos e a respectiva orientação.
+No capítulo \ref{chap:desenv} foi exposto a arquitetura do sistema desenvolvido. Inicialmente foi mostrado como a imagem de entrada foi segmentada utilizando técnicas de subtração de fundo, limiarização, filtros morfológicos, operações lógicas e seleção de maior região. Foi mostrado também como a imagem foi descrita utilizando propriedades de regiões e descritores de \emph{Fourier}. E finalmente como os descritores foram aplicados nas redes neurais obtendo assim a classe dos objetos e a respectiva orientação.
 
 % considerações testes e resultados
 Finalmente no capítulo \ref{chap:testes} apresentou-se um ambiente de testes automatizado que possibilitou a validação do sistema apresentado no capítulo \ref{chap:desenv}. Utilizando o ambiente foram executados dois grupos de testes. O primeiro com 8 objetos e o segundo com 16 objetos. 
