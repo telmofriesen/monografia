@@ -2,11 +2,11 @@
 
 Este capítulo apresenta as considerações finais da monografia. Aqui são discutidos os objetivos do projeto e os resultados alcançados no sistema desenvolvido, são apresentadas considerações sobre a metodologia utilizada, além de sugestões para trabalhos futuros.
 
-\section{Considerações finais}
+\section{Discussão do desenvolvimento e dos resultados}
 
 % introdução?
 Como foi visto desenvolveu-se um sistema capaz de ser integrado em uma linha de produção minimizando falhas e erros de classificação de objetos além de gerar uma estimativa da orientação de cada objeto para posterior reposicionamento caso necessário.
-Atingiu-se portanto o objetivo geral do trabalho visto que através da utilização de um sistema de redes neurais o sistema desenvolvido foi capaz de classificar objetos metálicos com $100\%$ de acerto e foi capaz de medir o ângulo de rotação com erro médio de $1.2^o$.
+Atingiu-se portanto o objetivo geral do trabalho visto que através da utilização de um sistema de redes neurais o sistema desenvolvido foi capaz de classificar os objetos metálicos testados com $100\%$ de acerto e foi capaz de medir o ângulo de rotação com erro médio de $1.2^o$.
 %3 Objetivos: geral
 %O objetivo geral deste trabalho é desenvolver um sistema capaz de classificar objetos metálicos e medir seu respectivo ângulo de rotação com relação ao eixo x do plano cartesiano, sendo os objetos previamente conhecidos pelo sistema utilizando-se técnicas de aprendizagem de máquina.
 Como pôde ser visto nas seções \ref{sec:desenv_seg1} e \ref{sec:desenv_seg2} foram analisadas e aplicadas técnicas de segmentação de imagens que permitiram a identificação da região de interesse, atingindo portanto o primeiro objetivo específico.
@@ -17,7 +17,7 @@ O segundo objetivo específico foi cumprido utilizando descritores de \emph{Fouri
 O terceiro objetivo foi contemplado pelo emprego de redes neurais para classificação dos objetos e estimativa de ângulo.
 %O terceiro objetivo é o emprego de uma técnica de aprendizagem de máquina, como redes neurais, que possibilite a classificação de objetos previamente conhecidos pelo sistema.
 
-O desenvolvimento do projeto foi dividido em três etapas conforme proposto na metodologia. Porém foi necessário a volta a etapa de descrição para ajustes durante o desenvolvimento da terceira etapa. Cada etapa foi executada utilizando a metodologia de desenvolvimento em espiral, onde a cada ciclo de desenvolvimento foram agregadas novas funcionalidades ao sistema. As atividades desenvolvidas em cada ciclo estão dispostas na tabela \ref{tab:etapas-espiral}.
+O desenvolvimento do projeto foi dividido em três etapas conforme proposto na metodologia. Porém foi necessária a volta à etapa de descrição para ajustes durante o desenvolvimento da terceira etapa. Cada etapa foi executada utilizando a metodologia de desenvolvimento em espiral, onde a cada ciclo de desenvolvimento foram agregadas novas funcionalidades ao sistema. As atividades desenvolvidas em cada ciclo estão dispostas na tabela \ref{tab:etapas-espiral}.
 
 \begin{table}[htb!]
 	\centering
@@ -27,13 +27,13 @@ O desenvolvimento do projeto foi dividido em três etapas conforme proposto na me
 	  Etapa-Ciclo & Descrição \\
 	  \hline
 	  1-1 & Implementação da subtração de fundo.\\
-	  1-2 & Implementação da limiarização utilizando aproximações sucessivas e \\ & separação dos canais RGB.\\
+	  1-2 & Implementação da limiarização utilizando aproximações sucessivas e \\ & separação dos canais \sigla{RGB}{\emph{Reg, Green and Blue}}.\\
 	  1-3 & Implementação da limiarização pelo método de Otsu.\\
 	  1-4 & Implementação de filtro morfológico e separação dos canais RGB.\\
 	  1-5 & Implementação do filtro de maior região conexa.\\
 	  1-6 & Implementação de crescimento de regiões baseado em características locais.\\
 	  1-7 & Remoção de crescimento de regiões  e implementação de esqueletonização e \\ & poda.\\
-	  1-8 & Implementação de normalização utilizando PCA.\\
+	  1-8 & Implementação de normalização utilizando \sigla{PCA}{\emph{Principal components analysis}}.\\
 	  2-1 & Implementação de descrição utilizando descritores de \emph{Fourier}.\\
 	  2-2 & Implementação de descrição utilizando propriedades de regiões.\\
 	  3-1 & Implementação de classificação utilizando redes neurais com uma única saída.\\
@@ -53,7 +53,7 @@ O desenvolvimento do projeto foi dividido em três etapas conforme proposto na me
 %Para o teste e a validação do sistema é desenvolvido um ambiente de testes, onde objetos especificamente selecionados são posicionados de forma automática, possibilitando a captura de imagens do objeto em diversas posições angulares. 
 
 % considerações fundamentacao
-No capítulo \ref{chap:fundteor} apresentou-se embasamento teórico para o desenvolvimento do projeto, abrangendo as três áreas fundamentais de sistemas de processamento de imagens: segmentação, descrição e classificação. 
+No capítulo \ref{chap:fundteor} apresentou-se o embasamento teórico para o desenvolvimento do projeto, abrangendo as três áreas fundamentais de sistemas de processamento de imagens: segmentação, descrição e classificação. 
 Foram estudadas técnicas de segmentação de imagens que permitem, através da combinação de diversas delas, a identificação de regiões de interesse. Além da identificação da região de interesse foi apresentada a técnica de normalização de imagens utilizando a análise de componentes principais.
 Foi fornecido embasamento teórico para efetuar a descrição de imagens utilizando propriedades de regiões, como área, solidez, posição do centroide, entre outros além dos conceitos para efetuar a descrição utilizando descritores de \emph{Fourier}.
 Por fim apresentou-se uma visão geral de redes neurais e foram apresentadas noções sobre treinamento de redes utilizando algoritmos do tipo \emph{back propagation}.
@@ -64,7 +64,7 @@ No capítulo \ref{chap:desenv} foi exposto a arquitetura do sistema desenvolvido.
 % considerações testes e resultados
 Finalmente no capítulo \ref{chap:testes} apresentou-se um ambiente de testes automatizado que possibilitou a validação do sistema apresentado no capítulo \ref{chap:desenv}. Utilizando o ambiente foram executados dois grupos de testes. O primeiro com 8 objetos e o segundo com 16 objetos. 
 
-O sistema mostrou-se capaz de classificar todos os objetos corretamente com $100\%$ de acerto. Isso se deu devido à qualidade dos descritores calculados, que permitiram resumir as principais características de cada classe. Além disso a topologia da rede de classificação teve papel fundamental para a convergência do treinamento e para a qualidade de decisão.
+O sistema mostrou-se capaz de classificar todos os objetos testados corretamente com $100\%$ de acerto. Isso se deu devido à qualidade dos descritores calculados, que permitiram capturar as principais características de cada classe. Além disso a topologia da rede de classificação teve papel fundamental para a convergência do treinamento e para a qualidade de decisão.
 
 Na estimativa do ângulo obteve-se a precisão de $\pm4.1^o$ para o teste com 8 objetos e $\pm4.5^o$ para o teste com 16 objetos. O erro médio manteve-se em $1.3^o$, com desvio de $0.85^o$ para o primeiro teste e $1.1^o$, com desvio de $0.8^o$ para o segundo teste. O erro médio geral ficou portanto em $1.2^o$. O erro na estimativa do ângulo é bastante influenciado pelo sucesso na etapa de segmentação e normalização da imagem. Sendo assim, para obter bons resultados é necessário controlar ao máximo as condições externas de captura das imagens. Condições boas de iluminação por exemplo tendem a melhorar o resultado da etapa de segmentação. 
 

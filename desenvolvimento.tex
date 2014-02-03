@@ -163,7 +163,7 @@ Onde:
 	\label{fig:desenv_class3}
 \end{figure}
 
-É necessário portanto determinar o valor de $k$ para cada imagem normalizada. Utilizou-se para essa tarefa uma segunda rede neural para cada objeto. Essa rede recebe como entrada um descritor da imagem normalizada e informa na saída o valor de $k$. Para cada classe é gerada uma rede diferente, visto que as variações são diferentes de classe para classe. Após obter o valor $k$ da rede basta utilizar a equação \ref{eq:desenv_beta} para determinar o ângulo $\beta$ do objeto. Esse processo está resumido na figura \ref{fig:desenv_class2}.
+É necessário portanto determinar o valor de $k$ para cada imagem normalizada. Utilizou-se para essa tarefa uma segunda rede neural para cada objeto. Essa rede recebe como entrada o descritor da imagem normalizada e informa na saída o valor de $k$. Para cada classe é gerada uma rede diferente, visto que as variações são diferentes de classe para classe. Após obter o valor $k$ da rede basta utilizar a equação \ref{eq:desenv_beta} para determinar o ângulo $\beta$ do objeto. Esse processo está resumido na figura \ref{fig:desenv_class2}.
 
 \begin{figure}[H]
 	\centering
@@ -173,7 +173,7 @@ Onde:
 	\label{fig:desenv_class2}
 \end{figure}
 
-Foi escolhida uma rede neural para essa tarefa pois assumindo que redes neurais mostram bons resultados para aproximação de funções \cite{MATHWORKS-HELP-6}, supôs-se que também geram bons resultados para o problema exposto. A rede utilizada nessa etapa possui duas camadas, 12 entradas e uma saída. A primeira camada é formada por 7 \emph{perceptrons}. A melhor quantidade de perceptrons foi determinada empiricamente. A saída da rede possui um único perceptron pois a única saída da rede é o valor de $k$. A função de ativação da primeira camada da rede é a sigmoide pois permite o aprendizado de não linearidades. A segunda camada da rede possui uma função linear, $y=x$, favorecendo uma ampla faixa de valores de saída para $k$ \cite{MATHWORKS-HELP-3}.
+Sabendo-se que redes neurais mostram bons resultados para aproximação de funções \cite{MATHWORKS-HELP-6}, supôs-se que também gerariam bons resultados para o problema exposto, o que justifica a escolha dessa técnica de aprendizagem de máquina. A rede utilizada nessa etapa possui duas camadas, 12 entradas e uma saída. A primeira camada é formada por 7 \emph{perceptrons}. Essa quantidade de perceptrons foi determinada empiricamente. A saída da rede possui um único perceptron pois a única saída da rede é o valor de $k$. A função de ativação da primeira camada da rede é a sigmoide pois permite o aprendizado de não linearidades. A segunda camada da rede possui uma função linear, $y=x$, favorecendo uma ampla faixa de valores de saída para $k$ \cite{MATHWORKS-HELP-3}.
 
 Para o processo de treinamento da rede são utilizadas as mesmas amostras que foram utilizadas para o treinamento da rede responsável pela classificação do objeto. Em seguida são executadas as etapas descritas nas seções anteriores até a obtenção do descritor de entrada da rede. Além disso é necessário o conhecimento do ângulo em que o objeto se encontra para o cálculo de $k$ pela equação \ref{eq:desenv_beta}. Uma vez tendo o valor de $k$ e o descritor de entrada é possível treinar a rede.
 

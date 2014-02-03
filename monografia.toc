@@ -1,57 +1,57 @@
 \select@language {brazil}
-\contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{11}
-\contentsline {section}{\numberline {1.1}Motiva\c c\~ao e Justificativa}{11}
-\contentsline {section}{\numberline {1.2}Objetivos}{11}
-\contentsline {section}{\numberline {1.3}Metodologia}{12}
-\contentsline {section}{\numberline {1.4}Estrutura do Documento}{12}
-\contentsline {chapter}{\numberline {2}Fundamenta\c c\~ao Te\'orica}{13}
-\contentsline {section}{\numberline {2.1}Segmenta\c c\~ao}{13}
-\contentsline {subsection}{\numberline {2.1.1}Subtra\c c\~ao de fundo}{13}
-\contentsline {subsection}{\numberline {2.1.2}Limiariza\c c\~ao}{14}
-\contentsline {subsubsection}{Limiariza\c c\~ao global pelo m\'etodo de \emph {Otsu}}{15}
-\contentsline {subsection}{\numberline {2.1.3}Opera\c c\~oes morfol\'ogicas b\'asicas}{16}
-\contentsline {subsubsection}{Eros\~ao}{18}
-\contentsline {subsubsection}{Dilata\c c\~ao}{19}
-\contentsline {subsubsection}{Abertura e Fechamento}{20}
-\contentsline {subsection}{\numberline {2.1.4}Esqueletoniza\c c\~ao}{21}
-\contentsline {subsubsection}{Poda (\emph {Pruning})}{23}
-\contentsline {subsection}{\numberline {2.1.5}Normaliza\c c\~ao}{24}
-\contentsline {subsubsection}{Matriz de covari\^ancias}{24}
-\contentsline {subsubsection}{Autovetores e autovalores}{26}
-\contentsline {subsubsection}{Analise de componentes principais}{26}
-\contentsline {subsubsection}{Normaliza\c c\~ao}{27}
-\contentsline {section}{\numberline {2.2}Descri\c c\~ao}{28}
-\contentsline {subsection}{\numberline {2.2.1}Propriedades de regi\~oes}{28}
-\contentsline {subsubsection}{\'Area}{29}
-\contentsline {subsubsection}{\'Area convexa}{29}
-\contentsline {subsubsection}{\'Area Preenchida}{29}
-\contentsline {subsubsection}{Solidez}{29}
-\contentsline {subsubsection}{Extens\~ao}{29}
-\contentsline {subsubsection}{Excentricidade}{29}
-\contentsline {subsubsection}{Tamanho do eixo principal e eixo secund\'ario}{30}
-\contentsline {subsubsection}{N\'umero de Euler}{30}
-\contentsline {subsubsection}{Centroide}{30}
-\contentsline {subsection}{\numberline {2.2.2}Descritores de \emph {Fourier}}{31}
-\contentsline {section}{\numberline {2.3}Classifica\c c\~ao}{33}
-\contentsline {subsection}{\numberline {2.3.1}Redes neurais}{33}
-\contentsline {subsubsection}{Treinamento de \emph {perceptrons}}{37}
-\contentsline {subsubsection}{Treinamento de \emph {multi-layer perceptrons}}{39}
-\contentsline {section}{\numberline {2.4}Considera\c c\~oes}{41}
-\contentsline {chapter}{\numberline {3}Desenvolvimento}{42}
-\contentsline {section}{\numberline {3.1}Segmenta\c c\~ao: etapa 1}{43}
-\contentsline {section}{\numberline {3.2}Segmenta\c c\~ao: etapa 2}{45}
-\contentsline {section}{\numberline {3.3}Descri\c c\~ao: etapa 1}{46}
-\contentsline {section}{\numberline {3.4}Classifica\c c\~ao}{47}
-\contentsline {section}{\numberline {3.5}Descri\c c\~ao: etapa 2}{49}
-\contentsline {section}{\numberline {3.6}Estimativa de \^angulo}{50}
-\contentsline {section}{\numberline {3.7}Considera\c c\~oes}{53}
-\contentsline {chapter}{\numberline {4}Testes e An\'alise de Resultados}{54}
-\contentsline {section}{\numberline {4.1}Ambiente de testes}{54}
-\contentsline {section}{\numberline {4.2}Testes}{57}
-\contentsline {subsection}{\numberline {4.2.1}Primeiro teste: 8 objetos}{57}
-\contentsline {subsection}{\numberline {4.2.2}Segundo teste: 16 objetos}{60}
-\contentsline {section}{\numberline {4.3}Considera\c c\~oes}{63}
-\contentsline {chapter}{\numberline {5}Considera\c c\~oes finais}{65}
-\contentsline {section}{\numberline {5.1}Considera\c c\~oes finais}{65}
-\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{67}
-\contentsline {chapter}{REFER\^ENCIAS}{68}
+\contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{10}
+\contentsline {section}{\numberline {1.1}Motiva\c c\~ao e Justificativa}{10}
+\contentsline {section}{\numberline {1.2}Objetivos}{10}
+\contentsline {section}{\numberline {1.3}Metodologia}{11}
+\contentsline {section}{\numberline {1.4}Estrutura do Documento}{11}
+\contentsline {chapter}{\numberline {2}Fundamenta\c c\~ao Te\'orica}{12}
+\contentsline {section}{\numberline {2.1}Segmenta\c c\~ao}{12}
+\contentsline {subsection}{\numberline {2.1.1}Subtra\c c\~ao de fundo}{12}
+\contentsline {subsection}{\numberline {2.1.2}Limiariza\c c\~ao}{13}
+\contentsline {subsubsection}{Limiariza\c c\~ao global pelo m\'etodo de \emph {Otsu}}{14}
+\contentsline {subsection}{\numberline {2.1.3}Opera\c c\~oes morfol\'ogicas b\'asicas}{15}
+\contentsline {subsubsection}{Eros\~ao}{17}
+\contentsline {subsubsection}{Dilata\c c\~ao}{18}
+\contentsline {subsubsection}{Abertura e Fechamento}{19}
+\contentsline {subsection}{\numberline {2.1.4}Esqueletoniza\c c\~ao}{20}
+\contentsline {subsubsection}{Poda (\emph {Pruning})}{22}
+\contentsline {subsection}{\numberline {2.1.5}Normaliza\c c\~ao}{23}
+\contentsline {subsubsection}{Matriz de covari\^ancias}{23}
+\contentsline {subsubsection}{Autovetores e autovalores}{25}
+\contentsline {subsubsection}{Analise de componentes principais}{25}
+\contentsline {subsubsection}{Normaliza\c c\~ao}{26}
+\contentsline {section}{\numberline {2.2}Descri\c c\~ao}{27}
+\contentsline {subsection}{\numberline {2.2.1}Propriedades de regi\~oes}{27}
+\contentsline {subsubsection}{\'Area}{28}
+\contentsline {subsubsection}{\'Area convexa}{28}
+\contentsline {subsubsection}{\'Area Preenchida}{28}
+\contentsline {subsubsection}{Solidez}{28}
+\contentsline {subsubsection}{Extens\~ao}{28}
+\contentsline {subsubsection}{Excentricidade}{28}
+\contentsline {subsubsection}{Tamanho do eixo principal e eixo secund\'ario}{29}
+\contentsline {subsubsection}{N\'umero de Euler}{29}
+\contentsline {subsubsection}{Centroide}{29}
+\contentsline {subsection}{\numberline {2.2.2}Descritores de \emph {Fourier}}{30}
+\contentsline {section}{\numberline {2.3}Classifica\c c\~ao}{32}
+\contentsline {subsection}{\numberline {2.3.1}Redes neurais}{32}
+\contentsline {subsubsection}{Treinamento de \emph {perceptrons}}{36}
+\contentsline {subsubsection}{Treinamento de \emph {multi-layer perceptrons}}{38}
+\contentsline {section}{\numberline {2.4}Considera\c c\~oes}{40}
+\contentsline {chapter}{\numberline {3}Desenvolvimento}{41}
+\contentsline {section}{\numberline {3.1}Segmenta\c c\~ao: etapa 1}{42}
+\contentsline {section}{\numberline {3.2}Segmenta\c c\~ao: etapa 2}{44}
+\contentsline {section}{\numberline {3.3}Descri\c c\~ao: etapa 1}{45}
+\contentsline {section}{\numberline {3.4}Classifica\c c\~ao}{46}
+\contentsline {section}{\numberline {3.5}Descri\c c\~ao: etapa 2}{48}
+\contentsline {section}{\numberline {3.6}Estimativa de \^angulo}{49}
+\contentsline {section}{\numberline {3.7}Considera\c c\~oes}{52}
+\contentsline {chapter}{\numberline {4}Testes e An\'alise de Resultados}{53}
+\contentsline {section}{\numberline {4.1}Ambiente de testes}{53}
+\contentsline {section}{\numberline {4.2}Testes}{56}
+\contentsline {subsection}{\numberline {4.2.1}Primeiro teste: 8 objetos}{56}
+\contentsline {subsection}{\numberline {4.2.2}Segundo teste: 16 objetos}{59}
+\contentsline {section}{\numberline {4.3}Considera\c c\~oes}{62}
+\contentsline {chapter}{\numberline {5}Considera\c c\~oes finais}{64}
+\contentsline {section}{\numberline {5.1}Discuss\~ao do desenvolvimento e dos resultados}{64}
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{66}
+\contentsline {chapter}{REFER\^ENCIAS}{67}
