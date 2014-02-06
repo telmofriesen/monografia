@@ -1,42 +1,43 @@
 \select@language {brazil}
-\contentsline {figure}{\numberline {1}{\ignorespaces Imagens com e sem ru\IeC {\'\i }do e seus respectivos histogramas\relax }}{14}
-\contentsline {figure}{\numberline {2}{\ignorespaces Imagens limiarizadas pelo m\'etodo de \emph {Otsu} e seus respectivos histogramas\relax }}{15}
-\contentsline {figure}{\numberline {3}{\ignorespaces Exemplos de elementos estruturantes.\relax }}{16}
-\contentsline {figure}{\numberline {4}{\ignorespaces Exemplo de opera\c c\~ao morfol\'ogica: eros\~ao.\relax }}{17}
-\contentsline {figure}{\numberline {5}{\ignorespaces Exemplo de eros\~ao do conjunto A por B.\relax }}{18}
-\contentsline {figure}{\numberline {6}{\ignorespaces Exemplo de dilata\c c\~ao do conjunto A por B.\relax }}{18}
-\contentsline {figure}{\numberline {7}{\ignorespaces Conjunto $A$.\relax }}{19}
-\contentsline {figure}{\numberline {8}{\ignorespaces Conjunto $A \circ B$.\relax }}{20}
-\contentsline {figure}{\numberline {9}{\ignorespaces Conjunto $A \bullet B$.\relax }}{20}
-\contentsline {figure}{\numberline {10}{\ignorespaces Conjunto $A$, disco m\'aximo centrado em diversos pontos $z$ e esqueleto representado pelas linhas tracejadas.\relax }}{21}
-\contentsline {figure}{\numberline {11}{\ignorespaces Exemplo de esqueletoniza\c c\~ao e poda.\relax }}{23}
-\contentsline {figure}{\numberline {12}{\ignorespaces Imagens de exemplo e suas respectivas matrizes de covari\^ancia.\relax }}{25}
-\contentsline {figure}{\numberline {13}{\ignorespaces Imagens de exemplo e seus respectivos autovetores.\relax }}{26}
-\contentsline {figure}{\numberline {14}{\ignorespaces Imagens normalizadas.\relax }}{27}
-\contentsline {figure}{\numberline {15}{\ignorespaces Representa\c c\~ao da \'area para c\'alculo do momento de in\'ercia.\relax }}{29}
-\contentsline {figure}{\numberline {16}{\ignorespaces Imagem original e imagens reconstitu\IeC {\'\i }das utilizando $n$ descritores de \emph {Fourier}.\relax }}{31}
-\contentsline {figure}{\numberline {17}{\ignorespaces Modelo de \emph {perceptron}.\relax }}{33}
-\contentsline {figure}{\numberline {18}{\ignorespaces Gr\'afico da fun\c c\~ao de ativa\c c\~ao sigmoide.\relax }}{34}
-\contentsline {figure}{\numberline {19}{\ignorespaces Modelo de \emph {multi-layer feedforward network}.\relax }}{35}
-\contentsline {figure}{\numberline {20}{\ignorespaces Estruturas de redes neurais e sua respectiva capacidade de decis\~ao.\relax }}{36}
-\contentsline {figure}{\numberline {21}{\ignorespaces Vis\~ao geral do sistema desenvolvido.\relax }}{41}
-\contentsline {figure}{\numberline {22}{\ignorespaces Primeira etapa da segmenta\c c\~ao.\relax }}{43}
-\contentsline {figure}{\numberline {23}{\ignorespaces Segunda etapa da segmenta\c c\~ao.\relax }}{44}
-\contentsline {figure}{\numberline {24}{\ignorespaces Primeira etapa da descri\c c\~ao.\relax }}{46}
-\contentsline {figure}{\numberline {25}{\ignorespaces Etapa de classifica\c c\~ao.\relax }}{48}
-\contentsline {figure}{\numberline {26}{\ignorespaces Imagens normalizadas para diferentes entradas do mesmo objeto.\relax }}{49}
-\contentsline {figure}{\numberline {27}{\ignorespaces Segunda etapa da descri\c c\~ao.\relax }}{49}
-\contentsline {figure}{\numberline {28}{\ignorespaces Representa\c c\~ao do autovetor (vermelho), dos eixos da imagem (amarelo) e do eixo do objeto (azul).\relax }}{50}
-\contentsline {figure}{\numberline {29}{\ignorespaces Segunda etapa da classifica\c c\~ao.\relax }}{51}
-\contentsline {figure}{\numberline {30}{\ignorespaces Objetos de teste.\relax }}{54}
-\contentsline {figure}{\numberline {31}{\ignorespaces Montagem do ambiente de testes.\relax }}{55}
+\contentsline {figure}{\numberline {1}{\ignorespaces Vis\~ao geral do sistema.\relax }}{11}
+\contentsline {figure}{\numberline {2}{\ignorespaces Imagens com e sem ru\IeC {\'\i }do e seus respectivos histogramas\relax }}{15}
+\contentsline {figure}{\numberline {3}{\ignorespaces Imagens limiarizadas pelo m\'etodo de \emph {Otsu} e seus respectivos histogramas\relax }}{16}
+\contentsline {figure}{\numberline {4}{\ignorespaces Exemplos de elementos estruturantes.\relax }}{17}
+\contentsline {figure}{\numberline {5}{\ignorespaces Exemplo de opera\c c\~ao morfol\'ogica: eros\~ao.\relax }}{18}
+\contentsline {figure}{\numberline {6}{\ignorespaces Exemplo de eros\~ao do conjunto A por B.\relax }}{19}
+\contentsline {figure}{\numberline {7}{\ignorespaces Exemplo de dilata\c c\~ao do conjunto A por B.\relax }}{19}
+\contentsline {figure}{\numberline {8}{\ignorespaces Conjunto $A$.\relax }}{20}
+\contentsline {figure}{\numberline {9}{\ignorespaces Conjunto $A \circ B$.\relax }}{21}
+\contentsline {figure}{\numberline {10}{\ignorespaces Conjunto $A \bullet B$.\relax }}{21}
+\contentsline {figure}{\numberline {11}{\ignorespaces Conjunto $A$, disco m\'aximo centrado em diversos pontos $z$ e esqueleto representado pelas linhas tracejadas.\relax }}{22}
+\contentsline {figure}{\numberline {12}{\ignorespaces Exemplo de esqueletoniza\c c\~ao e poda.\relax }}{24}
+\contentsline {figure}{\numberline {13}{\ignorespaces Imagens de exemplo e suas respectivas matrizes de covari\^ancia.\relax }}{26}
+\contentsline {figure}{\numberline {14}{\ignorespaces Imagens de exemplo e seus respectivos autovetores.\relax }}{27}
+\contentsline {figure}{\numberline {15}{\ignorespaces Imagens normalizadas.\relax }}{28}
+\contentsline {figure}{\numberline {16}{\ignorespaces Representa\c c\~ao da \'area para c\'alculo do momento de in\'ercia.\relax }}{30}
+\contentsline {figure}{\numberline {17}{\ignorespaces Imagem original e imagens reconstitu\IeC {\'\i }das utilizando $n$ descritores de \emph {Fourier}.\relax }}{32}
+\contentsline {figure}{\numberline {18}{\ignorespaces Modelo de \emph {perceptron}.\relax }}{34}
+\contentsline {figure}{\numberline {19}{\ignorespaces Gr\'afico da fun\c c\~ao de ativa\c c\~ao sigmoide.\relax }}{35}
+\contentsline {figure}{\numberline {20}{\ignorespaces Modelo de \emph {multi-layer feedforward network}.\relax }}{36}
+\contentsline {figure}{\numberline {21}{\ignorespaces Estruturas de redes neurais e sua respectiva capacidade de decis\~ao.\relax }}{37}
+\contentsline {figure}{\numberline {22}{\ignorespaces Vis\~ao geral do sistema desenvolvido.\relax }}{42}
+\contentsline {figure}{\numberline {23}{\ignorespaces Primeira etapa da segmenta\c c\~ao.\relax }}{44}
+\contentsline {figure}{\numberline {24}{\ignorespaces Segunda etapa da segmenta\c c\~ao.\relax }}{45}
+\contentsline {figure}{\numberline {25}{\ignorespaces Primeira etapa da descri\c c\~ao.\relax }}{47}
+\contentsline {figure}{\numberline {26}{\ignorespaces Etapa de classifica\c c\~ao.\relax }}{49}
+\contentsline {figure}{\numberline {27}{\ignorespaces Imagens normalizadas para diferentes entradas do mesmo objeto.\relax }}{50}
+\contentsline {figure}{\numberline {28}{\ignorespaces Segunda etapa da descri\c c\~ao.\relax }}{50}
+\contentsline {figure}{\numberline {29}{\ignorespaces Representa\c c\~ao do autovetor (vermelho), dos eixos da imagem (amarelo) e do eixo do objeto (azul).\relax }}{51}
+\contentsline {figure}{\numberline {30}{\ignorespaces Segunda etapa da classifica\c c\~ao.\relax }}{52}
+\contentsline {figure}{\numberline {31}{\ignorespaces Objetos de teste.\relax }}{55}
 \contentsline {figure}{\numberline {32}{\ignorespaces Montagem do ambiente de testes.\relax }}{56}
-\contentsline {figure}{\numberline {33}{\ignorespaces Matriz de confus\~ao para 8 objetos (formando 16 classes).\relax }}{57}
-\contentsline {figure}{\numberline {34}{\ignorespaces Erro m\'edio da estimativa do \^angulo para 8 objetos.\relax }}{58}
-\contentsline {figure}{\numberline {35}{\ignorespaces Desvio padr\~ao do erro da estimativa do \^angulo para 8 objetos.\relax }}{58}
-\contentsline {figure}{\numberline {36}{\ignorespaces Erro m\'aximo da estimativa do \^angulo para 8 objetos.\relax }}{59}
-\contentsline {figure}{\numberline {37}{\ignorespaces Matriz de confus\~ao para 16 objetos (formando 31 classes).\relax }}{60}
-\contentsline {figure}{\numberline {38}{\ignorespaces Erro m\'edio da estimativa do \^angulo para 16 objetos.\relax }}{61}
-\contentsline {figure}{\numberline {39}{\ignorespaces Desvio padr\~ao do erro da estimativa do \^angulo para 16 objetos.\relax }}{61}
-\contentsline {figure}{\numberline {40}{\ignorespaces Erro m\'aximo da estimativa do \^angulo para 16 objetos.\relax }}{62}
-\contentsline {figure}{\numberline {41}{\ignorespaces Matriz de confus\~ao para 8 objetos - rede com 1 sa\IeC {\'\i }da.\relax }}{63}
+\contentsline {figure}{\numberline {33}{\ignorespaces Montagem do ambiente de testes.\relax }}{57}
+\contentsline {figure}{\numberline {34}{\ignorespaces Matriz de confus\~ao para 8 objetos (formando 16 classes).\relax }}{58}
+\contentsline {figure}{\numberline {35}{\ignorespaces Erro m\'edio da estimativa do \^angulo para 8 objetos.\relax }}{59}
+\contentsline {figure}{\numberline {36}{\ignorespaces Desvio padr\~ao do erro da estimativa do \^angulo para 8 objetos.\relax }}{59}
+\contentsline {figure}{\numberline {37}{\ignorespaces Erro m\'aximo da estimativa do \^angulo para 8 objetos.\relax }}{60}
+\contentsline {figure}{\numberline {38}{\ignorespaces Matriz de confus\~ao para 16 objetos (formando 31 classes).\relax }}{61}
+\contentsline {figure}{\numberline {39}{\ignorespaces Erro m\'edio da estimativa do \^angulo para 16 objetos.\relax }}{62}
+\contentsline {figure}{\numberline {40}{\ignorespaces Desvio padr\~ao do erro da estimativa do \^angulo para 16 objetos.\relax }}{62}
+\contentsline {figure}{\numberline {41}{\ignorespaces Erro m\'aximo da estimativa do \^angulo para 16 objetos.\relax }}{63}
+\contentsline {figure}{\numberline {42}{\ignorespaces Matriz de confus\~ao para 8 objetos - rede com 1 sa\IeC {\'\i }da.\relax }}{64}
