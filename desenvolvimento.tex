@@ -45,7 +45,7 @@ A segunda etapa da segmentação é responsável por normalizar a imagem. Esta etapa
 
 A região de interesse obtida da primeira etapa de segmentação é esqueletonizada e podada pelos processos descritos na seção \ref{sub:fundteor_esqueletonizacao}. Em seguida o processo de normalização da seção \ref{sub:fundteor_normalizacao} é aplicado.
 
-Como dito na seção \ref{sub:fundteor_normalizacao}, o autovetor associado ao maior autovalor da matriz de covariâncias dos pixeis da imagem aponta na direção de maior variação dos dados. 
+Como dito na seção \ref{sub:fundteor_normalizacao}, o autovetor associado ao maior autovalor da matriz de covariâncias dos pixels da imagem aponta na direção de maior variação dos dados. 
 
 O autovetor porém não aponta no sentido de maior variação dos dados. Como pode ser visto na figura \ref{fig:desenv_seg2}, normalizando o ``S" com o autovetor oposto $A'=-A$ obtém-se o a normalização correta para o ``S". Contudo se a normalização utilizar o autovetor $A$ obtém-se uma imagem com o ``S" normalizado rotacionado em $180^0$.
 
@@ -177,7 +177,7 @@ Sabendo-se que redes neurais mostram bons resultados para aproximação de funções
 
 Para o processo de treinamento da rede são utilizadas as mesmas amostras que foram utilizadas para o treinamento da rede responsável pela classificação do objeto. Em seguida são executadas as etapas descritas nas seções anteriores até a obtenção do descritor de entrada da rede. Além disso é necessário o conhecimento do ângulo em que o objeto se encontra para o cálculo de $k$ pela equação \ref{eq:desenv_beta}. Uma vez tendo o valor de $k$ e o descritor de entrada é possível treinar a rede.
 
-A rede é treinada utilizando um algoritmo de \emph{back propagation} conforme visto na seção \ref{subsec:fundteor_redes_neurais}. O algoritmo utilizado para esta rede em específico utiliza a otimização de \emph{Levenberg-Marquardt}. A escolha foi baseada na velocidade de convergência do treinamento e nos bons resultados apresentados por esse método para o problema de aproximação de funções \cite{MATHWORKS-HELP-5}.
+A rede é treinada utilizando um algoritmo de \emph{back propagation} conforme visto na seção \ref{subsec:fundteor_redes_neurais}. O algoritmo utilizado para esta rede em específico utiliza a otimização de \emph{Levenberg-Marquardt}. A escolha foi baseada na velocidade de convergência do treinamento e nos resultados apresentados por esse método para o problema de aproximação de funções \cite{MATHWORKS-HELP-5}.
 
 \section{Considerações} \label{sec:desenv_consideracoes}
 
